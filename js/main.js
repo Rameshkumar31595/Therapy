@@ -8,6 +8,175 @@
 
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ══════════════════════════════════════════════════════════
+     LANGUAGE (English / Telugu)
+     English defaults live in the HTML; Telugu strings below use
+     simple, everyday wording for Narasaraopet locals.
+     ══════════════════════════════════════════════════════════ */
+  var LANG_KEY = "sushruta_lang";
+
+  var TE = {
+    "nav.about": "మా గురించి",
+    "nav.services": "థెరపీలు",
+    "nav.why": "మేమే ఎందుకు",
+    "nav.timings": "సమయాలు",
+    "nav.experience": "అనుభవం",
+    "nav.contact": "కాంటాక్ట్",
+    "nav.call": "కాల్ 95024 77334",
+
+    "hero.eyebrow": "✦&nbsp; అసలైన కేరళ ఆయుర్వేద సంప్రదాయం &nbsp;✦",
+    "hero.t1": "సంప్రదాయ కేరళ",
+    "hero.t2": "మసాజ్ థెరపీ",
+    "hero.t3": "ఇప్పుడు మీ ఇంటి వద్దకే",
+    "hero.sub": "రిలాక్సేషన్, బాడీ కంఫర్ట్ మరియు స్ట్రెస్ రిలీఫ్ కోసం — సర్టిఫైడ్ థెరపిస్ట్ కపుల్ కేరళ సంప్రదాయ మసాజ్ సేవలను నరసరావుపేటలో మీ ఇంటికే వచ్చి అందిస్తారు.",
+    "hero.scroll": "శ్వాస తీసుకోండి. మెల్లగా స్క్రోల్ చేయండి.",
+
+    "cta.wa": "ఇప్పుడే వాట్సాప్ చేయండి",
+    "cta.call": "కాల్ చేయండి",
+
+    "chip.couple": "సర్టిఫైడ్ థెరపిస్ట్ కపుల్",
+    "chip.mf": "మేల్ & ఫీమేల్ సెపరేట్ థెరపిస్ట్",
+    "chip.door": "ఇంటికే వచ్చే సేవ",
+
+    "about.badge": "సుశ్రుత<br/><em>సంప్రదాయం</em>",
+    "about.eyebrow": "మా గురించి",
+    "about.title": "కేరళ వెల్‌నెస్ సంప్రదాయం,<br/><span class=\"gold-italic\">మీ ఇంటి సౌకర్యంలో</span>",
+    "about.lead": "సుశ్రుత — సర్టిఫైడ్ థెరపిస్ట్ కపుల్. ప్రొఫెషనల్ కేరళ మసాజ్ థెరపీని నరసరావుపేటలో మీ ఇంటి వద్దకే అందిస్తారు.",
+    "about.para": "తరతరాల ఆయుర్వేద అనుభవం నుంచి వచ్చిన అసలైన కేరళ పద్ధతుల్లో శిక్షణ పొందారు. ప్రతి సెషన్ రిలాక్సేషన్, బాడీ కంఫర్ట్ మరియు స్ట్రెస్ రిలీఫ్ కోసం — ప్రశాంతమైన ఒక గంట పూర్తిగా మీ కోసం.",
+    "about.p1t": "కుటుంబ అనుకూలం & నమ్మకమైన సేవ",
+    "about.p1d": "మర్యాదగల, ప్రొఫెషనల్ థెరపిస్ట్ కపుల్‌ను నిశ్చింతగా మీ ఇంటికి ఆహ్వానించవచ్చు.",
+    "about.p2t": "మేల్ మరియు ఫీమేల్ థెరపిస్ట్ అందుబాటులో ఉంటారు",
+    "about.p2d": "మహిళలకు లేడీ థెరపిస్ట్, పురుషులకు మేల్ థెరపిస్ట్ — మీ కంఫర్ట్ మరియు ప్రైవసీ కోసం, ఎల్లప్పుడూ.",
+    "about.p3t": "సంప్రదాయ నూనెలు & పద్ధతులు",
+    "about.p3d": "వేడి హెర్బల్ నూనెలతో అసలైన కేరళ మసాజ్ — రిలాక్సేషన్ మరియు నొప్పి ఉపశమన సపోర్ట్.",
+    "about.link": "వాట్సాప్‌లో మమ్మల్ని అడగండి",
+
+    "svc.eyebrow": "మా థెరపీలు",
+    "svc.title": "మీకు నచ్చిన <span class=\"gold-italic\">థెరపీ ఎంచుకోండి</span>",
+    "svc.intro": "ప్రతి థెరపీ మీ ఇంటి వద్దే — వేడి హెర్బల్ నూనెలు, శుభ్రమైన లినెన్లతో, సంప్రదాయ కేరళ పద్ధతిలో.",
+    "svc.book": "వాట్సాప్‌లో బుక్ చేయండి",
+    "svc.badge1": "బాగా ఇష్టపడేది",
+    "svc.badge2": "రాయల్ థెరపీ",
+    "svc1.tag": "పాదాలు & కాళ్ల మసాజ్",
+    "svc1.desc": "అలసిన కాళ్లు, పాదాలకు హాయినిచ్చే థెరపీ — వేడి నూనె, లయబద్ధమైన మసాజ్‌తో రోజంతా అలసట మాయం.",
+    "svc2.tag": "ఫుల్ బాడీ ఆయిల్ మసాజ్",
+    "svc2.desc": "కేరళ ప్రసిద్ధ ఫుల్ బాడీ మసాజ్ — వేడి హెర్బల్ నూనెతో పొడవైన, మృదువైన స్ట్రోక్స్. కండరాలు రిలాక్స్, మనసు ప్రశాంతం.",
+    "svc3.note": "ఎక్స్‌టెండెడ్",
+    "svc3.desc": "పూర్తి గంట సంప్రదాయ అభ్యంగ — డీప్ రిలాక్సేషన్, మెరుగైన ఫ్లెక్సిబిలిటీ, శరీరమంతా హాయి.",
+    "svc4.tag": "హెర్బల్ పోట్లి మసాజ్",
+    "svc4.desc": "కేరళ మూలికలతో నింపిన వేడి పోట్లిలతో మసాజ్ — నొప్పి ఉపశమన సపోర్ట్, కండరాలకు డీప్ కంఫర్ట్.",
+    "svc5.tag": "వేడి నూనె హెడ్ థెరపీ",
+    "svc5.desc": "నుదుటిపై వేడి నూనె ధార — డీప్ రిలాక్సేషన్, స్ట్రెస్ రిలీఫ్, మంచి నిద్రకు సపోర్ట్. కేరళ ప్రత్యేక థెరపీ.",
+    "svc6.tag": "సంప్రదాయ కేరళ ఆయిల్ థెరపీ",
+    "svc6.desc": "కేరళ \"రాయల్ ట్రీట్‌మెంట్\" — వేడి ఔషధ నూనె ధారలతో పాటు మసాజ్. శరీరమంతా లగ్జరీ అనుభూతి.",
+    "dur.30": "30 నిమిషాలు",
+    "dur.45": "45 నిమిషాలు",
+    "dur.50": "50 నిమిషాలు",
+    "dur.60": "60 నిమిషాలు",
+    "steam.title": "హెర్బల్ స్టీమ్",
+    "steam.label": "యాడ్-ఆన్",
+    "steam.desc": "ఏ థెరపీతోనైనా హెర్బల్ స్టీమ్ జోడించండి — కండరాలు రిలాక్స్ అవుతాయి, రిలాక్సేషన్ మరింత పెరుగుతుంది.",
+    "steam.btn": "బుకింగ్‌కు జోడించండి",
+
+    "why.eyebrow": "సుశ్రుత ఎందుకు",
+    "why.title": "పూర్తిగా నమ్మదగిన <span class=\"gold-italic\">వెల్‌నెస్ సేవ</span>",
+    "why.c1t": "సర్టిఫైడ్ థెరపిస్ట్ కపుల్",
+    "why.c1d": "అసలైన కేరళ ఆయుర్వేద పద్ధతుల్లో శిక్షణ పొందిన ప్రొఫెషనల్ థెరపిస్ట్ కపుల్.",
+    "why.c2t": "మేల్ / ఫీమేల్ సెపరేట్ థెరపిస్ట్",
+    "why.c2d": "మహిళలకు లేడీ థెరపిస్ట్, పురుషులకు మేల్ థెరపిస్ట్ — కంఫర్ట్, ప్రైవసీ ఎప్పుడూ ముందే.",
+    "why.c3t": "బాడీ కంఫర్ట్",
+    "why.c3d": "మీ శరీర అవసరాలకు తగినట్టు వేడి నూనెలు, సరైన ప్రెషర్‌తో మసాజ్.",
+    "why.c4t": "స్ట్రెస్ రిలీఫ్",
+    "why.c4d": "ఒక గంట ప్రశాంతత — ఒత్తిడి కరిగిపోతుంది, మనసు తేలికవుతుంది.",
+    "why.c5t": "మైండ్ & బాడీ రిలాక్స్",
+    "why.c5d": "సంప్రదాయ మసాజ్ లయతో శరీరం, మనసు రెండూ పూర్తి విశ్రాంతి పొందుతాయి.",
+    "why.c6t": "ఫ్లెక్సిబిలిటీ మెరుగుదల",
+    "why.c6d": "రెగ్యులర్ సెషన్లతో కండరాలు మృదువుగా, కదలికలు తేలికగా ఉంటాయి.",
+    "why.c7t": "ఇంటికే వచ్చే సౌకర్యం",
+    "why.c7d": "ప్రయాణం అవసరం లేదు, వెయిటింగ్ లేదు. నూనెలు, లినెన్లు అన్నీ మేమే తెస్తాము — మీరు హాయిగా రిలాక్స్ అవ్వండి.",
+
+    "time.eyebrow": "మేము వచ్చే సమయాలు",
+    "time.title": "ప్రతి రోజూ అందుబాటులో,<br/><span class=\"gold-italic\">మీ సౌకర్యం ప్రకారం</span>",
+    "time.para": "ఉదయం రిలాక్సేషన్ లేదా సాయంత్రం విశ్రాంతి — నరసరావుపేట మరియు పల్నాడు జిల్లా అంతటా మీ ఇంటికే వస్తాము.",
+    "time.btn": "ఈరోజు స్లాట్స్ కోసం అడగండి",
+    "time.card": "పని వేళలు",
+    "day.tue": "మంగళవారం",
+    "day.wed": "బుధవారం",
+    "day.thu": "గురువారం",
+    "day.fri": "శుక్రవారం",
+    "day.sat": "శనివారం",
+    "day.sun": "ఆదివారం",
+    "day.mon": "సోమవారం",
+    "day.half": "హాఫ్ డే",
+    "time.foot": "✦ &nbsp;సోమవారం ఉదయం మాత్రమే — ముందుగా బుక్ చేసుకోండి&nbsp; ✦",
+
+    "exp.eyebrow": "అనుభవం",
+    "exp.title": "కేరళ అనుభూతిలోకి <span class=\"gold-italic\">అడుగుపెట్టండి</span>",
+    "exp.intro": "కళ్ళు మూసుకోండి. వేడి నూనె, మూలికల సువాసన, దూరంగా పక్షుల పాట — మీ సెషన్ ఇలా ఉంటుంది.",
+    "exp.g1": "వేడి హెర్బల్ నూనెలు",
+    "exp.g2": "తొందర లేని సంప్రదాయ సేవ",
+    "exp.g3": "డీప్ రిలాక్సేషన్",
+    "exp.g4": "కేరళ అందం",
+    "exp.hint": "← &nbsp;స్వైప్ చేయండి&nbsp; →",
+
+    "con.title": "మీ శరీరానికి కావాల్సిన<br/><span class=\"gold-italic\">విశ్రాంతి ఇదే</span>",
+    "con.sub": "ఒక్క మెసేజ్ చాలు. మీకు కావాల్సిన థెరపీ, సమయం చెప్పండి — మేము మీ ఇంటి వద్దకే వచ్చి సేవ అందిస్తాము.",
+    "con.wa": "వాట్సాప్ — 95024 77334",
+    "con.call": "కాల్ — 95024 77334",
+    "con.loc": "నరసరావుపేట, పల్నాడు జిల్లా",
+    "con.hours": "ప్రతి రోజూ 9 AM – 8 PM &nbsp;·&nbsp; సోమవారం 9 AM – 1 PM",
+    "con.door": "మీ ఇంటి వద్దకే సేవ",
+
+    "foot.line": "సంప్రదాయ కేరళ వెల్‌నెస్ — నరసరావుపేటలో మీ ఇంటి వద్దకే."
+  };
+
+  var i18nEls = document.querySelectorAll("[data-i18n]");
+  var enDefaults = {};
+  i18nEls.forEach(function (el) {
+    var key = el.getAttribute("data-i18n");
+    if (!(key in enDefaults)) enDefaults[key] = el.innerHTML;
+  });
+
+  var langSwitch = document.getElementById("langSwitch");
+
+  function applyLang(lang) {
+    var isTe = lang === "te";
+    i18nEls.forEach(function (el) {
+      var key = el.getAttribute("data-i18n");
+      var value = isTe ? TE[key] : enDefaults[key];
+      if (value !== undefined) el.innerHTML = value;
+    });
+    document.documentElement.setAttribute("lang", isTe ? "te" : "en");
+    langSwitch.textContent = isTe ? "English" : "తెలుగు";
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+  }
+
+  var savedLang = null;
+  try { savedLang = localStorage.getItem(LANG_KEY); } catch (e) {}
+
+  /* Language selection overlay — shown on first visit only */
+  var langModal = document.getElementById("langModal");
+  if (savedLang === "en" || savedLang === "te") {
+    applyLang(savedLang);
+  } else {
+    langModal.hidden = false;
+    document.body.classList.add("lang-open");
+  }
+
+  langModal.querySelectorAll(".lang-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      applyLang(btn.getAttribute("data-lang"));
+      langModal.classList.add("closing");
+      document.body.classList.remove("lang-open");
+      setTimeout(function () { langModal.hidden = true; }, 550);
+    });
+  });
+
+  langSwitch.addEventListener("click", function () {
+    var current = document.documentElement.getAttribute("lang");
+    applyLang(current === "te" ? "en" : "te");
+  });
+
   /* ── Header: solid on scroll ─────────────────────────────── */
   var header = document.getElementById("siteHeader");
   var headerTicking = false;
@@ -23,32 +192,30 @@
   }, { passive: true });
   updateHeader();
 
-  /* ── Mobile navigation ───────────────────────────────────── */
+  /* ── Mobile navigation (full-screen, scroll-locked) ──────── */
   var navToggle = document.getElementById("navToggle");
   var mainNav = document.getElementById("mainNav");
 
-  function closeNav() {
-    mainNav.classList.remove("open");
-    navToggle.classList.remove("active");
-    navToggle.setAttribute("aria-expanded", "false");
-    navToggle.setAttribute("aria-label", "Open menu");
-    document.body.style.overflow = "";
-  }
-
-  navToggle.addEventListener("click", function () {
-    var open = mainNav.classList.toggle("open");
+  function setNav(open) {
+    mainNav.classList.toggle("open", open);
     navToggle.classList.toggle("active", open);
     navToggle.setAttribute("aria-expanded", String(open));
     navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    document.body.style.overflow = open ? "hidden" : "";
+    // lock background scroll while the menu covers the viewport
+    document.body.classList.toggle("nav-open", open);
+    document.documentElement.style.overflow = open ? "hidden" : "";
+  }
+
+  navToggle.addEventListener("click", function () {
+    setNav(!mainNav.classList.contains("open"));
   });
 
   mainNav.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", closeNav);
+    link.addEventListener("click", function () { setNav(false); });
   });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && mainNav.classList.contains("open")) closeNav();
+    if (e.key === "Escape" && mainNav.classList.contains("open")) setNav(false);
   });
 
   /* ── Hero entrance ───────────────────────────────────────── */
@@ -81,14 +248,14 @@
   var parallaxEls = Array.prototype.slice.call(document.querySelectorAll("[data-parallax]"));
   if (!reducedMotion && parallaxEls.length) {
     var pxTicking = false;
-    function updateParallax() {
+    var updateParallax = function () {
       var y = window.scrollY;
       parallaxEls.forEach(function (el) {
         var speed = parseFloat(el.getAttribute("data-parallax")) || 0.2;
         el.style.transform = "translate3d(0," + (y * speed).toFixed(1) + "px,0)";
       });
       pxTicking = false;
-    }
+    };
     window.addEventListener("scroll", function () {
       if (!pxTicking) {
         pxTicking = true;
