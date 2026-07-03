@@ -429,13 +429,21 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
   position: absolute;
   top: -8%;
   width: 1.6rem;
-  fill: rgba(201, 163, 90, 0.5);
+  fill: rgba(201, 163, 90, 0.8);
   animation: leafFall linear infinite;
 }
 .lf-1 { left: 16%; animation-duration: 17s; animation-delay: 0s; }
-.lf-2 { left: 42%; width: 1.2rem; fill: rgba(93, 148, 114, 0.5); animation-duration: 21s; animation-delay: -8s; }
+.lf-2 { left: 42%; width: 1.2rem; fill: rgba(93, 148, 114, 0.78); animation-duration: 21s; animation-delay: -8s; }
 .lf-3 { left: 68%; animation-duration: 15s; animation-delay: -4s; }
-.lf-4 { left: 87%; width: 1.1rem; fill: rgba(93, 148, 114, 0.42); animation-duration: 24s; animation-delay: -13s; }
+.lf-4 { left: 87%; width: 1.1rem; fill: rgba(93, 148, 114, 0.68); animation-duration: 24s; animation-delay: -13s; }
+@media (max-width: 639px) {
+  .float-leaf { width: 2.2rem; }
+  .lf-2 { width: 1.7rem; }
+  .lf-4 { width: 1.6rem; }
+  .s-bird { width: 1.55rem; }
+  .sb-2 { width: 1.2rem; }
+  .sb-3 { width: 1.05rem; }
+}
 @keyframes leafFall {
   0%   { transform: translate(0, -5vh) rotate(0deg); opacity: 0; }
   8%   { opacity: 1; }
@@ -459,8 +467,8 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
   will-change: transform;
   animation: birdFly linear forwards;
 }
-.bird svg { width: 100%; height: auto; fill: rgba(15, 30, 22, 0.75); overflow: visible; }
-.section-dark .bird svg, .hero .bird svg { fill: rgba(10, 22, 16, 0.8); }
+.bird svg { width: 100%; height: auto; fill: rgba(15, 30, 22, 0.95); overflow: visible; }
+.section-dark .bird svg, .hero .bird svg { fill: rgba(10, 22, 16, 0.95); }
 .bird-glide { animation: birdBob 3.4s ease-in-out infinite; }
 
 @keyframes birdFly {
@@ -490,7 +498,7 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
 .s-bird {
   position: absolute;
   width: 1.1rem;
-  fill: rgba(15, 30, 22, 0.5);
+  fill: rgba(15, 30, 22, 0.78);
   animation: distantDrift 38s linear infinite;
 }
 .s-bird .wing-l, .s-bird .wing-r { animation-duration: 1.4s; }
@@ -813,6 +821,32 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
 }
 .service-card:hover .service-icon { transform: rotate(-6deg) scale(1.08); background: rgba(201, 163, 90, 0.22); }
 .service-icon svg { width: 1.9rem; height: 1.9rem; fill: var(--gold-bright); }
+
+/* Treatment photo — same 3.4rem height & margin as the icon box,
+   so card dimensions are unchanged; landscape crop for clarity */
+.service-photo {
+  width: 5.5rem;
+  height: 3.4rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(227, 194, 132, 0.3);
+  background: rgba(201, 163, 90, 0.13);
+  margin-bottom: 1.1rem;
+  transition: border-color 0.4s;
+}
+.service-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* warm grade to match the site's gold/forest palette */
+  filter: saturate(0.92) sepia(0.14);
+  transition: transform 0.6s var(--ease-out);
+}
+.service-card:hover .service-photo { border-color: rgba(227, 194, 132, 0.65); }
+.service-card:hover .service-photo img { transform: scale(1.08); }
+
+/* Steam add-on keeps its original 3.2rem row height */
+.steam-photo { width: 5rem; height: 3.2rem; flex-shrink: 0; margin-bottom: 0; }
 
 .service-name {
   font-family: var(--font-display);
@@ -1228,6 +1262,26 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
 .footer-line { font-family: var(--font-display); font-style: italic; font-size: 1.05rem; color: var(--gold); }
 .footer-copy { font-size: 0.78rem; }
 .footer-copy a { color: var(--gold-bright); text-decoration: none; }
+.footer-credit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.14rem;
+  font-size: 0.64rem;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+.footer-credit-line {
+  color: rgba(250, 246, 236, 0.5);
+  font-weight: 500;
+}
+.footer-credit-email {
+  color: rgba(201, 163, 90, 0.72);
+  font-weight: 500;
+  text-decoration: none;
+}
+.footer-credit-email:hover { text-decoration: none; }
 
 /* ── Sticky mobile CTA bar ─────────────────────────────────── */
 .mobile-cta-bar {
@@ -1371,6 +1425,7 @@ html[lang="te"] .timings-card-title,
 html[lang="te"] .footer-line,
 html[lang="te"] .timings-foot,
 html[lang="te"] .gallery-card figcaption,
+html[lang="te"] .farewell-msg,
 html[lang="te"] .main-nav a {
   font-family: "Noto Sans Telugu", "Nirmala UI", var(--font-body);
 }
@@ -1499,7 +1554,7 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "ఈ�
   width: clamp(150px, 21vw, 300px);
   aspect-ratio: 200 / 320;
   color: #86713f; /* olive-gold: reads warm on dark, neutral on ivory */
-  filter: blur(5px);
+  filter: blur(4px);
   --fig-m: 1;
   opacity: calc(var(--fig-o, 0) * var(--fig-m));
 }
@@ -1520,15 +1575,20 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "ఈ�
 @keyframes figFloat { from { transform: translateY(0); } to { transform: translateY(-10px); } }
 @keyframes haloBreath { 0%, 100% { opacity: 0.22; } 50% { opacity: 0.55; } }
 @media (max-width: 639px) {
-  .journey-figure { --fig-m: 0.65; width: 38vw; right: -2vw; bottom: 12vh; }
+  .journey-figure { --fig-m: 1; width: 54vw; right: -4vw; bottom: 12vh; }
 }
 
 /* About — discovering healing: herbs & warm golden light */
 .deco-herb { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
-.herb-leaf { position: absolute; fill: rgba(46, 107, 69, 0.16); animation: herbSway 9s ease-in-out infinite alternate; }
+.herb-leaf { position: absolute; fill: rgba(46, 107, 69, 0.34); animation: herbSway 9s ease-in-out infinite alternate; }
 .hl-1 { width: 3.4rem; top: 12%; right: 5%; rotate: 35deg; }
-.hl-2 { width: 2.4rem; top: 34%; right: 13%; rotate: -20deg; fill: rgba(201, 163, 90, 0.15); animation-delay: -3s; }
+.hl-2 { width: 2.4rem; top: 34%; right: 13%; rotate: -20deg; fill: rgba(201, 163, 90, 0.32); animation-delay: -3s; }
 .hl-3 { width: 2.8rem; bottom: 9%; left: 3%; rotate: 110deg; animation-delay: -6s; }
+@media (max-width: 639px) {
+  .hl-1 { width: 4.6rem; }
+  .hl-2 { width: 3.3rem; }
+  .hl-3 { width: 3.8rem; }
+}
 @keyframes herbSway {
   from { transform: translateY(0) rotate(-4deg); }
   to { transform: translateY(-14px) rotate(5deg); }
@@ -1540,7 +1600,7 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "ఈ�
   width: 52%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(227, 194, 132, 0.18), transparent 65%);
+  background: radial-gradient(circle, rgba(227, 194, 132, 0.32), transparent 65%);
   animation: oilGlow 8s ease-in-out infinite alternate;
 }
 @keyframes oilGlow { from { opacity: 0.55; } to { opacity: 1; } }
@@ -1563,26 +1623,36 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "ఈ�
   stroke-dasharray: 90 70;
   animation: flowDash linear infinite;
 }
-.fw-1 { opacity: 0.15; animation-duration: 11s; }
-.fw-2 { opacity: 0.10; animation-duration: 15s; animation-delay: -4s; }
-.fw-3 { opacity: 0.07; animation-duration: 19s; animation-delay: -9s; }
+.fw-1 { opacity: 0.34; animation-duration: 11s; }
+.fw-2 { opacity: 0.24; animation-duration: 15s; animation-delay: -4s; }
+.fw-3 { opacity: 0.16; animation-duration: 19s; animation-delay: -9s; }
 @keyframes flowDash { to { stroke-dashoffset: -320; } }
+@media (max-width: 639px) {
+  .fw { stroke-width: 2.4; }
+}
 
 /* Why us — healing in progress: greenery blooms into view */
 .deco-bloom { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
 .bloom-leaf {
   position: absolute;
-  fill: rgba(46, 107, 69, 0.18);
+  fill: rgba(46, 107, 69, 0.38);
   opacity: 0;
   transform: translateY(24px) scale(0.3);
   transition: opacity 1.3s var(--ease-out), transform 1.3s var(--ease-out);
 }
 .bl-1 { width: 5rem; bottom: 3%; left: 1.5%; rotate: 150deg; transition-delay: 0.05s; }
-.bl-2 { width: 3.2rem; bottom: 9%; left: 7%; rotate: 115deg; fill: rgba(201, 163, 90, 0.16); transition-delay: 0.3s; }
+.bl-2 { width: 3.2rem; bottom: 9%; left: 7%; rotate: 115deg; fill: rgba(201, 163, 90, 0.34); transition-delay: 0.3s; }
 .bl-3 { width: 4.2rem; top: 6%; right: 2%; rotate: -40deg; transition-delay: 0.5s; }
-.bl-4 { width: 2.6rem; top: 15%; right: 8%; rotate: -5deg; fill: rgba(201, 163, 90, 0.16); transition-delay: 0.7s; }
+.bl-4 { width: 2.6rem; top: 15%; right: 8%; rotate: -5deg; fill: rgba(201, 163, 90, 0.34); transition-delay: 0.7s; }
 .bl-5 { width: 3rem; bottom: 5%; right: 4%; rotate: -140deg; transition-delay: 0.9s; }
 .why-us.bloomed .bloom-leaf { opacity: 1; transform: none; }
+@media (max-width: 639px) {
+  .bl-1 { width: 6.5rem; }
+  .bl-2 { width: 4.3rem; }
+  .bl-3 { width: 5.5rem; }
+  .bl-4 { width: 3.5rem; }
+  .bl-5 { width: 4rem; }
+}
 
 /* Timings — restoration: calm breathing rings */
 .deco-breath {
@@ -1598,12 +1668,12 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "ఈ�
 .deco-breath span {
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(227, 194, 132, 0.13);
+  border: 1px solid rgba(227, 194, 132, 0.28);
   border-radius: 50%;
   animation: breathe 9s ease-in-out infinite;
 }
-.deco-breath span:nth-child(2) { inset: 18%; border-color: rgba(227, 194, 132, 0.17); animation-delay: -3s; }
-.deco-breath span:nth-child(3) { inset: 36%; border-color: rgba(227, 194, 132, 0.22); animation-delay: -6s; }
+.deco-breath span:nth-child(2) { inset: 18%; border-color: rgba(227, 194, 132, 0.36); animation-delay: -3s; }
+.deco-breath span:nth-child(3) { inset: 36%; border-color: rgba(227, 194, 132, 0.44); animation-delay: -6s; }
 @keyframes breathe {
   0%, 100% { transform: scale(1); opacity: 0.55; }
   50% { transform: scale(1.07); opacity: 1; }
@@ -1624,7 +1694,127 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "ఈ�
   pointer-events: none;
   z-index: 1;
 }
-.contact.sun-up .deco-sun { opacity: 0.55; transform: translate(-50%, 0) scale(1); }
+.contact.sun-up .deco-sun { opacity: 0.85; transform: translate(-50%, 0) scale(1); }
+
+/* ═══════════════════════════════════════════════════════════
+   FAREWELL — traditional Kerala send-off before the footer
+   ═══════════════════════════════════════════════════════════ */
+.farewell {
+  position: relative;
+  /* starts at the contact treeline's tone so the sections blend seamlessly */
+  background: linear-gradient(180deg, #0d2016, #0a1912);
+  text-align: center;
+  padding: 3.2rem 1.25rem 2.8rem;
+  overflow: hidden;
+}
+.farewell-inner { position: relative; z-index: 2; }
+
+.farewell-stage {
+  position: relative;
+  width: min(280px, 68vw);
+  margin: 0 auto;
+}
+.farewell-figure { display: block; width: 100%; height: auto; }
+
+.farewell-glow {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  width: 120%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227, 194, 132, 0.16), transparent 62%);
+  animation: fwGlowPulse 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes fwGlowPulse { from { opacity: 0.65; } to { opacity: 1; } }
+
+/* gentle, respectful motion — transform/opacity only */
+.fw-figure-g, .fw-head, .fw-hands, .fw-skirt, .fw-pallu, .fw-flame, .fw-smile {
+  transform-box: view-box;
+}
+.fw-figure-g {
+  transform-origin: 120px 300px;
+  animation: fwBreath 6s ease-in-out infinite;
+}
+@keyframes fwBreath {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(1.6px) scale(0.997); }
+}
+.fw-head {
+  transform-origin: 120px 90px;
+  animation: fwNod 7s ease-in-out infinite;
+}
+@keyframes fwNod {
+  0%, 34%, 100% { transform: translateY(0) rotate(0deg); }
+  14%, 20% { transform: translateY(2px) rotate(1.4deg); }
+}
+.fw-hands {
+  transform-origin: 120px 135px;
+  animation: fwPress 7s ease-in-out infinite;
+}
+@keyframes fwPress {
+  0%, 34%, 100% { transform: scale(1); }
+  14%, 20% { transform: scale(1.06); }
+}
+.fw-smile {
+  transform-origin: 120px 81px;
+  animation: fwSmile 7s ease-in-out infinite;
+}
+@keyframes fwSmile {
+  0%, 34%, 100% { transform: scaleY(1); }
+  14%, 20% { transform: scaleY(1.3); }
+}
+.fw-skirt {
+  transform-origin: 120px 172px;
+  animation: fwSway 9s ease-in-out infinite alternate;
+}
+@keyframes fwSway { from { transform: skewX(1.2deg); } to { transform: skewX(-1.2deg); } }
+.fw-pallu {
+  transform-origin: 138px 102px;
+  animation: fwPallu 9s ease-in-out infinite alternate;
+}
+@keyframes fwPallu { from { transform: rotate(0.7deg); } to { transform: rotate(-0.7deg); } }
+.fw-flame {
+  transform-origin: 52px 234px;
+  animation: fwFlick 2.6s ease-in-out infinite;
+}
+@keyframes fwFlick {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scaleY(1.1) scaleX(0.93); }
+  55% { transform: scaleY(0.9) scaleX(1.05); }
+  80% { transform: scaleY(1.06) rotate(1.4deg); }
+}
+
+.fw-line { fill: none; stroke: #3a2417; stroke-width: 1.3; stroke-linecap: round; }
+
+.farewell-leafd {
+  position: absolute;
+  fill: rgba(201, 163, 90, 0.4);
+  animation: fwLeafFloat 7s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.fwl-1 { width: 1.7rem; top: 14%; right: -6%; rotate: 30deg; }
+.fwl-2 { width: 1.3rem; top: 44%; right: 4%; rotate: -25deg; fill: rgba(93, 148, 114, 0.42); animation-delay: -2.5s; }
+.fwl-3 { width: 1.4rem; top: 26%; left: -4%; rotate: 115deg; fill: rgba(93, 148, 114, 0.36); animation-delay: -5s; }
+@keyframes fwLeafFloat {
+  from { transform: translateY(0) rotate(-5deg); }
+  to { transform: translateY(-12px) rotate(6deg); }
+}
+
+.farewell-msg {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.15rem, 3.6vw, 1.55rem);
+  line-height: 1.5;
+  color: var(--gold-bright);
+  max-width: 30rem;
+  margin: 1.5rem auto 0;
+  text-wrap: balance;
+}
+.farewell-mark { margin-top: 0.9rem; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.3em; }
 
 /* ═══════════════════════════════════════════════════════════
    ACCESSIBILITY — reduced motion

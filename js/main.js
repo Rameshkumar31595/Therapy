@@ -127,7 +127,9 @@
     "con.hours": "ప్రతి రోజూ 9 AM నుండి 8 PM &nbsp;·&nbsp; సోమవారం 9 AM నుండి 1 PM",
     "con.door": "మీ ఇంటి వద్దకే సేవ",
 
-    "foot.line": "సంప్రదాయ కేరళ వెల్‌నెస్, నరసరావుపేటలో మీ ఇంటి వద్దకే."
+    "foot.line": "సంప్రదాయ కేరళ వెల్‌నెస్, నరసరావుపేటలో మీ ఇంటి వద్దకే.",
+
+    "bye.msg": "ధన్యవాదాలు. మీ సేవలో ఉండేందుకు మేము సిద్ధంగా ఉన్నాము."
   };
 
   var i18nEls = document.querySelectorAll("[data-i18n]");
@@ -293,7 +295,8 @@
     function spawnBird(delayOffset) {
       var wrapper = document.createElement("div");
       wrapper.className = "bird";
-      var size = rand(14, 34);                 // px — small & distant
+      // px — small & distant; enlarged on phones for visibility
+      var size = rand(14, 34) * (window.innerWidth < 640 ? 1.4 : 1);
       var top = rand(8, 45);                   // % of layer height
       var duration = rand(18, 30) * (34 / size); // smaller = slower = further away
       duration = Math.min(duration, 42);
@@ -411,6 +414,7 @@
     var ctx = canvas.getContext("2d");
     var DPR = Math.min(window.devicePixelRatio || 1, 1.75);
     var W = 0, H = 0;
+    var sizeK = 1; // particles are enlarged on small screens for visibility
     var particles = [];
     var marks = [];        // scrollY of each story section top
     var ps = 0;            // smoothed story progress, 0 … 6
@@ -425,13 +429,13 @@
        speed – overall pace                  veil/va – ambient colour wash
        figO – silhouette opacity tuned to that section's background */
     var STAGES = [
-      { dark: 0.40, drop: 0.00, leaf: 0.20, up: 0.12, speed: 0.50, veil: [70, 88, 74],    va: 0.06, figO: 0.13 },
-      { dark: 0.05, drop: 0.18, leaf: 0.25, up: 0.30, speed: 0.60, veil: [201, 163, 90],  va: 0.05, figO: 0.08 },
-      { dark: 0.02, drop: 0.30, leaf: 0.12, up: 0.42, speed: 0.72, veil: [201, 163, 90],  va: 0.06, figO: 0.15 },
-      { dark: 0.00, drop: 0.06, leaf: 0.42, up: 0.55, speed: 0.55, veil: [93, 148, 114],  va: 0.05, figO: 0.08 },
-      { dark: 0.00, drop: 0.00, leaf: 0.25, up: 0.30, speed: 0.35, veil: [201, 163, 90],  va: 0.04, figO: 0.13 },
-      { dark: 0.00, drop: 0.00, leaf: 0.35, up: 0.50, speed: 0.50, veil: [227, 194, 132], va: 0.05, figO: 0.08 },
-      { dark: 0.00, drop: 0.00, leaf: 0.25, up: 0.85, speed: 0.60, veil: [227, 194, 132], va: 0.08, figO: 0.16 }
+      { dark: 0.40, drop: 0.00, leaf: 0.20, up: 0.12, speed: 0.50, veil: [70, 88, 74],    va: 0.06, figO: 0.26 },
+      { dark: 0.05, drop: 0.18, leaf: 0.25, up: 0.30, speed: 0.60, veil: [201, 163, 90],  va: 0.05, figO: 0.16 },
+      { dark: 0.02, drop: 0.30, leaf: 0.12, up: 0.42, speed: 0.72, veil: [201, 163, 90],  va: 0.06, figO: 0.30 },
+      { dark: 0.00, drop: 0.06, leaf: 0.42, up: 0.55, speed: 0.55, veil: [93, 148, 114],  va: 0.05, figO: 0.16 },
+      { dark: 0.00, drop: 0.00, leaf: 0.25, up: 0.30, speed: 0.35, veil: [201, 163, 90],  va: 0.04, figO: 0.26 },
+      { dark: 0.00, drop: 0.00, leaf: 0.35, up: 0.50, speed: 0.50, veil: [227, 194, 132], va: 0.05, figO: 0.16 },
+      { dark: 0.00, drop: 0.00, leaf: 0.25, up: 0.85, speed: 0.60, veil: [227, 194, 132], va: 0.08, figO: 0.32 }
     ];
     var KEYS = ["dark", "drop", "leaf", "up", "speed", "va", "figO"];
 
@@ -500,17 +504,17 @@
       p.ph = rand(0, Math.PI * 2);
       p.rot = rand(0, Math.PI * 2);
       p.spin = rand(-0.6, 0.6);
-      p.size = p.type === "leaf" ? rand(6, 13)
+      p.size = (p.type === "leaf" ? rand(6, 13)
              : p.type === "dark" ? rand(7, 15)
              : p.type === "drop" ? rand(6, 11)
-             : rand(1.2, 2.6);
+             : rand(1.2, 2.6)) * sizeK;
 
       var rising = P.up > 0.5 && p.type !== "drop";
       p.y = anywhere ? Math.random() * H : (rising ? H + 24 : -24);
     }
 
     function initParticles() {
-      var n = Math.round(Math.min(64, Math.max(14, (W * H) / 26000)));
+      var n = Math.round(Math.min(64, Math.max(18, (W * H) / 26000)));
       particles = [];
       for (var i = 0; i < n; i++) {
         var p = {};
@@ -523,6 +527,7 @@
       var w = window.innerWidth, h = window.innerHeight;
       if (w === W && h === H) return;
       W = w; H = h;
+      sizeK = W < 640 ? 1.45 : 1;
       canvas.width = Math.round(W * DPR);
       canvas.height = Math.round(H * DPR);
       ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
@@ -608,22 +613,22 @@
         var tw = 0.6 + 0.4 * Math.sin(t * (1 + p.fq * 6) + p.ph);
 
         if (p.type === "mote") {
-          var a = 0.30 * p.s * tw;
+          var a = 0.55 * p.s * tw;
           var col = p.gold ? "227,194,132" : "160,196,172";
           ctx.fillStyle = "rgba(" + col + "," + (a * 0.22).toFixed(3) + ")";
           ctx.beginPath(); ctx.arc(x, p.y, p.size * 3, 0, 6.2832); ctx.fill();
           ctx.fillStyle = "rgba(" + col + "," + a.toFixed(3) + ")";
           ctx.beginPath(); ctx.arc(x, p.y, p.size, 0, 6.2832); ctx.fill();
         } else if (p.type === "leaf") {
-          drawLeaf(p, x, 0.20 * p.s);
+          drawLeaf(p, x, 0.42 * p.s);
         } else if (p.type === "drop") {
           ctx.save();
           ctx.translate(x, p.y);
-          ctx.fillStyle = "rgba(213,175,102,0.3)";
-          ctx.beginPath(); ctx.ellipse(0, 0, 1.5, p.size, 0, 0, 6.2832); ctx.fill();
+          ctx.fillStyle = "rgba(213,175,102,0.5)";
+          ctx.beginPath(); ctx.ellipse(0, 0, 1.5 * sizeK, p.size, 0, 0, 6.2832); ctx.fill();
           ctx.restore();
         } else { // dark — heaviness that gradually dissolves
-          var da = 0.07 * p.s * darkAlive;
+          var da = 0.16 * p.s * darkAlive;
           if (da > 0.004) {
             ctx.fillStyle = "rgba(84,96,86," + da.toFixed(3) + ")";
             ctx.beginPath(); ctx.arc(x, p.y, p.size * 2.1, 0, 6.2832); ctx.fill();
