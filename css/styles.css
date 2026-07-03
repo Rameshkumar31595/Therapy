@@ -1460,6 +1460,173 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "ఈ�
 }
 
 /* ═══════════════════════════════════════════════════════════
+   SCROLL STORY — ambient healing journey behind the content
+   A fixed canvas + misty silhouette live at z-index 1; every
+   content container is stacked above them, so the story can
+   never cover text, buttons or cards. Transform/opacity only.
+   ═══════════════════════════════════════════════════════════ */
+
+/* Content always stacks above the story layer */
+.ritual-ribbon,
+.site-footer,
+.about-grid,
+.why-us .container,
+.timings-wrap,
+.experience .container,
+.gallery-scroll,
+.gallery-hint {
+  position: relative;
+  z-index: 2;
+}
+.services > .container { position: relative; z-index: 4; }
+
+.story-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.story-layer canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* Journey silhouette — a soft watermark figure whose posture
+   changes with scroll: burdened → receiving therapy →
+   meditative calm → renewed and upright */
+.journey-figure {
+  position: absolute;
+  right: 1.5vw;
+  bottom: 9vh;
+  width: clamp(150px, 21vw, 300px);
+  aspect-ratio: 200 / 320;
+  color: #86713f; /* olive-gold: reads warm on dark, neutral on ivory */
+  filter: blur(5px);
+  --fig-m: 1;
+  opacity: calc(var(--fig-o, 0) * var(--fig-m));
+}
+.journey-float { position: absolute; inset: 0; animation: figFloat 11s ease-in-out infinite alternate; }
+.pose {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  opacity: 0;
+  will-change: opacity;
+}
+.pose .limb { fill: none; stroke: currentColor; stroke-width: 11; stroke-linecap: round; }
+.pose .limb-thin { stroke-width: 5; }
+.pose .wavelet { fill: none; stroke: currentColor; stroke-width: 6; stroke-linecap: round; opacity: 0.7; }
+.pose .halo { fill: none; stroke: currentColor; stroke-width: 3; animation: haloBreath 7s ease-in-out infinite; }
+@keyframes figFloat { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+@keyframes haloBreath { 0%, 100% { opacity: 0.22; } 50% { opacity: 0.55; } }
+@media (max-width: 639px) {
+  .journey-figure { --fig-m: 0.65; width: 38vw; right: -2vw; bottom: 12vh; }
+}
+
+/* About — discovering healing: herbs & warm golden light */
+.deco-herb { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
+.herb-leaf { position: absolute; fill: rgba(46, 107, 69, 0.16); animation: herbSway 9s ease-in-out infinite alternate; }
+.hl-1 { width: 3.4rem; top: 12%; right: 5%; rotate: 35deg; }
+.hl-2 { width: 2.4rem; top: 34%; right: 13%; rotate: -20deg; fill: rgba(201, 163, 90, 0.15); animation-delay: -3s; }
+.hl-3 { width: 2.8rem; bottom: 9%; left: 3%; rotate: 110deg; animation-delay: -6s; }
+@keyframes herbSway {
+  from { transform: translateY(0) rotate(-4deg); }
+  to { transform: translateY(-14px) rotate(5deg); }
+}
+.oil-glow {
+  position: absolute;
+  top: -12%;
+  right: -10%;
+  width: 52%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227, 194, 132, 0.18), transparent 65%);
+  animation: oilGlow 8s ease-in-out infinite alternate;
+}
+@keyframes oilGlow { from { opacity: 0.55; } to { opacity: 1; } }
+
+/* Services — the therapy: massage strokes / oil flowing */
+.flow-waves {
+  position: absolute;
+  left: 0;
+  top: 12%;
+  width: 100%;
+  height: 72%;
+  z-index: 1;
+  pointer-events: none;
+}
+.fw {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 90 70;
+  animation: flowDash linear infinite;
+}
+.fw-1 { opacity: 0.15; animation-duration: 11s; }
+.fw-2 { opacity: 0.10; animation-duration: 15s; animation-delay: -4s; }
+.fw-3 { opacity: 0.07; animation-duration: 19s; animation-delay: -9s; }
+@keyframes flowDash { to { stroke-dashoffset: -320; } }
+
+/* Why us — healing in progress: greenery blooms into view */
+.deco-bloom { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
+.bloom-leaf {
+  position: absolute;
+  fill: rgba(46, 107, 69, 0.18);
+  opacity: 0;
+  transform: translateY(24px) scale(0.3);
+  transition: opacity 1.3s var(--ease-out), transform 1.3s var(--ease-out);
+}
+.bl-1 { width: 5rem; bottom: 3%; left: 1.5%; rotate: 150deg; transition-delay: 0.05s; }
+.bl-2 { width: 3.2rem; bottom: 9%; left: 7%; rotate: 115deg; fill: rgba(201, 163, 90, 0.16); transition-delay: 0.3s; }
+.bl-3 { width: 4.2rem; top: 6%; right: 2%; rotate: -40deg; transition-delay: 0.5s; }
+.bl-4 { width: 2.6rem; top: 15%; right: 8%; rotate: -5deg; fill: rgba(201, 163, 90, 0.16); transition-delay: 0.7s; }
+.bl-5 { width: 3rem; bottom: 5%; right: 4%; rotate: -140deg; transition-delay: 0.9s; }
+.why-us.bloomed .bloom-leaf { opacity: 1; transform: none; }
+
+/* Timings — restoration: calm breathing rings */
+.deco-breath {
+  position: absolute;
+  top: 50%;
+  right: -12%;
+  width: min(34rem, 80vw);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+}
+.deco-breath span {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(227, 194, 132, 0.13);
+  border-radius: 50%;
+  animation: breathe 9s ease-in-out infinite;
+}
+.deco-breath span:nth-child(2) { inset: 18%; border-color: rgba(227, 194, 132, 0.17); animation-delay: -3s; }
+.deco-breath span:nth-child(3) { inset: 36%; border-color: rgba(227, 194, 132, 0.22); animation-delay: -6s; }
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.07); opacity: 1; }
+}
+
+/* Contact — complete renewal: a golden sun rises */
+.deco-sun {
+  position: absolute;
+  left: 50%;
+  bottom: 4rem;
+  width: min(70vw, 30rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227, 194, 132, 0.5), rgba(227, 194, 132, 0.18) 45%, transparent 70%);
+  transform: translate(-50%, 18%) scale(0.85);
+  opacity: 0;
+  transition: opacity 2.6s var(--ease-out), transform 2.6s var(--ease-out);
+  pointer-events: none;
+  z-index: 1;
+}
+.contact.sun-up .deco-sun { opacity: 0.55; transform: translate(-50%, 0) scale(1); }
+
+/* ═══════════════════════════════════════════════════════════
    ACCESSIBILITY — reduced motion
    ═══════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
@@ -1475,6 +1642,7 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "ఈ�
     opacity: 1 !important;
     transform: none !important;
   }
-  .bird-layer, .static-flock, .leaf-layer { display: none; }
+  .bird-layer, .static-flock, .leaf-layer,
+  .story-layer, .flow-waves, .deco-herb, .deco-bloom, .deco-breath, .deco-sun { display: none; }
   .ribbon-track { animation: none; }
 }

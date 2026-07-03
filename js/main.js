@@ -375,4 +375,299 @@
       window.scrollTo({ top: top, behavior: reducedMotion ? "auto" : "smooth" });
     });
   });
+
+  /* ══════════════════════════════════════════════════════════
+     SCROLL STORY — ambient healing journey
+     Stress → Therapy → Relief → Renewal, told by a fixed
+     particle canvas plus a misty silhouette that changes pose
+     as the visitor scrolls. Everything lives at z-index 1,
+     below all content containers, and is pointer-events: none.
+     ══════════════════════════════════════════════════════════ */
+  (function storyLayer() {
+
+    /* Scene classes for the CSS-only decorations */
+    var whyUs = document.getElementById("why-us");
+    var contactSec = document.getElementById("contact");
+    if ("IntersectionObserver" in window && !reducedMotion) {
+      var sceneObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          if (entry.target === whyUs) whyUs.classList.add("bloomed");
+          if (entry.target === contactSec) contactSec.classList.add("sun-up");
+          sceneObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.22 });
+      if (whyUs) sceneObserver.observe(whyUs);
+      if (contactSec) sceneObserver.observe(contactSec);
+    } else {
+      if (whyUs) whyUs.classList.add("bloomed");
+      if (contactSec) contactSec.classList.add("sun-up");
+    }
+
+    var canvas = document.getElementById("storyCanvas");
+    var figure = document.getElementById("journeyFigure");
+    if (reducedMotion || !canvas || !canvas.getContext) return;
+
+    var ctx = canvas.getContext("2d");
+    var DPR = Math.min(window.devicePixelRatio || 1, 1.75);
+    var W = 0, H = 0;
+    var particles = [];
+    var marks = [];        // scrollY of each story section top
+    var ps = 0;            // smoothed story progress, 0 … 6
+    var last = 0;
+    var rafId = null;
+
+    var SECTIONS = ["hero", "about", "services", "why-us", "timings", "experience", "contact"];
+
+    /* One row per story stage.
+       dark – share of grey "stress" motes   drop – share of oil droplets
+       leaf – share of herbal leaves         up   – 0 = falling … 1 = rising
+       speed – overall pace                  veil/va – ambient colour wash
+       figO – silhouette opacity tuned to that section's background */
+    var STAGES = [
+      { dark: 0.40, drop: 0.00, leaf: 0.20, up: 0.12, speed: 0.50, veil: [70, 88, 74],    va: 0.06, figO: 0.13 },
+      { dark: 0.05, drop: 0.18, leaf: 0.25, up: 0.30, speed: 0.60, veil: [201, 163, 90],  va: 0.05, figO: 0.08 },
+      { dark: 0.02, drop: 0.30, leaf: 0.12, up: 0.42, speed: 0.72, veil: [201, 163, 90],  va: 0.06, figO: 0.15 },
+      { dark: 0.00, drop: 0.06, leaf: 0.42, up: 0.55, speed: 0.55, veil: [93, 148, 114],  va: 0.05, figO: 0.08 },
+      { dark: 0.00, drop: 0.00, leaf: 0.25, up: 0.30, speed: 0.35, veil: [201, 163, 90],  va: 0.04, figO: 0.13 },
+      { dark: 0.00, drop: 0.00, leaf: 0.35, up: 0.50, speed: 0.50, veil: [227, 194, 132], va: 0.05, figO: 0.08 },
+      { dark: 0.00, drop: 0.00, leaf: 0.25, up: 0.85, speed: 0.60, veil: [227, 194, 132], va: 0.08, figO: 0.16 }
+    ];
+    var KEYS = ["dark", "drop", "leaf", "up", "speed", "va", "figO"];
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+    function rand(a, b) { return a + Math.random() * (b - a); }
+
+    function stageParams(p) {
+      var i = Math.max(0, Math.min(Math.floor(p), STAGES.length - 2));
+      var t = clamp01(p - i);
+      var a = STAGES[i], b = STAGES[i + 1], out = {}, k;
+      for (k = 0; k < KEYS.length; k++) out[KEYS[k]] = lerp(a[KEYS[k]], b[KEYS[k]], t);
+      out.veil = [
+        lerp(a.veil[0], b.veil[0], t),
+        lerp(a.veil[1], b.veil[1], t),
+        lerp(a.veil[2], b.veil[2], t)
+      ];
+      return out;
+    }
+
+    function measure() {
+      marks = [];
+      for (var i = 0; i < SECTIONS.length; i++) {
+        var el = document.getElementById(SECTIONS[i]);
+        marks.push(el ? el.offsetTop : (i ? marks[i - 1] : 0));
+      }
+    }
+
+    function targetP() {
+      if (!marks.length) return 0;
+      var y = window.scrollY + H * 0.55;
+      if (y <= marks[0]) return 0;
+      for (var i = 0; i < marks.length - 1; i++) {
+        if (y < marks[i + 1]) {
+          return i + (y - marks[i]) / Math.max(1, marks[i + 1] - marks[i]);
+        }
+      }
+      return marks.length - 1;
+    }
+
+    /* Spawn positions favour the screen edges so the busiest
+       motion stays away from the central reading column */
+    function biasedX() {
+      if (Math.random() < 0.6) {
+        var e = Math.random() * 0.26 * W;
+        return Math.random() < 0.5 ? e : W - e;
+      }
+      return Math.random() * W;
+    }
+
+    function spawn(p, anywhere) {
+      var P = stageParams(ps);
+      var r = Math.random();
+      if (r < P.dark) p.type = "dark";
+      else if (r < P.dark + P.drop) p.type = "drop";
+      else if (r < P.dark + P.drop + P.leaf) p.type = "leaf";
+      else p.type = "mote";
+
+      p.gold = Math.random() < 0.6;
+      p.s = rand(0.5, 1.2);
+      p.x = biasedX();
+      p.vx = rand(-6, 6);
+      p.vy = rand(16, 40);
+      p.amp = rand(6, 26);
+      p.fq = rand(0.05, 0.25);
+      p.ph = rand(0, Math.PI * 2);
+      p.rot = rand(0, Math.PI * 2);
+      p.spin = rand(-0.6, 0.6);
+      p.size = p.type === "leaf" ? rand(6, 13)
+             : p.type === "dark" ? rand(7, 15)
+             : p.type === "drop" ? rand(6, 11)
+             : rand(1.2, 2.6);
+
+      var rising = P.up > 0.5 && p.type !== "drop";
+      p.y = anywhere ? Math.random() * H : (rising ? H + 24 : -24);
+    }
+
+    function initParticles() {
+      var n = Math.round(Math.min(64, Math.max(14, (W * H) / 26000)));
+      particles = [];
+      for (var i = 0; i < n; i++) {
+        var p = {};
+        spawn(p, true);
+        particles.push(p);
+      }
+    }
+
+    function resize() {
+      var w = window.innerWidth, h = window.innerHeight;
+      if (w === W && h === H) return;
+      W = w; H = h;
+      canvas.width = Math.round(W * DPR);
+      canvas.height = Math.round(H * DPR);
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      initParticles();
+    }
+
+    function drawVeil(P) {
+      var g = ctx.createRadialGradient(W / 2, -H * 0.25, 0, W / 2, -H * 0.25, H * 1.15);
+      var c = "rgba(" + (P.veil[0] | 0) + "," + (P.veil[1] | 0) + "," + (P.veil[2] | 0) + ",";
+      g.addColorStop(0, c + P.va.toFixed(3) + ")");
+      g.addColorStop(1, c + "0)");
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, W, H);
+    }
+
+    function drawLeaf(p, x, alpha) {
+      ctx.save();
+      ctx.translate(x, p.y);
+      ctx.rotate(p.rot);
+      ctx.fillStyle = p.gold
+        ? "rgba(201,163,90," + alpha.toFixed(3) + ")"
+        : "rgba(93,148,114," + alpha.toFixed(3) + ")";
+      var s = p.size;
+      ctx.beginPath();
+      ctx.moveTo(0, -s);
+      ctx.quadraticCurveTo(s * 0.75, -s * 0.15, 0, s);
+      ctx.quadraticCurveTo(-s * 0.75, -s * 0.15, 0, -s);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    /* Silhouette pose crossfade — each pose owns a region of the
+       journey: burdened → receiving → meditative → renewed */
+    var poses = figure ? figure.querySelectorAll(".pose") : [];
+    var CENTERS = [0.25, 2.0, 3.7, 5.6];
+    var SPANS = [1.35, 1.3, 1.3, 1.5];
+
+    function updateFigure(P) {
+      if (!poses.length) return;
+      for (var i = 0; i < poses.length; i++) {
+        var o;
+        if (i === poses.length - 1 && ps >= CENTERS[i]) o = 1;
+        else o = clamp01(1 - Math.abs(ps - CENTERS[i]) / SPANS[i]);
+        o = o * o * (3 - 2 * o); // smoothstep for a gentler blend
+        poses[i].style.opacity = o.toFixed(3);
+      }
+      figure.style.setProperty("--fig-o", P.figO.toFixed(3));
+    }
+
+    function frame(ts) {
+      rafId = requestAnimationFrame(frame);
+      if (!last) last = ts;
+      var dt = Math.min((ts - last) / 1000, 0.05);
+      last = ts;
+      var t = ts / 1000;
+
+      ps += (targetP() - ps) * Math.min(1, dt * 3);
+      var P = stageParams(ps);
+      /* the grey "stress" motes dissolve for good as healing begins */
+      var darkAlive = clamp01(1 - (ps - 0.55) / 1.0);
+      var dir = 1 - P.up * 2; // positive falls, negative rises
+
+      ctx.clearRect(0, 0, W, H);
+      drawVeil(P);
+
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+
+        if (p.type === "drop") {
+          p.y += p.vy * 2.2 * dt * (0.6 + P.speed); // oil always falls
+        } else {
+          p.y += p.vy * dir * P.speed * dt * (p.type === "dark" ? 0.5 : 1);
+        }
+        p.x += p.vx * dt;
+        p.rot += p.spin * dt;
+
+        if (p.y > H + 30 || p.y < -30 || p.x < -60 || p.x > W + 60) {
+          spawn(p, false);
+          continue;
+        }
+
+        var x = p.x + Math.sin(t * p.fq * 6.2832 + p.ph) * p.amp;
+        var tw = 0.6 + 0.4 * Math.sin(t * (1 + p.fq * 6) + p.ph);
+
+        if (p.type === "mote") {
+          var a = 0.30 * p.s * tw;
+          var col = p.gold ? "227,194,132" : "160,196,172";
+          ctx.fillStyle = "rgba(" + col + "," + (a * 0.22).toFixed(3) + ")";
+          ctx.beginPath(); ctx.arc(x, p.y, p.size * 3, 0, 6.2832); ctx.fill();
+          ctx.fillStyle = "rgba(" + col + "," + a.toFixed(3) + ")";
+          ctx.beginPath(); ctx.arc(x, p.y, p.size, 0, 6.2832); ctx.fill();
+        } else if (p.type === "leaf") {
+          drawLeaf(p, x, 0.20 * p.s);
+        } else if (p.type === "drop") {
+          ctx.save();
+          ctx.translate(x, p.y);
+          ctx.fillStyle = "rgba(213,175,102,0.3)";
+          ctx.beginPath(); ctx.ellipse(0, 0, 1.5, p.size, 0, 0, 6.2832); ctx.fill();
+          ctx.restore();
+        } else { // dark — heaviness that gradually dissolves
+          var da = 0.07 * p.s * darkAlive;
+          if (da > 0.004) {
+            ctx.fillStyle = "rgba(84,96,86," + da.toFixed(3) + ")";
+            ctx.beginPath(); ctx.arc(x, p.y, p.size * 2.1, 0, 6.2832); ctx.fill();
+            ctx.fillStyle = "rgba(84,96,86," + (da * 1.6).toFixed(3) + ")";
+            ctx.beginPath(); ctx.arc(x, p.y, p.size, 0, 6.2832); ctx.fill();
+          }
+        }
+      }
+
+      updateFigure(P);
+    }
+
+    function start() {
+      if (rafId === null) {
+        last = 0;
+        rafId = requestAnimationFrame(frame);
+      }
+    }
+    function stop() {
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    }
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stop(); else start();
+    });
+
+    /* Re-measure when layout shifts (lazy images, fonts, rotation) */
+    var measureTimer = null;
+    function queueMeasure() {
+      clearTimeout(measureTimer);
+      measureTimer = setTimeout(function () { measure(); resize(); }, 180);
+    }
+    window.addEventListener("resize", queueMeasure);
+    window.addEventListener("load", queueMeasure);
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(queueMeasure).observe(document.body);
+    }
+
+    measure();
+    resize();
+    ps = targetP(); // start in-place: no catch-up sweep on load
+    start();
+  })();
 })();

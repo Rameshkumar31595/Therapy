@@ -103,6 +103,55 @@
     </defs>
   </svg>
 
+  <!-- ═══════════ SCROLL STORY LAYER ═══════════
+       Fixed ambient canvas + journey silhouette. Sits at z-index 1;
+       all content containers stack above it, so it can never cover
+       text, buttons or cards. Purely decorative. -->
+  <div class="story-layer" aria-hidden="true">
+    <canvas id="storyCanvas"></canvas>
+    <div class="journey-figure" id="journeyFigure">
+      <div class="journey-float">
+        <!-- Pose 1 — arrival: burdened, head bowed -->
+        <svg class="pose" viewBox="0 0 200 320">
+          <circle cx="84" cy="74" r="16"/>
+          <path d="M70 96 C56 130 56 176 66 212 L116 212 C126 172 122 128 108 98 C98 88 78 86 70 96 Z"/>
+          <path class="limb" d="M72 108 C62 138 60 166 64 190"/>
+          <path class="limb" d="M106 106 C112 138 114 166 110 188"/>
+          <path class="limb" d="M78 212 C76 246 76 274 78 300"/>
+          <path class="limb" d="M104 212 C106 246 106 274 104 300"/>
+        </svg>
+        <!-- Pose 2 — therapy: reclined, strokes flowing above -->
+        <svg class="pose" viewBox="0 0 200 320">
+          <path class="wavelet" d="M30 196 C62 186 92 206 122 196 C150 187 168 199 182 192"/>
+          <path class="wavelet" d="M38 172 C68 162 98 182 128 172 C152 164 166 174 178 168"/>
+          <circle cx="46" cy="240" r="14"/>
+          <path d="M62 230 C100 220 146 222 168 234 C176 242 174 252 164 256 L64 256 C54 252 52 236 62 230 Z"/>
+          <path class="limb" d="M32 270 L180 270"/>
+        </svg>
+        <!-- Pose 3 — restoration: seated, breathing halo -->
+        <svg class="pose" viewBox="0 0 200 320">
+          <circle class="halo" cx="100" cy="176" r="62"/>
+          <circle cx="100" cy="124" r="15"/>
+          <path d="M86 144 C80 170 80 196 84 216 L116 216 C120 196 120 170 114 144 C106 136 94 136 86 144 Z"/>
+          <path class="limb" d="M86 158 C70 178 64 198 72 212"/>
+          <path class="limb" d="M114 158 C130 178 136 198 128 212"/>
+          <path d="M60 228 C78 216 122 216 140 228 C148 236 144 246 134 248 L66 248 C56 246 52 236 60 228 Z"/>
+        </svg>
+        <!-- Pose 4 — renewal: upright, arms open, birds above -->
+        <svg class="pose" viewBox="0 0 200 320">
+          <path class="limb limb-thin" d="M56 30 Q64 22 72 30"/>
+          <path class="limb limb-thin" d="M130 22 Q137 15 144 22"/>
+          <circle cx="100" cy="64" r="15"/>
+          <path d="M88 84 C82 122 82 162 88 204 L112 204 C118 162 118 122 112 84 C106 76 94 76 88 84 Z"/>
+          <path class="limb" d="M90 96 C70 80 54 62 44 40"/>
+          <path class="limb" d="M110 96 C130 80 146 62 156 40"/>
+          <path class="limb" d="M92 204 C90 240 90 272 92 300"/>
+          <path class="limb" d="M108 204 C110 240 110 272 108 300"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══════════ LANGUAGE SELECTION ═══════════ -->
   <div class="lang-modal" id="langModal" role="dialog" aria-modal="true" aria-labelledby="langModalTitle" hidden>
     <div class="lang-modal-card">
@@ -248,6 +297,13 @@
 
     <!-- ═══════════ ABOUT ═══════════ -->
     <section class="about section" id="about">
+      <!-- Story: discovering healing — herbs & warm golden light -->
+      <div class="deco-herb" aria-hidden="true">
+        <svg class="herb-leaf hl-1" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="herb-leaf hl-2" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="herb-leaf hl-3" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <span class="oil-glow"></span>
+      </div>
       <div class="container about-grid">
         <div class="about-visual reveal">
           <figure class="about-photo">
@@ -284,6 +340,12 @@
     <!-- ═══════════ SERVICES ═══════════ -->
     <section class="services section section-dark" id="services">
       <div class="bird-layer bird-layer-slow" id="servicesBirds" aria-hidden="true"></div>
+      <!-- Story: the therapy — massage strokes / oil flowing -->
+      <svg class="flow-waves" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
+        <path class="fw fw-1" d="M-40 120 C160 60 320 190 520 130 C720 70 880 190 1080 130 C1160 108 1210 118 1240 112"/>
+        <path class="fw fw-2" d="M-40 220 C180 160 340 290 540 230 C740 170 900 290 1100 230 C1170 210 1215 220 1240 214"/>
+        <path class="fw fw-3" d="M-40 320 C170 265 330 385 530 325 C730 265 890 385 1090 325 C1165 305 1212 316 1240 310"/>
+      </svg>
       <div class="container">
         <p class="section-eyebrow center reveal" data-i18n="svc.eyebrow">Our Therapies</p>
         <h2 class="section-title center reveal" data-i18n="svc.title">Choose Your <span class="gold-italic">Ritual of Renewal</span></h2>
@@ -399,6 +461,14 @@
 
     <!-- ═══════════ WHY CHOOSE US ═══════════ -->
     <section class="why-us section" id="why-us">
+      <!-- Story: healing in progress — greenery blooms -->
+      <div class="deco-bloom" aria-hidden="true">
+        <svg class="bloom-leaf bl-1" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="bloom-leaf bl-2" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="bloom-leaf bl-3" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="bloom-leaf bl-4" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="bloom-leaf bl-5" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+      </div>
       <div class="container">
         <p class="section-eyebrow center reveal" data-i18n="why.eyebrow">Why Sushruta</p>
         <h2 class="section-title center reveal" data-i18n="why.title">Wellness You Can <span class="gold-italic">Trust Completely</span></h2>
@@ -447,6 +517,8 @@
 
     <!-- ═══════════ TIMINGS ═══════════ -->
     <section class="timings section section-dark" id="timings">
+      <!-- Story: restoration — calm breathing rings -->
+      <div class="deco-breath" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="container timings-wrap">
         <div class="timings-copy">
           <p class="section-eyebrow reveal" data-i18n="time.eyebrow">When We Come To You</p>
@@ -509,6 +581,8 @@
     <!-- ═══════════ CONTACT ═══════════ -->
     <section class="contact section" id="contact">
       <div class="bird-layer bird-layer-slow" id="contactBirds" aria-hidden="true"></div>
+      <!-- Story: complete renewal — a golden sun rises -->
+      <div class="deco-sun" aria-hidden="true"></div>
       <svg class="treeline contact-treeline" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
         <path d="M0,100 C60,70 120,95 180,80 C215,40 240,35 270,68 C330,52 390,92 470,82 C505,42 532,36 565,70 C630,55 690,95 770,85 C810,45 838,40 870,72 C935,58 995,98 1075,88 C1112,50 1140,44 1172,76 C1240,62 1310,100 1440,82 L1440,160 L0,160 Z" />
       </svg>
