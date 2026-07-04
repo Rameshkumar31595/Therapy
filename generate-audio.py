@@ -67,12 +67,23 @@ KOKORO_VOICE = "af_heart"
 KOKORO_SPEED = 0.88
 
 # Telugu (Azure Neural via edge-tts): te-IN-ShrutiNeural is the
-# native Telugu female neural voice — warm, clear, natural Telugu
-# prosody. Rate below 0% = calmer, slower delivery for the
-# therapist character. Pitch can be nudged in Hz if desired.
+# native Telugu female neural voice. The settings below are the
+# "premium wellness consultant" recipe — sample 3 of the
+# confident-delivery audition in audio/te-samples: mature depth,
+# moderate deliberate pacing, firm sentence endings, strong vocal
+# presence, and just a trace of warmth (calm and assured, never
+# breathy or announcement-like).
 EDGE_VOICE = "te-IN-ShrutiNeural"
-EDGE_RATE = "-10%"     # slow, unhurried wellness pacing
-EDGE_PITCH = "+0Hz"
+EDGE_RATE = "-10%"     # moderate, deliberate — confident, not rushed
+EDGE_PITCH = "-4Hz"    # slightly deeper = mature, trustworthy
+
+TE_PARA_PAUSE = (0.9, 1.2)    # seconds between paragraphs (randomized)
+TE_DOTS_PAUSE = (0.5, 0.7)    # seconds at "…" breathing marks
+TE_LEAD_IN = 0.35             # room tone before the first word
+TE_TAIL = 0.6                 # room tone after the last word
+TE_PEAK = 0.91                # full presence, just under the EN level
+ROOM_TONE_LEVEL = 0.0004      # barely-audible bed so pauses feel alive
+WARMTH_MIX = 0.15             # trace of warmth; higher = softer/darker
 
 # Telugu offline fallback (Indic Parler-TTS): the voice is
 # *described* in words. Tweak freely — keep "calm / warm / slow /
@@ -127,10 +138,10 @@ def assemble(chunks_per_paragraph, sr):
     return np.concatenate(parts) if parts else silence(0.1, sr)
 
 
-def write_mp3(path, wav, sr):
+def write_mp3(path, wav, sr, peak_target=0.92):
     path.parent.mkdir(parents=True, exist_ok=True)
     peak = float(np.max(np.abs(wav))) or 1.0
-    wav = (wav / peak) * 0.92          # simple, consistent loudness
+    wav = (wav / peak) * peak_target   # simple, consistent loudness
     sf.write(str(path), wav, sr, format="MP3")
     kb = path.stat().st_size // 1024
     log(f"  ✓ {path.relative_to(ROOT)}  ({kb} KB, {len(wav)/sr:.0f}s)")
@@ -203,6 +214,27 @@ def make_telugu(jobs):
             raise
 
 
+def _room_tone(seconds, sr, rng):
+    """Barely-audible brown-ish noise — pauses feel human, not digital."""
+    n = int(seconds * sr)
+    x = np.cumsum(rng.standard_normal(n)).astype(np.float32)
+    x -= x.mean()
+    peak = float(np.max(np.abs(x))) or 1.0
+    return (x / peak) * ROOM_TONE_LEVEL
+
+
+def _warmth(wav, mix=WARMTH_MIX, alpha=0.25):
+    """Blend in a one-pole low-passed copy: rounds off the digital sheen."""
+    if mix <= 0:
+        return wav
+    lp = np.empty_like(wav)
+    acc = 0.0
+    for i, v in enumerate(wav):
+        acc = alpha * v + (1 - alpha) * acc
+        lp[i] = acc
+    return (1 - mix) * wav + mix * lp
+
+
 def _telugu_edge(jobs):
     import asyncio
     import io
@@ -212,9 +244,15 @@ def _telugu_edge(jobs):
     log(f"  using Azure Neural voice {EDGE_VOICE} "
         f"(rate {EDGE_RATE}, pitch {EDGE_PITCH}) via edge-tts")
 
+    def finalize(phrase):
+        # Phrases split at "…" lose their terminal punctuation and
+        # would be voiced with an unfinished, rising contour. A final
+        # period makes every phrase close with a confident fall.
+        return phrase if re.search(r"[.!?।]$", phrase) else phrase + "."
+
     async def synth(phrase):
         stream = edge_tts.Communicate(
-            phrase, EDGE_VOICE, rate=EDGE_RATE, pitch=EDGE_PITCH)
+            finalize(phrase), EDGE_VOICE, rate=EDGE_RATE, pitch=EDGE_PITCH)
         buf = io.BytesIO()
         async for chunk in stream.stream():
             if chunk["type"] == "audio":
@@ -228,15 +266,25 @@ def _telugu_edge(jobs):
     async def run_all():
         for therapy, text in jobs:
             log(f"• {therapy} (te)")
-            rendered, sr = [], 24000
-            for phrases in split_script(text):
-                row = []
-                for phrase in phrases:
+            # Seeded per file: pause lengths vary humanly within a
+            # track but are identical on every regeneration.
+            rng = np.random.default_rng(PARLER_SEED)
+            sr = 24000
+            parts = [_room_tone(TE_LEAD_IN, sr, rng)]
+            for pi, phrases in enumerate(split_script(text)):
+                if pi > 0:
+                    parts.append(_room_tone(
+                        rng.uniform(*TE_PARA_PAUSE), sr, rng))
+                for si, phrase in enumerate(phrases):
+                    if si > 0:
+                        parts.append(_room_tone(
+                            rng.uniform(*TE_DOTS_PAUSE), sr, rng))
                     wav, sr = await synth(phrase)
-                    row.append(wav)
-                rendered.append(row)
+                    parts.append(wav)
+            parts.append(_room_tone(TE_TAIL, sr, rng))
+            wav = _warmth(np.concatenate(parts))
             write_mp3(AUDIO_DIR / "te" / f"{therapy}.mp3",
-                      assemble(rendered, sr), sr)
+                      wav, sr, peak_target=TE_PEAK)
 
     asyncio.run(run_all())
 

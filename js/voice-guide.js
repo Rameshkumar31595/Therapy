@@ -25,6 +25,9 @@
   /* ── Configuration ─────────────────────────────────────── */
   var AUDIO_BASE = "audio/";
   var AUDIO_EXT = ".mp3";
+  // Cache-buster: bump whenever MP3s are regenerated, otherwise
+  // browsers keep playing the previously downloaded versions.
+  var AUDIO_VERSION = "2026-07-04a";
   var DEBUG = true; // set to false for production once audio works
 
   var THERAPIES = {
@@ -69,7 +72,8 @@
       errDecode: "This audio file can't be played — it may be corrupted or in an unsupported format.",
       errBlocked: "The browser paused playback — please tap the play button.",
       close: "Close", play: "Play", pause: "Pause",
-      stop: "Stop", replay: "Replay from beginning", seek: "Audio progress"
+      stop: "Stop", replay: "Replay from beginning", seek: "Audio progress",
+      speed: "Playback speed"
     },
     te: {
       eyebrow: "మీ థెరపిస్ట్ మాటల్లో",
@@ -79,7 +83,8 @@
       errDecode: "ఈ ఆడియో ఫైల్ ప్లే అవ్వడం లేదు — ఫైల్ ఫార్మాట్ సపోర్ట్ కాకపోవచ్చు.",
       errBlocked: "బ్రౌజర్ ప్లేబ్యాక్ ఆపింది — ప్లే బటన్ నొక్కండి.",
       close: "మూసివేయండి", play: "ప్లే", pause: "పాజ్",
-      stop: "ఆపండి", replay: "మొదటి నుంచి వినండి", seek: "ఆడియో ప్రోగ్రెస్"
+      stop: "ఆపండి", replay: "మొదటి నుంచి వినండి", seek: "ఆడియో ప్రోగ్రెస్",
+      speed: "ప్లేబ్యాక్ వేగం"
     }
   };
 
@@ -106,6 +111,7 @@
     play: document.getElementById("voicePlay"),
     stop: document.getElementById("voiceStop"),
     replay: document.getElementById("voiceReplay"),
+    speed: document.getElementById("voiceSpeed"),
     close: document.getElementById("voiceClose"),
     status: document.getElementById("voiceStatus")
   };
@@ -116,6 +122,28 @@
   var currentId = null;
   var seeking = false;
   var hideTimer = null;
+
+  /* Playback speed: cycles 1× → 1.5× → 2×; remembered across visits */
+  var SPEEDS = [1, 1.5, 2];
+  var SPEED_KEY = "voiceGuideSpeed";
+  var speed = 1;
+  try {
+    var saved = parseFloat(localStorage.getItem(SPEED_KEY));
+    if (SPEEDS.indexOf(saved) !== -1) speed = saved;
+  } catch (err) { /* storage unavailable — session default */ }
+
+  function applySpeed(a) {
+    a.playbackRate = speed;
+    // keep the natural voice pitch when sped up
+    if ("preservesPitch" in a) a.preservesPitch = true;
+    else if ("webkitPreservesPitch" in a) a.webkitPreservesPitch = true;
+  }
+
+  function renderSpeed() {
+    els.speed.textContent = (speed === 1 ? "1" : String(speed)) + "×";
+    els.speed.classList.toggle("active", speed !== 1);
+    els.speed.setAttribute("aria-label", t("speed") + " " + speed + "×");
+  }
 
   function lang() {
     return document.documentElement.getAttribute("lang") === "te" ? "te" : "en";
@@ -160,7 +188,9 @@
     if (!cache[key]) {
       var a = new Audio();
       a.preload = "none"; // nothing downloads until the visitor listens
-      a.src = AUDIO_BASE + lg + "/" + THERAPIES[id].file + AUDIO_EXT;
+      a.src = AUDIO_BASE + lg + "/" + THERAPIES[id].file + AUDIO_EXT
+        // query strings can upset file:// playback — only add on http(s)
+        + (location.protocol === "file:" ? "" : "?v=" + AUDIO_VERSION);
       log("Creating audio element:", a.src);
       bindAudio(a);
       cache[key] = a;
@@ -286,6 +316,7 @@
     els.seek.setAttribute("aria-label", UI[lg].seek);
     els.play.setAttribute("aria-label",
       audio && !audio.paused ? UI[lg].pause : UI[lg].play);
+    renderSpeed();
   }
 
   /* ── Playback control ──────────────────────────────────── */
@@ -313,6 +344,7 @@
   function setAudio(a, autoplay) {
     if (audio && audio !== a && !audio.paused) audio.pause();
     audio = a;
+    applySpeed(a);
     els.seek.disabled = !isFinite(a.duration) || !a.duration;
     setPlaying(!a.paused && !a.ended);
     setStatus(null);
@@ -380,6 +412,15 @@
     updateProgress();
     play();
   });
+
+  els.speed.addEventListener("click", function () {
+    speed = SPEEDS[(SPEEDS.indexOf(speed) + 1) % SPEEDS.length];
+    log("Playback speed:", speed + "×");
+    if (audio) applySpeed(audio);
+    renderSpeed();
+    try { localStorage.setItem(SPEED_KEY, String(speed)); } catch (err) {}
+  });
+  renderSpeed();
 
   /* ── Seeking / scrubbing ───────────────────────────────────
      Pointer-based: tap anywhere on the bar to jump, drag the

@@ -59,11 +59,16 @@ $py = "$env:LOCALAPPDATA\SushrutaTTS\venv\Scripts\python"
 - **English voice:** change `KOKORO_VOICE` in `generate-audio.py`
   (`af_heart` is warmest; `af_bella`, `af_nicole` are alternatives) and
   `KOKORO_SPEED` (0.85–0.95; lower = calmer).
-- **Telugu voice:** adjust `EDGE_RATE` in `generate-audio.py`
-  (`-10%` is the calm default; `-15%` is slower still) and `EDGE_PITCH`
-  (e.g. `-5Hz` for a slightly deeper tone). `EDGE_VOICE` is
-  `te-IN-ShrutiNeural`, the Telugu female neural voice; `te-IN-MohanNeural`
-  is the male alternative.
+- **Telugu voice:** the "premium wellness consultant" recipe lives in the
+  constants at the top of `generate-audio.py` — `EDGE_RATE` (`-10%`;
+  lower = slower/softer, higher = brisker), `EDGE_PITCH` (`-4Hz`), the
+  pause ranges `TE_PARA_PAUSE` / `TE_DOTS_PAUSE`, `WARMTH_MIX`
+  (0 = brightest, 0.35 = soft) and `TE_PEAK` (loudness). `EDGE_VOICE` is
+  `te-IN-ShrutiNeural`, the native Telugu female neural voice. Audition
+  samples are kept in `audio/te-samples/`: A/B/C = the earlier softness
+  audition; 1/2/3 = the confident-delivery audition
+  (1 = warm professional, 2 = confident expert,
+  3 = premium consultant ← chosen).
 - Listen on a phone speaker — that's what most visitors use.
 - If a word is mispronounced (e.g. *Pizhichil*), respell it phonetically in
   `scripts.json` and regenerate just that file.
