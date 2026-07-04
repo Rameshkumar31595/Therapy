@@ -27,7 +27,7 @@
   var AUDIO_EXT = ".mp3";
   // Cache-buster: bump whenever MP3s are regenerated, otherwise
   // browsers keep playing the previously downloaded versions.
-  var AUDIO_VERSION = "2026-07-04a";
+  var AUDIO_VERSION = "2026-07-04b";
   var DEBUG = true; // set to false for production once audio works
 
   var THERAPIES = {
