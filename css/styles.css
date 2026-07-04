@@ -1467,6 +1467,13 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "à°ˆà°
   .mobile-cta-bar { display: none; }
   .float-wa { display: grid; }
 
+  .header-inner {
+    min-height: 4.8rem;
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
+  .brand { flex-shrink: 0; }
+
   /* nav becomes inline */
   .nav-toggle { display: none; }
   .main-nav {
@@ -1475,17 +1482,22 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "à°ˆà°
     height: auto;
     background: none;
     flex-direction: row;
-    gap: 1.9rem;
+    gap: clamp(1rem, 1.35vw, 1.55rem);
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: center;
     opacity: 1;
     visibility: visible;
     z-index: auto;
   }
   .main-nav a {
     font-family: var(--font-body);
-    font-size: 0.86rem;
+    font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     position: relative;
+    white-space: nowrap;
+    line-height: 1;
   }
   .main-nav a:not(.nav-cta)::after {
     content: "";
@@ -1500,7 +1512,22 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "à°ˆà°
     transition: transform 0.4s var(--ease-out);
   }
   .main-nav a:not(.nav-cta):hover::after { transform: scaleX(1); transform-origin: left; }
-  .main-nav .nav-cta { padding: 0.6rem 1.3rem; font-size: 0.82rem; margin-top: 0; }
+  .main-nav .nav-cta {
+    min-height: 2.5rem;
+    padding: 0.56rem 1.05rem;
+    font-size: 0.79rem;
+    margin-top: 0;
+    line-height: 1;
+  }
+  .header-actions {
+    flex-shrink: 0;
+    gap: 0.45rem;
+  }
+  .lang-switch {
+    min-height: 2.5rem;
+    padding: 0.45rem 0.85rem;
+    line-height: 1;
+  }
 
   .about-grid { grid-template-columns: 5fr 6fr; gap: 4.5rem; align-items: center; }
   .about-visual { margin-inline: 0; }
@@ -2355,7 +2382,18 @@ body.cert-lightbox-open { overflow: hidden; }
   background-repeat: no-repeat;
   padding-right: 2.4rem;
 }
-.bk-field textarea { resize: vertical; min-height: 4rem; }
+.bk-field textarea {
+  resize: vertical;
+  min-height: 4.75rem;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  line-height: 1.5;
+}
+.bk-field textarea::placeholder {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: rgba(15, 36, 26, 0.42);
+}
 .bk-field input:focus, .bk-field select:focus, .bk-field textarea:focus {
   outline: none;
   border-color: var(--gold);
@@ -2390,7 +2428,7 @@ body.cert-lightbox-open { overflow: hidden; }
   gap: 0.6rem;
   padding: 0.7rem 1.1rem;
   border-radius: 12px;
-  border: 1.5px dashed rgba(166, 127, 59, 0.45);
+  border: 1.5px solid rgba(166, 127, 59, 0.34);
   background: rgba(201, 163, 90, 0.08);
   cursor: pointer;
   font-weight: 600;
