@@ -539,6 +539,28 @@
       </div>
     </section>
 
+    <!-- ═══════════ CREDENTIALS ═══════════
+         Certificate cards are rendered into #certGrid by
+         js/certificates.js (see the manifest there to add more). -->
+    <section class="credentials section" id="credentials">
+      <div class="container">
+        <p class="section-eyebrow center reveal" data-i18n="cred.eyebrow">Proof of Expertise</p>
+        <h2 class="section-title center reveal" data-i18n="cred.title">Certified &amp; Qualified <span class="gold-italic">Professionals</span></h2>
+        <p class="cred-statement reveal" data-i18n="cred.statement">Our therapists are professionally trained and certified in traditional Ayurvedic and therapeutic massage practices, ensuring safe, authentic, and effective treatments.</p>
+
+        <ul class="trust-badges reveal" aria-label="Trust indicators">
+          <li data-i18n="cred.b1">Certified Professionals</li>
+          <li data-i18n="cred.b2">Verified Training</li>
+          <li data-i18n="cred.b3">Traditional Expertise</li>
+          <li data-i18n="cred.b4">Client-Focused Care</li>
+        </ul>
+
+        <div class="cert-grid" id="certGrid"></div>
+
+        <p class="cred-verify reveal" data-i18n="cred.verify">Each certificate is Government-issued and can be independently verified on the official ASAP Kerala portal.</p>
+      </div>
+    </section>
+
     <!-- ═══════════ TIMINGS ═══════════ -->
     <section class="timings section section-dark" id="timings">
       <!-- Story: restoration — calm breathing rings -->
@@ -799,6 +821,7 @@
     </div>
   </div>
 
+  <script src="js/certificates.js" defer></script> <!-- before main.js: cards must exist when main.js wires i18n + reveal -->
   <script src="js/main.js" defer></script>
   <script src="js/voice-guide.js" defer></script>
 </body>
