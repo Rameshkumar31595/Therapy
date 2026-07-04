@@ -1,12 +1,16 @@
 # ═══════════════════════════════════════════════════════════
-# THERAPY VOICE GUIDE — FULLY LOCAL AUDIO GENERATION
+# THERAPY VOICE GUIDE — AUDIO GENERATION
 #
-# No cloud APIs, no keys, no monthly cost. Models download once
-# (from public open-source releases) and everything afterwards
-# runs offline on this machine.
+# No keys, no accounts, no monthly cost.
 #
-#   English → Kokoro (open-weights, warm female voice "af_heart")
-#   Telugu  → AI4Bharat Indic Parler-TTS (best open Telugu voice)
+#   English → Kokoro (open-weights, warm female voice "af_heart",
+#             fully offline after a one-time model download)
+#   Telugu  → Microsoft Azure Neural voice te-IN-ShrutiNeural via
+#             edge-tts (free, no API key; needs internet while
+#             generating). Native Telugu female voice with natural
+#             prosody — far beyond any open offline Telugu model.
+#             Offline fallbacks (Indic Parler-TTS / MMS) remain
+#             below but are only used if the network is down.
 #
 # Reads the narration text from narration/scripts.json and writes
 # MP3s exactly where the website's player looks for them:
@@ -62,10 +66,18 @@ MODELS_DIR = Path(os.environ.get("LOCALAPPDATA", ROOT)) / "SushrutaTTS" / "model
 KOKORO_VOICE = "af_heart"
 KOKORO_SPEED = 0.88
 
-# Telugu (Indic Parler-TTS): the voice is *described* in words.
-# Tweak freely — keep "calm / warm / slow / female" for the
-# therapist character. A fixed seed keeps the same voice across
-# all six files.
+# Telugu (Azure Neural via edge-tts): te-IN-ShrutiNeural is the
+# native Telugu female neural voice — warm, clear, natural Telugu
+# prosody. Rate below 0% = calmer, slower delivery for the
+# therapist character. Pitch can be nudged in Hz if desired.
+EDGE_VOICE = "te-IN-ShrutiNeural"
+EDGE_RATE = "-10%"     # slow, unhurried wellness pacing
+EDGE_PITCH = "+0Hz"
+
+# Telugu offline fallback (Indic Parler-TTS): the voice is
+# *described* in words. Tweak freely — keep "calm / warm / slow /
+# female" for the therapist character. A fixed seed keeps the same
+# voice across all six files.
 PARLER_MODEL = "ai4bharat/indic-parler-tts"
 PARLER_DESCRIPTION = (
     "Anjali speaks in a warm, calm and soothing female voice, "
@@ -159,16 +171,26 @@ def make_english(jobs):
 
 
 # ── Telugu engines ──────────────────────────────────────────
-# Preferred: AI4Bharat Indic Parler-TTS (best open Telugu voice).
-# It is a *gated* Hugging Face repo — free, but you must accept
-# the license once at https://huggingface.co/ai4bharat/indic-parler-tts
-# and log in (huggingface-cli login). Until then, we fall back to
-# facebook/mms-tts-tel, which is open and needs no account.
+# Preferred: Azure Neural voice te-IN-ShrutiNeural via edge-tts —
+# a native Telugu female voice with natural pronunciation and
+# intonation. Free, no key; needs internet during generation.
+# Offline fallbacks (in order): AI4Bharat Indic Parler-TTS (gated
+# Hugging Face repo — accept the license once at
+# https://huggingface.co/ai4bharat/indic-parler-tts and run
+# huggingface-cli login), then facebook/mms-tts-tel (open, but
+# noticeably robotic — last resort only).
 MMS_MODEL = "facebook/mms-tts-tel"
 MMS_SPEAKING_RATE = 0.92   # < 1.0 = slower, calmer
 
 
 def make_telugu(jobs):
+    try:
+        _telugu_edge(jobs)
+        return
+    except Exception as e:
+        log(f"  ✗ Azure Neural (edge-tts) failed: {e}")
+        log("  This engine needs internet access. Falling back to the")
+        log("  offline models — quality will be noticeably lower.")
     try:
         _telugu_parler(jobs)
     except Exception as e:
@@ -179,6 +201,44 @@ def make_telugu(jobs):
             _telugu_mms(jobs)
         else:
             raise
+
+
+def _telugu_edge(jobs):
+    import asyncio
+    import io
+
+    import edge_tts
+
+    log(f"  using Azure Neural voice {EDGE_VOICE} "
+        f"(rate {EDGE_RATE}, pitch {EDGE_PITCH}) via edge-tts")
+
+    async def synth(phrase):
+        stream = edge_tts.Communicate(
+            phrase, EDGE_VOICE, rate=EDGE_RATE, pitch=EDGE_PITCH)
+        buf = io.BytesIO()
+        async for chunk in stream.stream():
+            if chunk["type"] == "audio":
+                buf.write(chunk["data"])
+        buf.seek(0)
+        wav, sr = sf.read(buf, dtype="float32")
+        if wav.ndim > 1:
+            wav = wav.mean(axis=1)
+        return wav, sr
+
+    async def run_all():
+        for therapy, text in jobs:
+            log(f"• {therapy} (te)")
+            rendered, sr = [], 24000
+            for phrases in split_script(text):
+                row = []
+                for phrase in phrases:
+                    wav, sr = await synth(phrase)
+                    row.append(wav)
+                rendered.append(row)
+            write_mp3(AUDIO_DIR / "te" / f"{therapy}.mp3",
+                      assemble(rendered, sr), sr)
+
+    asyncio.run(run_all())
 
 
 def _telugu_mms(jobs):

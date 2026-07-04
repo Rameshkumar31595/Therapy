@@ -10,7 +10,11 @@ truststore               # use Windows cert store (avoids SSL errors behind AV/p
 # English — Kokoro (open weights, ONNX, fast on CPU)
 kokoro-onnx
 
-# Telugu — AI4Bharat Indic Parler-TTS (open weights)
+# Telugu — Azure Neural voice te-IN-ShrutiNeural via edge-tts
+# (free, no API key; needs internet while generating)
+edge-tts
+
+# Telugu offline fallbacks — AI4Bharat Indic Parler-TTS / MMS
 torch                     # CPU build is fine
 transformers
 git+https://github.com/huggingface/parler-tts.git

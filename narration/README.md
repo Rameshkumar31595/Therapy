@@ -29,7 +29,7 @@ Drop in files with these names from ANY source and the player uses them.
 | Language | Engine | Why |
 |----------|--------|-----|
 | English  | **Kokoro** (open weights, Apache-2.0, ONNX) | The most natural small open TTS available; warm female voice `af_heart`, runs fast on CPU. Model ~340 MB, downloaded once to `%LOCALAPPDATA%\SushrutaTTS\models`. |
-| Telugu   | **AI4Bharat Indic Parler-TTS** (open weights) | The best open-source Telugu quality; built specifically for Indian languages. The voice is *described in words* (calm, warm, slow, female) in `generate-audio.py` — edit `PARLER_DESCRIPTION` to reshape it. Model ~2.5 GB, downloaded once to the Hugging Face cache. |
+| Telugu   | **Azure Neural `te-IN-ShrutiNeural`** via `edge-tts` (free, no API key) | A native Telugu (India) female neural voice — natural pronunciation, correct sentence intonation, no English accent. Far beyond any open offline Telugu model. Needs internet **only while generating**; the website still just plays local MP3s. Offline fallbacks (Indic Parler-TTS, then MMS) kick in automatically if the network is down, at noticeably lower quality. |
 
 The scripts in `scripts.json` use `…` pauses and paragraph breaks; the
 generator turns those into real silences (0.45 s / 0.85 s), which is a big
@@ -59,10 +59,11 @@ $py = "$env:LOCALAPPDATA\SushrutaTTS\venv\Scripts\python"
 - **English voice:** change `KOKORO_VOICE` in `generate-audio.py`
   (`af_heart` is warmest; `af_bella`, `af_nicole` are alternatives) and
   `KOKORO_SPEED` (0.85–0.95; lower = calmer).
-- **Telugu voice:** edit `PARLER_DESCRIPTION` — it literally describes the
-  speaker. Keep "calm, warm, slow, female". `PARLER_SEED` fixes the voice so
-  all six files sound like the same person; change the seed to audition a
-  different voice.
+- **Telugu voice:** adjust `EDGE_RATE` in `generate-audio.py`
+  (`-10%` is the calm default; `-15%` is slower still) and `EDGE_PITCH`
+  (e.g. `-5Hz` for a slightly deeper tone). `EDGE_VOICE` is
+  `te-IN-ShrutiNeural`, the Telugu female neural voice; `te-IN-MohanNeural`
+  is the male alternative.
 - Listen on a phone speaker — that's what most visitors use.
 - If a word is mispronounced (e.g. *Pizhichil*), respell it phonetically in
   `scripts.json` and regenerate just that file.
