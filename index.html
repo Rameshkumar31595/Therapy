@@ -184,6 +184,7 @@
         <a href="#timings" data-i18n="nav.timings">Timings</a>
         <a href="#experience" data-i18n="nav.experience">Experience</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="#booking" class="nav-cta nav-book" data-i18n="nav.book">Book Appointment</a>
         <a href="tel:9502477334" class="nav-cta" data-i18n="nav.call">Call 95024 77334</a>
       </nav>
 
@@ -255,6 +256,10 @@
         couple brings the timeless wellness rituals of Kerala home to you in Narasaraopet.</span></p>
 
         <div class="hero-ctas">
+          <a href="#booking" class="btn btn-gold">
+            <svg viewBox="0 0 24 24" class="btn-icon" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 16H5V10h14ZM5 8V6h14v2Zm5.56 9.46-2.62-2.62 1.06-1.06 1.56 1.55 3.94-3.94 1.06 1.07Z"/></svg>
+            <span data-i18n="cta.book">Book Appointment</span>
+          </a>
           <a href="https://wa.me/919502477334?text=Namaste%2C%20I%20would%20like%20to%20book%20a%20Kerala%20massage%20therapy%20session." class="btn btn-whatsapp" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" class="btn-icon" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.16-1.32A10 10 0 1 0 12 2Zm5.68 14.11c-.24.67-1.4 1.31-1.93 1.36-.52.05-1.01.24-3.4-.71-2.87-1.13-4.68-4.06-4.82-4.25-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.36.26-.28.56-.35.75-.35h.54c.17 0 .41-.06.63.48.24.56.79 1.93.86 2.07.07.14.12.31.02.5-.09.19-.14.3-.28.47-.14.16-.3.37-.42.49-.14.14-.29.3-.13.58.16.28.73 1.2 1.56 1.95 1.07.96 1.98 1.25 2.26 1.39.28.14.44.12.61-.07.16-.19.7-.81.88-1.09.19-.28.38-.23.63-.14.26.1 1.64.78 1.92.92.28.14.47.21.54.32.07.12.07.67-.16 1.36Z"/></svg>
             <span data-i18n="cta.wa">WhatsApp Now</span>
@@ -337,6 +342,30 @@
       </div>
     </section>
 
+    <!-- ═══════════ CREDENTIALS ═══════════
+         Placed before the therapies so visitors see professional
+         qualifications before evaluating treatments. Certificate
+         cards are rendered into #certGrid by js/certificates.js
+         (see the manifest there to add more). -->
+    <section class="credentials section" id="credentials">
+      <div class="container">
+        <p class="section-eyebrow center reveal" data-i18n="cred.eyebrow">Proof of Expertise</p>
+        <h2 class="section-title center reveal" data-i18n="cred.title">Certified &amp; Qualified <span class="gold-italic">Professionals</span></h2>
+        <p class="cred-statement reveal" data-i18n="cred.statement">Our therapists are professionally trained and certified in traditional Ayurvedic and therapeutic massage practices, ensuring safe, authentic, and effective treatments.</p>
+
+        <ul class="trust-badges reveal" aria-label="Trust indicators">
+          <li data-i18n="cred.b1">Certified Professionals</li>
+          <li data-i18n="cred.b2">Verified Training</li>
+          <li data-i18n="cred.b3">Traditional Expertise</li>
+          <li data-i18n="cred.b4">Client-Focused Care</li>
+        </ul>
+
+        <div class="cert-grid" id="certGrid"></div>
+
+        <p class="cred-verify reveal" data-i18n="cred.verify">Each certificate is Government-issued and can be independently verified on the official ASAP Kerala portal.</p>
+      </div>
+    </section>
+
     <!-- ═══════════ SERVICES ═══════════ -->
     <section class="services section section-dark" id="services">
       <div class="bird-layer bird-layer-slow" id="servicesBirds" aria-hidden="true"></div>
@@ -369,7 +398,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3Zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05A4.47 4.47 0 0 0 16.5 12ZM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77Z"/></svg>
               <span data-i18n="svc.listen">Listen to Therapy</span>
             </button>
-            <a href="https://wa.me/919502477334?text=Namaste%2C%20I%20would%20like%20to%20book%20Padaabhyanga%20(Foot%20%26%20Leg%20Massage%2C%2030%20min)." class="service-book" target="_blank" rel="noopener" data-i18n="svc.book">Book on WhatsApp</a>
+            <a href="#booking" class="service-book" data-book="Padaabhyanga" data-i18n="svc.book">Book Appointment</a>
           </article>
 
           <article class="service-card reveal">
@@ -387,7 +416,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3Zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05A4.47 4.47 0 0 0 16.5 12ZM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77Z"/></svg>
               <span data-i18n="svc.listen">Listen to Therapy</span>
             </button>
-            <a href="https://wa.me/919502477334?text=Namaste%2C%20I%20would%20like%20to%20book%20Abhyanga%20(Full%20Body%20Oil%20Massage%2C%2045%20min)." class="service-book" target="_blank" rel="noopener" data-i18n="svc.book">Book on WhatsApp</a>
+            <a href="#booking" class="service-book" data-book="Abhyanga" data-i18n="svc.book">Book Appointment</a>
           </article>
 
           <article class="service-card service-card-featured reveal">
@@ -406,7 +435,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3Zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05A4.47 4.47 0 0 0 16.5 12ZM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77Z"/></svg>
               <span data-i18n="svc.listen">Listen to Therapy</span>
             </button>
-            <a href="https://wa.me/919502477334?text=Namaste%2C%20I%20would%20like%20to%20book%20Abhyanga%20(Full%20Body%20Oil%20Massage%2C%2060%20min)." class="service-book" target="_blank" rel="noopener" data-i18n="svc.book">Book on WhatsApp</a>
+            <a href="#booking" class="service-book" data-book="Abhyanga Extended" data-i18n="svc.book">Book Appointment</a>
           </article>
 
           <article class="service-card reveal">
@@ -424,7 +453,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3Zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05A4.47 4.47 0 0 0 16.5 12ZM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77Z"/></svg>
               <span data-i18n="svc.listen">Listen to Therapy</span>
             </button>
-            <a href="https://wa.me/919502477334?text=Namaste%2C%20I%20would%20like%20to%20book%20Hot%20Herbal%20Potli%20(Herbal%20Pouch%20Massage%2C%2045%20min)." class="service-book" target="_blank" rel="noopener" data-i18n="svc.book">Book on WhatsApp</a>
+            <a href="#booking" class="service-book" data-book="Hot Herbal Potli" data-i18n="svc.book">Book Appointment</a>
           </article>
 
           <article class="service-card reveal">
@@ -442,7 +471,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3Zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05A4.47 4.47 0 0 0 16.5 12ZM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77Z"/></svg>
               <span data-i18n="svc.listen">Listen to Therapy</span>
             </button>
-            <a href="https://wa.me/919502477334?text=Namaste%2C%20I%20would%20like%20to%20book%20Shirodhara%20(Warm%20Oil%20Head%20Therapy%2C%2050%20min)." class="service-book" target="_blank" rel="noopener" data-i18n="svc.book">Book on WhatsApp</a>
+            <a href="#booking" class="service-book" data-book="Shirodhara" data-i18n="svc.book">Book Appointment</a>
           </article>
 
           <article class="service-card service-card-royal reveal">
@@ -461,7 +490,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3Zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05A4.47 4.47 0 0 0 16.5 12ZM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77Z"/></svg>
               <span data-i18n="svc.listen">Listen to Therapy</span>
             </button>
-            <a href="https://wa.me/919502477334?text=Namaste%2C%20I%20would%20like%20to%20book%20Pizhichil%20(Traditional%20Kerala%20Oil%20Therapy%2C%2060%20min)." class="service-book" target="_blank" rel="noopener" data-i18n="svc.book">Book on WhatsApp</a>
+            <a href="#booking" class="service-book" data-book="Pizhichil" data-i18n="svc.book">Book Appointment</a>
           </article>
         </div>
 
@@ -477,7 +506,7 @@
           </div>
           <div class="steam-addon-right">
             <span class="service-price">₹200</span>
-            <a href="https://wa.me/919502477334?text=Namaste%2C%20I%20would%20like%20to%20add%20Herbal%20Steam%20to%20my%20booking." class="service-book" target="_blank" rel="noopener" data-i18n="steam.btn">Add to Booking</a>
+            <a href="#booking" class="service-book" data-book-steam="1" data-i18n="steam.btn">Add to Booking</a>
           </div>
         </div>
       </div>
@@ -536,28 +565,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ═══════════ CREDENTIALS ═══════════
-         Certificate cards are rendered into #certGrid by
-         js/certificates.js (see the manifest there to add more). -->
-    <section class="credentials section" id="credentials">
-      <div class="container">
-        <p class="section-eyebrow center reveal" data-i18n="cred.eyebrow">Proof of Expertise</p>
-        <h2 class="section-title center reveal" data-i18n="cred.title">Certified &amp; Qualified <span class="gold-italic">Professionals</span></h2>
-        <p class="cred-statement reveal" data-i18n="cred.statement">Our therapists are professionally trained and certified in traditional Ayurvedic and therapeutic massage practices, ensuring safe, authentic, and effective treatments.</p>
-
-        <ul class="trust-badges reveal" aria-label="Trust indicators">
-          <li data-i18n="cred.b1">Certified Professionals</li>
-          <li data-i18n="cred.b2">Verified Training</li>
-          <li data-i18n="cred.b3">Traditional Expertise</li>
-          <li data-i18n="cred.b4">Client-Focused Care</li>
-        </ul>
-
-        <div class="cert-grid" id="certGrid"></div>
-
-        <p class="cred-verify reveal" data-i18n="cred.verify">Each certificate is Government-issued and can be independently verified on the official ASAP Kerala portal.</p>
       </div>
     </section>
 
@@ -624,6 +631,130 @@
       <p class="gallery-hint" aria-hidden="true" data-i18n="exp.hint">← &nbsp;swipe to wander&nbsp; →</p>
     </section>
 
+    <!-- ═══════════ BOOKING ═══════════
+         WhatsApp-only appointment flow, wired up by js/booking.js.
+         The owner's number lives in ONE place: OWNER_WHATSAPP at the
+         top of js/booking.js. -->
+    <section class="booking section" id="booking">
+      <div class="container">
+        <p class="section-eyebrow center reveal" data-i18n="bk.eyebrow">Book Your Session</p>
+        <h2 class="section-title center reveal" data-i18n="bk.title">Reserve Your <span class="gold-italic">Moment of Renewal</span></h2>
+        <p class="section-intro center reveal" data-i18n="bk.intro">Fill in a few details and we'll receive your request instantly on WhatsApp. No payment now, no account needed.</p>
+
+        <ul class="trust-badges reveal" aria-label="Why you can book with confidence">
+          <li data-i18n="bk.t1">Certified Professionals</li>
+          <li data-i18n="bk.t2">Traditional Kerala Expertise</li>
+          <li data-i18n="bk.t3">Experienced Therapists</li>
+          <li data-i18n="bk.t4">Personalized Care</li>
+          <li data-i18n="bk.t5">Quick WhatsApp Confirmation</li>
+        </ul>
+
+        <form class="booking-card reveal" id="bookingForm" novalidate>
+          <div class="bk-grid">
+
+            <div class="bk-field">
+              <label for="bkName" data-i18n="bk.name">Full Name <em>*</em></label>
+              <input type="text" id="bkName" name="name" autocomplete="name" placeholder="Your name" />
+              <p class="bk-error" id="bkNameErr" hidden></p>
+            </div>
+
+            <div class="bk-field">
+              <label for="bkPhone" data-i18n="bk.phone">Mobile Number <em>*</em></label>
+              <input type="tel" id="bkPhone" name="phone" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile number" />
+              <p class="bk-error" id="bkPhoneErr" hidden></p>
+            </div>
+
+            <div class="bk-field">
+              <label for="bkTherapy" data-i18n="bk.therapy">Therapy <em>*</em></label>
+              <select id="bkTherapy" name="therapy">
+                <option value="" data-i18n="bk.therapyPh">Select a therapy…</option>
+                <option value="Padaabhyanga">Padaabhyanga · 30 min · ₹800</option>
+                <option value="Abhyanga">Abhyanga · 45 min · ₹1000</option>
+                <option value="Abhyanga Extended">Abhyanga Extended · 60 min · ₹1200</option>
+                <option value="Hot Herbal Potli">Hot Herbal Potli · 45 min · ₹1500</option>
+                <option value="Shirodhara">Shirodhara · 50 min · ₹2500</option>
+                <option value="Pizhichil">Pizhichil · 60 min · ₹3000</option>
+              </select>
+              <p class="bk-error" id="bkTherapyErr" hidden></p>
+            </div>
+
+            <div class="bk-field bk-field-steam">
+              <label class="bk-check">
+                <input type="checkbox" id="bkSteam" name="steam" />
+                <span data-i18n="bk.steam">Add Herbal Steam <strong>(+₹200)</strong></span>
+              </label>
+            </div>
+
+            <div class="bk-field">
+              <label for="bkDate" data-i18n="bk.date">Preferred Date <em>*</em></label>
+              <input type="date" id="bkDate" name="date" />
+              <p class="bk-error" id="bkDateErr" hidden></p>
+            </div>
+
+            <div class="bk-field">
+              <label for="bkTime" data-i18n="bk.time">Preferred Time <em>*</em></label>
+              <select id="bkTime" name="time">
+                <option value="" data-i18n="bk.timePh">Select a time…</option>
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+                <option value="06:00 PM">06:00 PM</option>
+              </select>
+              <p class="bk-error" id="bkTimeErr" hidden></p>
+            </div>
+
+            <fieldset class="bk-field">
+              <legend data-i18n="bk.gender">Gender <em>*</em></legend>
+              <div class="bk-radios">
+                <label class="bk-radio"><input type="radio" name="gender" value="Male" /><span data-i18n="bk.male">Male</span></label>
+                <label class="bk-radio"><input type="radio" name="gender" value="Female" /><span data-i18n="bk.female">Female</span></label>
+              </div>
+              <p class="bk-note" data-i18n="bk.genderNote">Your therapist is assigned automatically — a male therapist for men, a lady therapist for women.</p>
+              <p class="bk-error" id="bkGenderErr" hidden></p>
+            </fieldset>
+
+            <fieldset class="bk-field">
+              <legend data-i18n="bk.session">Session Type</legend>
+              <div class="bk-radios">
+                <label class="bk-radio"><input type="radio" name="session" value="At Clinic" checked /><span data-i18n="bk.clinic">At Clinic</span></label>
+                <label class="bk-radio"><input type="radio" name="session" value="Home Visit" /><span data-i18n="bk.home">Home Visit</span></label>
+              </div>
+            </fieldset>
+
+            <div class="bk-field bk-field-wide">
+              <label for="bkNotes" data-i18n="bk.notes">Special Requirements <small>(optional)</small></label>
+              <textarea id="bkNotes" name="notes" rows="2" placeholder="Anything we should know — health conditions, preferences…"></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-whatsapp btn-lg bk-submit" id="bkSubmit">
+            <svg viewBox="0 0 24 24" class="btn-icon" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.16-1.32A10 10 0 1 0 12 2Zm5.68 14.11c-.24.67-1.4 1.31-1.93 1.36-.52.05-1.01.24-3.4-.71-2.87-1.13-4.68-4.06-4.82-4.25-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.36.26-.28.56-.35.75-.35h.54c.17 0 .41-.06.63.48.24.56.79 1.93.86 2.07.07.14.12.31.02.5-.09.19-.14.3-.28.47-.14.16-.3.37-.42.49-.14.14-.29.3-.13.58.16.28.73 1.2 1.56 1.95 1.07.96 1.98 1.25 2.26 1.39.28.14.44.12.61-.07.16-.19.7-.81.88-1.09.19-.28.38-.23.63-.14.26.1 1.64.78 1.92.92.28.14.47.21.54.32.07.12.07.67-.16 1.36Z"/></svg>
+            <span data-i18n="bk.submit">Send Booking on WhatsApp</span>
+          </button>
+          <p class="bk-privacy" data-i18n="bk.privacy">Submitting opens WhatsApp with your details pre-filled — you press send. Nothing is stored on this website.</p>
+        </form>
+
+        <div class="booking-success" id="bookingSuccess" hidden>
+          <svg class="bk-check-anim" viewBox="0 0 72 72" aria-hidden="true">
+            <circle class="bk-check-circle" cx="36" cy="36" r="32" />
+            <path class="bk-check-tick" d="M22 37.5 32 47l18-20" />
+          </svg>
+          <h3 data-i18n="bk.doneTitle">Thank you for your booking request.</h3>
+          <p data-i18n="bk.doneMsg">Your appointment details have been sent through WhatsApp. Our team will contact you shortly to confirm your appointment.</p>
+          <div class="bk-done-actions">
+            <a href="#services" class="btn btn-call" id="bkContinue" data-i18n="bk.continue">Continue Browsing</a>
+            <a href="https://wa.me/919502477334" class="btn btn-whatsapp" target="_blank" rel="noopener" id="bkWaContact" data-i18n="bk.waContact">WhatsApp Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══════════ CONTACT ═══════════ -->
     <section class="contact section" id="contact">
       <div class="bird-layer bird-layer-slow" id="contactBirds" aria-hidden="true"></div>
@@ -640,6 +771,10 @@
         and we'll be at your doorstep, ready to help you truly relax.</p>
 
         <div class="contact-actions reveal">
+          <a href="#booking" class="btn btn-gold btn-lg">
+            <svg viewBox="0 0 24 24" class="btn-icon" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 16H5V10h14ZM5 8V6h14v2Zm5.56 9.46-2.62-2.62 1.06-1.06 1.56 1.55 3.94-3.94 1.06 1.07Z"/></svg>
+            <span data-i18n="cta.book">Book Appointment</span>
+          </a>
           <a href="https://wa.me/919502477334?text=Namaste%2C%20I%20would%20like%20to%20book%20a%20Kerala%20massage%20therapy%20session." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" class="btn-icon" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.16-1.32A10 10 0 1 0 12 2Zm5.68 14.11c-.24.67-1.4 1.31-1.93 1.36-.52.05-1.01.24-3.4-.71-2.87-1.13-4.68-4.06-4.82-4.25-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.36.26-.28.56-.35.75-.35h.54c.17 0 .41-.06.63.48.24.56.79 1.93.86 2.07.07.14.12.31.02.5-.09.19-.14.3-.28.47-.14.16-.3.37-.42.49-.14.14-.29.3-.13.58.16.28.73 1.2 1.56 1.95 1.07.96 1.98 1.25 2.26 1.39.28.14.44.12.61-.07.16-.19.7-.81.88-1.09.19-.28.38-.23.63-.14.26.1 1.64.78 1.92.92.28.14.47.21.54.32.07.12.07.67-.16 1.36Z"/></svg>
             <span data-i18n="con.wa">WhatsApp 95024 77334</span>
@@ -753,6 +888,7 @@
         </div>
       </div>
       <p class="footer-line" data-i18n="foot.line">Traditional Kerala wellness, at your doorstep in Narasaraopet.</p>
+      <p class="footer-book"><a href="#booking" class="btn btn-gold" data-i18n="cta.book">Book Appointment</a></p>
       <p class="footer-copy">© <span id="year">2026</span> Sushruta Kerala Massage Therapy · Narasaraopet, Palnadu District · <a href="tel:9502477334">95024 77334</a></p>
       <p class="footer-credit"><span class="footer-credit-line">Designed by</span><a class="footer-credit-email" href="https://mail.google.com/mail/?view=cm&fs=1&to=rameshkumarkandula1@gmail.com" target="_blank" rel="noopener">rameshkumarkandula1@gmail.com</a></p>
     </div>
@@ -823,6 +959,7 @@
 
   <script src="js/certificates.js" defer></script> <!-- before main.js: cards must exist when main.js wires i18n + reveal -->
   <script src="js/main.js" defer></script>
+  <script src="js/booking.js" defer></script>
   <script src="js/voice-guide.js" defer></script>
 </body>
 </html>
