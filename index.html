@@ -665,16 +665,30 @@
             </div>
 
             <div class="bk-field">
-              <label for="bkTherapy" data-i18n="bk.therapy">Therapy <em>*</em></label>
-              <select id="bkTherapy" name="therapy">
-                <option value="" data-i18n="bk.therapyPh">Select a therapy…</option>
-                <option value="Padaabhyanga">Padaabhyanga · 30 min · ₹800</option>
-                <option value="Abhyanga">Abhyanga · 45 min · ₹1000</option>
-                <option value="Abhyanga Extended">Abhyanga Extended · 60 min · ₹1200</option>
-                <option value="Hot Herbal Potli">Hot Herbal Potli · 45 min · ₹1500</option>
-                <option value="Shirodhara">Shirodhara · 50 min · ₹2500</option>
-                <option value="Pizhichil">Pizhichil · 60 min · ₹3000</option>
+              <label for="bkSession" data-i18n="bk.session">Session Type <em>*</em></label>
+              <select id="bkSession" name="session">
+                <option value="" data-i18n="bk.sessionPh">Select Home or Clinic…</option>
+                <option value="Home Visit" data-i18n="bk.home">Home Visit</option>
+                <option value="At Clinic" data-i18n="bk.clinic">At Clinic</option>
               </select>
+              <p class="bk-note" data-i18n="bk.sessionNote">Home visits support only Padaabhyanga, Abhyanga, and Abhyanga Extended. At clinic, all therapies are available.</p>
+              <p class="bk-error" id="bkSessionErr" hidden></p>
+            </div>
+
+            <div class="bk-field">
+              <label for="bkTherapy" data-i18n="bk.therapy">Therapy <em>*</em></label>
+              <div class="bk-therapy-wrap">
+                <select id="bkTherapy" name="therapy" disabled>
+                  <option value="" data-i18n="bk.therapyPh">Select a therapy…</option>
+                  <option value="Padaabhyanga" data-home="1" data-clinic="1">Padaabhyanga · 30 min · ₹800</option>
+                  <option value="Abhyanga" data-home="1" data-clinic="1">Abhyanga · 45 min · ₹1000</option>
+                  <option value="Abhyanga Extended" data-home="1" data-clinic="1">Abhyanga Extended · 60 min · ₹1200</option>
+                  <option value="Hot Herbal Potli" data-clinic="1">Hot Herbal Potli · 45 min · ₹1500</option>
+                  <option value="Shirodhara" data-clinic="1">Shirodhara · 50 min · ₹2500</option>
+                  <option value="Pizhichil" data-clinic="1">Pizhichil · 60 min · ₹3000</option>
+                </select>
+                <p class="bk-note bk-note-right" data-i18n="bk.therapyNote">Some therapies need special equipment that is only available at the clinic.</p>
+              </div>
               <p class="bk-error" id="bkTherapyErr" hidden></p>
             </div>
 
@@ -717,14 +731,6 @@
               </div>
               <p class="bk-note" data-i18n="bk.genderNote">Your therapist is assigned automatically — a male therapist for men, a lady therapist for women.</p>
               <p class="bk-error" id="bkGenderErr" hidden></p>
-            </fieldset>
-
-            <fieldset class="bk-field">
-              <legend data-i18n="bk.session">Session Type</legend>
-              <div class="bk-radios">
-                <label class="bk-radio"><input type="radio" name="session" value="At Clinic" checked /><span data-i18n="bk.clinic">At Clinic</span></label>
-                <label class="bk-radio"><input type="radio" name="session" value="Home Visit" /><span data-i18n="bk.home">Home Visit</span></label>
-              </div>
             </fieldset>
 
             <div class="bk-field bk-field-wide">

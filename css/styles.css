@@ -2394,6 +2394,33 @@ body.cert-lightbox-open { overflow: hidden; }
   line-height: 1.45;
   color: rgba(15, 36, 26, 0.42);
 }
+.bk-therapy-wrap {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+.bk-therapy-wrap select {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.bk-note-right {
+  max-width: 13rem;
+  margin: 0.2rem 0 0;
+  text-align: right;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: rgba(15, 36, 26, 0.66);
+}
+@media (max-width: 640px) {
+  .bk-therapy-wrap {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .bk-note-right {
+    max-width: none;
+    text-align: left;
+  }
+}
 .bk-field input:focus, .bk-field select:focus, .bk-field textarea:focus {
   outline: none;
   border-color: var(--gold);

@@ -23,6 +23,7 @@
   var els = {
     name: document.getElementById("bkName"),
     phone: document.getElementById("bkPhone"),
+    session: document.getElementById("bkSession"),
     therapy: document.getElementById("bkTherapy"),
     steam: document.getElementById("bkSteam"),
     date: document.getElementById("bkDate"),
@@ -46,6 +47,7 @@
       errName: "Please tell us your name.",
       errPhone: "Please enter your mobile number.",
       errPhoneFormat: "Please enter a valid 10-digit Indian mobile number.",
+      errSession: "Please choose Home or Clinic first.",
       errTherapy: "Please choose a therapy.",
       errDate: "Please pick your preferred date.",
       errDatePast: "That date has already passed — please pick today or a future date.",
@@ -54,12 +56,16 @@
       sending: "Opening WhatsApp…",
       namePh: "Your name",
       phonePh: "10-digit mobile number",
+      sessionPh: "Select Home or Clinic…",
+      sessionNote: "Home visits support only Padaabhyanga, Abhyanga, and Abhyanga Extended. At clinic, all therapies are available.",
+      therapyNote: "Some therapies need special equipment that is only available at the clinic.",
       notesPh: "Anything we should know — health conditions, preferences…"
     },
     te: {
       errName: "దయచేసి మీ పేరు రాయండి.",
       errPhone: "దయచేసి మీ మొబైల్ నంబర్ ఇవ్వండి.",
       errPhoneFormat: "దయచేసి సరైన 10 అంకెల మొబైల్ నంబర్ ఇవ్వండి.",
+      errSession: "దయచేసి ముందు ఇంటి వద్ద లేదా క్లినిక్‌ను ఎంచుకోండి.",
       errTherapy: "దయచేసి ఒక థెరపీ ఎంచుకోండి.",
       errDate: "దయచేసి మీకు అనుకూలమైన తేదీ ఎంచుకోండి.",
       errDatePast: "ఆ తేదీ దాటిపోయింది — ఈరోజు లేదా రాబోయే తేదీ ఎంచుకోండి.",
@@ -68,16 +74,44 @@
       sending: "వాట్సాప్ తెరుస్తున్నాం…",
       namePh: "మీ పేరు",
       phonePh: "10 అంకెల మొబైల్ నంబర్",
+      sessionPh: "ఇంటి వద్ద లేదా క్లినిక్ ఎంచుకోండి…",
+      sessionNote: "ఇంటి వద్ద సేవలో Padaabhyanga, Abhyanga, Abhyanga Extended మాత్రమే అందుబాటులో ఉంటాయి. క్లినిక్‌లో అన్ని థెరపీలు అందుబాటులో ఉంటాయి.",
+      therapyNote: "కొన్ని థెరపీలకు అవసరమైన ప్రత్యేక పరికరాలు కేవలం క్లినిక్‌లో మాత్రమే అందుబాటులో ఉంటాయి.",
       notesPh: "మేము తెలుసుకోవాల్సినవి — ఆరోగ్య విషయాలు, ఇష్టాలు…"
     }
   };
   function t(key) { return T[lang()][key]; }
+
+  var HOME_THERAPIES = {
+    "Padaabhyanga": true,
+    "Abhyanga": true,
+    "Abhyanga Extended": true
+  };
+
+  var CLINIC_THERAPIES = {
+    "Padaabhyanga": true,
+    "Abhyanga": true,
+    "Abhyanga Extended": true,
+    "Hot Herbal Potli": true,
+    "Shirodhara": true,
+    "Pizhichil": true
+  };
+
+  function therapyAllowedForSession(therapy, sessionType) {
+    if (!therapy || !sessionType) return false;
+    if (sessionType === "Home Visit") return !!HOME_THERAPIES[therapy];
+    if (sessionType === "At Clinic") return !!CLINIC_THERAPIES[therapy];
+    return false;
+  }
 
   /* Placeholders follow the site language (main.js only swaps
      innerHTML of [data-i18n]; placeholders are attributes). */
   function applyPlaceholders() {
     els.name.placeholder = t("namePh");
     els.phone.placeholder = t("phonePh");
+    if (els.session && !els.session.value) {
+      els.session.options[0].textContent = t("sessionPh");
+    }
     els.notes.placeholder = t("notesPh");
   }
   applyPlaceholders();
@@ -92,6 +126,34 @@
       ("0" + d.getDate()).slice(-2);
   }
   els.date.min = todayISO();
+
+  function updateTherapies() {
+    var sessionType = els.session.value;
+
+    els.therapy.disabled = !sessionType;
+
+    Array.prototype.forEach.call(els.therapy.options, function (option) {
+      if (!option.value) return;
+
+      var allowed = therapyAllowedForSession(option.value, sessionType);
+      option.disabled = !allowed;
+      option.hidden = false;
+    });
+
+    if (!therapyAllowedForSession(els.therapy.value, sessionType)) {
+      els.therapy.value = "";
+    }
+  }
+
+  updateTherapies();
+  els.session.addEventListener("change", function () {
+    setError(els.session, "bkSessionErr", null);
+    setError(els.therapy, "bkTherapyErr", null);
+    updateTherapies();
+  });
+  els.session.addEventListener("input", function () {
+    setError(els.session, "bkSessionErr", null);
+  });
 
   /* ── Validation ─────────────────────────────────────────── */
   function setError(field, id, msg) {
@@ -130,6 +192,7 @@
       check(/^(\+?91)?[6-9]\d{9}$/.test(digits), els.phone, "bkPhoneErr", t("errPhoneFormat"));
     }
 
+    check(!!els.session.value, els.session, "bkSessionErr", t("errSession"));
     check(!!els.therapy.value, els.therapy, "bkTherapyErr", t("errTherapy"));
 
     if (!els.date.value) {
@@ -146,7 +209,7 @@
   }
 
   /* Clear a field's error as soon as the visitor fixes it */
-  [["name", "bkNameErr"], ["phone", "bkPhoneErr"], ["therapy", "bkTherapyErr"],
+  [["name", "bkNameErr"], ["phone", "bkPhoneErr"], ["session", "bkSessionErr"], ["therapy", "bkTherapyErr"],
    ["date", "bkDateErr"], ["time", "bkTimeErr"]].forEach(function (pair) {
     els[pair[0]].addEventListener("input", function () { setError(els[pair[0]], pair[1], null); });
     els[pair[0]].addEventListener("change", function () { setError(els[pair[0]], pair[1], null); });
@@ -175,6 +238,8 @@
       "",
       "📞 Phone:", els.phone.value.replace(/[\s\-()]/g, ""),
       "",
+      "🏠 Session Type:", els.session.value,
+      "",
       "💆 Therapy:", els.therapy.value,
       "",
       "♨ Herbal Steam:", els.steam.checked ? "Yes (+₹200)" : "No",
@@ -186,8 +251,6 @@
       "🚻 Gender:", gender,
       "",
       "🧑‍⚕️ Assigned Therapist:", therapist,
-      "",
-      "🏠 Session Type:", radioValue("session"),
       "",
       "📝 Notes:", notes,
       "",
@@ -231,7 +294,13 @@
   /* ── "Book" buttons: preselect therapy / steam add-on ───── */
   document.querySelectorAll("[data-book]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      els.therapy.value = btn.getAttribute("data-book");
+      var therapy = btn.getAttribute("data-book");
+      var sessionType = therapyAllowedForSession(therapy, "Home Visit") ? "Home Visit" : "At Clinic";
+
+      els.session.value = sessionType;
+      updateTherapies();
+      els.therapy.value = therapy;
+      setError(els.session, "bkSessionErr", null);
       setError(els.therapy, "bkTherapyErr", null);
       if (form.hidden) { /* success panel showing — bring form back */
         els.success.hidden = true;
