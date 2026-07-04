@@ -1,0 +1,16 @@
+# Local, offline TTS pipeline — no cloud APIs, no keys.
+# Install into a venv OUTSIDE the OneDrive folder (see narration/README.md):
+#   py -3.12 -m venv "$env:LOCALAPPDATA\SushrutaTTS\venv"
+#   & "$env:LOCALAPPDATA\SushrutaTTS\venv\Scripts\pip" install -r requirements-tts.txt
+
+numpy
+soundfile>=0.12          # writes MP3 directly (bundled libsndfile)
+truststore               # use Windows cert store (avoids SSL errors behind AV/proxy)
+
+# English — Kokoro (open weights, ONNX, fast on CPU)
+kokoro-onnx
+
+# Telugu — AI4Bharat Indic Parler-TTS (open weights)
+torch                     # CPU build is fine
+transformers
+git+https://github.com/huggingface/parler-tts.git
