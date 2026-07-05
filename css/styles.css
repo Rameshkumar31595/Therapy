@@ -1260,6 +1260,7 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
 .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
 .footer-brand { display: flex; align-items: center; gap: 0.65rem; color: var(--ivory); text-align: left; }
 .footer-line { font-family: var(--font-display); font-style: italic; font-size: 1.05rem; color: var(--gold); }
+.footer-addr { font-size: 0.82rem; line-height: 1.5; max-width: 30rem; color: rgba(250, 246, 236, 0.62); }
 .footer-copy { font-size: 0.78rem; }
 .footer-copy a { color: var(--gold-bright); text-decoration: none; }
 .footer-credit {

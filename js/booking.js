@@ -17,6 +17,23 @@
 
   var OWNER_WHATSAPP = "919502477334";
 
+  /* ── FEATURE FLAG: Home / Doorstep service ────────────────
+     Home (doorstep) service is temporarily paused — the site
+     currently operates as CLINIC ONLY. While this is false the
+     booking form hides the "Session Type" chooser, treats every
+     request as "At Clinic", and adds the clinic address to the
+     WhatsApp message.
+
+     To bring doorstep service back later, simply set this to
+     true — no other change is required. All home-service logic
+     (HOME_THERAPIES, Home Visit handling, etc.) is preserved. */
+  var HOME_SERVICE_ENABLED = false;
+
+  /* Clinic address included in every clinic booking message. */
+  var CLINIC_ADDRESS =
+    "Venkata Ramana Enclave, 4th Line, Prakash Nagar, " +
+    "Varababu Hospital Road, Narasaraopet, Andhra Pradesh";
+
   var form = document.getElementById("bookingForm");
   if (!form) return;
 
@@ -145,6 +162,18 @@
     }
   }
 
+  /* ── CLINIC-ONLY MODE ─────────────────────────────────────
+     When home service is paused, lock the session to "At Clinic",
+     hide the Session Type chooser and the clinic-only equipment
+     note (both only make sense when Home vs Clinic is offered). */
+  if (!HOME_SERVICE_ENABLED && els.session) {
+    els.session.value = "At Clinic";
+    var sessionField = els.session.closest(".bk-field");
+    if (sessionField) sessionField.style.display = "none";
+    var clinicNote = form.querySelector(".bk-note-right");
+    if (clinicNote) clinicNote.style.display = "none";
+  }
+
   updateTherapies();
   els.session.addEventListener("change", function () {
     setError(els.session, "bkSessionErr", null);
@@ -230,15 +259,26 @@
     var gender = radioValue("gender");
     var therapist = gender === "Male" ? "Male Therapist" : "Female Therapist";
     var notes = els.notes.value.trim() || "—";
+    var sessionType = els.session.value;
+    var atClinic = sessionType === "At Clinic";
 
-    return [
+    var lines = [
       "🌿 New Appointment Request",
       "",
       "👤 Name:", els.name.value.trim(),
       "",
       "📞 Phone:", els.phone.value.replace(/[\s\-()]/g, ""),
       "",
-      "🏠 Session Type:", els.session.value,
+      (atClinic ? "🏥 Session Type:" : "🏠 Session Type:"), sessionType
+    ];
+
+    /* Clinic bookings carry the clinic address so the customer
+       always knows where to arrive. */
+    if (atClinic) {
+      lines.push("", "📍 Clinic Address:", CLINIC_ADDRESS);
+    }
+
+    lines.push(
       "",
       "💆 Therapy:", els.therapy.value,
       "",
@@ -255,7 +295,9 @@
       "📝 Notes:", notes,
       "",
       "Please confirm appointment availability."
-    ].join("\n");
+    );
+
+    return lines.join("\n");
   }
 
   /* ── Submit → open WhatsApp → success panel ─────────────── */
@@ -295,7 +337,8 @@
   document.querySelectorAll("[data-book]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var therapy = btn.getAttribute("data-book");
-      var sessionType = therapyAllowedForSession(therapy, "Home Visit") ? "Home Visit" : "At Clinic";
+      var sessionType = (HOME_SERVICE_ENABLED && therapyAllowedForSession(therapy, "Home Visit"))
+        ? "Home Visit" : "At Clinic";
 
       els.session.value = sessionType;
       updateTherapies();
