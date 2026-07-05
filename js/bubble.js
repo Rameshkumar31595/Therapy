@@ -39,59 +39,63 @@
      One short, warm, premium message per section, in both
      languages. Kept concise for the compact voice-first card. */
   var MESSAGES = {
+    intro: {
+      en: "Hello! I'm Bubble, your wellness guide. I'll help you understand the therapies, services, facilities, and booking options available on this page.",
+      te: "నమస్కారం! నేను బబుల్. ఈ వెబ్‌సైట్‌లోని థెరపీలు, సేవలు, సదుపాయాలు మరియు బుకింగ్ వివరాలను సులభంగా అర్థం చేసుకోవడంలో నేను మీకు సహాయం చేస్తాను."
+    },
     hero: {
-      en: "Welcome to Sushruta Kerala Massage Therapy. I'm Bubble, your wellness guide — I'll help you explore our therapies, home service, clinic treatments and booking.",
-      te: "సుశ్రుత కేరళ మసాజ్ థెరపీకి స్వాగతం. నేను బబుల్. ఈ వెబ్‌సైట్‌లోని థెరపీలు, హోమ్ సర్వీస్, క్లినిక్ సేవలు మరియు బుకింగ్ వివరాలు తెలుసుకోవడంలో నేను మీకు సహాయం చేస్తాను."
+      en: "This is the top of the page. It introduces our authentic Kerala massage therapy, offered at our clinic and at your home for selected therapies.",
+      te: "ఇది పేజీ మొదటి భాగం. ఇక్కడ మా అసలైన కేరళ మసాజ్ థెరపీ పరిచయం ఉంటుంది. క్లినిక్‌లో, ఎంచుకున్న థెరపీలకు మీ ఇంటిలో కూడా అందిస్తాం."
     },
     about: {
-      en: "This is our story — a certified therapist couple bringing authentic Kerala Ayurveda to Narasaraopet, at our clinic and to your home.",
-      te: "ఇది మా కథ — సర్టిఫైడ్ థెరపిస్ట్ కపుల్, అసలైన కేరళ ఆయుర్వేదాన్ని నరసరావుపేటలో క్లినిక్‌లోనూ, మీ ఇంటికీ అందిస్తారు."
+      en: "This is our story. Sushruta is a certified therapist couple offering authentic Kerala Ayurveda in Narasaraopet, at the clinic and at your home for selected therapies.",
+      te: "ఇది మా కథ. సుశ్రుత ఒక సర్టిఫైడ్ థెరపిస్ట్ కపుల్. నరసరావుపేటలో అసలైన కేరళ ఆయుర్వేదాన్ని క్లినిక్‌లో, ఎంచుకున్న థెరపీలకు మీ ఇంటిలో అందిస్తారు."
     },
     certificates: {
-      en: "These certificates showcase our professional training and experience. They're here to help you book with confidence.",
-      te: "ఈ సర్టిఫికేట్లు మా ప్రొఫెషనల్ శిక్షణ, అనుభవాన్ని చూపిస్తాయి. మీరు నమ్మకంగా బుక్ చేసుకోవడానికి ఇవి సహాయపడతాయి."
+      en: "These are our certificates. They show the therapists' professional training and qualifications, so you can book with confidence.",
+      te: "ఇవి మా సర్టిఫికేట్లు. థెరపిస్టుల ప్రొఫెషనల్ శిక్షణ, అర్హతలను ఇవి చూపిస్తాయి. అందుకే మీరు నమ్మకంగా బుక్ చేసుకోవచ్చు."
     },
     therapies: {
-      en: "These are our Kerala therapies. Tap Listen on any card to hear more — and a few are also available as home service.",
-      te: "ఇవి మా కేరళ థెరపీలు. మరిన్ని వివరాలకు కార్డ్‌పై Listen నొక్కండి — కొన్ని హోమ్ సర్వీస్‌గా కూడా అందుబాటులో ఉన్నాయి."
+      en: "Here are our therapies, including Padaabhyanga, Abhyanga, Shirodhara, Pizhichil and Herbal Potli. Padaabhyanga and Abhyanga are also offered as home service. Tap Listen on a card to hear more.",
+      te: "ఇవి మా థెరపీలు: పాదాభ్యంగ, అభ్యంగ, శిరోధార, పిజిచిల్, హెర్బల్ పోట్లి. పాదాభ్యంగ, అభ్యంగ హోమ్ సర్వీస్‌గా కూడా అందిస్తాం. వివరాలకు కార్డ్‌పై Listen నొక్కండి."
     },
     "therapy-detail": {
-      en: "Tap “Listen to Therapy” on any card to hear how that treatment works, in your language.",
-      te: "ఏదైనా కార్డ్‌పై “థెరపీ వినండి” నొక్కితే, ఆ చికిత్స ఎలా పనిచేస్తుందో మీ భాషలో వినవచ్చు."
+      en: "Tap Listen to Therapy on any card to hear how that treatment works, in your language.",
+      te: "ఏదైనా కార్డ్‌పై థెరపీ వినండి నొక్కితే, ఆ చికిత్స ఎలా పనిచేస్తుందో మీ భాషలో వినవచ్చు."
     },
     "why-us": {
-      en: "Here's why guests trust us — certified therapists, separate male and female care, and genuine Kerala technique.",
-      te: "అతిథులు మమ్మల్ని ఎందుకు నమ్ముతారో ఇక్కడ ఉంది — సర్టిఫైడ్ థెరపిస్టులు, మేల్/ఫీమేల్ సెపరేట్ కేర్, అసలైన కేరళ పద్ధతి."
+      en: "This section shows why guests trust us. We are certified therapists, we offer separate male and female care, and we use genuine Kerala technique.",
+      te: "అతిథులు మమ్మల్ని ఎందుకు నమ్ముతారో ఈ విభాగం చూపిస్తుంది. మేము సర్టిఫైడ్ థెరపిస్టులం, మేల్ ఫీమేల్ సెపరేట్ కేర్ అందిస్తాం, అసలైన కేరళ పద్ధతిని పాటిస్తాం."
     },
     timings: {
-      en: "These are our hours — open daily, with Monday mornings only. Booking ahead is always a good idea.",
-      te: "ఇవి మా సమయాలు — ప్రతిరోజూ తెరిచి ఉంటాం, సోమవారం ఉదయం మాత్రమే. ముందుగా బుక్ చేసుకోవడం ఎప్పుడూ మంచిది."
+      en: "These are our timings. We are open every day from 9 in the morning to 8 in the evening, with Monday mornings only. Booking ahead is a good idea.",
+      te: "ఇవి మా సమయాలు. ప్రతిరోజూ ఉదయం 9 నుండి రాత్రి 8 వరకు తెరిచి ఉంటాం, సోమవారం ఉదయం మాత్రమే. ముందుగా బుక్ చేసుకోవడం మంచిది."
     },
     experience: {
-      en: "A little glimpse of the calm you can expect — warm oils, quiet care, and a true Kerala mood.",
-      te: "మీకు లభించే ప్రశాంతత ఒక చిన్న సంగ్రహం — వెచ్చని నూనెలు, నిశ్శబ్ద సేవ, నిజమైన కేరళ అనుభూతి."
+      en: "This is a glimpse of the experience. Warm herbal oils, quiet unhurried care, and a calm Kerala atmosphere.",
+      te: "ఇది అనుభవం ఒక సంగ్రహం. వెచ్చని హెర్బల్ నూనెలు, తొందర లేని ప్రశాంత సేవ, ప్రశాంత కేరళ వాతావరణం."
     },
     location: {
-      en: "This section shows our clinic location. If you'd like to visit, just tap Directions and Google Maps will take care of the rest.",
-      te: "ఈ విభాగంలో మా క్లినిక్ లొకేషన్ ఉంది. రావాలనుకుంటే, Directions నొక్కండి — మిగతాది Google Maps చూసుకుంటుంది."
+      en: "This section shows our clinic location. To visit, tap Directions and Google Maps will guide you there.",
+      te: "ఈ విభాగంలో మా క్లినిక్ లొకేషన్ ఉంది. రావాలంటే Directions నొక్కండి, Google Maps మీకు మార్గం చూపిస్తుంది."
     },
     booking: {
-      en: "Ready to book? Choose your service type, therapy and time — I'll let the booking form handle the rest.",
-      te: "బుక్ చేయడానికి సిద్ధమా? సేవ రకం, థెరపీ, సమయం ఎంచుకోండి — మిగతాది బుకింగ్ ఫారమ్ చూసుకుంటుంది."
+      en: "This is the booking section. Choose your service type, clinic or home, then your therapy, date and time. Your request is sent to WhatsApp for confirmation.",
+      te: "ఇది బుకింగ్ విభాగం. సేవ రకం అంటే క్లినిక్ లేదా హోమ్, తరువాత థెరపీ, తేదీ, సమయం ఎంచుకోండి. మీ అభ్యర్థన కన్ఫర్మేషన్ కోసం WhatsAppకి పంపబడుతుంది."
     },
     contact: {
-      en: "Here are the quick ways to reach us — Call, WhatsApp or Directions. Whenever you're ready, we're one tap away.",
-      te: "మమ్మల్ని సంప్రదించే సులభ మార్గాలు ఇవి — Call, WhatsApp లేదా Directions. మీరు సిద్ధమైనప్పుడు, ఒక్క ట్యాప్ దూరంలో ఉన్నాం."
+      en: "This section has the quick ways to reach us. Call, WhatsApp, or Get Directions. Whenever you are ready, we are one tap away.",
+      te: "ఈ విభాగంలో మమ్మల్ని సంప్రదించే సులభ మార్గాలు ఉన్నాయి. Call, WhatsApp లేదా Get Directions. మీరు సిద్ధమైనప్పుడు, ఒక్క ట్యాప్ దూరంలో ఉన్నాం."
     },
     footer: {
-      en: "That's the tour! Address, phone, WhatsApp and directions all live here for quick access. Thanks for visiting.",
-      te: "అదీ టూర్! చిరునామా, ఫోన్, WhatsApp, directions అన్నీ ఇక్కడ సులభంగా ఉన్నాయి. సందర్శించినందుకు ధన్యవాదాలు."
+      en: "You have reached the end of the page. The address, phone, WhatsApp, and directions are all here for quick access. Thanks for visiting.",
+      te: "మీరు పేజీ చివరికి వచ్చారు. చిరునామా, ఫోన్, WhatsApp, directions అన్నీ ఇక్కడ సులభంగా ఉన్నాయి. సందర్శించినందుకు ధన్యవాదాలు."
     }
   };
 
   var UI = {
     en: {
-      open: "Open Bubble — your wellness guide",
+      open: "Open Bubble, your wellness guide",
       close: "Close Bubble guide",
       title: "Bubble",
       welcome: "Hi! I'm Bubble. Tap me for a quick tour of this page.",
@@ -101,7 +105,7 @@
       closeBtn: "Close"
     },
     te: {
-      open: "బబుల్ తెరవండి — మీ వెల్‌నెస్ గైడ్",
+      open: "బబుల్ తెరవండి, మీ వెల్‌నెస్ గైడ్",
       close: "బబుల్ గైడ్ మూసివేయండి",
       title: "బబుల్",
       welcome: "హాయ్! నేను బబుల్. ఈ పేజీ టూర్ కోసం నన్ను ట్యాప్ చేయండి.",
@@ -285,14 +289,16 @@
     panel.classList.toggle("speaking", on);
   }
   function stopSpeech() { voice.stop(); setSpeaking(false); }
-  function speakSection(section) {
-    if (!canSpeak) return;                  // unsupported → text only, silently
+  /* Speaks one message; onDone (optional) runs when it finishes,
+     which lets us chain the intro into the section narration. */
+  function speakSection(section, onDone) {
+    if (!canSpeak) { if (onDone) onDone(); return; }
     voice.speak({
       section: section,
       lang: lang(),
       text: messageFor(section),
       onStart: function () { setSpeaking(true); },
-      onEnd: function () { setSpeaking(false); }
+      onEnd: function () { setSpeaking(false); if (onDone) onDone(); }
     });
   }
 
@@ -366,6 +372,7 @@
 
   /* ══════════════ BubbleMessagePanel controls ═══════════════ */
   var open = false;
+  var introing = false;   // true while the opening self-introduction plays
   var tipTimer = null;
 
   function applyStaticLabels() {
@@ -388,25 +395,38 @@
   }
   function hideTip() { tip.classList.remove("show"); }
 
-  /* Open → enter Active Guide Mode: start monitoring, narrate the
-     current section right away (inside the tap gesture for iOS). */
+  /* Open → enter Active Guide Mode. Bubble ALWAYS introduces itself
+     first (once per activation), then narrates whatever section the
+     visitor is on — no matter where on the page they opened it. */
   function openPanel() {
     if (open) return;
     open = true;
     hideTip();
     monitor.start();
-    var sec = monitor.current() || "hero";
-    renderMessage(sec);
     panel.classList.add("open");
     avatar.setAttribute("aria-expanded", "true");
     avatar.setAttribute("aria-label", UI[lang()].close);
     try { panel.focus({ preventScroll: true }); } catch (e) { panel.focus(); }
-    speakSection(sec);
+
+    if (canSpeak) {
+      introing = true;
+      renderMessage("intro");
+      speakSection("intro", function () {   // when the intro finishes…
+        introing = false;
+        if (!open) return;
+        var sec = monitor.current() || "hero";  // …explain the current section
+        renderMessage(sec);
+        speakSection(sec);
+      });
+    } else {
+      renderMessage(monitor.current() || "hero");  // no speech → show section text
+    }
   }
   /* Close → leave Guide Mode: stop speech AND stop all monitoring. */
   function closePanel(withHint) {
     if (!open) return;
     open = false;
+    introing = false;
     monitor.stop();
     stopSpeech();
     panel.classList.remove("open");
@@ -422,7 +442,7 @@
   // the debounce settles) swaps the text and narrates it — stopping
   // any in-progress speech first. Same section never repeats.
   var monitor = createSectionMonitor(function (section) {
-    if (!open) return;
+    if (!open || introing) return;   // let the self-introduction finish first
     renderMessage(section);
     speakSection(section);
   });
@@ -447,6 +467,7 @@
     applyStaticLabels();
     voice.refresh();
     if (open) {
+      introing = false;           // switch straight to the section in the new language
       var sec = monitor.current() || "hero";
       renderMessage(sec);
       speakSection(sec);          // best-effort (may be blocked without a gesture on iOS)
