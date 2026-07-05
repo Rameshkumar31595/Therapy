@@ -122,6 +122,7 @@
   var currentId = null;
   var seeking = false;
   var hideTimer = null;
+  var pendingSeekPct = null; // scrub target set before duration is known
 
   /* Playback speed: cycles 1× → 1.5× → 2×; remembered across visits */
   var SPEEDS = [1, 1.5, 2];
@@ -187,7 +188,11 @@
     var key = id + "-" + lg;
     if (!cache[key]) {
       var a = new Audio();
-      a.preload = "none"; // nothing downloads until the visitor listens
+      // Fetch just the header (duration) as soon as the visitor clicks
+      // Listen, so the seek bar is usable straight away — the full audio
+      // still streams only on play. Lazy: the element is created on the
+      // first listen, so there is no page-load cost.
+      a.preload = "metadata";
       a.src = AUDIO_BASE + lg + "/" + THERAPIES[id].file + AUDIO_EXT
         // query strings can upset file:// playback — only add on http(s)
         + (location.protocol === "file:" ? "" : "?v=" + AUDIO_VERSION);
@@ -228,12 +233,17 @@
   function bindAudio(a) {
     a.addEventListener("loadedmetadata", function () {
       log("Metadata loaded:", audioState(a));
-      if (a !== audio) return;
-      els.dur.textContent = fmt(a.duration);
-      els.seek.disabled = false;
+      syncDuration(a);
+    });
+    // Duration can arrive (or be corrected from NaN/Infinity to a finite
+    // value) later than loadedmetadata on some browsers / streaming setups.
+    a.addEventListener("durationchange", function () {
+      log("Duration changed:", a.duration);
+      syncDuration(a);
     });
     a.addEventListener("canplay", function () {
       log("Audio ready (canplay):", a.currentSrc || a.src);
+      syncDuration(a);
     });
     a.addEventListener("timeupdate", function () {
       if (a !== audio || seeking) return;
@@ -294,13 +304,39 @@
   }
 
   function updateProgress() {
-    var d = audio && isFinite(audio.duration) ? audio.duration : 0;
-    var c = audio ? audio.currentTime : 0;
+    var d = audio && isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 0;
+    var c = audio && isFinite(audio.currentTime) ? audio.currentTime : 0;
     var pct = d ? (c / d) * 100 : 0;
+    if (!isFinite(pct)) pct = 0;                 // never feed NaN/Infinity to the slider
+    pct = Math.min(100, Math.max(0, pct));
     els.seek.value = pct;
     els.seek.style.setProperty("--p", pct + "%");
     els.cur.textContent = fmt(c);
     if (d) els.dur.textContent = fmt(d);
+  }
+
+  /* Duration just became known (or was corrected to a finite value):
+     refresh the readout, make sure the slider is usable, and apply any
+     scrub the visitor made before the metadata had loaded. */
+  function syncDuration(a) {
+    if (a !== audio) return;
+    var d = a.duration;
+    if (!isFinite(d) || d <= 0) return;
+    els.dur.textContent = fmt(d);
+    els.seek.disabled = false;
+    flushPendingSeek();
+    if (!seeking && !dragging) updateProgress();
+  }
+
+  /* Apply a seek the visitor requested before duration was available. */
+  function flushPendingSeek() {
+    if (pendingSeekPct == null || !audio) return;
+    var d = audio.duration;
+    if (!isFinite(d) || d <= 0) return;
+    var pct = pendingSeekPct;
+    pendingSeekPct = null;
+    audio.currentTime = Math.min(pct * d, Math.max(0, d - 0.05));
+    if (!seeking && !dragging) updateProgress();
   }
 
   function renderTexts() {
@@ -345,7 +381,12 @@
     if (audio && audio !== a && !audio.paused) audio.pause();
     audio = a;
     applySpeed(a);
-    els.seek.disabled = !isFinite(a.duration) || !a.duration;
+    pendingSeekPct = null;      // drop any scrub aimed at the previous clip
+    seeking = false;
+    dragging = false;
+    // The slider is percentage-based, so it stays usable even before the
+    // duration is known; the actual seek is deferred until it loads.
+    els.seek.disabled = false;
     setPlaying(!a.paused && !a.ended);
     setStatus(null);
     updateProgress();
@@ -432,14 +473,16 @@
      (arrow-key) accessibility. */
   var dragging = false;
 
-  function pctFromPointer(e) {
+  function pctFromClientX(clientX) {
     var rect = els.seek.getBoundingClientRect();
-    if (!rect.width) return 0;
-    var pct = (e.clientX - rect.left) / rect.width;
+    if (!rect.width || !isFinite(clientX)) return 0;
+    var pct = (clientX - rect.left) / rect.width;
     return Math.min(1, Math.max(0, pct));
   }
+  function pctFromPointer(e) { return pctFromClientX(e.clientX); }
 
   function previewPct(pct) {
+    pct = Math.min(1, Math.max(0, pct));
     els.seek.value = pct * 100;
     els.seek.style.setProperty("--p", (pct * 100) + "%");
     if (audio && isFinite(audio.duration) && audio.duration) {
@@ -449,8 +492,23 @@
 
   function seekToPct(pct, e) {
     if (!audio) return;
+    pct = Math.min(1, Math.max(0, pct));
     var d = audio.duration; // read fresh — never a cached value
-    if (!isFinite(d) || d <= 0) return;
+    if (!isFinite(d) || d <= 0) {
+      // Duration not known yet (metadata still loading, or autoplay was
+      // blocked so nothing has streamed). Remember the target and keep the
+      // thumb where the visitor left it; flushPendingSeek() applies it the
+      // instant loadedmetadata / durationchange fires. Nudge a load so we
+      // don't wait for a play() that may never come.
+      pendingSeekPct = pct;
+      previewPct(pct);
+      if (audio.readyState === 0) {
+        if (audio.preload === "none") audio.preload = "metadata";
+        try { audio.load(); } catch (err) {}
+      }
+      log("Seek deferred until duration known:", +pct.toFixed(4));
+      return;
+    }
     // keep a hair below duration so we don't trip 'ended'
     var target = Math.min(pct * d, Math.max(0, d - 0.05));
     if (DEBUG) {
@@ -468,29 +526,75 @@
     updateProgress();
   }
 
+  /* Shared scrub gesture, fed by either Pointer Events (preferred: one
+     path for mouse, touch and pen) or the touch/mouse fallback below. */
+  function scrubStart(pct) {
+    if (!audio) return false;
+    dragging = true;
+    seeking = true;      // blocks timeupdate from stomping the preview
+    previewPct(pct);
+    return true;
+  }
+  function scrubMove(pct) { if (dragging) previewPct(pct); }
+  function scrubEnd(pct, e) {
+    if (!dragging) return;
+    dragging = false;
+    seekToPct(pct, e);
+    seeking = false;
+  }
+
   if (window.PointerEvent) {
     els.seek.addEventListener("pointerdown", function (e) {
-      if (els.seek.disabled || (e.pointerType === "mouse" && e.button !== 0)) return;
+      if (!audio || (e.pointerType === "mouse" && e.button !== 0)) return;
       e.preventDefault(); // we drive the thumb ourselves
-      dragging = true;
-      seeking = true;     // blocks timeupdate from stomping the preview
+      if (!scrubStart(pctFromPointer(e))) return;
       try { els.seek.setPointerCapture(e.pointerId); } catch (err) {}
-      previewPct(pctFromPointer(e));
     });
     els.seek.addEventListener("pointermove", function (e) {
-      if (dragging) previewPct(pctFromPointer(e));
+      scrubMove(pctFromPointer(e));
     });
     els.seek.addEventListener("pointerup", function (e) {
-      if (!dragging) return;
-      dragging = false;
-      seekToPct(pctFromPointer(e), e);
-      seeking = false;
+      scrubEnd(pctFromPointer(e), e);
     });
     els.seek.addEventListener("pointercancel", function () {
       // gesture taken over (e.g. scroll) — abandon without seeking
       dragging = false;
       seeking = false;
       updateProgress();
+    });
+  } else {
+    // Fallback for browsers without Pointer Events (e.g. iOS Safari < 13):
+    // explicit touch handlers for mobile and mouse handlers for desktop,
+    // using the same percentage model.
+    els.seek.addEventListener("touchstart", function (e) {
+      if (!e.touches.length) return;
+      if (scrubStart(pctFromClientX(e.touches[0].clientX))) e.preventDefault();
+    }, { passive: false });
+    els.seek.addEventListener("touchmove", function (e) {
+      if (!dragging || !e.touches.length) return;
+      e.preventDefault();
+      scrubMove(pctFromClientX(e.touches[0].clientX));
+    }, { passive: false });
+    els.seek.addEventListener("touchend", function (e) {
+      var tp = e.changedTouches && e.changedTouches[0];
+      scrubEnd(tp ? pctFromClientX(tp.clientX) : els.seek.value / 100, null);
+    });
+    els.seek.addEventListener("touchcancel", function () {
+      dragging = false; seeking = false; updateProgress();
+    });
+
+    var docMove = function (e) { scrubMove(pctFromClientX(e.clientX)); };
+    var docUp = function (e) {
+      scrubEnd(pctFromClientX(e.clientX), e);
+      document.removeEventListener("mousemove", docMove);
+      document.removeEventListener("mouseup", docUp);
+    };
+    els.seek.addEventListener("mousedown", function (e) {
+      if (!audio || e.button !== 0) return;
+      e.preventDefault();
+      if (!scrubStart(pctFromClientX(e.clientX))) return;
+      document.addEventListener("mousemove", docMove);
+      document.addEventListener("mouseup", docUp);
     });
   }
 
