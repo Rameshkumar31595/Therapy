@@ -1,0 +1,231 @@
+/* ═══════════════════════════════════════════════════════════
+   BUBBLE — context-aware virtual page guide
+   Isolated styles. Reuses the site's :root design tokens
+   (--forest-*, --gold-*, --ivory, fonts) so it stays on-brand.
+   Positioned to never cover the sticky CTA bar, the floating
+   WhatsApp button, or the booking form.
+   ═══════════════════════════════════════════════════════════ */
+
+.bubble-root {
+  position: fixed;
+  right: 0.9rem;
+  /* Sit above the mobile sticky action bar (~3.6rem tall) */
+  bottom: calc(4.8rem + env(safe-area-inset-bottom, 0px));
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Avatar button ─────────────────────────────────────────── */
+.bubble-avatar {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  border: 2px solid var(--gold-bright);
+  background: radial-gradient(120% 120% at 50% 20%, var(--forest-2), var(--forest-deep));
+  box-shadow: 0 8px 22px rgba(15, 36, 26, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  animation: bubbleFloat 3.6s ease-in-out infinite;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  touch-action: manipulation;
+}
+.bubble-avatar:hover { transform: translateY(-2px) scale(1.04); }
+.bubble-avatar:active { transform: scale(0.95); }
+.bubble-avatar:focus-visible { outline: 3px solid var(--gold-bright); outline-offset: 2px; }
+.bubble-avatar svg { width: 100%; height: 100%; display: block; }
+
+/* Gentle idle bob + a soft breathing glow ring */
+@keyframes bubbleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.bubble-avatar::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-bright);
+  opacity: 0;
+  animation: bubblePulse 3.6s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes bubblePulse {
+  0% { transform: scale(0.9); opacity: 0.35; }
+  70%, 100% { transform: scale(1.25); opacity: 0; }
+}
+
+/* Eyes blink + a little welcoming wave */
+.bb-eye { transform-box: fill-box; transform-origin: center; animation: bbBlink 5.2s infinite; }
+@keyframes bbBlink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+.bb-hand { transform-box: fill-box; transform-origin: 70% 90%; animation: bbWave 6s ease-in-out infinite; }
+@keyframes bbWave {
+  0%, 82%, 100% { transform: rotate(0deg); }
+  86% { transform: rotate(16deg); }
+  90% { transform: rotate(-8deg); }
+  94% { transform: rotate(12deg); }
+}
+
+/* ── Speech tooltip (welcome / close hint) ─────────────────── */
+.bubble-tip {
+  max-width: 15rem;
+  background: var(--ivory);
+  color: var(--forest-deep);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  padding: 0.6rem 0.8rem;
+  border-radius: 14px 14px 4px 14px;
+  box-shadow: 0 10px 26px rgba(15, 36, 26, 0.28);
+  border: 1px solid rgba(201, 163, 90, 0.35);
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
+  transform-origin: bottom right;
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+  pointer-events: none;
+}
+.bubble-tip.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+/* ── Message panel — compact, voice-first assistant card ─────
+   Deliberately small: a slim header (orb · name · voice wave ·
+   close) over a short message. Feels like a modern voice guide,
+   not a chat popup, and never blankets the screen on mobile. */
+.bubble-panel {
+  width: min(15.5rem, calc(100vw - 1.7rem));
+  background: linear-gradient(180deg, #ffffff, var(--ivory));
+  color: var(--forest-deep);
+  border-radius: 20px;
+  border: 1px solid rgba(201, 163, 90, 0.32);
+  box-shadow: 0 14px 40px rgba(15, 36, 26, 0.3);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  transform-origin: bottom right;
+  transition: opacity 0.26s var(--ease-out), transform 0.26s var(--ease-out), box-shadow 0.3s;
+  pointer-events: none;
+}
+.bubble-panel.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+/* Soft golden glow while narrating — the "voice-first" cue */
+.bubble-panel.speaking { box-shadow: 0 14px 40px rgba(15, 36, 26, 0.3), 0 0 0 1.5px rgba(227, 194, 132, 0.6); }
+
+.bubble-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+  background: linear-gradient(180deg, var(--forest), var(--forest-deep));
+  color: var(--ivory);
+}
+/* Pulsing orb — Siri-like presence dot */
+.bubble-orb {
+  position: relative;
+  width: 1.35rem; height: 1.35rem; flex-shrink: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--gold-bright), var(--gold-deep) 70%);
+  box-shadow: 0 0 0 1.5px rgba(227, 194, 132, 0.5);
+}
+.bubble-orb i {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-bright);
+  opacity: 0;
+}
+.bubble-panel.speaking .bubble-orb i { animation: bubbleOrb 1.4s ease-out infinite; }
+@keyframes bubbleOrb { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.9); opacity: 0; } }
+
+.bubble-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold-bright);
+  flex: 1;
+  line-height: 1;
+}
+.bubble-close {
+  width: 2rem; height: 2rem;
+  flex-shrink: 0;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  border: none;
+  background: rgba(250, 246, 236, 0.12);
+  color: var(--ivory);
+  cursor: pointer;
+  transition: background 0.25s;
+  touch-action: manipulation;
+}
+.bubble-close:hover { background: rgba(227, 194, 132, 0.25); }
+.bubble-close:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 2px; }
+.bubble-close svg { width: 0.95rem; height: 0.95rem; fill: currentColor; }
+
+/* Voice-first: the message is SPOKEN. Only a tiny caption is shown —
+   clamped to 2 lines so the card never grows into a chat-style box.
+   No bottom padding on the clamped box (that let a 3rd line peek);
+   the breathing space below is a margin, outside the clip. */
+.bubble-msg {
+  padding: 0.6rem 0.85rem 0;
+  margin: 0 0 0.7rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(15, 36, 26, 0.82);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+html[lang="te"] .bubble-msg { font-size: 0.82rem; line-height: 1.6; }
+
+/* Voice wave — animated bars shown in the header while speaking */
+.bubble-wave {
+  display: none;
+  align-items: center;
+  gap: 2.5px;
+  height: 1rem;
+  flex-shrink: 0;
+  padding-right: 0.1rem;
+}
+.bubble-panel.speaking .bubble-wave { display: inline-flex; }
+.bubble-wave i {
+  width: 2.5px;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--gold-bright);
+  transform-origin: center;
+  animation: bubbleWave 0.85s ease-in-out infinite;
+}
+.bubble-wave i:nth-child(1) { animation-delay: 0s; }
+.bubble-wave i:nth-child(2) { animation-delay: 0.12s; }
+.bubble-wave i:nth-child(3) { animation-delay: 0.24s; }
+.bubble-wave i:nth-child(4) { animation-delay: 0.36s; }
+.bubble-wave i:nth-child(5) { animation-delay: 0.48s; }
+@keyframes bubbleWave { 0%, 100% { transform: scaleY(0.3); } 50% { transform: scaleY(1); } }
+
+/* Avatar gets a soft golden ring while Bubble is speaking */
+.bubble-panel.speaking ~ .bubble-avatar { box-shadow: 0 8px 22px rgba(15, 36, 26, 0.4), 0 0 0 3px rgba(227, 194, 132, 0.5); }
+
+/* ── Desktop: same compact card; only the anchor point moves so
+   it sits above the floating WhatsApp button. ──────────────── */
+@media (min-width: 900px) {
+  .bubble-root { right: 1.6rem; bottom: 6.4rem; }
+  .bubble-panel { width: 16.5rem; }
+}
+
+/* ── Reduced motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .bubble-avatar { animation: none; }
+  .bubble-avatar::after,
+  .bb-eye, .bb-hand { animation: none; }
+  .bubble-wave i, .bubble-orb i { animation: none; }
+  .bubble-panel, .bubble-tip { transition: opacity 0.2s linear; transform: none; }
+  .bubble-panel.open, .bubble-tip.show { transform: none; }
+}

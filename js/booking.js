@@ -17,17 +17,13 @@
 
   var OWNER_WHATSAPP = "919502477334";
 
-  /* ── FEATURE FLAG: Home / Doorstep service ────────────────
-     Home (doorstep) service is temporarily paused — the site
-     currently operates as CLINIC ONLY. While this is false the
-     booking form hides the "Session Type" chooser, treats every
-     request as "At Clinic", and adds the clinic address to the
-     WhatsApp message.
-
-     To bring doorstep service back later, simply set this to
-     true — no other change is required. All home-service logic
-     (HOME_THERAPIES, Home Visit handling, etc.) is preserved. */
-  var HOME_SERVICE_ENABLED = false;
+  /* ── TWO SERVICES ─────────────────────────────────────────
+     The clinic offers BOTH "At Clinic" and "Home Service".
+     Home Service is available ONLY for the three therapies that
+     need no clinic equipment (see HOME_THERAPIES). When Home
+     Service is chosen the Herbal Steam add-on is removed and a
+     customer address is required; the WhatsApp message then
+     carries that address instead of the clinic address/map. */
 
   /* Clinic address (one line per part for clean WhatsApp rendering)
      + Google Maps link. Kept in Latin script in both languages, as
@@ -52,6 +48,9 @@
     session: document.getElementById("bkSession"),
     therapy: document.getElementById("bkTherapy"),
     steam: document.getElementById("bkSteam"),
+    steamField: document.getElementById("bkSteamField"),
+    address: document.getElementById("bkAddress"),
+    addressField: document.getElementById("bkAddressField"),
     date: document.getElementById("bkDate"),
     time: document.getElementById("bkTime"),
     notes: document.getElementById("bkNotes"),
@@ -73,8 +72,9 @@
       errName: "Please tell us your name.",
       errPhone: "Please enter your mobile number.",
       errPhoneFormat: "Please enter a valid 10-digit Indian mobile number.",
-      errSession: "Please choose Home or Clinic first.",
+      errSession: "Please choose At Clinic or Home Service first.",
       errTherapy: "Please choose a therapy.",
+      errAddress: "Please enter your full home address for the visit.",
       errDate: "Please pick your preferred date.",
       errDatePast: "That date has already passed — please pick today or a future date.",
       errTime: "Please choose a preferred time.",
@@ -82,17 +82,19 @@
       sending: "Opening WhatsApp…",
       namePh: "Your name",
       phonePh: "10-digit mobile number",
-      sessionPh: "Select Home or Clinic…",
-      sessionNote: "Home visits support only Padaabhyanga, Abhyanga, and Abhyanga Extended. At clinic, all therapies are available.",
+      sessionPh: "Select service type…",
+      sessionNote: "Home Service is available only for Padaabhyanga, Abhyanga and Abhyanga Extended. At the clinic, all therapies are available.",
       therapyNote: "Some therapies need special equipment that is only available at the clinic.",
+      addressPh: "House / flat, street, area, landmark, town…",
       notesPh: "Anything we should know — health conditions, preferences…"
     },
     te: {
       errName: "దయచేసి మీ పేరు రాయండి.",
       errPhone: "దయచేసి మీ మొబైల్ నంబర్ ఇవ్వండి.",
       errPhoneFormat: "దయచేసి సరైన 10 అంకెల మొబైల్ నంబర్ ఇవ్వండి.",
-      errSession: "దయచేసి ముందు ఇంటి వద్ద లేదా క్లినిక్‌ను ఎంచుకోండి.",
+      errSession: "దయచేసి ముందు క్లినిక్‌లో లేదా హోమ్ సర్వీస్ ఎంచుకోండి.",
       errTherapy: "దయచేసి ఒక థెరపీ ఎంచుకోండి.",
+      errAddress: "దయచేసి హోమ్ సర్వీస్ కోసం మీ పూర్తి ఇంటి చిరునామా ఇవ్వండి.",
       errDate: "దయచేసి మీకు అనుకూలమైన తేదీ ఎంచుకోండి.",
       errDatePast: "ఆ తేదీ దాటిపోయింది — ఈరోజు లేదా రాబోయే తేదీ ఎంచుకోండి.",
       errTime: "దయచేసి సమయం ఎంచుకోండి.",
@@ -100,9 +102,10 @@
       sending: "వాట్సాప్ తెరుస్తున్నాం…",
       namePh: "మీ పేరు",
       phonePh: "10 అంకెల మొబైల్ నంబర్",
-      sessionPh: "ఇంటి వద్ద లేదా క్లినిక్ ఎంచుకోండి…",
-      sessionNote: "ఇంటి వద్ద సేవలో Padaabhyanga, Abhyanga, Abhyanga Extended మాత్రమే అందుబాటులో ఉంటాయి. క్లినిక్‌లో అన్ని థెరపీలు అందుబాటులో ఉంటాయి.",
+      sessionPh: "సేవ రకం ఎంచుకోండి…",
+      sessionNote: "హోమ్ సర్వీస్ కేవలం Padaabhyanga, Abhyanga, Abhyanga Extended కోసం మాత్రమే అందుబాటులో ఉంది. క్లినిక్‌లో అన్ని థెరపీలు అందుబాటులో ఉంటాయి.",
       therapyNote: "కొన్ని థెరపీలకు అవసరమైన ప్రత్యేక పరికరాలు కేవలం క్లినిక్‌లో మాత్రమే అందుబాటులో ఉంటాయి.",
+      addressPh: "ఇల్లు / ఫ్లాట్, వీధి, ఏరియా, ల్యాండ్‌మార్క్, ఊరు…",
       notesPh: "మేము తెలుసుకోవాల్సినవి — ఆరోగ్య విషయాలు, ఇష్టాలు…"
     }
   };
@@ -128,7 +131,11 @@
       therapist: "Therapist",
       maleT: "Male Therapist",
       femaleT: "Female Therapist",
+      serviceType: "Service Type",
+      atClinicVal: "At Clinic",
+      homeVal: "Home Service",
       clinic: "Clinic Location",
+      custAddr: "Home Address",
       directions: "Directions",
       notes: "Notes",
       confirm: "Kindly confirm appointment availability.",
@@ -157,7 +164,11 @@
       therapist: "థెరపిస్ట్",
       maleT: "పురుష థెరపిస్ట్",
       femaleT: "మహిళా థెరపిస్ట్",
+      serviceType: "సేవ రకం",
+      atClinicVal: "క్లినిక్‌లో",
+      homeVal: "హోమ్ సర్వీస్",
       clinic: "క్లినిక్ చిరునామా",
+      custAddr: "ఇంటి చిరునామా",
       directions: "మార్గం",
       notes: "గమనికలు",
       confirm: "దయచేసి అపాయింట్‌మెంట్ లభ్యతను నిర్ధారించండి.",
@@ -193,7 +204,7 @@
 
   function therapyAllowedForSession(therapy, sessionType) {
     if (!therapy || !sessionType) return false;
-    if (sessionType === "Home Visit") return !!HOME_THERAPIES[therapy];
+    if (sessionType === "Home Service") return !!HOME_THERAPIES[therapy];
     if (sessionType === "At Clinic") return !!CLINIC_THERAPIES[therapy];
     return false;
   }
@@ -203,9 +214,7 @@
   function applyPlaceholders() {
     els.name.placeholder = t("namePh");
     els.phone.placeholder = t("phonePh");
-    if (els.session && !els.session.value) {
-      els.session.options[0].textContent = t("sessionPh");
-    }
+    if (els.address) els.address.placeholder = t("addressPh");
     els.notes.placeholder = t("notesPh");
   }
   applyPlaceholders();
@@ -221,44 +230,44 @@
   }
   els.date.min = todayISO();
 
-  function updateTherapies() {
+  /* Match the form to the chosen service type: filter the therapy
+     list, and toggle the Herbal Steam add-on + the home-address
+     field. Switching back to "At Clinic" restores everything. */
+  function applyServiceType() {
     var sessionType = els.session.value;
+    var isHome = sessionType === "Home Service";
 
     els.therapy.disabled = !sessionType;
-
     Array.prototype.forEach.call(els.therapy.options, function (option) {
       if (!option.value) return;
-
       var allowed = therapyAllowedForSession(option.value, sessionType);
-      option.disabled = !allowed;
-      option.hidden = false;
+      option.disabled = !allowed;   // fallback for browsers that ignore [hidden]
+      option.hidden = !allowed;     // Home Service shows only its 3 therapies
     });
-
     if (!therapyAllowedForSession(els.therapy.value, sessionType)) {
       els.therapy.value = "";
     }
+
+    // Herbal Steam is clinic-only — remove it entirely for Home Service.
+    if (els.steam) {
+      if (isHome) els.steam.checked = false;
+      els.steam.disabled = isHome;
+    }
+    if (els.steamField) els.steamField.hidden = isHome;
+
+    // Home address: shown & required for Home Service; cleared otherwise.
+    if (els.addressField) els.addressField.hidden = !isHome;
+    if (!isHome && els.address) {
+      els.address.value = "";
+      setError(els.address, "bkAddressErr", null);
+    }
   }
 
-  /* ── CLINIC-ONLY MODE ─────────────────────────────────────
-     When home service is paused, lock the session to "At Clinic",
-     hide the Session Type chooser and the clinic-only equipment
-     note (both only make sense when Home vs Clinic is offered). */
-  if (!HOME_SERVICE_ENABLED && els.session) {
-    els.session.value = "At Clinic";
-    var sessionField = els.session.closest(".bk-field");
-    if (sessionField) sessionField.style.display = "none";
-    var clinicNote = form.querySelector(".bk-note-right");
-    if (clinicNote) clinicNote.style.display = "none";
-  }
-
-  updateTherapies();
+  applyServiceType();
   els.session.addEventListener("change", function () {
     setError(els.session, "bkSessionErr", null);
     setError(els.therapy, "bkTherapyErr", null);
-    updateTherapies();
-  });
-  els.session.addEventListener("input", function () {
-    setError(els.session, "bkSessionErr", null);
+    applyServiceType();
   });
 
   /* ── Validation ─────────────────────────────────────────── */
@@ -301,6 +310,11 @@
     check(!!els.session.value, els.session, "bkSessionErr", t("errSession"));
     check(!!els.therapy.value, els.therapy, "bkTherapyErr", t("errTherapy"));
 
+    // Home Service requires a delivery address.
+    if (els.session.value === "Home Service") {
+      check(els.address && els.address.value.trim().length >= 6, els.address, "bkAddressErr", t("errAddress"));
+    }
+
     if (!els.date.value) {
       check(false, els.date, "bkDateErr", t("errDate"));
     } else {
@@ -316,7 +330,8 @@
 
   /* Clear a field's error as soon as the visitor fixes it */
   [["name", "bkNameErr"], ["phone", "bkPhoneErr"], ["session", "bkSessionErr"], ["therapy", "bkTherapyErr"],
-   ["date", "bkDateErr"], ["time", "bkTimeErr"]].forEach(function (pair) {
+   ["address", "bkAddressErr"], ["date", "bkDateErr"], ["time", "bkTimeErr"]].forEach(function (pair) {
+    if (!els[pair[0]]) return;
     els[pair[0]].addEventListener("input", function () { setError(els[pair[0]], pair[1], null); });
     els[pair[0]].addEventListener("change", function () { setError(els[pair[0]], pair[1], null); });
   });
@@ -341,6 +356,7 @@
      well within mobile limits (nothing gets truncated). */
   function buildMessage() {
     var L = m();
+    var isHome = els.session.value === "Home Service";
     var gender = radioValue("gender");
     var therapist = gender === "Male" ? L.maleT : L.femaleT;
     var therapyName = L.therapies[els.therapy.value] || els.therapy.value;
@@ -354,21 +370,32 @@
     p.push("👤 " + L.patient + ": " + els.name.value.trim());
     p.push("📱 " + L.contact + ": " + els.phone.value.replace(/[\s\-()]/g, ""));
     p.push("");
+    p.push("🧭 " + L.serviceType + ": " + (isHome ? L.homeVal : L.atClinicVal));
+    p.push("");
     p.push("💆 " + L.therapy + ": " + therapyName);
-    if (els.steam.checked) p.push("♨️ " + L.steam + ": " + L.steamYes);
+    // Herbal Steam only ever applies to a clinic booking.
+    if (!isHome && els.steam && els.steam.checked) p.push("♨️ " + L.steam + ": " + L.steamYes);
     p.push("");
     p.push("📅 " + L.date + ": " + formatDate(els.date.value));
     p.push("🕒 " + L.time + ": " + els.time.value);
     p.push("");
     p.push("👨‍⚕️ " + L.therapist + ": " + therapist);
     p.push("");
-    p.push("📍 " + L.clinic);
-    p.push("");
-    p.push(CLINIC_ADDRESS_LINES.join("\n"));
-    p.push("");
-    p.push("🗺️ " + L.directions);
-    p.push("");
-    p.push(CLINIC_MAPS_URL);
+    if (isHome) {
+      // Home Service → customer address, no clinic address/map.
+      p.push("📍 " + L.custAddr);
+      p.push("");
+      p.push(els.address.value.trim());
+    } else {
+      // At Clinic → clinic address + Google Maps link.
+      p.push("📍 " + L.clinic);
+      p.push("");
+      p.push(CLINIC_ADDRESS_LINES.join("\n"));
+      p.push("");
+      p.push("🗺️ " + L.directions);
+      p.push("");
+      p.push(CLINIC_MAPS_URL);
+    }
     if (notes) {
       p.push("");
       p.push("✍️ " + L.notes + ":");
@@ -432,11 +459,10 @@
   document.querySelectorAll("[data-book]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var therapy = btn.getAttribute("data-book");
-      var sessionType = (HOME_SERVICE_ENABLED && therapyAllowedForSession(therapy, "Home Visit"))
-        ? "Home Visit" : "At Clinic";
-
-      els.session.value = sessionType;
-      updateTherapies();
+      // Default to At Clinic (every therapy is available there); the
+      // visitor can switch to Home Service for an eligible therapy.
+      els.session.value = "At Clinic";
+      applyServiceType();
       els.therapy.value = therapy;
       setError(els.session, "bkSessionErr", null);
       setError(els.therapy, "bkTherapyErr", null);
@@ -449,6 +475,9 @@
   });
   document.querySelectorAll("[data-book-steam]").forEach(function (btn) {
     btn.addEventListener("click", function () {
+      // Steam is clinic-only, so ensure the clinic service is selected.
+      els.session.value = "At Clinic";
+      applyServiceType();
       els.steam.checked = true;
       if (form.hidden) {
         els.success.hidden = true;

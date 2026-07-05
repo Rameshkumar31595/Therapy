@@ -562,7 +562,11 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
 }
 
 /* line reveal */
-.reveal-line { display: block; overflow: hidden; }
+/* padding-bottom gives descenders (g y p q j) room inside the
+   overflow:hidden line so they're never clipped; the title lines
+   pull back an equal amount so vertical rhythm is unchanged. */
+.reveal-line { display: block; overflow: hidden; padding-bottom: 0.14em; }
+.hero-title .reveal-line { margin-bottom: -0.14em; }
 .reveal-line > span { display: block; transform: translateY(110%); opacity: 0; }
 .hero-loaded .reveal-line > span {
   animation: lineUp 1s var(--ease-out) forwards;
@@ -886,6 +890,24 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
   color: var(--gold);
   margin: 0.15rem 0 0.8rem;
 }
+/* "Home Service Available" tag — only on the three eligible cards */
+.home-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  margin: -0.35rem 0 0.85rem;
+  padding: 0.2rem 0.62rem;
+  border-radius: 999px;
+  background: rgba(46, 107, 69, 0.28);
+  border: 1px solid rgba(129, 199, 150, 0.45);
+  color: #bfe6cd;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.home-badge svg { width: 0.85rem; height: 0.85rem; fill: currentColor; }
+html[lang="te"] .home-badge { letter-spacing: 0.01em; text-transform: none; font-size: 0.72rem; }
 .service-desc {
   font-size: 0.92rem;
   color: rgba(250, 246, 236, 0.75);
@@ -1309,6 +1331,7 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
 .footer-brand { display: flex; align-items: center; gap: 0.65rem; color: var(--ivory); text-align: left; }
 .footer-line { font-family: var(--font-display); font-style: italic; font-size: 1.05rem; color: var(--gold); }
 .footer-addr { font-size: 0.85rem; line-height: 1.55; max-width: 30rem; color: rgba(250, 246, 236, 0.62); }
+.footer-note { font-size: 0.8rem; color: rgba(250, 246, 236, 0.55); }
 .footer-addr a {
   color: inherit;
   text-decoration: none;
@@ -2429,6 +2452,9 @@ body.cert-lightbox-open { overflow: hidden; }
 }
 
 .bk-field { border: 0; padding: 0; margin: 0; min-width: 0; }
+/* When JS hides the steam / home-address field, [hidden] must win
+   even over the desktop .bk-field-steam { display:flex } rule. */
+.bk-field[hidden] { display: none !important; }
 .bk-field label, .bk-field legend {
   display: block;
   font-weight: 700;
