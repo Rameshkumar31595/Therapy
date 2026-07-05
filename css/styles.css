@@ -159,6 +159,15 @@ ul { list-style: none; }
 }
 .btn-gold:hover { transform: translateY(-3px); filter: brightness(1.05); }
 
+/* "Get Directions" — gold gradient action, works on both the dark
+   contact section and the white booking-confirmation card. */
+.btn-directions {
+  background: var(--grad-gold);
+  color: var(--forest-deep);
+  box-shadow: 0 8px 26px rgba(166, 127, 59, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.btn-directions:hover { transform: translateY(-3px); filter: brightness(1.05); }
+
 .btn-lg { min-height: 3.6rem; padding: 1rem 2.1rem; font-size: 1.05rem; }
 
 .text-link {
@@ -1245,10 +1254,41 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
+  max-width: 100%;
   font-size: 0.9rem;
   color: rgba(250, 246, 236, 0.85);
 }
+/* Let the text wrap inside the flex row instead of forcing the
+   row to its (wide) max-content width and overflowing the page. */
+.contact-detail > span { min-width: 0; overflow-wrap: break-word; }
 .contact-detail svg { width: 1.1rem; height: 1.1rem; fill: var(--gold); flex-shrink: 0; }
+
+/* Clickable clinic address → opens Google Maps. Generous touch
+   target, wraps neatly, keeps the same visual language as the row. */
+.contact-map-link {
+  text-decoration: none;
+  max-width: 34rem;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 12px;
+  transition: color 0.25s var(--ease-out), background 0.25s var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+.contact-map-link span {
+  text-decoration: underline;
+  text-decoration-color: rgba(227, 194, 132, 0.4);
+  text-underline-offset: 3px;
+}
+.contact-map-link:hover,
+.contact-map-link:focus-visible {
+  color: var(--gold-bright);
+  background: rgba(227, 194, 132, 0.1);
+}
+.contact-map-link:hover span,
+.contact-map-link:focus-visible span { text-decoration-color: var(--gold-bright); }
+
+.contact-directions { margin-top: 1.4rem; display: flex; justify-content: center; }
+.contact-directions .btn { width: min(100%, 22rem); }
 
 /* ── Footer ────────────────────────────────────────────────── */
 .site-footer {
@@ -1260,7 +1300,35 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
 .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
 .footer-brand { display: flex; align-items: center; gap: 0.65rem; color: var(--ivory); text-align: left; }
 .footer-line { font-family: var(--font-display); font-style: italic; font-size: 1.05rem; color: var(--gold); }
-.footer-addr { font-size: 0.82rem; line-height: 1.5; max-width: 30rem; color: rgba(250, 246, 236, 0.62); }
+.footer-addr { font-size: 0.85rem; line-height: 1.55; max-width: 30rem; color: rgba(250, 246, 236, 0.62); }
+.footer-addr a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(227, 194, 132, 0.35);
+  padding-bottom: 1px;
+  transition: color 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+}
+.footer-addr a:hover,
+.footer-addr a:focus-visible { color: var(--gold-bright); border-color: var(--gold-bright); }
+.footer-directions { line-height: 1; }
+.footer-directions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0.4rem 1.05rem;
+  color: var(--gold-bright);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: 1px solid rgba(227, 194, 132, 0.45);
+  border-radius: 999px;
+  transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+.footer-directions a:hover,
+.footer-directions a:focus-visible { background: rgba(227, 194, 132, 0.14); transform: translateY(-2px); }
+.footer-directions svg { width: 1rem; height: 1rem; fill: currentColor; }
 .footer-copy { font-size: 0.78rem; }
 .footer-copy a { color: var(--gold-bright); text-decoration: none; }
 .footer-credit {
@@ -2514,6 +2582,27 @@ body.cert-lightbox-open { overflow: hidden; }
   line-height: 1.7;
   color: rgba(15, 36, 26, 0.75);
 }
+.bk-done-addr {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 26rem;
+  margin: 1.2rem auto 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  text-align: left;
+  color: rgba(15, 36, 26, 0.72);
+}
+.bk-done-addr svg { width: 1.05rem; height: 1.05rem; fill: var(--gold-deep); flex-shrink: 0; margin-top: 0.15rem; }
+.bk-done-addr a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(166, 127, 59, 0.4);
+  text-underline-offset: 3px;
+}
+.bk-done-addr a:hover,
+.bk-done-addr a:focus-visible { color: var(--forest-deep); text-decoration-color: var(--gold-deep); }
 .bk-done-actions {
   margin-top: 1.6rem;
   display: flex;
@@ -2557,4 +2646,28 @@ body.cert-lightbox-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .booking-success.show .bk-check-circle,
   .booking-success.show .bk-check-tick { animation: none; stroke-dashoffset: 0; }
+}
+
+/* ── Clinic address / Get Directions — phone refinements ─────
+   Tuned for 360px, 390px and 430px wide screens: the long address
+   wraps beside its pin, touch targets stay comfortable, text never
+   shrinks too far, and the Get Directions CTA is easy to tap. */
+@media (max-width: 639px) {
+  .contact-map-link {
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    max-width: 22rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .contact-map-link svg { margin-top: 0.2rem; }
+  .contact-directions .btn { width: 100%; max-width: 22rem; }
+
+  .footer-addr { font-size: 0.9rem; padding: 0 0.5rem; }
+  .footer-directions a { min-height: 3rem; padding: 0.6rem 1.3rem; }
+
+  .bk-done-addr { font-size: 0.95rem; padding: 0 0.4rem; }
+  .bk-done-actions { flex-direction: column; align-items: stretch; }
+  .bk-done-actions .btn { width: 100%; }
 }

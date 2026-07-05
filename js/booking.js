@@ -29,10 +29,13 @@
      (HOME_THERAPIES, Home Visit handling, etc.) is preserved. */
   var HOME_SERVICE_ENABLED = false;
 
-  /* Clinic address included in every clinic booking message. */
+  /* Clinic address + Google Maps link included in every clinic
+     booking message so the customer knows exactly where to arrive. */
   var CLINIC_ADDRESS =
     "Venkata Ramana Enclave, 4th Line, Prakash Nagar, " +
     "Varababu Hospital Road, Narasaraopet, Andhra Pradesh";
+  var CLINIC_MAPS_URL =
+    "https://www.google.com/maps/search/?api=1&query=16.2309877,80.04908";
 
   var form = document.getElementById("bookingForm");
   if (!form) return;
@@ -272,10 +275,13 @@
       (atClinic ? "🏥 Session Type:" : "🏠 Session Type:"), sessionType
     ];
 
-    /* Clinic bookings carry the clinic address so the customer
-       always knows where to arrive. */
+    /* Clinic bookings carry the clinic address + Google Maps link
+       so the customer always knows where to arrive. */
     if (atClinic) {
-      lines.push("", "📍 Clinic Address:", CLINIC_ADDRESS);
+      lines.push(
+        "", "📍 Clinic Address:", CLINIC_ADDRESS,
+        "", "🗺️ Google Maps:", CLINIC_MAPS_URL
+      );
     }
 
     lines.push(
