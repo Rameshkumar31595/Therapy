@@ -2649,7 +2649,7 @@ body.cert-lightbox-open { overflow: hidden; }
 .booking-success.show .bk-check-tick { animation: bkDraw 0.45s 0.55s var(--ease-out) forwards; }
 @keyframes bkDraw { to { stroke-dashoffset: 0; } }
 
-/* Book buttons in nav + footer */
+/* Book Appointment CTA in the navbar */
 .nav-book {
   background: var(--grad-gold);
   color: var(--forest-deep) !important;
@@ -2657,7 +2657,6 @@ body.cert-lightbox-open { overflow: hidden; }
   padding: 0.45rem 1.1rem;
   font-weight: 700;
 }
-.footer-book { margin-top: 1.2rem; }
 
 @media (prefers-reduced-motion: reduce) {
   .booking-success.show .bk-check-circle,

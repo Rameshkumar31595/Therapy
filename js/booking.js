@@ -29,11 +29,17 @@
      (HOME_THERAPIES, Home Visit handling, etc.) is preserved. */
   var HOME_SERVICE_ENABLED = false;
 
-  /* Clinic address + Google Maps link included in every clinic
-     booking message so the customer knows exactly where to arrive. */
-  var CLINIC_ADDRESS =
-    "Venkata Ramana Enclave, 4th Line, Prakash Nagar, " +
-    "Varababu Hospital Road, Narasaraopet, Andhra Pradesh";
+  /* Clinic address (one line per part for clean WhatsApp rendering)
+     + Google Maps link. Kept in Latin script in both languages, as
+     these are proper nouns the owner reads off to locate the booking. */
+  var CLINIC_ADDRESS_LINES = [
+    "Venkata Ramana Enclave,",
+    "4th Line,",
+    "Prakash Nagar,",
+    "Varababu Hospital Road,",
+    "Narasaraopet,",
+    "Andhra Pradesh"
+  ];
   var CLINIC_MAPS_URL =
     "https://www.google.com/maps/search/?api=1&query=16.2309877,80.04908";
 
@@ -101,6 +107,74 @@
     }
   };
   function t(key) { return T[lang()][key]; }
+
+  /* ── WhatsApp message strings (fully localized) ───────────────
+     The generated booking message is built entirely from ONE of
+     these two blocks depending on the active site language, so the
+     message is never mixed-language. Month/day names are kept here
+     (not Intl.toLocaleDateString) so desktop, Android and iPhone all
+     produce a byte-identical message regardless of device locale. */
+  var MSG = {
+    en: {
+      header: "Sushruta Kerala Massage Therapy",
+      title: "Appointment Request",
+      patient: "Patient",
+      contact: "Contact",
+      therapy: "Therapy",
+      steam: "Herbal Steam",
+      steamYes: "Yes (+₹200)",
+      date: "Date",
+      time: "Time",
+      therapist: "Therapist",
+      maleT: "Male Therapist",
+      femaleT: "Female Therapist",
+      clinic: "Clinic Location",
+      directions: "Directions",
+      notes: "Notes",
+      confirm: "Kindly confirm appointment availability.",
+      days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      months: ["January", "February", "March", "April", "May", "June",
+               "July", "August", "September", "October", "November", "December"],
+      therapies: {
+        "Padaabhyanga": "Padaabhyanga",
+        "Abhyanga": "Abhyanga",
+        "Abhyanga Extended": "Abhyanga (Extended)",
+        "Hot Herbal Potli": "Hot Herbal Potli",
+        "Shirodhara": "Shirodhara",
+        "Pizhichil": "Pizhichil"
+      }
+    },
+    te: {
+      header: "సుశ్రుత కేరళ మసాజ్ థెరపీ",
+      title: "అపాయింట్‌మెంట్ అభ్యర్థన",
+      patient: "పేరు",
+      contact: "ఫోన్",
+      therapy: "థెరపీ",
+      steam: "హెర్బల్ స్టీమ్",
+      steamYes: "అవును (+₹200)",
+      date: "తేదీ",
+      time: "సమయం",
+      therapist: "థెరపిస్ట్",
+      maleT: "పురుష థెరపిస్ట్",
+      femaleT: "మహిళా థెరపిస్ట్",
+      clinic: "క్లినిక్ చిరునామా",
+      directions: "మార్గం",
+      notes: "గమనికలు",
+      confirm: "దయచేసి అపాయింట్‌మెంట్ లభ్యతను నిర్ధారించండి.",
+      days: ["ఆది", "సోమ", "మంగళ", "బుధ", "గురు", "శుక్ర", "శని"],
+      months: ["జనవరి", "ఫిబ్రవరి", "మార్చి", "ఏప్రిల్", "మే", "జూన్",
+               "జూలై", "ఆగస్టు", "సెప్టెంబర్", "అక్టోబర్", "నవంబర్", "డిసెంబర్"],
+      therapies: {
+        "Padaabhyanga": "పాదాభ్యంగ",
+        "Abhyanga": "అభ్యంగ",
+        "Abhyanga Extended": "అభ్యంగ (ఎక్స్‌టెండెడ్)",
+        "Hot Herbal Potli": "హాట్ హెర్బల్ పోట్లి",
+        "Shirodhara": "శిరోధార",
+        "Pizhichil": "పిజిచిల్"
+      }
+    }
+  };
+  function m() { return MSG[lang()]; }
 
   var HOME_THERAPIES = {
     "Padaabhyanga": true,
@@ -251,76 +325,91 @@
   });
 
   /* ── WhatsApp message ───────────────────────────────────── */
+  /* Device-independent date: getDay()/getMonth() are pure calendar
+     math, so the same yyyy-mm-dd yields identical text everywhere. */
   function formatDate(iso) {
-    var parts = iso.split("-");
-    var d = new Date(+parts[0], +parts[1] - 1, +parts[2]);
-    return d.toLocaleDateString("en-IN",
-      { weekday: "short", day: "numeric", month: "long", year: "numeric" });
+    var L = m();
+    var p = iso.split("-");
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    return L.days[d.getDay()] + ", " + (+p[2]) + " " + L.months[+p[1] - 1] + " " + p[0];
   }
 
+  /* Builds the full booking message in the ACTIVE site language.
+     Optional rows (Herbal Steam, Notes) are only added when set —
+     no empty placeholders, no "—"/"N/A". Address + Maps link are
+     always present. Kept compact so the encoded wa.me payload stays
+     well within mobile limits (nothing gets truncated). */
   function buildMessage() {
+    var L = m();
     var gender = radioValue("gender");
-    var therapist = gender === "Male" ? "Male Therapist" : "Female Therapist";
-    var notes = els.notes.value.trim() || "—";
-    var sessionType = els.session.value;
-    var atClinic = sessionType === "At Clinic";
+    var therapist = gender === "Male" ? L.maleT : L.femaleT;
+    var therapyName = L.therapies[els.therapy.value] || els.therapy.value;
+    var notes = els.notes.value.trim();
 
-    var lines = [
-      "🌿 New Appointment Request",
-      "",
-      "👤 Name:", els.name.value.trim(),
-      "",
-      "📞 Phone:", els.phone.value.replace(/[\s\-()]/g, ""),
-      "",
-      (atClinic ? "🏥 Session Type:" : "🏠 Session Type:"), sessionType
-    ];
-
-    /* Clinic bookings carry the clinic address + Google Maps link
-       so the customer always knows where to arrive. */
-    if (atClinic) {
-      lines.push(
-        "", "📍 Clinic Address:", CLINIC_ADDRESS,
-        "", "🗺️ Google Maps:", CLINIC_MAPS_URL
-      );
+    var p = [];
+    p.push("✨ " + L.header);
+    p.push("");
+    p.push(L.title);
+    p.push("");
+    p.push("👤 " + L.patient + ": " + els.name.value.trim());
+    p.push("📱 " + L.contact + ": " + els.phone.value.replace(/[\s\-()]/g, ""));
+    p.push("");
+    p.push("💆 " + L.therapy + ": " + therapyName);
+    if (els.steam.checked) p.push("♨️ " + L.steam + ": " + L.steamYes);
+    p.push("");
+    p.push("📅 " + L.date + ": " + formatDate(els.date.value));
+    p.push("🕒 " + L.time + ": " + els.time.value);
+    p.push("");
+    p.push("👨‍⚕️ " + L.therapist + ": " + therapist);
+    p.push("");
+    p.push("📍 " + L.clinic);
+    p.push("");
+    p.push(CLINIC_ADDRESS_LINES.join("\n"));
+    p.push("");
+    p.push("🗺️ " + L.directions);
+    p.push("");
+    p.push(CLINIC_MAPS_URL);
+    if (notes) {
+      p.push("");
+      p.push("✍️ " + L.notes + ":");
+      p.push(notes);
     }
+    p.push("");
+    p.push("🙏 " + L.confirm);
 
-    lines.push(
-      "",
-      "💆 Therapy:", els.therapy.value,
-      "",
-      "♨ Herbal Steam:", els.steam.checked ? "Yes (+₹200)" : "No",
-      "",
-      "📅 Preferred Date:", formatDate(els.date.value),
-      "",
-      "🕒 Preferred Time:", els.time.value,
-      "",
-      "🚻 Gender:", gender,
-      "",
-      "🧑‍⚕️ Assigned Therapist:", therapist,
-      "",
-      "📝 Notes:", notes,
-      "",
-      "Please confirm appointment availability."
-    );
-
-    return lines.join("\n");
+    return p.join("\n");
   }
 
   /* ── Submit → open WhatsApp → success panel ─────────────── */
   var submitLabel = els.submit.querySelector("span");
 
+  /* Robust WhatsApp open (mobile + desktop).
+     The whole message is encoded ONCE with encodeURIComponent, so the
+     Maps URL's "&query=" travels as an opaque %26 and is never parsed
+     as a separate parameter. We try a new tab (desktop keeps the site
+     open); if the browser blocks it — common on mobile — we navigate
+     the current tab instead, which lets the OS hand the wa.me link
+     straight to the WhatsApp app so the text arrives intact. No
+     "noopener" feature string (that made mobile treat it as a blocked
+     popup and drop the payload). */
+  function openWhatsApp(message) {
+    var url = "https://wa.me/" + OWNER_WHATSAPP +
+      "?text=" + encodeURIComponent(message);
+    var win = window.open(url, "_blank");
+    if (!win || win.closed || typeof win.closed === "undefined") {
+      window.location.href = url;
+    }
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!validate()) return;
-
-    var url = "https://wa.me/" + OWNER_WHATSAPP +
-      "?text=" + encodeURIComponent(buildMessage());
 
     els.submit.disabled = true;
     var original = submitLabel.textContent;
     submitLabel.textContent = t("sending");
 
-    window.open(url, "_blank", "noopener");
+    openWhatsApp(buildMessage());
 
     setTimeout(function () {
       els.submit.disabled = false;
