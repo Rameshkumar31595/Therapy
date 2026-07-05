@@ -67,10 +67,10 @@
     en: {
       eyebrow: "A word from your therapist",
       loading: "Preparing your therapist's voice…",
-      errMissing: "Audio file missing — this narration hasn't been added to the website yet.",
-      errNetwork: "Couldn't load the audio — please check your internet connection and try again.",
-      errDecode: "This audio file can't be played — it may be corrupted or in an unsupported format.",
-      errBlocked: "The browser paused playback — please tap the play button.",
+      errMissing: "Audio file missing. This narration hasn't been added to the website yet.",
+      errNetwork: "Couldn't load the audio. Please check your internet connection and try again.",
+      errDecode: "This audio file can't be played. It may be corrupted or in an unsupported format.",
+      errBlocked: "The browser paused playback. Please tap the play button.",
       close: "Close", play: "Play", pause: "Pause",
       stop: "Stop", replay: "Replay from beginning", seek: "Audio progress",
       speed: "Playback speed"
@@ -78,10 +78,10 @@
     te: {
       eyebrow: "మీ థెరపిస్ట్ మాటల్లో",
       loading: "ఆడియో సిద్ధమవుతోంది…",
-      errMissing: "ఆడియో ఫైల్ లేదు — ఈ థెరపీ నెరేషన్ ఇంకా వెబ్‌సైట్‌కి జోడించలేదు.",
-      errNetwork: "ఆడియో లోడ్ కాలేదు — మీ ఇంటర్నెట్ కనెక్షన్ చూసి మళ్లీ ప్రయత్నించండి.",
-      errDecode: "ఈ ఆడియో ఫైల్ ప్లే అవ్వడం లేదు — ఫైల్ ఫార్మాట్ సపోర్ట్ కాకపోవచ్చు.",
-      errBlocked: "బ్రౌజర్ ప్లేబ్యాక్ ఆపింది — ప్లే బటన్ నొక్కండి.",
+      errMissing: "ఆడియో ఫైల్ లేదు. ఈ థెరపీ నెరేషన్ ఇంకా వెబ్‌సైట్‌కి జోడించలేదు.",
+      errNetwork: "ఆడియో లోడ్ కాలేదు. మీ ఇంటర్నెట్ కనెక్షన్ చూసి మళ్లీ ప్రయత్నించండి.",
+      errDecode: "ఈ ఆడియో ఫైల్ ప్లే అవ్వడం లేదు. ఫైల్ ఫార్మాట్ సపోర్ట్ కాకపోవచ్చు.",
+      errBlocked: "బ్రౌజర్ ప్లేబ్యాక్ ఆపింది. ప్లే బటన్ నొక్కండి.",
       close: "మూసివేయండి", play: "ప్లే", pause: "పాజ్",
       stop: "ఆపండి", replay: "మొదటి నుంచి వినండి", seek: "ఆడియో ప్రోగ్రెస్",
       speed: "ప్లేబ్యాక్ వేగం"

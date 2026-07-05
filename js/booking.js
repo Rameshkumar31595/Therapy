@@ -76,7 +76,7 @@
       errTherapy: "Please choose a therapy.",
       errAddress: "Please enter your full home address for the visit.",
       errDate: "Please pick your preferred date.",
-      errDatePast: "That date has already passed — please pick today or a future date.",
+      errDatePast: "That date has already passed. Please pick today or a future date.",
       errTime: "Please choose a preferred time.",
       errGender: "Please select your gender so we can assign the right therapist.",
       sending: "Opening WhatsApp…",
@@ -86,7 +86,7 @@
       sessionNote: "Home Service is available only for Padaabhyanga, Abhyanga and Abhyanga Extended. At the clinic, all therapies are available.",
       therapyNote: "Some therapies need special equipment that is only available at the clinic.",
       addressPh: "House / flat, street, area, landmark, town…",
-      notesPh: "Anything we should know — health conditions, preferences…"
+      notesPh: "Anything we should know: health conditions, preferences…"
     },
     te: {
       errName: "దయచేసి మీ పేరు రాయండి.",
@@ -96,7 +96,7 @@
       errTherapy: "దయచేసి ఒక థెరపీ ఎంచుకోండి.",
       errAddress: "దయచేసి హోమ్ సర్వీస్ కోసం మీ పూర్తి ఇంటి చిరునామా ఇవ్వండి.",
       errDate: "దయచేసి మీకు అనుకూలమైన తేదీ ఎంచుకోండి.",
-      errDatePast: "ఆ తేదీ దాటిపోయింది — ఈరోజు లేదా రాబోయే తేదీ ఎంచుకోండి.",
+      errDatePast: "ఆ తేదీ దాటిపోయింది. ఈరోజు లేదా రాబోయే తేదీ ఎంచుకోండి.",
       errTime: "దయచేసి సమయం ఎంచుకోండి.",
       errGender: "సరైన థెరపిస్ట్‌ను కేటాయించేందుకు జెండర్ ఎంచుకోండి.",
       sending: "వాట్సాప్ తెరుస్తున్నాం…",
@@ -106,7 +106,7 @@
       sessionNote: "హోమ్ సర్వీస్ కేవలం Padaabhyanga, Abhyanga, Abhyanga Extended కోసం మాత్రమే అందుబాటులో ఉంది. క్లినిక్‌లో అన్ని థెరపీలు అందుబాటులో ఉంటాయి.",
       therapyNote: "కొన్ని థెరపీలకు అవసరమైన ప్రత్యేక పరికరాలు కేవలం క్లినిక్‌లో మాత్రమే అందుబాటులో ఉంటాయి.",
       addressPh: "ఇల్లు / ఫ్లాట్, వీధి, ఏరియా, ల్యాండ్‌మార్క్, ఊరు…",
-      notesPh: "మేము తెలుసుకోవాల్సినవి — ఆరోగ్య విషయాలు, ఇష్టాలు…"
+      notesPh: "మేము తెలుసుకోవాల్సినవి: ఆరోగ్య విషయాలు, ఇష్టాలు…"
     }
   };
   function t(key) { return T[lang()][key]; }

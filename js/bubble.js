@@ -28,6 +28,7 @@
 
   var SS_WELCOME = "bubble_welcomed";
   var SS_HINT = "bubble_close_hint";
+  var SS_INTRO = "bubble_introduced";   // full introduction already played this session?
 
   function lang() {
     return document.documentElement.getAttribute("lang") === "te" ? "te" : "en";
@@ -42,6 +43,12 @@
     intro: {
       en: "Hello! I'm Bubble, your wellness guide. I'll help you understand the therapies, services, facilities, and booking options available on this page.",
       te: "నమస్కారం! నేను బబుల్. ఈ వెబ్‌సైట్‌లోని థెరపీలు, సేవలు, సదుపాయాలు మరియు బుకింగ్ వివరాలను సులభంగా అర్థం చేసుకోవడంలో నేను మీకు సహాయం చేస్తాను."
+    },
+    // Short, funny line for a re-open in the same session (skips the
+    // full introduction, which has already played once).
+    reactivate: {
+      en: "I love to speak, but my developer won't let me talk too much. Let me quickly explain this section.",
+      te: "నాకు మాట్లాడటం చాలా ఇష్టం, కానీ నా డెవలపర్ ఎక్కువగా మాట్లాడనివ్వడు. ఈ విభాగాన్ని త్వరగా చెబుతాను."
     },
     hero: {
       en: "This is the top of the page. It introduces our authentic Kerala massage therapy, offered at our clinic and at your home for selected therapies.",
@@ -395,9 +402,11 @@
   }
   function hideTip() { tip.classList.remove("show"); }
 
-  /* Open → enter Active Guide Mode. Bubble ALWAYS introduces itself
-     first (once per activation), then narrates whatever section the
-     visitor is on — no matter where on the page they opened it. */
+  /* Open → enter Active Guide Mode. On the FIRST activation of the
+     session Bubble plays its full introduction; on any later re-open
+     it plays a short, funny reactivation line instead. Either way it
+     then narrates whatever section the visitor is on — no matter
+     where on the page they opened it. */
   function openPanel() {
     if (open) return;
     open = true;
@@ -409,9 +418,12 @@
     try { panel.focus({ preventScroll: true }); } catch (e) { panel.focus(); }
 
     if (canSpeak) {
+      // First open this session → full intro; re-open → reactivation line.
+      var lead = ssGet(SS_INTRO) ? "reactivate" : "intro";
+      ssSet(SS_INTRO, "1");
       introing = true;
-      renderMessage("intro");
-      speakSection("intro", function () {   // when the intro finishes…
+      renderMessage(lead);
+      speakSection(lead, function () {   // when the intro/reactivation finishes…
         introing = false;
         if (!open) return;
         var sec = monitor.current() || "hero";  // …explain the current section

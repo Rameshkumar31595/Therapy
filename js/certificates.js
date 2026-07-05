@@ -22,7 +22,7 @@
       file: "Certificates/Jampani Bhavana.pdf",
       preview: "Certificates/previews/jampani-bhavana.jpg",
       name: "Jampani Bhavana",
-      alt: "Government-issued Ayurveda Therapist certificate of Jampani Bhavana — " +
+      alt: "Government-issued Ayurveda Therapist certificate of Jampani Bhavana, " +
            "1200 hours of training, NSQF Level 4, recognised by NCVET, " +
            "issued under the Additional Skill Acquisition Programme, Kerala"
     },
@@ -30,7 +30,7 @@
       file: "Certificates/Rahul Ashok Sakamuri.pdf",
       preview: "Certificates/previews/rahul-ashok-sakamuri.jpg",
       name: "Rahul Ashok Sakamuri",
-      alt: "Government-issued Ayurveda Therapist certificate of Rahul Ashok Sakamuri — " +
+      alt: "Government-issued Ayurveda Therapist certificate of Rahul Ashok Sakamuri, " +
            "1200 hours of training, NSQF Level 4, recognised by NCVET, " +
            "issued under the Additional Skill Acquisition Programme, Kerala"
     }
