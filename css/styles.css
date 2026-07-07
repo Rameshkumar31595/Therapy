@@ -380,7 +380,7 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
 /* ── Hero ──────────────────────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 92svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -653,23 +653,24 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeUpHint {
+  from { opacity: 0; transform: translateX(-50%) translateY(22px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
 .scroll-hint {
   position: absolute;
   bottom: 1.4rem;
   left: 50%;
   transform: translateX(-50%);
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   z-index: 6;
   opacity: 0;
 }
-/* only when there is comfortable room below the hero content */
-@media (min-height: 700px) and (min-width: 640px) {
-  .scroll-hint { display: flex; }
-}
-.hero-loaded .scroll-hint { animation: fadeUp 1.2s var(--ease-out) 1.6s forwards; }
+.hero-loaded .scroll-hint { animation: fadeUpHint 1.2s var(--ease-out) 1.6s forwards; }
 .scroll-hint-text {
   font-size: 0.66rem;
   letter-spacing: 0.28em;
