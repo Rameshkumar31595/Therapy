@@ -18,14 +18,14 @@
   var OWNER_WHATSAPP = "919502477334";
 
   /* ── TWO SERVICES ─────────────────────────────────────────
-     The clinic offers BOTH "At Clinic" and "Home Service".
+     The massage therapy center offers BOTH "At Massage Therapy Center" and "Home Service".
      Home Service is available ONLY for the three therapies that
-     need no clinic equipment (see HOME_THERAPIES). When Home
+     need no massage therapy center equipment (see HOME_THERAPIES). When Home
      Service is chosen the Herbal Steam add-on is removed and a
      customer address is required; the WhatsApp message then
-     carries that address instead of the clinic address/map. */
+     carries that address instead of the massage therapy center address/map. */
 
-  /* Clinic address (one line per part for clean WhatsApp rendering)
+  /* Massage Therapy Center address (one line per part for clean WhatsApp rendering)
      + Google Maps link. Kept in Latin script in both languages, as
      these are proper nouns the owner reads off to locate the booking. */
   var CLINIC_ADDRESS_LINES = [
@@ -72,7 +72,7 @@
       errName: "Please tell us your name.",
       errPhone: "Please enter your mobile number.",
       errPhoneFormat: "Please enter a valid 10-digit Indian mobile number.",
-      errSession: "Please choose At Clinic or Home Service first.",
+      errSession: "Please choose At Massage Therapy Center or Home Service first.",
       errTherapy: "Please choose a therapy.",
       errAddress: "Please enter your full home address for the visit.",
       errDate: "Please pick your preferred date.",
@@ -83,8 +83,8 @@
       namePh: "Your name",
       phonePh: "10-digit mobile number",
       sessionPh: "Select service type…",
-      sessionNote: "Home Service is available only for Padaabhyanga, Abhyanga and Abhyanga Extended. At the clinic, all therapies are available.",
-      therapyNote: "Some therapies need special equipment that is only available at the clinic.",
+      sessionNote: "Home Service is available only for Padaabhyanga, Abhyanga and Abhyanga Extended. At the massage therapy center, all therapies are available.",
+      therapyNote: "Some therapies need special equipment that is only available at the massage therapy center.",
       addressPh: "House / flat, street, area, landmark, town…",
       notesPh: "Anything we should know: health conditions, preferences…"
     },
@@ -92,7 +92,7 @@
       errName: "దయచేసి మీ పేరు రాయండి.",
       errPhone: "దయచేసి మీ మొబైల్ నంబర్ ఇవ్వండి.",
       errPhoneFormat: "దయచేసి సరైన 10 అంకెల మొబైల్ నంబర్ ఇవ్వండి.",
-      errSession: "దయచేసి ముందు క్లినిక్‌లో లేదా హోమ్ సర్వీస్ ఎంచుకోండి.",
+      errSession: "దయచేసి ముందు మసాజ్ థెరపీ సెంటర్‌లో లేదా హోమ్ సర్వీస్ ఎంచుకోండి.",
       errTherapy: "దయచేసి ఒక థెరపీ ఎంచుకోండి.",
       errAddress: "దయచేసి హోమ్ సర్వీస్ కోసం మీ పూర్తి ఇంటి చిరునామా ఇవ్వండి.",
       errDate: "దయచేసి మీకు అనుకూలమైన తేదీ ఎంచుకోండి.",
@@ -103,8 +103,8 @@
       namePh: "మీ పేరు",
       phonePh: "10 అంకెల మొబైల్ నంబర్",
       sessionPh: "సేవ రకం ఎంచుకోండి…",
-      sessionNote: "హోమ్ సర్వీస్ కేవలం Padaabhyanga, Abhyanga, Abhyanga Extended కోసం మాత్రమే అందుబాటులో ఉంది. క్లినిక్‌లో అన్ని థెరపీలు అందుబాటులో ఉంటాయి.",
-      therapyNote: "కొన్ని థెరపీలకు అవసరమైన ప్రత్యేక పరికరాలు కేవలం క్లినిక్‌లో మాత్రమే అందుబాటులో ఉంటాయి.",
+      sessionNote: "హోమ్ సర్వీస్ కేవలం Padaabhyanga, Abhyanga, Abhyanga Extended కోసం మాత్రమే అందుబాటులో ఉంది. మసాజ్ థెరపీ సెంటర్‌లో అన్ని థెరపీలు అందుబాటులో ఉంటాయి.",
+      therapyNote: "కొన్ని థెరపీలకు అవసరమైన ప్రత్యేక పరికరాలు కేవలం మసాజ్ థెరపీ సెంటర్‌లో మాత్రమే అందుబాటులో ఉంటాయి.",
       addressPh: "ఇల్లు / ఫ్లాట్, వీధి, ఏరియా, ల్యాండ్‌మార్క్, ఊరు…",
       notesPh: "మేము తెలుసుకోవాల్సినవి: ఆరోగ్య విషయాలు, ఇష్టాలు…"
     }
@@ -132,9 +132,9 @@
       maleT: "Male Therapist",
       femaleT: "Female Therapist",
       serviceType: "Service Type",
-      atClinicVal: "At Clinic",
+      atClinicVal: "At Massage Therapy Center",
       homeVal: "Home Service",
-      clinic: "Clinic Location",
+      massage therapy center: "Massage Therapy Center Location",
       custAddr: "Home Address",
       directions: "Directions",
       notes: "Notes",
@@ -165,9 +165,9 @@
       maleT: "పురుష థెరపిస్ట్",
       femaleT: "మహిళా థెరపిస్ట్",
       serviceType: "సేవ రకం",
-      atClinicVal: "క్లినిక్‌లో",
+      atClinicVal: "మసాజ్ థెరపీ సెంటర్‌లో",
       homeVal: "హోమ్ సర్వీస్",
-      clinic: "క్లినిక్ చిరునామా",
+      massage therapy center: "మసాజ్ థెరపీ సెంటర్ చిరునామా",
       custAddr: "ఇంటి చిరునామా",
       directions: "మార్గం",
       notes: "గమనికలు",
@@ -205,7 +205,7 @@
   function therapyAllowedForSession(therapy, sessionType) {
     if (!therapy || !sessionType) return false;
     if (sessionType === "Home Service") return !!HOME_THERAPIES[therapy];
-    if (sessionType === "At Clinic") return !!CLINIC_THERAPIES[therapy];
+    if (sessionType === "At Massage Therapy Center") return !!CLINIC_THERAPIES[therapy];
     return false;
   }
 
@@ -232,7 +232,7 @@
 
   /* Match the form to the chosen service type: filter the therapy
      list, and toggle the Herbal Steam add-on + the home-address
-     field. Switching back to "At Clinic" restores everything. */
+     field. Switching back to "At Massage Therapy Center" restores everything. */
   function applyServiceType() {
     var sessionType = els.session.value;
     var isHome = sessionType === "Home Service";
@@ -248,7 +248,7 @@
       els.therapy.value = "";
     }
 
-    // Herbal Steam is clinic-only — remove it entirely for Home Service.
+    // Herbal Steam is massage therapy center-only — remove it entirely for Home Service.
     if (els.steam) {
       if (isHome) els.steam.checked = false;
       els.steam.disabled = isHome;
@@ -373,7 +373,7 @@
     p.push("🧭 " + L.serviceType + ": " + (isHome ? L.homeVal : L.atClinicVal));
     p.push("");
     p.push("💆 " + L.therapy + ": " + therapyName);
-    // Herbal Steam only ever applies to a clinic booking.
+    // Herbal Steam only ever applies to a massage therapy center booking.
     if (!isHome && els.steam && els.steam.checked) p.push("♨️ " + L.steam + ": " + L.steamYes);
     p.push("");
     p.push("📅 " + L.date + ": " + formatDate(els.date.value));
@@ -382,13 +382,13 @@
     p.push("👨‍⚕️ " + L.therapist + ": " + therapist);
     p.push("");
     if (isHome) {
-      // Home Service → customer address, no clinic address/map.
+      // Home Service → customer address, no massage therapy center address/map.
       p.push("📍 " + L.custAddr);
       p.push("");
       p.push(els.address.value.trim());
     } else {
-      // At Clinic → clinic address + Google Maps link.
-      p.push("📍 " + L.clinic);
+      // At Massage Therapy Center → massage therapy center address + Google Maps link.
+      p.push("📍 " + L.massage therapy center);
       p.push("");
       p.push(CLINIC_ADDRESS_LINES.join("\n"));
       p.push("");
@@ -459,9 +459,9 @@
   document.querySelectorAll("[data-book]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var therapy = btn.getAttribute("data-book");
-      // Default to At Clinic (every therapy is available there); the
+      // Default to At Massage Therapy Center (every therapy is available there); the
       // visitor can switch to Home Service for an eligible therapy.
-      els.session.value = "At Clinic";
+      els.session.value = "At Massage Therapy Center";
       applyServiceType();
       els.therapy.value = therapy;
       setError(els.session, "bkSessionErr", null);
@@ -475,8 +475,8 @@
   });
   document.querySelectorAll("[data-book-steam]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      // Steam is clinic-only, so ensure the clinic service is selected.
-      els.session.value = "At Clinic";
+      // Steam is massage therapy center-only, so ensure the massage therapy center service is selected.
+      els.session.value = "At Massage Therapy Center";
       applyServiceType();
       els.steam.checked = true;
       if (form.hidden) {

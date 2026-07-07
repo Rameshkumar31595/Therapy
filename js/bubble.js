@@ -116,7 +116,7 @@
       en: [
         "Our 45-minute Abhyanga is a full-body oil massage that quickly relieves muscle tension and rejuvenates your body.",
         "Short on time? The 45-minute Abhyanga offers a deeply relaxing, traditional full-body massage to ease your stress.",
-        "Enjoy a revitalizing 45-minute Abhyanga session, using warm herbal oils to nourish your skin and relax your muscles."
+        "Enjoy a revitalizing 45-minute Abhyanga session, using warm natural oils to nourish your skin and relax your muscles."
       ],
       te: [
         "మా 45 నిమిషాల అభ్యంగ అనేది కండరాల ఒత్తిడిని త్వరగా తగ్గించి, మీ శరీరాన్ని ఉత్తేజపరిచే పూర్తి శరీర నూనె మసాజ్.",
@@ -128,12 +128,12 @@
       en: [
         "The 60-minute Abhyanga provides an extended, deeply restorative full-body massage for ultimate relaxation and wellness.",
         "Immerse yourself in our 60-minute Abhyanga. This comprehensive therapy thoroughly soothes your nervous system.",
-        "Our one-hour Abhyanga uses warm, medicated oils to deeply detoxify, nourish, and completely relax your entire body."
+        "Our one-hour Abhyanga uses warm, natural oils to deeply detoxify, nourish, and completely relax your entire body."
       ],
       te: [
         "60 నిమిషాల అభ్యంగ మీకు అత్యుత్తమ విశ్రాంతి మరియు ఆరోగ్యం కోసం పొడిగించిన, లోతైన పూర్తి శరీర మసాజ్‌ను అందిస్తుంది.",
         "మా 60 నిమిషాల అభ్యంగలో మునిగిపోండి. ఈ సమగ్ర థెరపీ మీ నాడీ వ్యవస్థను పూర్తిగా శాంతపరుస్తుంది.",
-        "మా ఒక గంట అభ్యంగ వెచ్చని, ఔషధ నూనెలను ఉపయోగించి మీ శరీరాన్ని లోతుగా డిటాక్సిఫై చేసి, పూర్తిగా సడలిస్తుంది."
+        "మా ఒక గంట అభ్యంగ వెచ్చని, సహజ నూనెలను ఉపయోగించి మీ శరీరాన్ని లోతుగా డిటాక్సిఫై చేసి, పూర్తిగా సడలిస్తుంది."
       ]
     },
     potli: {
@@ -162,12 +162,12 @@
     },
     pizhichil: {
       en: [
-        "Pizhichil is the king of Ayurvedic therapies, combining a continuous pour of warm medicated oil with a gentle, synchronous massage.",
+        "Pizhichil is the king of Ayurvedic therapies, combining a continuous pour of warm natural oil with a gentle, synchronous massage.",
         "Treat yourself to Pizhichil, a royal therapy that intensely nourishes the body, improves circulation, and relieves severe tension.",
-        "Experience the luxurious Pizhichil. Litres of warm herbal oil are rhythmically poured over your body for unmatched rejuvenation."
+        "Experience the luxurious Pizhichil. Litres of warm natural oil are rhythmically poured over your body for unmatched rejuvenation."
       ],
       te: [
-        "పిజిచిల్ అనేది మసాజ్ థెరపీలలో రారాజు, ఇది వెచ్చని ఔషధ నూనెను నిరంతరంగా పోయడం మరియు సున్నితమైన మసాజ్‌తో కూడి ఉంటుంది.",
+        "పిజిచిల్ అనేది మసాజ్ థెరపీలలో రారాజు, ఇది వెచ్చని సహజ నూనెను నిరంతరంగా పోయడం మరియు సున్నితమైన మసాజ్‌తో కూడి ఉంటుంది.",
         "శరీరాన్ని తీవ్రంగా పోషించి, రక్త ప్రసరణను మెరుగుపరిచి, తీవ్రమైన ఒత్తిడిని తగ్గించే రాజ థెరపీ అయిన పిజిచిల్‌ను ఆస్వాదించండి.",
         "విలాసవంతమైన పిజిచిల్‌ను అనుభవించండి. సాటిలేని ఉత్తేజం కోసం మీ శరీరంపై లీటర్ల కొద్దీ వెచ్చని మూలికా నూనె లయబద్ధంగా పోయబడుతుంది."
       ]
@@ -222,13 +222,13 @@
     },
     hero: {
       en: [
-        "We offer authentic Kerala massage therapy right here at our clinic, with pure natural oil, for relaxation, to improve blood circulation, body comfort, and skin health. We even offer relaxing therapies like Padaabhyanga and Abhyanga as convenient home services.",
-        "At our specialized clinic, you can experience true Kerala Ayurveda. And for your ultimate comfort, therapies like Padaabhyanga are available right at your home.",
+        "We offer authentic Kerala massage therapy right here at our massage therapy center, with pure natural oil, for relaxation, to improve blood circulation, body comfort, and skin health. We even offer relaxing therapies like Padaabhyanga and Abhyanga as convenient home services.",
+        "At our specialized massage therapy center, you can experience true Kerala Ayurveda. And for your ultimate comfort, therapies like Padaabhyanga are available right at your home.",
         "Experience the healing power of authentic Kerala therapies at our center. If you prefer to relax at home, our home services have you covered."
       ],
       te: [
-        "మేము మా ప్రత్యేక క్లినిక్‌లో ప్రామాణిక కేరళ మసాజ్ థెరపీలను అందిస్తున్నాము. పాదాభ్యంగ మరియు అభ్యంగ వంటి కొన్ని థెరపీలను మీ ఇంటి వద్ద కూడా అందిస్తాము.",
-        "మా క్లినిక్‌లో మీరు నిజమైన కేరళ మసాజ్ సంప్రదాయాన్ని అనుభవించవచ్చు. మీ సౌలభ్యం కోసం, పాదాభ్యంగ వంటి థెరపీలను మీ ఇంటి వద్దకే తీసుకువస్తున్నాము.",
+        "మేము మా ప్రత్యేక మసాజ్ థెరపీ సెంటర్‌లో ప్రామాణిక కేరళ మసాజ్ థెరపీలను అందిస్తున్నాము. పాదాభ్యంగ మరియు అభ్యంగ వంటి కొన్ని థెరపీలను మీ ఇంటి వద్ద కూడా అందిస్తాము.",
+        "మా మసాజ్ థెరపీ సెంటర్‌లో మీరు నిజమైన కేరళ మసాజ్ సంప్రదాయాన్ని అనుభవించవచ్చు. మీ సౌలభ్యం కోసం, పాదాభ్యంగ వంటి థెరపీలను మీ ఇంటి వద్దకే తీసుకువస్తున్నాము.",
         "మా కేంద్రంలో కేరళ థెరపీల స్వస్థతను ఆస్వాదించండి. మీరు ఇంట్లోనే విశ్రాంతి తీసుకోవాలనుకుంటే, మా హోమ్ సర్వీసెస్ మీకు అందుబాటులో ఉన్నాయి."
       ]
     },
@@ -306,25 +306,25 @@
     },
     "experience": {
       en: [
-        "You'll experience profound relaxation here, with warm herbal oils and a deeply peaceful atmosphere inspired by Kerala's heritage.",
-        "Immerse yourself in tranquility. Our unhurried care and warm herbal oils will leave you feeling completely rejuvenated and balanced.",
+        "You'll experience profound relaxation here, with warm natural oils and a deeply peaceful atmosphere inspired by Kerala's heritage.",
+        "Immerse yourself in tranquility. Our unhurried care and warm natural oils will leave you feeling completely rejuvenated and balanced.",
         "Step into a deeply calming space. The rich heritage of Kerala Ayurveda combined with our personalized care ensures a truly restorative experience."
       ],
       te: [
-        "వెచ్చని హెర్బల్ నూనెలు, ప్రశాంతమైన వ్యక్తిగత సేవ మరియు కేరళ సంప్రదాయ స్ఫూర్తితో కూడిన ప్రశాంత వాతావరణంలో గొప్ప ఉపశమనాన్ని అనుభవించండి.",
-        "ప్రశాంతతలో మునిగిపోండి. మా శ్రద్ధతో కూడిన సేవ మరియు వెచ్చని హెర్బల్ నూనెలు మిమ్మల్ని పూర్తిగా ఉత్తేజపరుస్తాయి.",
+        "వెచ్చని సహజ నూనెలు, ప్రశాంతమైన వ్యక్తిగత సేవ మరియు కేరళ సంప్రదాయ స్ఫూర్తితో కూడిన ప్రశాంత వాతావరణంలో గొప్ప ఉపశమనాన్ని అనుభవించండి.",
+        "ప్రశాంతతలో మునిగిపోండి. మా శ్రద్ధతో కూడిన సేవ మరియు వెచ్చని సహజ నూనెలు మిమ్మల్ని పూర్తిగా ఉత్తేజపరుస్తాయి.",
         "ప్రశాంతమైన వాతావరణంలోకి అడుగుపెట్టండి. కేరళ మసాజ్ సంప్రదాయం మరియు మా వ్యక్తిగత సేవ మీకు నిజమైన స్వస్థతను అందిస్తాయి."
       ]
     },
     "location": {
       en: [
-        "Here is where you can find our clinic in Narasaraopet. Just tap 'Directions' and Google Maps will guide you right to our door.",
-        "Looking for us? This map shows our exact location in Narasaraopet. Tap directions for an easy route straight to the clinic.",
+        "Here is where you can find our massage therapy center in Narasaraopet. Just tap 'Directions' and Google Maps will guide you right to our door.",
+        "Looking for us? This map shows our exact location in Narasaraopet. Tap directions for an easy route straight to the massage therapy center.",
         "We are conveniently located right here in Narasaraopet. Feel free to use the map below to get instant directions to our center."
       ],
       te: [
-        "ఇది నరసరావుపేటలో మా క్లినిక్ ఉన్న ప్రదేశం. మా వద్దకు చేరుకోవడానికి, 'డైరెక్షన్స్' పై నొక్కండి, గూగుల్ మ్యాప్స్ మీకు మార్గదర్శకత్వం చేస్తుంది.",
-        "మమ్మల్ని వెతుకుతున్నారా? ఈ మ్యాప్ నరసరావుపేటలో మా ఖచ్చితమైన స్థానాన్ని చూపుతుంది. నేరుగా క్లినిక్‌కి సులభమైన మార్గం కోసం డైరెక్షన్స్ నొక్కండి.",
+        "ఇది నరసరావుపేటలో మా మసాజ్ థెరపీ సెంటర్ ఉన్న ప్రదేశం. మా వద్దకు చేరుకోవడానికి, 'డైరెక్షన్స్' పై నొక్కండి, గూగుల్ మ్యాప్స్ మీకు మార్గదర్శకత్వం చేస్తుంది.",
+        "మమ్మల్ని వెతుకుతున్నారా? ఈ మ్యాప్ నరసరావుపేటలో మా ఖచ్చితమైన స్థానాన్ని చూపుతుంది. నేరుగా మసాజ్ థెరపీ సెంటర్‌కి సులభమైన మార్గం కోసం డైరెక్షన్స్ నొక్కండి.",
         "మేము నరసరావుపేటలోనే సౌకర్యవంతంగా ఉన్నాము. మా కేంద్రానికి తక్షణ మార్గదర్శకత్వం పొందడానికి కింద ఉన్న మ్యాప్‌ను ఉపయోగించండి."
       ]
     },
@@ -354,7 +354,7 @@
     },
     "padaabhyanga": {
       en: [
-        "Padaabhyanga is a traditional foot and leg massage. It uses warm herbal oils on vital energy points to relieve tired feet, improve blood circulation, and promote deep, restful sleep."
+        "Padaabhyanga is a traditional foot and leg massage. It uses warm natural oils on vital energy points to relieve tired feet, improve blood circulation, and promote deep, restful sleep."
       ],
       te: [
         "పాదాభ్యంగం అనేది సాంప్రదాయ కాళ్లు మరియు పాదాల మసాజ్. ఇది అలసటను దూరం చేసి, రక్త ప్రసరణను మెరుగుపరుస్తుంది మరియు మంచి నిద్రను ప్రోత్సహిస్తుంది."
@@ -386,18 +386,18 @@
     },
     "shirodhara": {
       en: [
-        "Shirodhara involves pouring a continuous stream of warm herbal oil gently over your forehead. It is incredibly effective for calming the nervous system, reducing anxiety, and curing insomnia."
+        "Shirodhara involves pouring a continuous stream of warm natural oil gently over your forehead. It is incredibly effective for calming the nervous system, reducing anxiety, and curing insomnia."
       ],
       te: [
-        "శిరోధారలో వెచ్చని హెర్బల్ నూనెను నుదుటిపై నిరంతరం ధారగా పోస్తారు. ఇది నాడీ వ్యవస్థను ప్రశాంతపరిచి, ఒత్తిడిని మరియు నిద్రలేమిని తగ్గిస్తుంది."
+        "శిరోధారలో వెచ్చని సహజ నూనెను నుదుటిపై నిరంతరం ధారగా పోస్తారు. ఇది నాడీ వ్యవస్థను ప్రశాంతపరిచి, ఒత్తిడిని మరియు నిద్రలేమిని తగ్గిస్తుంది."
       ]
     },
     "pizhichil": {
       en: [
-        "Pizhichil is the ultimate royal therapy where warm medicated oil is continuously squeezed over the body. It promotes profound rejuvenation, improves skin tone, and boosts overall immunity."
+        "Pizhichil is the ultimate royal therapy where warm natural oil is continuously squeezed over the body. It promotes profound rejuvenation, improves skin tone, and boosts overall immunity."
       ],
       te: [
-        "పిళిచిల్ అనేది వెచ్చని ఔషధ నూనెను శరీరంపై పిండే విశిష్ట సాంప్రదాయ థెరపీ. ఇది శరీరాన్ని పునరుత్తేజపరిచి, రోగనిరోధక శక్తిని పెంచుతుంది."
+        "పిళిచిల్ అనేది వెచ్చని సహజ నూనెను శరీరంపై పిండే విశిష్ట సాంప్రదాయ థెరపీ. ఇది శరీరాన్ని పునరుత్తేజపరిచి, రోగనిరోధక శక్తిని పెంచుతుంది."
       ]
     },
     "footer": {
