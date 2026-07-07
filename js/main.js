@@ -67,6 +67,12 @@
     "svc.badge1": "బాగా ఇష్టపడేది",
     "svc.badge2": "రాయల్ థెరపీ",
     "svc1.tag": "పాదాలు & కాళ్ల మసాజ్",
+    "svc1.title": "పాదాభ్యంగ",
+    "svc2.title": "అభ్యంగ (45 నిమిషాలు)",
+    "svc3.title": "అభ్యంగ (60 నిమిషాలు)",
+    "svc4.title": "హెర్బల్ పోట్లి",
+    "svc5.title": "శిరోధార",
+    "svc6.title": "పిజిచిల్",
     "svc1.desc": "అలసిన కాళ్లు, పాదాలకు హాయినిచ్చే థెరపీ. వేడి నూనె, లయబద్ధమైన మసాజ్‌తో రోజంతా అలసట మాయం.",
     "svc2.tag": "ఫుల్ బాడీ ఆయిల్ మసాజ్",
     "svc2.desc": "కేరళ ప్రసిద్ధ ఫుల్ బాడీ మసాజ్. వేడి హెర్బల్ నూనెతో పొడవైన, మృదువైన స్ట్రోక్స్. కండరాలు రిలాక్స్, మనసు ప్రశాంతం.",
@@ -450,10 +456,48 @@
       var target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
+      
+      // Close mobile nav if open
+      if (document.body.classList.contains("nav-open")) {
+        var toggleBtn = document.getElementById("navToggle");
+        if (toggleBtn) toggleBtn.click();
+      }
+
       var top = target.getBoundingClientRect().top + window.scrollY - 64;
       window.scrollTo({ top: top, behavior: reducedMotion ? "auto" : "smooth" });
     });
   });
+
+  /* ── ScrollSpy for Navigation Links ──────────────────────── */
+  var scrollSpySections = document.querySelectorAll("section[id]");
+  var navLinks = document.querySelectorAll(".main-nav a[href^='#']");
+
+  function updateScrollSpy() {
+    var scrollY = window.scrollY;
+    var current = "";
+
+    scrollSpySections.forEach(function(sec) {
+      var sectionTop = sec.offsetTop - 100;
+      var sectionHeight = sec.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = sec.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(function(link) {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", function() {
+    requestAnimationFrame(updateScrollSpy);
+  }, { passive: true });
+  
+  // Call once on load
+  setTimeout(updateScrollSpy, 100);
 
   /* ══════════════════════════════════════════════════════════
      SCROLL STORY — ambient healing journey
@@ -794,66 +838,6 @@
     
     // Initial check
     setTimeout(updateSpy, 100);
-  })();
-
-  /* ── Testimonials Carousel ────────────── */
-  (function initTestimonials() {
-    var cards = document.querySelectorAll('.testimonial-card');
-    var dots = document.querySelectorAll('.test-dot');
-    var prevBtn = document.querySelector('.test-btn.prev');
-    var nextBtn = document.querySelector('.test-btn.next');
-    
-    if (!cards.length) return;
-    
-    var currentIndex = 0;
-    var timer;
-    
-    function showTestimonial(index) {
-      cards.forEach(function(card) { card.classList.remove('active'); });
-      dots.forEach(function(dot) { dot.classList.remove('active'); });
-      
-      cards[index].classList.add('active');
-      dots[index].classList.add('active');
-      currentIndex = index;
-    }
-    
-    function nextTestimonial() {
-      var next = (currentIndex + 1) % cards.length;
-      showTestimonial(next);
-    }
-    
-    function prevTestimonial() {
-      var prev = (currentIndex - 1 + cards.length) % cards.length;
-      showTestimonial(prev);
-    }
-    
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(nextTestimonial, 5000);
-    }
-    
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function() {
-        nextTestimonial();
-        resetTimer();
-      });
-    }
-    
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function() {
-        prevTestimonial();
-        resetTimer();
-      });
-    }
-    
-    dots.forEach(function(dot, index) {
-      dot.addEventListener('click', function() {
-        showTestimonial(index);
-        resetTimer();
-      });
-    });
-    
-    resetTimer();
   })();
 
 })();

@@ -20,7 +20,7 @@
   var CERTIFICATES = [
     {
       file: "Certificates/Jampani Bhavana.pdf",
-      preview: "Certificates/previews/jampani-bhavana.jpg",
+      preview: "Certificates/previews/jampani-bhavana.webp",
       name: "Jampani Bhavana",
       alt: "Government-issued Ayurveda Therapist certificate of Jampani Bhavana, " +
            "1200 hours of training, NSQF Level 4, recognised by NCVET, " +
@@ -28,7 +28,7 @@
     },
     {
       file: "Certificates/Rahul Ashok Sakamuri.pdf",
-      preview: "Certificates/previews/rahul-ashok-sakamuri.jpg",
+      preview: "Certificates/previews/rahul-ashok-sakamuri.webp",
       name: "Rahul Ashok Sakamuri",
       alt: "Government-issued Ayurveda Therapist certificate of Rahul Ashok Sakamuri, " +
            "1200 hours of training, NSQF Level 4, recognised by NCVET, " +

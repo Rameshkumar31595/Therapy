@@ -100,6 +100,78 @@
         "అద్భుతమైన ఎంపిక! అభ్యంగ మీ మొత్తం ఆరోగ్యానికి సరైన సాంప్రదాయ చికిత్స."
       ]
     },
+    padaabhyanga: {
+      en: [
+        "Padaabhyanga is a traditional foot massage that relieves fatigue, improves sleep, and completely relaxes the lower limbs.",
+        "Our Padaabhyanga therapy focuses on your feet and lower legs to melt away daily stress and restore balance.",
+        "Experience deep relaxation with Padaabhyanga, designed to soothe tired feet and promote a calm, restful sleep."
+      ],
+      te: [
+        "పాదాభ్యంగ అనేది అలసటను తగ్గించి, నిద్రను మెరుగుపరిచే సాంప్రదాయ పాద మసాజ్. ఇది కాళ్ళకు పూర్తి విశ్రాంతిని ఇస్తుంది.",
+        "మా పాదాభ్యంగ థెరపీ మీ పాదాలు మరియు కాళ్ళపై దృష్టి సారించి, రోజువారీ ఒత్తిడిని దూరం చేస్తుంది.",
+        "అలసిపోయిన పాదాలను శాంతపరచడానికి మరియు ప్రశాంతమైన నిద్రను ప్రోత్సహించడానికి పాదాభ్యంగతో లోతైన విశ్రాంతిని అనుభవించండి."
+      ]
+    },
+    abhyanga45: {
+      en: [
+        "Our 45-minute Abhyanga is a full-body oil massage that quickly relieves muscle tension and rejuvenates your body.",
+        "Short on time? The 45-minute Abhyanga offers a deeply relaxing, traditional full-body massage to ease your stress.",
+        "Enjoy a revitalizing 45-minute Abhyanga session, using warm herbal oils to nourish your skin and relax your muscles."
+      ],
+      te: [
+        "మా 45 నిమిషాల అభ్యంగ అనేది కండరాల ఒత్తిడిని త్వరగా తగ్గించి, మీ శరీరాన్ని ఉత్తేజపరిచే పూర్తి శరీర నూనె మసాజ్.",
+        "సమయం తక్కువగా ఉందా? 45 నిమిషాల అభ్యంగ మీకు లోతైన విశ్రాంతినిచ్చే సాంప్రదాయ పూర్తి శరీర మసాజ్‌ను అందిస్తుంది.",
+        "మీ చర్మాన్ని పోషించడానికి మరియు కండరాలను సడలించడానికి వెచ్చని మూలికా నూనెలను ఉపయోగించే 45 నిమిషాల అభ్యంగను ఆస్వాదించండి."
+      ]
+    },
+    abhyanga60: {
+      en: [
+        "The 60-minute Abhyanga provides an extended, deeply restorative full-body massage for ultimate relaxation and wellness.",
+        "Immerse yourself in our 60-minute Abhyanga. This comprehensive therapy thoroughly soothes your nervous system.",
+        "Our one-hour Abhyanga uses warm, medicated oils to deeply detoxify, nourish, and completely relax your entire body."
+      ],
+      te: [
+        "60 నిమిషాల అభ్యంగ మీకు అత్యుత్తమ విశ్రాంతి మరియు ఆరోగ్యం కోసం పొడిగించిన, లోతైన పూర్తి శరీర మసాజ్‌ను అందిస్తుంది.",
+        "మా 60 నిమిషాల అభ్యంగలో మునిగిపోండి. ఈ సమగ్ర చికిత్స మీ నాడీ వ్యవస్థను పూర్తిగా శాంతపరుస్తుంది.",
+        "మా ఒక గంట అభ్యంగ వెచ్చని, ఔషధ నూనెలను ఉపయోగించి మీ శరీరాన్ని లోతుగా డిటాక్సిఫై చేసి, పూర్తిగా సడలిస్తుంది."
+      ]
+    },
+    potli: {
+      en: [
+        "Herbal Potli uses warm poultices of medicinal herbs to reduce inflammation and provide deep relief for aching joints.",
+        "Experience the healing warmth of Herbal Potli, highly effective for soothing stiff muscles and joint pain.",
+        "Our Potli therapy applies heated herbal bags to targeted areas, melting away deep-seated tension and pain."
+      ],
+      te: [
+        "హెర్బల్ పోట్లి ఔషధ మూలికల వెచ్చని మూటలను ఉపయోగించి వాపును తగ్గిస్తుంది మరియు కీళ్ల నొప్పులకు లోతైన ఉపశమనాన్ని ఇస్తుంది.",
+        "కండరాల బిగుతు మరియు కీళ్ల నొప్పులను తగ్గించడంలో అత్యంత ప్రభావవంతమైన హెర్బల్ పోట్లి యొక్క స్వస్థతను అనుభవించండి.",
+        "మా పోట్లి థెరపీ వేడిచేసిన మూలికా సంచులను ఉపయోగించి, లోతైన ఒత్తిడి మరియు నొప్పిని దూరం చేస్తుంది."
+      ]
+    },
+    shirodhara: {
+      en: [
+        "Shirodhara involves a continuous, rhythmic flow of warm oil over your forehead to profoundly calm the mind and nervous system.",
+        "Melt away mental stress with Shirodhara, our signature therapy designed to deeply relax your mind and improve sleep quality.",
+        "Experience profound tranquility with Shirodhara, the ultimate Ayurvedic treatment for mental clarity and relaxation."
+      ],
+      te: [
+        "శిరోధారలో మీ నుదిటిపై వెచ్చని నూనెను నిరంతరంగా, లయబద్ధంగా పోయడం ద్వారా మనస్సు మరియు నాడీ వ్యవస్థను ప్రశాంతపరుస్తారు.",
+        "మా ప్రత్యేక చికిత్స అయిన శిరోధారతో మానసిక ఒత్తిడిని దూరం చేసుకోండి, ఇది మీ మనస్సును విశ్రాంతిపరిచి నిద్ర నాణ్యతను మెరుగుపరుస్తుంది.",
+        "మానసిక స్పష్టత మరియు విశ్రాంతి కోసం అంతిమ ఆయుర్వేద చికిత్స అయిన శిరోధారతో లోతైన ప్రశాంతతను అనుభవించండి."
+      ]
+    },
+    pizhichil: {
+      en: [
+        "Pizhichil is the king of Ayurvedic therapies, combining a continuous pour of warm medicated oil with a gentle, synchronous massage.",
+        "Treat yourself to Pizhichil, a royal therapy that intensely nourishes the body, improves circulation, and relieves severe tension.",
+        "Experience the luxurious Pizhichil. Litres of warm herbal oil are rhythmically poured over your body for unmatched rejuvenation."
+      ],
+      te: [
+        "పిజిచిల్ అనేది ఆయుర్వేద చికిత్సలలో రారాజు, ఇది వెచ్చని ఔషధ నూనెను నిరంతరంగా పోయడం మరియు సున్నితమైన మసాజ్‌తో కూడి ఉంటుంది.",
+        "శరీరాన్ని తీవ్రంగా పోషించి, రక్త ప్రసరణను మెరుగుపరిచి, తీవ్రమైన ఒత్తిడిని తగ్గించే రాజ చికిత్స అయిన పిజిచిల్‌ను ఆస్వాదించండి.",
+        "విలాసవంతమైన పిజిచిల్‌ను అనుభవించండి. సాటిలేని ఉత్తేజం కోసం మీ శరీరంపై లీటర్ల కొద్దీ వెచ్చని మూలికా నూనె లయబద్ధంగా పోయబడుతుంది."
+      ]
+    },
     "booking-potli": {
       en: [
         "Hot Herbal Potli is perfect for soothing stiff muscles and joint pain. Let me know if you need help finishing the form!",
@@ -280,6 +352,54 @@
         "మాతో మాట్లాడాలనుకుంటున్నారా. మాకు వెంటనే కాల్ చేయడానికి లేదా వాట్సాప్‌లో చిన్న సందేశం పంపడానికి కింద ట్యాప్ చేయండి."
       ]
     },
+    "padaabhyanga": {
+      en: [
+        "Padaabhyanga is a traditional foot and leg massage. It uses warm herbal oils on vital energy points to relieve tired feet, improve blood circulation, and promote deep, restful sleep."
+      ],
+      te: [
+        "పాదాభ్యంగం అనేది సాంప్రదాయ కాళ్లు మరియు పాదాల మసాజ్. ఇది అలసటను దూరం చేసి, రక్త ప్రసరణను మెరుగుపరుస్తుంది మరియు మంచి నిద్రను ప్రోత్సహిస్తుంది."
+      ]
+    },
+    "abhyanga45": {
+      en: [
+        "Abhyanga is a classic full-body massage. Warm, therapeutic oils are applied with gentle, flowing strokes to ease muscle tension, detoxify the body, and restore deep calm."
+      ],
+      te: [
+        "అభ్యంగం అనేది సాంప్రదాయ పూర్తి శరీర మసాజ్. ఇది కండరాల నొప్పులను తగ్గించి, శరీరాన్ని నిర్విషీకరణ చేస్తుంది మరియు ప్రశాంతతను ఇస్తుంది."
+      ]
+    },
+    "abhyanga60": {
+      en: [
+        "Abhyanga Extended offers a full hour of restorative body massage. It allows deeper oil penetration and extra time on tight spots to completely melt away chronic stress and fatigue."
+      ],
+      te: [
+        "అభ్యంగం ఎక్స్‌టెండెడ్ మీకు పూర్తి గంటపాటు శరీర మసాజ్ అందిస్తుంది. ఇది కండరాల నొప్పులను పూర్తిగా తగ్గించి, దీర్ఘకాలిక ఒత్తిడి మరియు అలసటను దూరం చేస్తుంది."
+      ]
+    },
+    "potli": {
+      en: [
+        "Hot Herbal Potli uses muslin pouches filled with medicinal herbs. Pressed warm against your body, it reduces joint pain, relieves stiffness, and relaxes deep muscle tissues."
+      ],
+      te: [
+        "హాట్ హెర్బల్ పోట్లి థెరపీలో మూలికలతో నింపిన వేడి మూటలను ఉపయోగిస్తారు. ఇది కీళ్ల నొప్పులను, కండరాల పట్టుకోతలను తగ్గించడానికి అద్భుతంగా పనిచేస్తుంది."
+      ]
+    },
+    "shirodhara": {
+      en: [
+        "Shirodhara involves pouring a continuous stream of warm herbal oil gently over your forehead. It is incredibly effective for calming the nervous system, reducing anxiety, and curing insomnia."
+      ],
+      te: [
+        "శిరోధారలో వెచ్చని హెర్బల్ నూనెను నుదుటిపై నిరంతరం ధారగా పోస్తారు. ఇది నాడీ వ్యవస్థను ప్రశాంతపరిచి, ఒత్తిడిని మరియు నిద్రలేమిని తగ్గిస్తుంది."
+      ]
+    },
+    "pizhichil": {
+      en: [
+        "Pizhichil is the ultimate royal therapy where warm medicated oil is continuously squeezed over the body. It promotes profound rejuvenation, improves skin tone, and boosts overall immunity."
+      ],
+      te: [
+        "పిళిచిల్ అనేది వెచ్చని ఔషధ నూనెను శరీరంపై పిండే విశిష్ట సాంప్రదాయ చికిత్స. ఇది శరీరాన్ని పునరుత్తేజపరిచి, రోగనిరోధక శక్తిని పెంచుతుంది."
+      ]
+    },
     "footer": {
       en: [
         "Thanks for exploring our therapies! You'll find all our contact details and quick links right down here at the bottom.",
@@ -443,9 +563,9 @@
       // Highest-quality engines (matters most when several exist)
       if (/google/.test(nm)) s += 30;
       if (/natural|neural|online|enhanced|premium|wavenet/.test(nm)) s += 26;
-      // Warmer / younger (typically female) — same intent both languages
-      if (/female|woman|zira|heera|swara|kalpana|raveena|aditi|priya|neerja|isha|lekha/.test(nm)) s += 14;
-      if (/\bmale\b|david|ravi|hemant|prabhat/.test(nm)) s -= 6;
+      // Prefer male voices to match pre-generated Prabhat and Mohan
+      if (/\bmale\b|david|ravi|hemant|prabhat|mohan/.test(nm)) s += 14;
+      if (/female|woman|zira|heera|swara|kalpana|raveena|aditi|priya|neerja|isha|lekha/.test(nm)) s -= 6;
       if (v.localService) s += 3;
       return s;
     }
@@ -639,6 +759,8 @@
   var open = false;
   var introing = false;   // true while the opening self-introduction plays
   var tipTimer = null;
+  var isSpeakingTherapy = false;
+  var activeTherapy = null;
 
   function applyStaticLabels() {
     var L = UI[lang()];
@@ -706,6 +828,8 @@
     if (!open) return;
     open = false;
     introing = false;
+    isSpeakingTherapy = false;
+    activeTherapy = null;
     monitor.stop();
     stopSpeech();
     panel.classList.remove("open");
@@ -721,7 +845,7 @@
   // the debounce settles) swaps the text and narrates it — stopping
   // any in-progress speech first. Same section never repeats.
   var monitor = createSectionMonitor(function (section) {
-    if (!open || introing) return;   // let the self-introduction finish first
+    if (!open || introing || isSpeakingTherapy) return;   // let the self-introduction finish first
     renderMessage(section);
     speakSection(section);
   });
@@ -747,9 +871,9 @@
     voice.refresh();
     if (open) {
       introing = false;           // switch straight to the section in the new language
-      var sec = monitor.current() || "hero";
+      var sec = isSpeakingTherapy && activeTherapy ? activeTherapy : (monitor.current() || "hero");
       renderMessage(sec);
-      speakSection(sec);          // best-effort (may be blocked without a gesture on iOS)
+      speakSection(sec, isSpeakingTherapy ? function () { isSpeakingTherapy = false; } : null);          // best-effort (may be blocked without a gesture on iOS)
     } else {
       stopSpeech();
     }
@@ -799,5 +923,27 @@
     document.addEventListener(idleEvents[i], resetIdle, { passive: true });
   }
   resetIdle();
+
+  // 3. Therapy Listen Buttons Integration
+  var listenBtns = document.querySelectorAll(".service-listen");
+  listenBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var therapy = btn.getAttribute("data-therapy");
+      if (!therapy) return;
+      
+      // Auto-open Bubble
+      if (!open) openPanel();
+      
+      isSpeakingTherapy = true;
+      activeTherapy = therapy;
+      
+      renderMessage(therapy);
+      speakSection(therapy, function () {
+        isSpeakingTherapy = false;
+        activeTherapy = null;
+      });
+    });
+  });
 
 })();

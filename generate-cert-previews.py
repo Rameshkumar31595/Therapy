@@ -38,12 +38,12 @@ def main():
         print("No PDFs found in", CERT_DIR)
         return
     for pdf_path in pdfs:
-        out = OUT_DIR / (slug(pdf_path.stem) + ".jpg")
+        out = OUT_DIR / (slug(pdf_path.stem) + ".webp")
         doc = pdfium.PdfDocument(str(pdf_path))
         page = doc[0]
         scale = RENDER_WIDTH / page.get_width()
         image = page.render(scale=scale).to_pil()
-        image.convert("RGB").save(str(out), "JPEG", quality=85, optimize=True)
+        image.convert("RGB").save(str(out), "WEBP", quality=80)
         kb = out.stat().st_size // 1024
         print(f"  ✓ {out.relative_to(ROOT)}  ({kb} KB)")
     print("Done.")

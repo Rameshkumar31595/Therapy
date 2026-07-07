@@ -128,6 +128,78 @@ MESSAGES = {
         "మేము నరసరావుపేటలోనే సౌకర్యవంతంగా ఉన్నాము. మా కేంద్రానికి తక్షణ మార్గదర్శకత్వం పొందడానికి కింద ఉన్న మ్యాప్‌ను ఉపయోగించండి."
       ]
     },
+    "padaabhyanga": {
+      "en": [
+        "Padaabhyanga is a traditional foot massage that relieves fatigue, improves sleep, and completely relaxes the lower limbs.",
+        "Our Padaabhyanga therapy focuses on your feet and lower legs to melt away daily stress and restore balance.",
+        "Experience deep relaxation with Padaabhyanga, designed to soothe tired feet and promote a calm, restful sleep."
+      ],
+      "te": [
+        "పాదాభ్యంగ అనేది అలసటను తగ్గించి, నిద్రను మెరుగుపరిచే సాంప్రదాయ పాద మసాజ్. ఇది కాళ్ళకు పూర్తి విశ్రాంతిని ఇస్తుంది.",
+        "మా పాదాభ్యంగ థెరపీ మీ పాదాలు మరియు కాళ్ళపై దృష్టి సారించి, రోజువారీ ఒత్తిడిని దూరం చేస్తుంది.",
+        "అలసిపోయిన పాదాలను శాంతపరచడానికి మరియు ప్రశాంతమైన నిద్రను ప్రోత్సహించడానికి పాదాభ్యంగతో లోతైన విశ్రాంతిని అనుభవించండి."
+      ]
+    },
+    "abhyanga45": {
+      "en": [
+        "Our 45-minute Abhyanga is a full-body oil massage that quickly relieves muscle tension and rejuvenates your body.",
+        "Short on time? The 45-minute Abhyanga offers a deeply relaxing, traditional full-body massage to ease your stress.",
+        "Enjoy a revitalizing 45-minute Abhyanga session, using warm herbal oils to nourish your skin and relax your muscles."
+      ],
+      "te": [
+        "మా 45 నిమిషాల అభ్యంగ అనేది కండరాల ఒత్తిడిని త్వరగా తగ్గించి, మీ శరీరాన్ని ఉత్తేజపరిచే పూర్తి శరీర నూనె మసాజ్.",
+        "సమయం తక్కువగా ఉందా? 45 నిమిషాల అభ్యంగ మీకు లోతైన విశ్రాంతినిచ్చే సాంప్రదాయ పూర్తి శరీర మసాజ్‌ను అందిస్తుంది.",
+        "మీ చర్మాన్ని పోషించడానికి మరియు కండరాలను సడలించడానికి వెచ్చని మూలికా నూనెలను ఉపయోగించే 45 నిమిషాల అభ్యంగను ఆస్వాదించండి."
+      ]
+    },
+    "abhyanga60": {
+      "en": [
+        "The 60-minute Abhyanga provides an extended, deeply restorative full-body massage for ultimate relaxation and wellness.",
+        "Immerse yourself in our 60-minute Abhyanga. This comprehensive therapy thoroughly soothes your nervous system.",
+        "Our one-hour Abhyanga uses warm, medicated oils to deeply detoxify, nourish, and completely relax your entire body."
+      ],
+      "te": [
+        "60 నిమిషాల అభ్యంగ మీకు అత్యుత్తమ విశ్రాంతి మరియు ఆరోగ్యం కోసం పొడిగించిన, లోతైన పూర్తి శరీర మసాజ్‌ను అందిస్తుంది.",
+        "మా 60 నిమిషాల అభ్యంగలో మునిగిపోండి. ఈ సమగ్ర చికిత్స మీ నాడీ వ్యవస్థను పూర్తిగా శాంతపరుస్తుంది.",
+        "మా ఒక గంట అభ్యంగ వెచ్చని, ఔషధ నూనెలను ఉపయోగించి మీ శరీరాన్ని లోతుగా డిటాక్సిఫై చేసి, పూర్తిగా సడలిస్తుంది."
+      ]
+    },
+    "potli": {
+      "en": [
+        "Herbal Potli uses warm poultices of medicinal herbs to reduce inflammation and provide deep relief for aching joints.",
+        "Experience the healing warmth of Herbal Potli, highly effective for soothing stiff muscles and joint pain.",
+        "Our Potli therapy applies heated herbal bags to targeted areas, melting away deep-seated tension and pain."
+      ],
+      "te": [
+        "హెర్బల్ పోట్లి ఔషధ మూలికల వెచ్చని మూటలను ఉపయోగించి వాపును తగ్గిస్తుంది మరియు కీళ్ల నొప్పులకు లోతైన ఉపశమనాన్ని ఇస్తుంది.",
+        "కండరాల బిగుతు మరియు కీళ్ల నొప్పులను తగ్గించడంలో అత్యంత ప్రభావవంతమైన హెర్బల్ పోట్లి యొక్క స్వస్థతను అనుభవించండి.",
+        "మా పోట్లి థెరపీ వేడిచేసిన మూలికా సంచులను ఉపయోగించి, లోతైన ఒత్తిడి మరియు నొప్పిని దూరం చేస్తుంది."
+      ]
+    },
+    "shirodhara": {
+      "en": [
+        "Shirodhara involves a continuous, rhythmic flow of warm oil over your forehead to profoundly calm the mind and nervous system.",
+        "Melt away mental stress with Shirodhara, our signature therapy designed to deeply relax your mind and improve sleep quality.",
+        "Experience profound tranquility with Shirodhara, the ultimate Ayurvedic treatment for mental clarity and relaxation."
+      ],
+      "te": [
+        "శిరోధారలో మీ నుదిటిపై వెచ్చని నూనెను నిరంతరంగా, లయబద్ధంగా పోయడం ద్వారా మనస్సు మరియు నాడీ వ్యవస్థను ప్రశాంతపరుస్తారు.",
+        "మా ప్రత్యేక చికిత్స అయిన శిరోధారతో మానసిక ఒత్తిడిని దూరం చేసుకోండి, ఇది మీ మనస్సును విశ్రాంతిపరిచి నిద్ర నాణ్యతను మెరుగుపరుస్తుంది.",
+        "మానసిక స్పష్టత మరియు విశ్రాంతి కోసం అంతిమ ఆయుర్వేద చికిత్స అయిన శిరోధారతో లోతైన ప్రశాంతతను అనుభవించండి."
+      ]
+    },
+    "pizhichil": {
+      "en": [
+        "Pizhichil is the king of Ayurvedic therapies, combining a continuous pour of warm medicated oil with a gentle, synchronous massage.",
+        "Treat yourself to Pizhichil, a royal therapy that intensely nourishes the body, improves circulation, and relieves severe tension.",
+        "Experience the luxurious Pizhichil. Litres of warm herbal oil are rhythmically poured over your body for unmatched rejuvenation."
+      ],
+      "te": [
+        "పిజిచిల్ అనేది ఆయుర్వేద చికిత్సలలో రారాజు, ఇది వెచ్చని ఔషధ నూనెను నిరంతరంగా పోయడం మరియు సున్నితమైన మసాజ్‌తో కూడి ఉంటుంది.",
+        "శరీరాన్ని తీవ్రంగా పోషించి, రక్త ప్రసరణను మెరుగుపరిచి, తీవ్రమైన ఒత్తిడిని తగ్గించే రాజ చికిత్స అయిన పిజిచిల్‌ను ఆస్వాదించండి.",
+        "విలాసవంతమైన పిజిచిల్‌ను అనుభవించండి. సాటిలేని ఉత్తేజం కోసం మీ శరీరంపై లీటర్ల కొద్దీ వెచ్చని మూలికా నూనె లయబద్ధంగా పోయబడుతుంది."
+      ]
+    },
     "booking": {
       "en": [
         "Ready to relax? Just choose your service, therapy, and time. Your booking will be quickly confirmed over WhatsApp.",
