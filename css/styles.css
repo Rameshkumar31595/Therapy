@@ -2107,15 +2107,43 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "à°ˆà°
   gap: 1.6rem;
 }
 .cert-card {
+  position: relative;
+  z-index: 1;
   flex: 0 1 21.5rem;      /* ~3 per row desktop, 2 tablet, 1 mobile */
   max-width: 24rem;
-  background: #fff;
-  border: 1px solid rgba(201, 163, 90, 0.25);
+  /* padding acts as the border width */
+  padding: 2px;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(15, 36, 26, 0.08);
   transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
 }
+
+.cert-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent 70%, rgba(201, 163, 90, 1) 90%, transparent 100%);
+  animation: rotateBorder 4s linear infinite;
+  z-index: -2;
+}
+
+.cert-card::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #fff;
+  border-radius: 16px;
+  z-index: -1;
+}
+
+@keyframes rotateBorder {
+  100% { transform: rotate(1turn); }
+}
+
 .cert-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 22px 48px rgba(15, 36, 26, 0.16);
@@ -2125,6 +2153,8 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "à°ˆà°
   display: block;
   background: var(--ivory);
   border-bottom: 1px solid rgba(201, 163, 90, 0.25);
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
 }
 .cert-preview img {
   display: block;
