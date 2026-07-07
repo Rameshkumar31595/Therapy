@@ -2224,7 +2224,14 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "ఈ�
 body.cert-lightbox-open { overflow: hidden; }
 
 /* ═══════════ BOOKING ═══════════ */
-.booking { background: var(--ivory-warm); scroll-margin-top: 4.5rem; }
+.booking { 
+  background: var(--ivory-warm); 
+  scroll-margin-top: 4.5rem; 
+  min-height: calc(100vh - 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .booking-card {
   max-width: 46rem;
