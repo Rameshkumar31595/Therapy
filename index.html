@@ -180,11 +180,11 @@
       </a>
 
       <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-        <a href="#about" data-i18n="nav.about">About</a>
         <a href="#services" data-i18n="nav.services">Therapies</a>
+        <a href="#booking" class="nav-cta nav-book" data-i18n="nav.book">Book Appointment</a>
+        <a href="#about" data-i18n="nav.about">About</a>
         <a href="#why-us" data-i18n="nav.why">Why Us</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
-        <a href="#booking" class="nav-cta nav-book" data-i18n="nav.book">Book Appointment</a>
         <a href="tel:9502477334" class="nav-cta" data-i18n="nav.call">Call 95024 77334</a>
         <a href="https://www.google.com/maps/search/?api=1&amp;query=16.2309877,80.04908" class="nav-cta nav-directions" target="_blank" rel="noopener noreferrer" aria-label="Open clinic location in Google Maps" data-i18n="nav.directions">Directions</a>
       </nav>
@@ -199,8 +199,6 @@
   </header>
 
   <main id="top">
-
-    <!-- ═══════════ HERO ═══════════ -->
     <section class="hero" id="hero" data-section="hero">
       <div class="hero-sky" aria-hidden="true">
         <div class="sun-glow"></div>
@@ -302,72 +300,6 @@
     </div>
 
     <!-- ═══════════ ABOUT ═══════════ -->
-    <section class="about section" id="about" data-section="about">
-      <!-- Story: discovering healing — herbs & warm golden light -->
-      <div class="deco-herb" aria-hidden="true">
-        <svg class="herb-leaf hl-1" viewBox="0 0 64 64"><use href="#leaf"/></svg>
-        <svg class="herb-leaf hl-2" viewBox="0 0 64 64"><use href="#leaf"/></svg>
-        <svg class="herb-leaf hl-3" viewBox="0 0 64 64"><use href="#leaf"/></svg>
-        <span class="oil-glow"></span>
-      </div>
-      <div class="container about-grid">
-        <div class="about-visual reveal">
-          <figure class="about-photo">
-            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900&q=65&auto=format&fit=crop"
-                 alt="Warm Ayurvedic spa setting with herbal oils and flowers" loading="lazy" width="900" height="1100" />
-            <figcaption class="photo-badge">
-              <svg viewBox="0 0 64 40" aria-hidden="true"><use href="#lotus"/></svg>
-              <span data-i18n="about.badge">Rooted in the<br/><em>Sushruta tradition</em></span>
-            </figcaption>
-          </figure>
-          <div class="about-photo-frame" aria-hidden="true"></div>
-        </div>
-
-        <div class="about-copy">
-          <p class="section-eyebrow reveal" data-i18n="about.eyebrow">Our Story</p>
-          <h2 class="section-title reveal" data-i18n="about.title">The Healing Heritage of Kerala,<br/><span class="gold-italic">At Our Clinic &amp; Your Home</span></h2>
-          <p class="lead reveal" data-i18n="about.lead">Sushruta is a certified therapist couple providing professional Kerala massage therapy
-          in Narasaraopet, at our clinic, and at home for selected therapies, with warm herbal oils, rhythmic strokes and deep, mindful care.</p>
-          <p class="reveal" data-i18n="about.para">Trained in authentic Kerala techniques passed down through generations of
-          Ayurvedic practice, every session is designed for relaxation, body comfort, stress relief and overall wellness,
-          giving you a quiet hour where the outside world fades away.</p>
-
-          <ul class="about-points">
-            <li class="reveal"><span class="point-dot"></span><div><strong data-i18n="about.p1t">Family-friendly &amp; trustworthy</strong><p data-i18n="about.p1d">A respectful, professional therapist couple you can trust completely for your wellness and care.</p></div></li>
-            <li class="reveal"><span class="point-dot"></span><div><strong data-i18n="about.p2t">Separate male &amp; female therapist support</strong><p data-i18n="about.p2d">Lady therapist for women, male therapist for men, always available for your comfort and privacy.</p></div></li>
-            <li class="reveal"><span class="point-dot"></span><div><strong data-i18n="about.p3t">Traditional oils &amp; techniques</strong><p data-i18n="about.p3d">Warm herbal oils and time-honoured Kerala strokes for genuine relaxation and pain relief support.</p></div></li>
-          </ul>
-
-          <a href="https://wa.me/919502477334?text=Namaste%2C%20I%20would%20like%20to%20know%20more%20about%20your%20Kerala%20massage%20services." class="text-link reveal" target="_blank" rel="noopener"><span data-i18n="about.link">Ask us anything on WhatsApp</span> <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════ CREDENTIALS ═══════════
-         Placed before the therapies so visitors see professional
-         qualifications before evaluating treatments. Certificate
-         cards are rendered into #certGrid by js/certificates.js
-         (see the manifest there to add more). -->
-    <section class="credentials section" id="credentials" data-section="certificates">
-      <div class="container">
-        <p class="section-eyebrow center reveal" data-i18n="cred.eyebrow">Proof of Expertise</p>
-        <h2 class="section-title center reveal" data-i18n="cred.title">Certified &amp; Qualified <span class="gold-italic">Professionals</span></h2>
-        <p class="cred-statement reveal" data-i18n="cred.statement">Our therapists are professionally trained and certified in traditional Ayurvedic and therapeutic massage practices, ensuring safe, authentic, and effective treatments.</p>
-
-        <ul class="trust-badges reveal" aria-label="Trust indicators">
-          <li data-i18n="cred.b1">Certified Professionals</li>
-          <li data-i18n="cred.b2">Verified Training</li>
-          <li data-i18n="cred.b3">Traditional Expertise</li>
-          <li data-i18n="cred.b4">Client-Focused Care</li>
-        </ul>
-
-        <div class="cert-grid" id="certGrid"></div>
-
-        <p class="cred-verify reveal" data-i18n="cred.verify">Each certificate is Government-issued and can be independently verified on the official ASAP Kerala portal.</p>
-      </div>
-    </section>
-
-    <!-- ═══════════ SERVICES ═══════════ -->
     <section class="services section section-dark" id="services" data-section="therapies">
       <div class="bird-layer bird-layer-slow" id="servicesBirds" aria-hidden="true"></div>
       <!-- Story: the therapy — massage strokes / oil flowing -->
@@ -517,128 +449,6 @@
     </section>
 
     <!-- ═══════════ WHY CHOOSE US ═══════════ -->
-    <section class="why-us section" id="why-us" data-section="why-us">
-      <!-- Story: healing in progress — greenery blooms -->
-      <div class="deco-bloom" aria-hidden="true">
-        <svg class="bloom-leaf bl-1" viewBox="0 0 64 64"><use href="#leaf"/></svg>
-        <svg class="bloom-leaf bl-2" viewBox="0 0 64 64"><use href="#leaf"/></svg>
-        <svg class="bloom-leaf bl-3" viewBox="0 0 64 64"><use href="#leaf"/></svg>
-        <svg class="bloom-leaf bl-4" viewBox="0 0 64 64"><use href="#leaf"/></svg>
-        <svg class="bloom-leaf bl-5" viewBox="0 0 64 64"><use href="#leaf"/></svg>
-      </div>
-      <div class="container">
-        <p class="section-eyebrow center reveal" data-i18n="why.eyebrow">Why Sushruta</p>
-        <h2 class="section-title center reveal" data-i18n="why.title">Wellness You Can <span class="gold-italic">Trust Completely</span></h2>
-
-        <div class="why-grid">
-          <div class="why-card reveal">
-            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5Zm-1.2 13.6-3.4-3.4 1.4-1.4 2 2 4.4-4.4 1.4 1.4Z"/></svg></div>
-            <h3 data-i18n="why.c1t">Certified Therapist Couple</h3>
-            <p data-i18n="why.c1d">A professional therapist couple trained in authentic Kerala Ayurvedic massage techniques.</p>
-          </div>
-          <div class="why-card reveal">
-            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm0 2c-2.3 0-7 1.2-7 3.5V19h9v-2.5c0-.9.4-1.7 1.1-2.4A11 11 0 0 0 8 13Zm8 0c-.3 0-.6 0-1 .05A4.4 4.4 0 0 1 17 16.5V19h6v-2.5c0-2.3-4.7-3.5-7-3.5Z"/></svg></div>
-            <h3 data-i18n="why.c2t">Separate Male / Female Therapists</h3>
-            <p data-i18n="why.c2d">Lady therapist for women, male therapist for men, so comfort, privacy and dignity always come first.</p>
-          </div>
-          <div class="why-card reveal">
-            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.9-10-9.5C.6 8 2.4 4.5 6 4.5c2.2 0 3.8 1.2 6 3.5 2.2-2.3 3.8-3.5 6-3.5 3.6 0 5.4 3.5 4 7C19.5 16.1 12 21 12 21Z"/></svg></div>
-            <h3 data-i18n="why.c3t">Body Comfort</h3>
-            <p data-i18n="why.c3d">Warm oils and mindful pressure crafted around your body's needs and preferences.</p>
-          </div>
-          <div class="why-card reveal">
-            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-7 7c0 2.4 1.2 4.4 3 5.7V18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3c1.8-1.3 3-3.3 3-5.7a7 7 0 0 0-7-7Zm-3 18h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1Z"/></svg></div>
-            <h3 data-i18n="why.c4t">Stress Relief</h3>
-            <p data-i18n="why.c4d">An hour of stillness. Let tension dissolve as the mind settles into deep quiet.</p>
-          </div>
-          <div class="why-card reveal">
-            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 1 1-4 4 4 4 0 0 1 4-4Zm-1 9h2l1 5-2 6-2-6Zm-5.5.3L9 12.5 7.5 17 3 15Zm13 0L21 15l-4.5 2L15 12.5Z"/></svg></div>
-            <h3 data-i18n="why.c5t">Relax Mind &amp; Body</h3>
-            <p data-i18n="why.c5d">Traditional rhythms that quieten thought and release the whole body into rest.</p>
-          </div>
-          <div class="why-card reveal">
-            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.5 5.5A2 2 0 1 0 12 2a2 2 0 0 0 1.5 3.5ZM9.9 21H12l1-5.5 2.1 2V21h2v-4.5l-2.1-2 .6-3A7.3 7.3 0 0 0 20 13v-2a5.3 5.3 0 0 1-4-2l-1-1.6a2 2 0 0 0-1.7-1c-.3 0-.5 0-.8.1L7 8.3V13h2V9.6l1.8-.7-1.6 8.1Z"/></svg></div>
-            <h3 data-i18n="why.c6t">Improved Flexibility</h3>
-            <p data-i18n="why.c6d">Regular sessions support suppler muscles, easier movement and lighter mornings.</p>
-          </div>
-          <div class="why-card why-card-wide reveal">
-            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3Z"/></svg></div>
-            <div>
-              <h3 data-i18n="why.c7t">Clinic or Home Comfort</h3>
-              <p data-i18n="why.c7d">A peaceful, hygienic clinic — or the comfort of your own home for selected therapies. Warm oils, fresh linens and expertise are ready; you simply relax.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════ TIMINGS ═══════════ -->
-    <section class="timings section section-dark" id="timings" data-section="timings">
-      <!-- Story: restoration — calm breathing rings -->
-      <div class="deco-breath" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="container timings-wrap">
-        <div class="timings-copy">
-          <p class="section-eyebrow reveal" data-i18n="time.eyebrow">When We're Available</p>
-          <h2 class="section-title reveal" data-i18n="time.title">Open Every Day,<br/><span class="gold-italic">At Your Convenience</span></h2>
-          <p class="reveal" data-i18n="time.para">Book a morning of renewal or an evening of deep rest, at our clinic
-          in Narasaraopet, Palnadu District, or as a home visit for selected therapies. Open all week.</p>
-          <a href="https://wa.me/919502477334?text=Namaste%2C%20what%20time%20slots%20are%20available%20today%3F" class="btn btn-gold reveal" target="_blank" rel="noopener" data-i18n="time.btn">Check Today's Availability</a>
-        </div>
-
-        <div class="timings-card reveal" id="timingsCard">
-          <div class="timings-card-glow" aria-hidden="true"></div>
-          <h3 class="timings-card-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7Z"/></svg> <span data-i18n="time.card">Working Hours</span></h3>
-          <ul class="timings-list">
-            <li data-day="2"><span data-i18n="day.tue">Tuesday</span><span>9:00 AM to 8:00 PM</span></li>
-            <li data-day="3"><span data-i18n="day.wed">Wednesday</span><span>9:00 AM to 8:00 PM</span></li>
-            <li data-day="4"><span data-i18n="day.thu">Thursday</span><span>9:00 AM to 8:00 PM</span></li>
-            <li data-day="5"><span data-i18n="day.fri">Friday</span><span>9:00 AM to 8:00 PM</span></li>
-            <li data-day="6"><span data-i18n="day.sat">Saturday</span><span>9:00 AM to 8:00 PM</span></li>
-            <li data-day="0"><span data-i18n="day.sun">Sunday</span><span>9:00 AM to 8:00 PM</span></li>
-            <li class="monday-special" data-day="1">
-              <span><span data-i18n="day.mon">Monday</span> <em class="monday-note" data-i18n="day.half">Half Day</em></span>
-              <span>9:00 AM to 1:00 PM</span>
-            </li>
-          </ul>
-          <p class="timings-foot" data-i18n="time.foot">✦ &nbsp;Monday sessions are mornings only, so book early&nbsp; ✦</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════ EXPERIENCE / GALLERY ═══════════ -->
-    <section class="experience section" id="experience" data-section="experience">
-      <div class="container">
-        <p class="section-eyebrow center reveal" data-i18n="exp.eyebrow">The Experience</p>
-        <h2 class="section-title center reveal" data-i18n="exp.title">Step Into a <span class="gold-italic">Kerala State of Mind</span></h2>
-        <p class="section-intro center reveal" data-i18n="exp.intro">Close your eyes. Warm oil, the scent of herbs, birdsong
-        in the distance. This is what your session feels like.</p>
-      </div>
-
-      <div class="gallery-scroll reveal" role="list" aria-label="Wellness experience gallery">
-        <figure class="gallery-card" role="listitem">
-          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=60&auto=format&fit=crop" alt="Spa stones, herbal oils and frangipani flowers arranged for therapy" loading="lazy" width="800" height="1000" />
-          <figcaption><span class="gallery-num">01</span><span data-i18n="exp.g1">Warm Herbal Oils</span></figcaption>
-        </figure>
-        <figure class="gallery-card" role="listitem">
-          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=60&auto=format&fit=crop" alt="A calm massage therapy session in progress" loading="lazy" width="800" height="1000" />
-          <figcaption><span class="gallery-num">02</span><span data-i18n="exp.g2">Unhurried Traditional Care</span></figcaption>
-        </figure>
-        <figure class="gallery-card" role="listitem">
-          <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=60&auto=format&fit=crop" alt="Relaxing back massage with flowing strokes" loading="lazy" width="800" height="1000" />
-          <figcaption><span class="gallery-num">03</span><span data-i18n="exp.g3">Deep Relaxation</span></figcaption>
-        </figure>
-        <figure class="gallery-card" role="listitem">
-          <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=60&auto=format&fit=crop" alt="Kerala backwaters with palm trees at golden hour" loading="lazy" width="800" height="1000" />
-          <figcaption><span class="gallery-num">04</span><span data-i18n="exp.g4">The Spirit of Kerala</span></figcaption>
-        </figure>
-      </div>
-      <p class="gallery-hint" aria-hidden="true" data-i18n="exp.hint">← &nbsp;swipe to wander&nbsp; →</p>
-    </section>
-
-    <!-- ═══════════ BOOKING ═══════════
-         WhatsApp-only appointment flow, wired up by js/booking.js.
-         The owner's number lives in ONE place: OWNER_WHATSAPP at the
-         top of js/booking.js. -->
     <section class="booking section" id="booking" data-section="booking">
       <div class="container">
         <p class="section-eyebrow center reveal" data-i18n="bk.eyebrow">Book Your Session</p>
@@ -787,6 +597,194 @@
     </section>
 
     <!-- ═══════════ CONTACT ═══════════ -->
+    <section class="about section" id="about" data-section="about">
+      <!-- Story: discovering healing — herbs & warm golden light -->
+      <div class="deco-herb" aria-hidden="true">
+        <svg class="herb-leaf hl-1" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="herb-leaf hl-2" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="herb-leaf hl-3" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <span class="oil-glow"></span>
+      </div>
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <figure class="about-photo">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900&q=65&auto=format&fit=crop"
+                 alt="Warm Ayurvedic spa setting with herbal oils and flowers" loading="lazy" width="900" height="1100" />
+            <figcaption class="photo-badge">
+              <svg viewBox="0 0 64 40" aria-hidden="true"><use href="#lotus"/></svg>
+              <span data-i18n="about.badge">Rooted in the<br/><em>Sushruta tradition</em></span>
+            </figcaption>
+          </figure>
+          <div class="about-photo-frame" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-copy">
+          <p class="section-eyebrow reveal" data-i18n="about.eyebrow">Our Story</p>
+          <h2 class="section-title reveal" data-i18n="about.title">The Healing Heritage of Kerala,<br/><span class="gold-italic">At Our Clinic &amp; Your Home</span></h2>
+          <p class="lead reveal" data-i18n="about.lead">Sushruta is a certified therapist couple providing professional Kerala massage therapy
+          in Narasaraopet, at our clinic, and at home for selected therapies, with warm herbal oils, rhythmic strokes and deep, mindful care.</p>
+          <p class="reveal" data-i18n="about.para">Trained in authentic Kerala techniques passed down through generations of
+          Ayurvedic practice, every session is designed for relaxation, body comfort, stress relief and overall wellness,
+          giving you a quiet hour where the outside world fades away.</p>
+
+          <ul class="about-points">
+            <li class="reveal"><span class="point-dot"></span><div><strong data-i18n="about.p1t">Family-friendly &amp; trustworthy</strong><p data-i18n="about.p1d">A respectful, professional therapist couple you can trust completely for your wellness and care.</p></div></li>
+            <li class="reveal"><span class="point-dot"></span><div><strong data-i18n="about.p2t">Separate male &amp; female therapist support</strong><p data-i18n="about.p2d">Lady therapist for women, male therapist for men, always available for your comfort and privacy.</p></div></li>
+            <li class="reveal"><span class="point-dot"></span><div><strong data-i18n="about.p3t">Traditional oils &amp; techniques</strong><p data-i18n="about.p3d">Warm herbal oils and time-honoured Kerala strokes for genuine relaxation and pain relief support.</p></div></li>
+          </ul>
+
+          <a href="https://wa.me/919502477334?text=Namaste%2C%20I%20would%20like%20to%20know%20more%20about%20your%20Kerala%20massage%20services." class="text-link reveal" target="_blank" rel="noopener"><span data-i18n="about.link">Ask us anything on WhatsApp</span> <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CREDENTIALS ═══════════
+         Placed before the therapies so visitors see professional
+         qualifications before evaluating treatments. Certificate
+         cards are rendered into #certGrid by js/certificates.js
+         (see the manifest there to add more). -->
+    <section class="credentials section" id="credentials" data-section="certificates">
+      <div class="container">
+        <p class="section-eyebrow center reveal" data-i18n="cred.eyebrow">Proof of Expertise</p>
+        <h2 class="section-title center reveal" data-i18n="cred.title">Certified &amp; Qualified <span class="gold-italic">Professionals</span></h2>
+        <p class="cred-statement reveal" data-i18n="cred.statement">Our therapists are professionally trained and certified in traditional Ayurvedic and therapeutic massage practices, ensuring safe, authentic, and effective treatments.</p>
+
+        <ul class="trust-badges reveal" aria-label="Trust indicators">
+          <li data-i18n="cred.b1">Certified Professionals</li>
+          <li data-i18n="cred.b2">Verified Training</li>
+          <li data-i18n="cred.b3">Traditional Expertise</li>
+          <li data-i18n="cred.b4">Client-Focused Care</li>
+        </ul>
+
+        <div class="cert-grid" id="certGrid"></div>
+
+        <p class="cred-verify reveal" data-i18n="cred.verify">Each certificate is Government-issued and can be independently verified on the official ASAP Kerala portal.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════ SERVICES ═══════════ -->
+    <section class="why-us section" id="why-us" data-section="why-us">
+      <!-- Story: healing in progress — greenery blooms -->
+      <div class="deco-bloom" aria-hidden="true">
+        <svg class="bloom-leaf bl-1" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="bloom-leaf bl-2" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="bloom-leaf bl-3" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="bloom-leaf bl-4" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+        <svg class="bloom-leaf bl-5" viewBox="0 0 64 64"><use href="#leaf"/></svg>
+      </div>
+      <div class="container">
+        <p class="section-eyebrow center reveal" data-i18n="why.eyebrow">Why Sushruta</p>
+        <h2 class="section-title center reveal" data-i18n="why.title">Wellness You Can <span class="gold-italic">Trust Completely</span></h2>
+
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5Zm-1.2 13.6-3.4-3.4 1.4-1.4 2 2 4.4-4.4 1.4 1.4Z"/></svg></div>
+            <h3 data-i18n="why.c1t">Certified Therapist Couple</h3>
+            <p data-i18n="why.c1d">A professional therapist couple trained in authentic Kerala Ayurvedic massage techniques.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm0 2c-2.3 0-7 1.2-7 3.5V19h9v-2.5c0-.9.4-1.7 1.1-2.4A11 11 0 0 0 8 13Zm8 0c-.3 0-.6 0-1 .05A4.4 4.4 0 0 1 17 16.5V19h6v-2.5c0-2.3-4.7-3.5-7-3.5Z"/></svg></div>
+            <h3 data-i18n="why.c2t">Separate Male / Female Therapists</h3>
+            <p data-i18n="why.c2d">Lady therapist for women, male therapist for men, so comfort, privacy and dignity always come first.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.9-10-9.5C.6 8 2.4 4.5 6 4.5c2.2 0 3.8 1.2 6 3.5 2.2-2.3 3.8-3.5 6-3.5 3.6 0 5.4 3.5 4 7C19.5 16.1 12 21 12 21Z"/></svg></div>
+            <h3 data-i18n="why.c3t">Body Comfort</h3>
+            <p data-i18n="why.c3d">Warm oils and mindful pressure crafted around your body's needs and preferences.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-7 7c0 2.4 1.2 4.4 3 5.7V18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3c1.8-1.3 3-3.3 3-5.7a7 7 0 0 0-7-7Zm-3 18h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1Z"/></svg></div>
+            <h3 data-i18n="why.c4t">Stress Relief</h3>
+            <p data-i18n="why.c4d">An hour of stillness. Let tension dissolve as the mind settles into deep quiet.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 1 1-4 4 4 4 0 0 1 4-4Zm-1 9h2l1 5-2 6-2-6Zm-5.5.3L9 12.5 7.5 17 3 15Zm13 0L21 15l-4.5 2L15 12.5Z"/></svg></div>
+            <h3 data-i18n="why.c5t">Relax Mind &amp; Body</h3>
+            <p data-i18n="why.c5d">Traditional rhythms that quieten thought and release the whole body into rest.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.5 5.5A2 2 0 1 0 12 2a2 2 0 0 0 1.5 3.5ZM9.9 21H12l1-5.5 2.1 2V21h2v-4.5l-2.1-2 .6-3A7.3 7.3 0 0 0 20 13v-2a5.3 5.3 0 0 1-4-2l-1-1.6a2 2 0 0 0-1.7-1c-.3 0-.5 0-.8.1L7 8.3V13h2V9.6l1.8-.7-1.6 8.1Z"/></svg></div>
+            <h3 data-i18n="why.c6t">Improved Flexibility</h3>
+            <p data-i18n="why.c6d">Regular sessions support suppler muscles, easier movement and lighter mornings.</p>
+          </div>
+          <div class="why-card why-card-wide reveal">
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3Z"/></svg></div>
+            <div>
+              <h3 data-i18n="why.c7t">Clinic or Home Comfort</h3>
+              <p data-i18n="why.c7d">A peaceful, hygienic clinic — or the comfort of your own home for selected therapies. Warm oils, fresh linens and expertise are ready; you simply relax.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ TIMINGS ═══════════ -->
+    <section class="experience section" id="experience" data-section="experience">
+      <div class="container">
+        <p class="section-eyebrow center reveal" data-i18n="exp.eyebrow">The Experience</p>
+        <h2 class="section-title center reveal" data-i18n="exp.title">Step Into a <span class="gold-italic">Kerala State of Mind</span></h2>
+        <p class="section-intro center reveal" data-i18n="exp.intro">Close your eyes. Warm oil, the scent of herbs, birdsong
+        in the distance. This is what your session feels like.</p>
+      </div>
+
+      <div class="gallery-scroll reveal" role="list" aria-label="Wellness experience gallery">
+        <figure class="gallery-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=60&auto=format&fit=crop" alt="Spa stones, herbal oils and frangipani flowers arranged for therapy" loading="lazy" width="800" height="1000" />
+          <figcaption><span class="gallery-num">01</span><span data-i18n="exp.g1">Warm Herbal Oils</span></figcaption>
+        </figure>
+        <figure class="gallery-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=60&auto=format&fit=crop" alt="A calm massage therapy session in progress" loading="lazy" width="800" height="1000" />
+          <figcaption><span class="gallery-num">02</span><span data-i18n="exp.g2">Unhurried Traditional Care</span></figcaption>
+        </figure>
+        <figure class="gallery-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=60&auto=format&fit=crop" alt="Relaxing back massage with flowing strokes" loading="lazy" width="800" height="1000" />
+          <figcaption><span class="gallery-num">03</span><span data-i18n="exp.g3">Deep Relaxation</span></figcaption>
+        </figure>
+        <figure class="gallery-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=60&auto=format&fit=crop" alt="Kerala backwaters with palm trees at golden hour" loading="lazy" width="800" height="1000" />
+          <figcaption><span class="gallery-num">04</span><span data-i18n="exp.g4">The Spirit of Kerala</span></figcaption>
+        </figure>
+      </div>
+      <p class="gallery-hint" aria-hidden="true" data-i18n="exp.hint">← &nbsp;swipe to wander&nbsp; →</p>
+    </section>
+
+    <!-- ═══════════ BOOKING ═══════════
+         WhatsApp-only appointment flow, wired up by js/booking.js.
+         The owner's number lives in ONE place: OWNER_WHATSAPP at the
+         top of js/booking.js. -->
+    <section class="timings section section-dark" id="timings" data-section="timings">
+      <!-- Story: restoration — calm breathing rings -->
+      <div class="deco-breath" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container timings-wrap">
+        <div class="timings-copy">
+          <p class="section-eyebrow reveal" data-i18n="time.eyebrow">When We're Available</p>
+          <h2 class="section-title reveal" data-i18n="time.title">Open Every Day,<br/><span class="gold-italic">At Your Convenience</span></h2>
+          <p class="reveal" data-i18n="time.para">Book a morning of renewal or an evening of deep rest, at our clinic
+          in Narasaraopet, Palnadu District, or as a home visit for selected therapies. Open all week.</p>
+          <a href="https://wa.me/919502477334?text=Namaste%2C%20what%20time%20slots%20are%20available%20today%3F" class="btn btn-gold reveal" target="_blank" rel="noopener" data-i18n="time.btn">Check Today's Availability</a>
+        </div>
+
+        <div class="timings-card reveal" id="timingsCard">
+          <div class="timings-card-glow" aria-hidden="true"></div>
+          <h3 class="timings-card-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7Z"/></svg> <span data-i18n="time.card">Working Hours</span></h3>
+          <ul class="timings-list">
+            <li data-day="2"><span data-i18n="day.tue">Tuesday</span><span>9:00 AM to 8:00 PM</span></li>
+            <li data-day="3"><span data-i18n="day.wed">Wednesday</span><span>9:00 AM to 8:00 PM</span></li>
+            <li data-day="4"><span data-i18n="day.thu">Thursday</span><span>9:00 AM to 8:00 PM</span></li>
+            <li data-day="5"><span data-i18n="day.fri">Friday</span><span>9:00 AM to 8:00 PM</span></li>
+            <li data-day="6"><span data-i18n="day.sat">Saturday</span><span>9:00 AM to 8:00 PM</span></li>
+            <li data-day="0"><span data-i18n="day.sun">Sunday</span><span>9:00 AM to 8:00 PM</span></li>
+            <li class="monday-special" data-day="1">
+              <span><span data-i18n="day.mon">Monday</span> <em class="monday-note" data-i18n="day.half">Half Day</em></span>
+              <span>9:00 AM to 1:00 PM</span>
+            </li>
+          </ul>
+          <p class="timings-foot" data-i18n="time.foot">✦ &nbsp;Monday sessions are mornings only, so book early&nbsp; ✦</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ EXPERIENCE / GALLERY ═══════════ -->
     <section class="contact section" id="contact" data-section="contact">
       <div class="bird-layer bird-layer-slow" id="contactBirds" aria-hidden="true"></div>
       <!-- Story: complete renewal — a golden sun rises -->

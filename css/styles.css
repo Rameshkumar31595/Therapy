@@ -297,7 +297,19 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
   letter-spacing: 0.04em;
   transition: color 0.3s;
 }
-.main-nav a:hover { color: var(--gold-bright); }
+.main-nav a:hover,
+.main-nav a.active { color: var(--gold-bright); }
+
+.main-nav a:not(.nav-cta) {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.2rem 1.2rem;
+  margin: -0.2rem -1.2rem;
+  transition: border-color 0.3s, color 0.3s;
+}
+.main-nav a:not(.nav-cta).active {
+  border-color: var(--gold-bright);
+}
 .main-nav .nav-cta {
   font-family: var(--font-body);
   font-size: 0.95rem;
@@ -1619,7 +1631,20 @@ html[lang="te"] .timings-list li.today span:first-child::after { content: "à°ˆà°
     transform-origin: right;
     transition: transform 0.4s var(--ease-out);
   }
-  .main-nav a:not(.nav-cta):hover::after { transform: scaleX(1); transform-origin: left; }
+  .main-nav a:not(.nav-cta):hover::after,
+  .main-nav a:not(.nav-cta).active::after { transform: scaleX(1); transform-origin: left; }
+  
+  /* Additional full border for active state as requested */
+  .main-nav a:not(.nav-cta) {
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 0.4rem 0.8rem;
+    margin: -0.4rem -0.8rem; /* Offset padding to prevent layout shifts */
+    transition: border-color 0.3s;
+  }
+  .main-nav a:not(.nav-cta).active {
+    border-color: var(--gold-bright);
+  }
   .main-nav .nav-cta {
     min-height: 2.5rem;
     padding: 0.56rem 1.05rem;

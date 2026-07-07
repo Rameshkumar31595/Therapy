@@ -739,4 +739,49 @@
     ps = targetP(); // start in-place: no catch-up sweep on load
     start();
   })();
+
+  /* ── Scroll Spy for Navigation Active State ────────────── */
+  (function initScrollSpy() {
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll(".main-nav a:not(.nav-cta)"));
+    if (navLinks.length === 0) return;
+    
+    var targets = navLinks.map(function(link) {
+      var href = link.getAttribute("href");
+      if (!href || href.charAt(0) !== "#") return null;
+      var id = href.substring(1);
+      return document.getElementById(id);
+    }).filter(function(el) { return el !== null; });
+    
+    if (targets.length === 0) return;
+    
+    function updateSpy() {
+      var mid = window.innerHeight / 3; // use upper third of screen as the "active" focal point
+      var bestId = null;
+      
+      // Find the last section that has its top above the focal point
+      // This works beautifully for normal scrolling
+      targets.forEach(function(sec) {
+        var rect = sec.getBoundingClientRect();
+        if (rect.top <= mid + 100) { // +100px buffer
+          bestId = sec.id;
+        }
+      });
+      
+      navLinks.forEach(function(link) {
+        var href = link.getAttribute("href");
+        if (href === "#" + bestId) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    }
+    
+    window.addEventListener("scroll", updateSpy, { passive: true });
+    window.addEventListener("resize", updateSpy, { passive: true });
+    
+    // Initial check
+    setTimeout(updateSpy, 100);
+  })();
+
 })();
