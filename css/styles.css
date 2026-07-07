@@ -248,15 +248,48 @@ ul { list-style: none; }
   100% { background-position: 200% center; }
 }
 @keyframes lotusBreathe {
-  0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 4px rgba(227, 194, 132, 0.4)); fill: var(--gold); }
-  50% { transform: scale(1.3) rotate(15deg); filter: drop-shadow(0 0 25px rgba(227, 194, 132, 1)); fill: #ffffff; }
+  0%, 100% { 
+    transform: scale(1); 
+    filter: drop-shadow(0 0 3px rgba(227, 194, 132, 0.3)); 
+  }
+  50% { 
+    transform: scale(1.12); 
+    filter: drop-shadow(0 0 14px rgba(227, 194, 132, 0.75)); 
+  }
 }
+@keyframes petalBreatheC {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08, 1.18); }
+}
+@keyframes petalBreatheIL {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-8deg) scale(1.04); }
+}
+@keyframes petalBreatheIR {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(8deg) scale(1.04); }
+}
+@keyframes petalBreatheOL {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-18deg) scale(1.02); }
+}
+@keyframes petalBreatheOR {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(18deg) scale(1.02); }
+}
+
+.petal-c { transform-origin: 32px 32px; animation: petalBreatheC 4s ease-in-out infinite; }
+.petal-il { transform-origin: 32px 32px; animation: petalBreatheIL 4s ease-in-out infinite; }
+.petal-ir { transform-origin: 32px 32px; animation: petalBreatheIR 4s ease-in-out infinite; }
+.petal-ol { transform-origin: 32px 32px; animation: petalBreatheOL 4s ease-in-out infinite; }
+.petal-or { transform-origin: 32px 32px; animation: petalBreatheOR 4s ease-in-out infinite; }
+
 .brand-mark { 
   width: 2.3rem; 
   height: 1.5rem; 
   fill: var(--gold); 
   flex-shrink: 0; 
-  animation: lotusBreathe 3s ease-in-out infinite;
+  animation: lotusBreathe 4s ease-in-out infinite;
 }
 .brand-name {
   font-family: var(--font-display);
