@@ -1162,14 +1162,14 @@ html[lang="te"] .home-badge { letter-spacing: 0.01em; text-transform: none; font
   vertical-align: middle;
 }
 
-.monday-special {
+.halfday-special {
   background: linear-gradient(120deg, rgba(201, 163, 90, 0.22), rgba(201, 163, 90, 0.08));
   border-radius: 0.6rem;
   padding-inline: 0.8rem !important;
   border-bottom-color: transparent !important;
   margin-top: 0.4rem;
 }
-.monday-note {
+.halfday-note {
   font-style: normal;
   font-size: 0.58rem;
   font-weight: 700;
