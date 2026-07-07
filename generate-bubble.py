@@ -23,7 +23,7 @@ MESSAGES = {
     "hero": {
       "en": [
         "We offer authentic Kerala massage therapy right here at our massage therapy center, with pure natural oil, for relaxation, to improve blood circulation, body comfort, and skin health. We even offer relaxing therapies like Padaabhyanga and Abhyanga as convenient home services.",
-        "At our specialized massage therapy center, you can experience true Kerala Ayurveda. And for your ultimate comfort, therapies like Padaabhyanga are available right at your home.",
+        "At our specialized massage therapy center, you can experience true Kerala Massage tradition. And for your ultimate comfort, therapies like Padaabhyanga are available right at your home.",
         "Experience the healing power of authentic Kerala therapies at our center. If you prefer to relax at home, our home services have you covered."
       ],
       "te": [
@@ -34,8 +34,8 @@ MESSAGES = {
     },
     "about": {
       "en": [
-        "Sushruta is run by a certified therapist couple. Our goal is to bring the true, traditional essence of Kerala Ayurveda straight to Narasaraopet.",
-        "Founded by a passionate and certified therapist couple, we are deeply committed to providing authentic Ayurvedic care to the Narasaraopet community.",
+        "Sushruta is run by a certified therapist couple. Our goal is to bring the true, traditional essence of Kerala Massage tradition straight to Narasaraopet.",
+        "Founded by a passionate and certified therapist couple, we are deeply committed to providing authentic Massage care to the Narasaraopet community.",
         "We are a husband and wife team of certified therapists, and our lifelong mission is bringing traditional Kerala healing practices directly to you."
       ],
       "te": [
@@ -46,9 +46,9 @@ MESSAGES = {
     },
     "certificates": {
       "en": [
-        "Our certifications show our deep professional training in traditional Ayurveda, so you can always rest assured you are in expert hands.",
+        "Our certifications show our deep professional training in traditional Massage tradition, so you can always rest assured you are in expert hands.",
         "We pride ourselves on our rigorous professional training. These certifications guarantee you're receiving care of the absolute highest quality.",
-        "Feel completely at ease knowing our expertise is backed by recognized Ayurvedic certifications. You are truly in safe, knowledgeable hands."
+        "Feel completely at ease knowing our expertise is backed by recognized Massage certifications. You are truly in safe, knowledgeable hands."
       ],
       "te": [
         "మా సర్టిఫికేట్లు సాంప్రదాయ మసాజ్ పద్ధతుల్లో మా వృత్తిపరమైన శిక్షణ మరియు నైపుణ్యాన్ని ప్రతిబింబిస్తాయి. అత్యుత్తమ నాణ్యమైన థెరపీకి ఇవే నిదర్శనం.",
@@ -58,7 +58,7 @@ MESSAGES = {
     },
     "therapies": {
       "en": [
-        "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Herbal Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
+        "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Hot Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
         "We offer a wonderful range of traditional therapies. Browse through them below, and just tap the listen button to hear a detailed explanation of each one.",
         "From soothing Shirodhara to relaxing Pizhichil, explore all our healing therapies here. Don't forget to tap listen to learn the benefits of each."
       ],
@@ -108,7 +108,7 @@ MESSAGES = {
       "en": [
         "You'll experience profound relaxation here, with warm natural oils and a deeply peaceful atmosphere inspired by Kerala's heritage.",
         "Immerse yourself in tranquility. Our unhurried care and warm natural oils will leave you feeling completely rejuvenated and balanced.",
-        "Step into a deeply calming space. The rich heritage of Kerala Ayurveda combined with our personalized care ensures a truly restorative experience."
+        "Step into a deeply calming space. The rich heritage of Kerala Massage tradition combined with our personalized care ensures a truly restorative experience."
       ],
       "te": [
         "వెచ్చని సహజ నూనెలు, ప్రశాంతమైన వ్యక్తిగత సేవ మరియు కేరళ సంప్రదాయ స్ఫూర్తితో కూడిన ప్రశాంత వాతావరణంలో గొప్ప ఉపశమనాన్ని అనుభవించండి.",
@@ -166,8 +166,8 @@ MESSAGES = {
     },
     "potli": {
       "en": [
-        "Herbal Potli uses warm poultices of medicinal herbs to reduce inflammation and provide deep relief for aching joints.",
-        "Experience the healing warmth of Herbal Potli, highly effective for soothing stiff muscles and joint pain.",
+        "Hot Potli uses warm poultices of natural ingredients to reduce inflammation and provide deep relief for aching joints.",
+        "Experience the healing warmth of Hot Potli, highly effective for soothing stiff muscles and joint pain.",
         "Our Potli therapy applies heated herbal bags to targeted areas, melting away deep-seated tension and pain."
       ],
       "te": [
@@ -180,7 +180,7 @@ MESSAGES = {
       "en": [
         "Shirodhara involves a continuous, rhythmic flow of warm oil over your forehead to profoundly calm the mind and nervous system.",
         "Melt away mental stress with Shirodhara, our signature therapy designed to deeply relax your mind and improve sleep quality.",
-        "Experience profound tranquility with Shirodhara, the ultimate Ayurvedic therapy for mental clarity and relaxation."
+        "Experience profound tranquility with Shirodhara, the ultimate Massage therapy for mental clarity and relaxation."
       ],
       "te": [
         "శిరోధారలో మీ నుదిటిపై వెచ్చని నూనెను నిరంతరంగా, లయబద్ధంగా పోయడం ద్వారా మనస్సు మరియు నాడీ వ్యవస్థను ప్రశాంతపరుస్తారు.",
@@ -190,7 +190,7 @@ MESSAGES = {
     },
     "pizhichil": {
       "en": [
-        "Pizhichil is the king of Ayurvedic therapies, combining a continuous pour of warm natural oil with a gentle, synchronous massage.",
+        "Pizhichil is the king of Massage therapies, combining a continuous pour of warm natural oil with a gentle, synchronous massage.",
         "Treat yourself to Pizhichil, a royal therapy that intensely nourishes the body, improves circulation, and relieves severe tension.",
         "Experience the luxurious Pizhichil. Litres of warm natural oil are rhythmically poured over your body for unmatched rejuvenation."
       ],

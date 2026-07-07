@@ -22,7 +22,7 @@
       file: "Certificates/Jampani Bhavana.pdf",
       preview: "Certificates/previews/jampani-bhavana.webp",
       name: "Jampani Bhavana",
-      alt: "Government-issued Ayurveda Therapist certificate of Jampani Bhavana, " +
+      alt: "Government-issued Massage Therapist certificate of Jampani Bhavana, " +
            "1200 hours of training, NSQF Level 4, recognised by NCVET, " +
            "issued under the Additional Skill Acquisition Programme, Kerala"
     },
@@ -30,7 +30,7 @@
       file: "Certificates/Rahul Ashok Sakamuri.pdf",
       preview: "Certificates/previews/rahul-ashok-sakamuri.webp",
       name: "Rahul Ashok Sakamuri",
-      alt: "Government-issued Ayurveda Therapist certificate of Rahul Ashok Sakamuri, " +
+      alt: "Government-issued Massage Therapist certificate of Rahul Ashok Sakamuri, " +
            "1200 hours of training, NSQF Level 4, recognised by NCVET, " +
            "issued under the Additional Skill Acquisition Programme, Kerala"
     }
@@ -90,9 +90,9 @@
       "</a>" +
       '<div class="cert-body">' +
       '  <h3 class="cert-name">' + cert.name + "</h3>" +
-      '  <p class="cert-role" data-i18n="cred.role">Certified Ayurveda Therapist · NSQF Level 4</p>' +
+      '  <p class="cert-role" data-i18n="cred.role">Certified Massage Therapist · NSQF Level 4</p>' +
       '  <p class="cert-issuer" data-i18n="cred.issuer">ASAP Kerala · Recognised by NCVET, Government of India</p>' +
-      '  <p class="cert-meta" data-i18n="cred.meta">1200 hours of training · Sree Chithra Ayurveda, Thrissur, Kerala</p>' +
+      '  <p class="cert-meta" data-i18n="cred.meta">1200 hours of training · Sree Chithra Kerala Massage, Thrissur, Kerala</p>' +
       '  <a class="btn btn-gold cert-view" ' + openAttrs + ' data-i18n="cred.view">View Full Certificate</a>' +
       "</div>";
 

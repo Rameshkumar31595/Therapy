@@ -146,7 +146,7 @@
         "Padaabhyanga": "Padaabhyanga",
         "Abhyanga": "Abhyanga",
         "Abhyanga Extended": "Abhyanga (Extended)",
-        "Hot Herbal Potli": "Hot Herbal Potli",
+        "Hot Potli": "Hot Potli",
         "Shirodhara": "Shirodhara",
         "Pizhichil": "Pizhichil"
       }
@@ -179,7 +179,7 @@
         "Padaabhyanga": "పాదాభ్యంగ",
         "Abhyanga": "అభ్యంగ",
         "Abhyanga Extended": "అభ్యంగ (ఎక్స్‌టెండెడ్)",
-        "Hot Herbal Potli": "హాట్ హెర్బల్ పోట్లి",
+        "Hot Potli": "హాట్ పోట్లి",
         "Shirodhara": "శిరోధార",
         "Pizhichil": "పిజిచిల్"
       }
@@ -197,7 +197,7 @@
     "Padaabhyanga": true,
     "Abhyanga": true,
     "Abhyanga Extended": true,
-    "Hot Herbal Potli": true,
+    "Hot Potli": true,
     "Shirodhara": true,
     "Pizhichil": true
   };

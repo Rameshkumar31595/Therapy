@@ -48,8 +48,8 @@
     },
     potli: {
       file: "potli",
-      name: { en: "Hot Herbal Potli", te: "హాట్ హెర్బల్ పోట్లి" },
-      tag:  { en: "Herbal Pouch Massage", te: "హెర్బల్ పోట్లి మసాజ్" }
+      name: { en: "Hot Potli", te: "హాట్ పోట్లి" },
+      tag:  { en: "Warm Pouch Massage", te: "వామ్ పోట్లి మసాజ్" }
     },
     shirodhara: {
       file: "shirodhara",
