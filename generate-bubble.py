@@ -58,7 +58,7 @@ MESSAGES = {
     },
     "therapies": {
       "en": [
-        "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Hot Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
+        "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Hot Herbal Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
         "We offer a wonderful range of traditional therapies. Browse through them below, and just tap the listen button to hear a detailed explanation of each one.",
         "From soothing Shirodhara to relaxing Pizhichil, explore all our healing therapies here. Don't forget to tap listen to learn the benefits of each."
       ],
@@ -166,8 +166,8 @@ MESSAGES = {
     },
     "potli": {
       "en": [
-        "Hot Potli uses warm poultices of natural ingredients to reduce inflammation and provide deep relief for aching joints.",
-        "Experience the healing warmth of Hot Potli, highly effective for soothing stiff muscles and joint pain.",
+        "Hot Herbal Potli uses warm poultices of medicinal herbs to reduce inflammation and provide deep relief for aching joints.",
+        "Experience the healing warmth of Hot Herbal Potli, highly effective for soothing stiff muscles and joint pain.",
         "Our Potli therapy applies heated herbal bags to targeted areas, melting away deep-seated tension and pain."
       ],
       "te": [
