@@ -58,7 +58,7 @@ MESSAGES = {
     },
     "therapies": {
       "en": [
-        "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Hot Herbal Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
+        "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Hot Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
         "We offer a wonderful range of traditional therapies. Browse through them below, and just tap the listen button to hear a detailed explanation of each one.",
         "From soothing Shirodhara to relaxing Pizhichil, explore all our soothing therapies here. Don't forget to tap listen to learn the benefits of each."
       ],
@@ -149,7 +149,7 @@ MESSAGES = {
       "te": [
         "మా 45 నిమిషాల అభ్యంగ అనేది కండరాల ఒత్తిడిని త్వరగా తగ్గించి, మీ శరీరాన్ని ఉత్తేజపరిచే పూర్తి శరీర నూనె మసాజ్.",
         "సమయం తక్కువగా ఉందా? 45 నిమిషాల అభ్యంగ మీకు లోతైన విశ్రాంతినిచ్చే సాంప్రదాయ పూర్తి శరీర మసాజ్‌ను అందిస్తుంది.",
-        "మీ చర్మాన్ని పోషించడానికి మరియు కండరాలను సడలించడానికి వెచ్చని మూలికా నూనెలను ఉపయోగించే 45 నిమిషాల అభ్యంగను ఆస్వాదించండి."
+        "మీ చర్మాన్ని పోషించడానికి మరియు కండరాలను సడలించడానికి వెచ్చని సహజ నూనెలను ఉపయోగించే 45 నిమిషాల అభ్యంగను ఆస్వాదించండి."
       ]
     },
     "abhyanga60": {
@@ -166,14 +166,14 @@ MESSAGES = {
     },
     "potli": {
       "en": [
-        "Hot Herbal Potli uses warm poultices of natural herbs to reduce inflammation and provide deep relief for aching joints.",
-        "Experience the soothing warmth of Hot Herbal Potli, highly effective for soothing stiff muscles and joint pain.",
-        "Our Potli therapy applies heated herbal bags to targeted areas, melting away deep-seated tension and pain."
+        "Hot Potli uses warm poultices of natural ingredients to reduce inflammation and provide deep relief for aching joints.",
+        "Experience the soothing warmth of Hot Potli, highly effective for soothing stiff muscles and joint pain.",
+        "Our Potli therapy applies heated natural bags to targeted areas, melting away deep-seated tension and pain."
       ],
       "te": [
-        "హెర్బల్ పోట్లి ఔషధ మూలికల వెచ్చని మూటలను ఉపయోగించి వాపును తగ్గిస్తుంది మరియు కీళ్ల నొప్పులకు లోతైన ఉపశమనాన్ని ఇస్తుంది.",
+        "హెర్బల్ పోట్లి సహజ నూనెల వెచ్చని మూటలను ఉపయోగించి వాపును తగ్గిస్తుంది మరియు కీళ్ల నొప్పులకు లోతైన ఉపశమనాన్ని ఇస్తుంది.",
         "కండరాల బిగుతు మరియు కీళ్ల నొప్పులను తగ్గించడంలో అత్యంత ప్రభావవంతమైన హెర్బల్ పోట్లి యొక్క హాయిని అనుభవించండి.",
-        "మా పోట్లి థెరపీ వేడిచేసిన మూలికా సంచులను ఉపయోగించి, లోతైన ఒత్తిడి మరియు నొప్పిని దూరం చేస్తుంది."
+        "మా పోట్లి థెరపీ వేడిచేసిన సహజ సంచులను ఉపయోగించి, లోతైన ఒత్తిడి మరియు నొప్పిని దూరం చేస్తుంది."
       ]
     },
     "shirodhara": {
@@ -197,7 +197,7 @@ MESSAGES = {
       "te": [
         "పిజిచిల్ అనేది మసాజ్ థెరపీలలో రారాజు, ఇది వెచ్చని సహజ నూనెను నిరంతరంగా పోయడం మరియు సున్నితమైన మసాజ్‌తో కూడి ఉంటుంది.",
         "శరీరాన్ని తీవ్రంగా పోషించి, రక్త ప్రసరణను మెరుగుపరిచి, తీవ్రమైన ఒత్తిడిని తగ్గించే రాజ థెరపీ అయిన పిజిచిల్‌ను ఆస్వాదించండి.",
-        "విలాసవంతమైన పిజిచిల్‌ను అనుభవించండి. సాటిలేని ఉత్తేజం కోసం మీ శరీరంపై లీటర్ల కొద్దీ వెచ్చని మూలికా నూనె లయబద్ధంగా పోయబడుతుంది."
+        "విలాసవంతమైన పిజిచిల్‌ను అనుభవించండి. సాటిలేని ఉత్తేజం కోసం మీ శరీరంపై లీటర్ల కొద్దీ వెచ్చని సహజ నూనె లయబద్ధంగా పోయబడుతుంది."
       ]
     },
     "booking": {

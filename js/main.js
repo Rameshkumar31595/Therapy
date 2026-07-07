@@ -79,7 +79,7 @@
     "svc3.note": "ఎక్స్‌టెండెడ్",
     "svc3.desc": "పూర్తి గంట సంప్రదాయ అభ్యంగతో డీప్ రిలాక్సేషన్, మెరుగైన ఫ్లెక్సిబిలిటీ, శరీరమంతా హాయి.",
     "svc4.tag": "హెర్బల్ పోట్లి మసాజ్",
-    "svc4.desc": "కేరళ మూలికలతో నింపిన వేడి పోట్లిలతో మసాజ్. నొప్పి ఉపశమన సపోర్ట్, కండరాలకు డీప్ కంఫర్ట్.",
+    "svc4.desc": "కేరళ సహజ పదార్థాలతో నింపిన వేడి పోట్లిలతో మసాజ్. నొప్పి ఉపశమన సపోర్ట్, కండరాలకు డీప్ కంఫర్ట్.",
     "svc5.tag": "వేడి నూనె హెడ్ థెరపీ",
     "svc5.desc": "నుదుటిపై వేడి నూనె ధారతో డీప్ రిలాక్సేషన్, స్ట్రెస్ రిలీఫ్, మంచి నిద్రకు సపోర్ట్. కేరళ ప్రత్యేక థెరపీ.",
     "svc6.tag": "సంప్రదాయ కేరళ ఆయిల్ థెరపీ",
@@ -140,7 +140,7 @@
 
     "exp.eyebrow": "అనుభవం",
     "exp.title": "కేరళ అనుభూతిలోకి <span class=\"gold-italic\">అడుగుపెట్టండి</span>",
-    "exp.intro": "కళ్ళు మూసుకోండి. వేడి నూనె, మూలికల సువాసన, దూరంగా పక్షుల పాట. మీ సెషన్ ఇలా ఉంటుంది.",
+    "exp.intro": "కళ్ళు మూసుకోండి. వేడి నూనె, సహజ పదార్థాల సువాసన, దూరంగా పక్షుల పాట. మీ సెషన్ ఇలా ఉంటుంది.",
     "exp.g1": "వేడి సహజ నూనెలు",
     "exp.g2": "తొందర లేని సంప్రదాయ సేవ",
     "exp.g3": "డీప్ రిలాక్సేషన్",
@@ -183,7 +183,7 @@
     "bk.male": "పురుషుడు",
     "bk.female": "మహిళ",
     "bk.genderNote": "థెరపిస్ట్ ఆటోమేటిక్‌గా కేటాయించబడతారు. పురుషులకు మేల్ థెరపిస్ట్, మహిళలకు లేడీ థెరపిస్ట్.",
-    "bk.clinic": "మసాజ్ థెరపీ సెంటర్‌లో",
+    "bk.massage therapy center": "మసాజ్ థెరపీ సెంటర్‌లో",
     "bk.home": "హోమ్ సర్వీస్",
     "bk.address": "ఇంటి చిరునామా <em>*</em>",
     "bk.addressNote": "హోమ్ సర్వీస్ కేవలం ఎంచుకున్న థెరపీలకు మాత్రమే. దయచేసి ల్యాండ్‌మార్క్‌తో పూర్తి చిరునామా ఇవ్వండి.",
@@ -500,7 +500,7 @@
   setTimeout(updateScrollSpy, 100);
 
   /* ══════════════════════════════════════════════════════════
-     SCROLL STORY — ambient healing journey
+     SCROLL STORY — ambient comforting journey
      Stress → Therapy → Relief → Renewal, told by a fixed
      particle canvas plus a misty silhouette that changes pose
      as the visitor scrolls. Everything lives at z-index 1,
@@ -706,7 +706,7 @@
 
       ps += (targetP() - ps) * Math.min(1, dt * 3);
       var P = stageParams(ps);
-      /* the grey "stress" motes dissolve for good as healing begins */
+      /* the grey "stress" motes dissolve for good as comforting begins */
       var darkAlive = clamp01(1 - (ps - 0.55) / 1.0);
       var dir = 1 - P.up * 2; // positive falls, negative rises
 

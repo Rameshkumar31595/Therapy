@@ -28,7 +28,7 @@
   /* Massage Therapy Center address (one line per part for clean WhatsApp rendering)
      + Google Maps link. Kept in Latin script in both languages, as
      these are proper nouns the owner reads off to locate the booking. */
-  var CLINIC_ADDRESS_LINES = [
+  var CENTER_ADDRESS_LINES = [
     "Venkata Ramana Enclave,",
     "4th Line,",
     "Prakash Nagar,",
@@ -36,7 +36,7 @@
     "Narasaraopet,",
     "Andhra Pradesh"
   ];
-  var CLINIC_MAPS_URL =
+  var CENTER_MAPS_URL =
     "https://www.google.com/maps/search/?api=1&query=16.2309877,80.04908";
 
   var form = document.getElementById("bookingForm");
@@ -132,7 +132,7 @@
       maleT: "Male Therapist",
       femaleT: "Female Therapist",
       serviceType: "Service Type",
-      atClinicVal: "At Massage Therapy Center",
+      atCenterVal: "At Massage Therapy Center",
       homeVal: "Home Service",
       massage therapy center: "Massage Therapy Center Location",
       custAddr: "Home Address",
@@ -165,7 +165,7 @@
       maleT: "పురుష థెరపిస్ట్",
       femaleT: "మహిళా థెరపిస్ట్",
       serviceType: "సేవ రకం",
-      atClinicVal: "మసాజ్ థెరపీ సెంటర్‌లో",
+      atCenterVal: "మసాజ్ థెరపీ సెంటర్‌లో",
       homeVal: "హోమ్ సర్వీస్",
       massage therapy center: "మసాజ్ థెరపీ సెంటర్ చిరునామా",
       custAddr: "ఇంటి చిరునామా",
@@ -193,7 +193,7 @@
     "Abhyanga Extended": true
   };
 
-  var CLINIC_THERAPIES = {
+  var CENTER_THERAPIES = {
     "Padaabhyanga": true,
     "Abhyanga": true,
     "Abhyanga Extended": true,
@@ -205,7 +205,7 @@
   function therapyAllowedForSession(therapy, sessionType) {
     if (!therapy || !sessionType) return false;
     if (sessionType === "Home Service") return !!HOME_THERAPIES[therapy];
-    if (sessionType === "At Massage Therapy Center") return !!CLINIC_THERAPIES[therapy];
+    if (sessionType === "At Massage Therapy Center") return !!CENTER_THERAPIES[therapy];
     return false;
   }
 
@@ -370,7 +370,7 @@
     p.push("👤 " + L.patient + ": " + els.name.value.trim());
     p.push("📱 " + L.contact + ": " + els.phone.value.replace(/[\s\-()]/g, ""));
     p.push("");
-    p.push("🧭 " + L.serviceType + ": " + (isHome ? L.homeVal : L.atClinicVal));
+    p.push("🧭 " + L.serviceType + ": " + (isHome ? L.homeVal : L.atCenterVal));
     p.push("");
     p.push("💆 " + L.therapy + ": " + therapyName);
     // Hot Steam Bath only ever applies to a massage therapy center booking.
@@ -390,11 +390,11 @@
       // At Massage Therapy Center → massage therapy center address + Google Maps link.
       p.push("📍 " + L.massage therapy center);
       p.push("");
-      p.push(CLINIC_ADDRESS_LINES.join("\n"));
+      p.push(CENTER_ADDRESS_LINES.join("\n"));
       p.push("");
       p.push("🗺️ " + L.directions);
       p.push("");
-      p.push(CLINIC_MAPS_URL);
+      p.push(CENTER_MAPS_URL);
     }
     if (notes) {
       p.push("");
