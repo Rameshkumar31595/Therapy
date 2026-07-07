@@ -170,20 +170,20 @@ async def generate():
     os.makedirs(AUDIO_DIR / "en", exist_ok=True)
     os.makedirs(AUDIO_DIR / "te", exist_ok=True)
     
-    edge_tts_bin = os.environ.get("LOCALAPPDATA", ROOT) + r"\SushrutaTTS\venv\Scripts\edge-tts.exe"
+    edge_tts_bin = os.environ.get("LOCALAPPDATA", "C:\\Users\\HP\\AppData\\Local") + r"\SushrutaTTS\venv\Scripts\edge-tts.exe"
 
     for section, scripts in MESSAGES.items():
-        # English
+        # English (Prabhat)
         for i, en_text in enumerate(scripts["en"]):
             en_out = AUDIO_DIR / "en" / f"{section}_{i}.mp3"
             print(f"Generating EN: {section}_{i}")
-            subprocess.run([edge_tts_bin, "--voice", "en-IN-NeerjaNeural", "--rate", "+5%", "--text", en_text, "--write-media", str(en_out)], check=True)
+            subprocess.run([edge_tts_bin, "--voice", "en-IN-PrabhatNeural", "--pitch", "+5Hz", "--rate", "+5%", "--text", en_text, "--write-media", str(en_out)], check=True)
 
-        # Telugu
+        # Telugu (Mohan)
         for i, te_text in enumerate(scripts["te"]):
             te_out = AUDIO_DIR / "te" / f"{section}_{i}.mp3"
             print(f"Generating TE: {section}_{i}")
-            subprocess.run([edge_tts_bin, "--voice", "te-IN-ShrutiNeural", "--rate", "+0%", "--text", te_text, "--write-media", str(te_out)], check=True)
+            subprocess.run([edge_tts_bin, "--voice", "te-IN-MohanNeural", "--pitch", "+0Hz", "--rate", "+0%", "--text", te_text, "--write-media", str(te_out)], check=True)
 
 if __name__ == "__main__":
     asyncio.run(generate())

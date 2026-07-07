@@ -40,6 +40,102 @@
      One short, warm, premium message per section, in both
      languages. Kept concise for the compact voice-first card. */
   var MESSAGES = {
+    "intro-morning": {
+      en: [
+        "Good morning! I'm Bubble, your wellness guide. Welcome to Sushruta Kerala Massage Therapy. I'll be right here if you need help exploring our treatments.",
+        "A very good morning to you! Welcome to Sushruta. I'm Bubble! Think of me as your personal guide to everything we offer here.",
+        "Good morning and welcome to Sushruta Kerala Massage Therapy. I am Bubble. Feel free to tap me anytime you'd like a quick tour."
+      ],
+      te: [
+        "శుభోదయం! నేను బబుల్, మీ వెల్‌నెస్ గైడ్‌ని. సుశ్రుత కేరళ మసాజ్ థెరపీకి స్వాగతం.",
+        "మీకు శుభోదయం! సుశ్రుతకు స్వాగతం. నేను మీ గైడ్ బబుల్‌ని! మా థెరపీల గురించి సహాయం కావాలంటే నేను ఇక్కడే ఉంటాను.",
+        "శుభోదయం, సుశ్రుత కేరళ మసాజ్ థెరపీకి స్వాగతం. నేను బబుల్. మీకు ఏమైనా అర్థం కాని విషయాలు ఉంటే, నన్ను ట్యాప్ చేయండి."
+      ]
+    },
+    "intro-afternoon": {
+      en: [
+        "Good afternoon! I'm Bubble, your wellness guide. Welcome to Sushruta Kerala Massage Therapy.",
+        "A very good afternoon to you! Welcome to Sushruta. I'm Bubble, your personal guide today.",
+        "Good afternoon and welcome to Sushruta Kerala Massage Therapy. I am Bubble, here to help you."
+      ],
+      te: [
+        "శుభ మధ్యాహ్నం! నేను బబుల్, మీ వెల్‌నెస్ గైడ్‌ని. సుశ్రుత కేరళ మసాజ్ థెరపీకి స్వాగతం.",
+        "మీకు శుభ మధ్యాహ్నం! సుశ్రుతకు స్వాగతం. నేను మీ గైడ్ బబుల్‌ని!",
+        "శుభ మధ్యాహ్నం, సుశ్రుత కేరళ మసాజ్ థెరపీకి స్వాగతం. నేను బబుల్."
+      ]
+    },
+    "intro-evening": {
+      en: [
+        "Good evening! I'm Bubble, your wellness guide. Welcome to Sushruta Kerala Massage Therapy.",
+        "A very good evening to you! Welcome to Sushruta. I'm Bubble, your personal guide.",
+        "Good evening and welcome to Sushruta Kerala Massage Therapy. I am Bubble."
+      ],
+      te: [
+        "శుభ సాయంత్రం! నేను బబుల్, మీ వెల్‌నెస్ గైడ్‌ని. సుశ్రుత కేరళ మసాజ్ థెరపీకి స్వాగతం.",
+        "మీకు శుభ సాయంత్రం! సుశ్రుతకు స్వాగతం. నేను మీ గైడ్ బబుల్‌ని!",
+        "శుభ సాయంత్రం, సుశ్రుత కేరళ మసాజ్ థెరపీకి స్వాగతం. నేను బబుల్."
+      ]
+    },
+    "booking-padaabhyanga": {
+      en: [
+        "Padaabhyanga is a great choice for relieving tired legs and improving sleep. Let me know if you need help finishing the form!",
+        "Ah, Padaabhyanga! Perfect for melting away the day's fatigue from your feet.",
+        "Excellent choice! Padaabhyanga works wonders for relaxation."
+      ],
+      te: [
+        "పాదాభ్యంగ అద్భుతమైన ఎంపిక! అలసిన కాళ్ళకు ఇది చాలా ఉపశమనం ఇస్తుంది.",
+        "ఆహా, పాదాభ్యంగ! మీ పాదాల అలసటను దూరం చేయడానికి ఇది సరైనది.",
+        "మంచి ఎంపిక! పాదాభ్యంగ మీ విశ్రాంతికి అద్భుతంగా పనిచేస్తుంది."
+      ]
+    },
+    "booking-abhyanga": {
+      en: [
+        "Abhyanga is a wonderful choice for deep, full-body relaxation. Let me know if you need help finishing the form!",
+        "Ah, Abhyanga! Our signature full-body oil massage will leave you completely rejuvenated.",
+        "Excellent choice! Abhyanga is the ultimate traditional therapy for overall wellness."
+      ],
+      te: [
+        "అభ్యంగ చాలా మంచి ఎంపిక! పూర్తి శరీరానికి లోతైన విశ్రాంతిని అందిస్తుంది.",
+        "ఆహా, అభ్యంగ! మా ప్రత్యేకమైన పూర్తి శరీర నూనె మసాజ్ మిమ్మల్ని పూర్తిగా ఉత్తేజపరుస్తుంది.",
+        "అద్భుతమైన ఎంపిక! అభ్యంగ మీ మొత్తం ఆరోగ్యానికి సరైన సాంప్రదాయ చికిత్స."
+      ]
+    },
+    "booking-potli": {
+      en: [
+        "Hot Herbal Potli is perfect for soothing stiff muscles and joint pain. Let me know if you need help finishing the form!",
+        "Ah, Potli! The warm herbal pouches will provide incredible relief to your muscles.",
+        "Excellent choice! Herbal Potli is highly recommended for deep tissue relaxation."
+      ],
+      te: [
+        "హెర్బల్ పోట్లి చాలా మంచి ఎంపిక! కండరాల నొప్పులను తగ్గించడానికి ఇది అద్భుతంగా పనిచేస్తుంది.",
+        "ఆహా, పోట్లి! వెచ్చని మూలికా మూటలు మీ కండరాలకు గొప్ప ఉపశమనాన్ని ఇస్తాయి.",
+        "మంచి ఎంపిక! కండరాల విశ్రాంతికి హెర్బల్ పోట్లి బాగా సిఫార్సు చేయబడింది."
+      ]
+    },
+    "booking-shirodhara": {
+      en: [
+        "Shirodhara is a beautiful choice for melting away stress and calming the mind. Let me know if you need help finishing the form!",
+        "Ah, Shirodhara! The continuous flow of warm oil is a royal treatment for your nervous system.",
+        "Excellent choice! Shirodhara is our most deeply relaxing therapy."
+      ],
+      te: [
+        "శిరోధార చాలా మంచి ఎంపిక! ఒత్తిడిని తగ్గించడానికి మరియు మనస్సును ప్రశాంతంగా ఉంచడానికి ఇది అద్భుతం.",
+        "ఆహా, శిరోధార! వెచ్చని నూనె ధార మీ నాడీ వ్యవస్థకు గొప్ప విశ్రాంతిని ఇస్తుంది.",
+        "మంచి ఎంపిక! శిరోధార మా అత్యంత ప్రశాంతమైన చికిత్స."
+      ]
+    },
+    "booking-pizhichil": {
+      en: [
+        "Pizhichil is the ultimate royal therapy for profound healing and relaxation. Let me know if you need help finishing the form!",
+        "Ah, Pizhichil! You've chosen the king of Ayurvedic therapies.",
+        "Excellent choice! Pizhichil offers unmatched rejuvenation for both body and mind."
+      ],
+      te: [
+        "పిజిచిల్ చాలా మంచి ఎంపిక! లోతైన స్వస్థత మరియు విశ్రాంతికి ఇది అంతిమ రాజ చికిత్స.",
+        "ఆహా, పిజిచిల్! మీరు ఆయుర్వేద చికిత్సలలో రారాజును ఎంచుకున్నారు.",
+        "మంచి ఎంపిక! పిజిచిల్ మీ శరీరానికి మరియు మనస్సుకు సాటిలేని ఉత్తేజాన్ని ఇస్తుంది."
+      ]
+    },
     intro: {
       en: [
         "Hi! I'm Bubble, your wellness guide. Welcome to Sushruta Kerala Massage Therapy. I'll be right here if you need help exploring our treatments, facilities, or booking options.",
@@ -205,6 +301,7 @@
       title: "Bubble",
       welcome: "Hi! I'm Bubble. Tap me for a quick tour of this page.",
       closeHint: "Tap me anytime if you need help understanding this page.",
+      idleNudge: "Need help deciding? Tap me to hear more about our therapies.",
       listen: "Listen",
       stop: "Stop",
       closeBtn: "Close"
@@ -215,6 +312,7 @@
       title: "బబుల్",
       welcome: "హాయ్! నేను బబుల్. ఈ పేజీ టూర్ కోసం నన్ను ట్యాప్ చేయండి.",
       closeHint: "ఈ పేజీని అర్థం చేసుకోవడానికి సహాయం కావాలంటే ఎప్పుడైనా నన్ను ట్యాప్ చేయండి.",
+      idleNudge: "ఏమైనా సహాయం కావాలా? మా థెరపీల గురించి వినడానికి నన్ను ట్యాప్ చేయండి.",
       listen: "వినండి",
       stop: "ఆపండి",
       closeBtn: "మూసివేయి"
@@ -223,6 +321,12 @@
 
   // Pick a random variation of the message
   function messageFor(section) {
+    if (section === "intro") {
+      var hour = new Date().getHours();
+      if (hour < 12) section = "intro-morning";
+      else if (hour < 17) section = "intro-afternoon";
+      else section = "intro-evening";
+    }
     var entry = MESSAGES[section] || MESSAGES.hero;
     var variations = entry[lang()] || entry.en;
     var idx = Math.floor(Math.random() * variations.length);
@@ -441,11 +545,20 @@
   function speakSection(section, onDone) {
     if (!canSpeak) { if (onDone) onDone(); return; }
     
+    // Resolve time-of-day for intro audio
+    var resolvedSection = section;
+    if (resolvedSection === "intro") {
+      var hour = new Date().getHours();
+      if (hour < 12) resolvedSection = "intro-morning";
+      else if (hour < 17) resolvedSection = "intro-afternoon";
+      else resolvedSection = "intro-evening";
+    }
+    
     var text = msgEl.textContent;
     var idx = parseInt(msgEl.getAttribute("data-msg-idx") || "0", 10);
     
     voice.speak({
-      section: section,
+      section: resolvedSection,
       index: idx,
       lang: lang(),
       text: text,
@@ -646,8 +759,45 @@
   // One-time friendly welcome (once per session, only if not opened yet)
   if (!ssGet(SS_WELCOME)) {
     setTimeout(function () {
-      if (!open) { showTip(UI[lang()].welcome, 6000); }
+      if (!open && !ssGet(SS_HINT)) showTip(UI[lang()].welcome, 8000);
       ssSet(SS_WELCOME, "1");
     }, 1600);
   }
+
+  // 1. Context-Aware: Booking Form Reaction
+  document.addEventListener("change", function (e) {
+    if (e.target.id === "bkTherapy" && e.target.value) {
+      var therapyCode = e.target.value;
+      var key = "booking-abhyanga"; // Default to abhyanga as it has 45 and 60 variants
+      if (therapyCode.indexOf("padaabhyanga") !== -1) key = "booking-padaabhyanga";
+      else if (therapyCode.indexOf("potli") !== -1) key = "booking-potli";
+      else if (therapyCode.indexOf("shirodhara") !== -1) key = "booking-shirodhara";
+      else if (therapyCode.indexOf("pizhichil") !== -1) key = "booking-pizhichil";
+      
+      // Auto-open Bubble to react
+      if (!open) openPanel();
+      renderMessage(key);
+      speakSection(key);
+    }
+  });
+
+  // 2. Context-Aware: Inactivity / Idle Nudge
+  var idleTimer = null;
+  function resetIdle() {
+    if (idleTimer) clearTimeout(idleTimer);
+    if (!open) {
+      idleTimer = setTimeout(function () {
+        // If they are idle for 45 seconds and bubble is not open
+        if (!open) {
+          showTip(UI[lang()].idleNudge, 8000);
+        }
+      }, 45000);
+    }
+  }
+  var idleEvents = ["mousemove", "scroll", "touchstart", "click", "keydown"];
+  for (var i = 0; i < idleEvents.length; i++) {
+    document.addEventListener(idleEvents[i], resetIdle, { passive: true });
+  }
+  resetIdle();
+
 })();
