@@ -28,7 +28,7 @@
 
   var SS_WELCOME = "bubble_welcomed";
   var SS_HINT = "bubble_close_hint";
-  var SS_INTRO = "bubble_introduced";   // full introduction already played this session?
+  var hasIntroduced = false;   // full introduction already played this page load?
 
   function lang() {
     return document.documentElement.getAttribute("lang") === "te" ? "te" : "en";
@@ -41,62 +41,56 @@
      languages. Kept concise for the compact voice-first card. */
   var MESSAGES = {
     intro: {
-      en: "Hello! I'm Bubble, your wellness guide. I'll help you understand the therapies, services, facilities, and booking options available on this page.",
-      te: "నమస్కారం! నేను బబుల్. ఈ వెబ్‌సైట్‌లోని థెరపీలు, సేవలు, సదుపాయాలు మరియు బుకింగ్ వివరాలను సులభంగా అర్థం చేసుకోవడంలో నేను మీకు సహాయం చేస్తాను."
-    },
-    // Short, funny line for a re-open in the same session (skips the
-    // full introduction, which has already played once).
-    reactivate: {
-      en: "I love to speak, but my developer won't let me talk too much. Let me quickly explain this section.",
-      te: "నాకు మాట్లాడటం చాలా ఇష్టం, కానీ నా డెవలపర్ ఎక్కువగా మాట్లాడనివ్వడు. ఈ విభాగాన్ని త్వరగా చెబుతాను."
+      en: "Hi! I'm Bubble, your wellness guide. Welcome to Sushruta Kerala Massage Therapy. I'll be right here if you need help exploring our treatments, facilities, or booking options.",
+      te: "హలో! నేను బబుల్, మీ వెల్‌నెస్ గైడ్‌ని. సుశ్రుత కేరళ మసాజ్ థెరపీకి స్వాగతం. మా ప్రామాణిక ఆయుర్వేద చికిత్సలు, సదుపాయాలు మరియు బుకింగ్ వివరాలను అర్థం చేసుకోవడంలో మీకు సహాయం చేస్తాను."
     },
     hero: {
-      en: "This is the top of the page. It introduces our authentic Kerala massage therapy, offered at our clinic and at your home for selected therapies.",
-      te: "ఇది పేజీ మొదటి భాగం. ఇక్కడ మా అసలైన కేరళ మసాజ్ థెరపీ పరిచయం ఉంటుంది. క్లినిక్‌లో, ఎంచుకున్న థెరపీలకు మీ ఇంటిలో కూడా అందిస్తాం."
+      en: "We offer authentic Kerala Ayurvedic therapies right here at our clinic. We even offer relaxing treatments like Padaabhyanga and Abhyanga as convenient home services.",
+      te: "మేము మా ప్రత్యేక క్లినిక్‌లో ప్రామాణిక కేరళ ఆయుర్వేద థెరపీలను అందిస్తున్నాము. పాదాభ్యంగ మరియు అభ్యంగ వంటి కొన్ని చికిత్సలను మీ ఇంటి వద్ద కూడా అందిస్తాము."
     },
     about: {
-      en: "This is our story. Sushruta is a certified therapist couple offering authentic Kerala Ayurveda in Narasaraopet, at the clinic and at your home for selected therapies.",
-      te: "ఇది మా కథ. సుశ్రుత ఒక సర్టిఫైడ్ థెరపిస్ట్ కపుల్. నరసరావుపేటలో అసలైన కేరళ ఆయుర్వేదాన్ని క్లినిక్‌లో, ఎంచుకున్న థెరపీలకు మీ ఇంటిలో అందిస్తారు."
+      en: "Sushruta is run by a certified therapist couple. Our goal is to bring the true, traditional essence of Kerala Ayurveda straight to Narasaraopet.",
+      te: "సుశ్రుత కేరళ ఆయుర్వేద కేంద్రాన్ని ఒక సర్టిఫైడ్ థెరపిస్ట్ దంపతులు నిర్వహిస్తున్నారు. నరసరావుపేటలో నిజమైన కేరళ ఆయుర్వేద వైద్యాన్ని అందించడమే మా లక్ష్యం."
     },
     certificates: {
-      en: "These are our certificates. They show the therapists' professional training and qualifications, so you can book with confidence.",
-      te: "ఇవి మా సర్టిఫికేట్లు. థెరపిస్టుల ప్రొఫెషనల్ శిక్షణ, అర్హతలను ఇవి చూపిస్తాయి. అందుకే మీరు నమ్మకంగా బుక్ చేసుకోవచ్చు."
+      en: "Our certifications show our deep professional training in traditional Ayurveda, so you can always rest assured you are in expert hands.",
+      te: "మా సర్టిఫికేట్లు సాంప్రదాయ ఆయుర్వేద పద్ధతుల్లో మా వృత్తిపరమైన శిక్షణ మరియు నైపుణ్యాన్ని ప్రతిబింబిస్తాయి. అత్యుత్తమ నాణ్యమైన చికిత్సకు ఇవే నిదర్శనం."
     },
     therapies: {
-      en: "Here are our therapies, including Padaabhyanga, Abhyanga, Shirodhara, Pizhichil and Herbal Potli. Padaabhyanga and Abhyanga are also offered as home service. Tap Listen on a card to hear more.",
-      te: "ఇవి మా థెరపీలు: పాదాభ్యంగ, అభ్యంగ, శిరోధార, పిజిచిల్, హెర్బల్ పోట్లి. పాదాభ్యంగ, అభ్యంగ హోమ్ సర్వీస్‌గా కూడా అందిస్తాం. వివరాలకు కార్డ్‌పై Listen నొక్కండి."
+      en: "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Herbal Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
+      te: "పాదాభ్యంగ, అభ్యంగ, శిరోధార, పిజిచిల్ మరియు హెర్బల్ పోట్లి వంటి మా థెరపీలను అన్వేషించండి. ప్రతి చికిత్స గురించి మరింత తెలుసుకోవడానికి కార్డ్‌పై 'వినండి' నొక్కండి."
     },
     "therapy-detail": {
-      en: "Tap Listen to Therapy on any card to hear how that treatment works, in your language.",
+      en: "If you want to know what to expect, just tap 'Listen to Therapy' to hear a soothing explanation in your own language.",
       te: "ఏదైనా కార్డ్‌పై థెరపీ వినండి నొక్కితే, ఆ చికిత్స ఎలా పనిచేస్తుందో మీ భాషలో వినవచ్చు."
     },
     "why-us": {
-      en: "This section shows why guests trust us. We are certified therapists, we offer separate male and female care, and we use genuine Kerala technique.",
-      te: "అతిథులు మమ్మల్ని ఎందుకు నమ్ముతారో ఈ విభాగం చూపిస్తుంది. మేము సర్టిఫైడ్ థెరపిస్టులం, మేల్ ఫీమేల్ సెపరేట్ కేర్ అందిస్తాం, అసలైన కేరళ పద్ధతిని పాటిస్తాం."
+      en: "Our guests love us for our certified expertise, and our strict dedication to authentic Kerala massage techniques. We also provide distinct care options for men and women.",
+      te: "అతిథులు మమ్మల్ని ఎందుకు విశ్వసిస్తారంటే, మా సర్టిఫైడ్ నైపుణ్యం, పురుషులకు మరియు స్త్రీలకు ప్రత్యేకమైన సేవలు మరియు అసలైన కేరళ మసాజ్ పద్ధతుల పట్ల మా నిబద్ధత."
     },
     timings: {
-      en: "These are our timings. We are open every day from 9 in the morning to 8 in the evening, with Monday mornings only. Booking ahead is a good idea.",
-      te: "ఇవి మా సమయాలు. ప్రతిరోజూ ఉదయం 9 నుండి రాత్రి 8 వరకు తెరిచి ఉంటాం, సోమవారం ఉదయం మాత్రమే. ముందుగా బుక్ చేసుకోవడం మంచిది."
+      en: "We're open every day from 9 AM to 8 PM, except on Mondays when we close early at 1 PM. It's always best to book your appointment in advance.",
+      te: "మేము ప్రతిరోజూ ఉదయం 9 గంటల నుండి రాత్రి 8 గంటల వరకు తెరిచి ఉంటాము, సోమవారం మాత్రం మధ్యాహ్నం 1 గంట వరకు మాత్రమే. మీరు ముందుగా అపాయింట్‌మెంట్ బుక్ చేసుకోవడం సూచించబడింది."
     },
     experience: {
-      en: "This is a glimpse of the experience. Warm herbal oils, quiet unhurried care, and a calm Kerala atmosphere.",
-      te: "ఇది అనుభవం ఒక సంగ్రహం. వెచ్చని హెర్బల్ నూనెలు, తొందర లేని ప్రశాంత సేవ, ప్రశాంత కేరళ వాతావరణం."
+      en: "You'll experience profound relaxation here, with warm herbal oils and a deeply peaceful atmosphere inspired by Kerala's heritage.",
+      te: "వెచ్చని హెర్బల్ నూనెలు, ప్రశాంతమైన వ్యక్తిగత సేవ మరియు కేరళ సంప్రదాయ స్ఫూర్తితో కూడిన ప్రశాంత వాతావరణంలో గొప్ప ఉపశమనాన్ని అనుభవించండి."
     },
     location: {
-      en: "This section shows our clinic location. To visit, tap Directions and Google Maps will guide you there.",
-      te: "ఈ విభాగంలో మా క్లినిక్ లొకేషన్ ఉంది. రావాలంటే Directions నొక్కండి, Google Maps మీకు మార్గం చూపిస్తుంది."
+      en: "Here is where you can find our clinic in Narasaraopet. Just tap 'Directions' and Google Maps will guide you right to our door.",
+      te: "ఇది నరసరావుపేటలో మా క్లినిక్ ఉన్న ప్రదేశం. మా వద్దకు చేరుకోవడానికి, 'డైరెక్షన్స్' పై నొక్కండి, గూగుల్ మ్యాప్స్ మీకు మార్గదర్శకత్వం చేస్తుంది."
     },
     booking: {
-      en: "This is the booking section. Choose your service type, clinic or home, then your therapy, date and time. Your request is sent to WhatsApp for confirmation.",
-      te: "ఇది బుకింగ్ విభాగం. సేవ రకం అంటే క్లినిక్ లేదా హోమ్, తరువాత థెరపీ, తేదీ, సమయం ఎంచుకోండి. మీ అభ్యర్థన కన్ఫర్మేషన్ కోసం WhatsAppకి పంపబడుతుంది."
+      en: "Ready to relax? Just choose your service, therapy, and time. Your booking will be quickly confirmed over WhatsApp.",
+      te: "విశ్రాంతి తీసుకోవడానికి సిద్ధంగా ఉన్నారా? మీకు కావలసిన సేవ, థెరపీ, తేదీ మరియు సమయాన్ని ఎంచుకోండి. మీ బుకింగ్ అభ్యర్థన వాట్సాప్ ద్వారా నిర్ధారించబడుతుంది."
     },
     contact: {
-      en: "This section has the quick ways to reach us. Call, WhatsApp, or Get Directions. Whenever you are ready, we are one tap away.",
-      te: "ఈ విభాగంలో మమ్మల్ని సంప్రదించే సులభ మార్గాలు ఉన్నాయి. Call, WhatsApp లేదా Get Directions. మీరు సిద్ధమైనప్పుడు, ఒక్క ట్యాప్ దూరంలో ఉన్నాం."
+      en: "We are always here to help. Feel free to call us or send a WhatsApp message anytime.",
+      te: "మేము మీకు సహాయం చేయడానికి ఎల్లప్పుడూ సిద్ధంగా ఉన్నాము. కాల్ లేదా వాట్సాప్ ద్వారా మమ్మల్ని సంప్రదించండి, లేదా నేరుగా రావడానికి మ్యాప్ మార్గాన్ని పొందండి."
     },
     footer: {
-      en: "You have reached the end of the page. The address, phone, WhatsApp, and directions are all here for quick access. Thanks for visiting.",
-      te: "మీరు పేజీ చివరికి వచ్చారు. చిరునామా, ఫోన్, WhatsApp, directions అన్నీ ఇక్కడ సులభంగా ఉన్నాయి. సందర్శించినందుకు ధన్యవాదాలు."
+      en: "Thanks for exploring our therapies! You'll find all our contact details and quick links right down here at the bottom.",
+      te: "మా సేవలను పరిశీలించినందుకు ధన్యవాదాలు. మీరు మా పూర్తి సంప్రదింపు వివరాలు, చిరునామా మరియు ముఖ్యమైన లింక్‌లను ఇక్కడ పేజీ చివరన కనుగొనవచ్చు."
     }
   };
 
@@ -218,8 +212,8 @@
        Pitch/volume constant across sections AND languages; Telugu
        gets a marginally slower rate purely for clarity. */
     var TUNING = {
-      en: { rate: 1.0, pitch: 1.2, volume: 1.0 },
-      te: { rate: 0.94, pitch: 1.2, volume: 1.0 }
+      en: { rate: 0.96, pitch: 1.0, volume: 1.0 },
+      te: { rate: 0.94, pitch: 1.0, volume: 1.0 }
     };
     var cache = { en: undefined, te: undefined }; // best voice per language
 
@@ -265,26 +259,64 @@
       catch (e) { synth.onvoiceschanged = resolve; }
     }
 
+    var audioEl = new Audio();
+    var currentSynth = null;
+    var ttsFallback = function(req) {
+      if (!supported || !req || !req.text) { if (req && req.onEnd) req.onEnd(); return false; }
+      try { synth.cancel(); } catch (e) {}
+      var L = req.lang === "te" ? "te" : "en";
+      currentSynth = new window.SpeechSynthesisUtterance(req.text);
+      currentSynth.lang = L === "te" ? "te-IN" : "en-IN";
+      var v = cache[L];
+      if (v === undefined) { resolve(); v = cache[L]; }
+      if (v) currentSynth.voice = v;
+      var tune = TUNING[L];
+      currentSynth.rate = tune.rate; currentSynth.pitch = tune.pitch; currentSynth.volume = tune.volume;
+      currentSynth.onstart = req.onStart || null;
+      currentSynth.onend = req.onEnd || null;
+      currentSynth.onerror = req.onEnd || null;
+      try { synth.speak(currentSynth); return true; }
+      catch (e) { if (req.onEnd) req.onEnd(); return false; }
+    };
+
     return {
-      isSupported: function () { return supported; },
+      isSupported: function () { return true; }, // Supported by HTML5 Audio
       refresh: resolve,
-      stop: function () { if (synth) { try { synth.cancel(); } catch (e) {} } },
+      stop: function () {
+        audioEl.pause();
+        audioEl.currentTime = 0;
+        if (synth) { 
+          try { 
+            synth.pause(); 
+            synth.cancel(); 
+          } catch (e) {} 
+        }
+      },
       speak: function (req) {
-        if (!supported || !req || !req.text) { if (req && req.onEnd) req.onEnd(); return false; }
-        try { synth.cancel(); } catch (e) {}
+        if (!req || !req.text) { if (req && req.onEnd) req.onEnd(); return false; }
+        this.stop();
         var L = req.lang === "te" ? "te" : "en";
-        var u = new window.SpeechSynthesisUtterance(req.text);
-        u.lang = L === "te" ? "te-IN" : "en-IN";
-        var v = cache[L];
-        if (v === undefined) { resolve(); v = cache[L]; }
-        if (v) u.voice = v;                 // else platform picks by u.lang
-        var tune = TUNING[L];
-        u.rate = tune.rate; u.pitch = tune.pitch; u.volume = tune.volume;
-        u.onstart = req.onStart || null;
-        u.onend = req.onEnd || null;
-        u.onerror = req.onEnd || null;
-        try { synth.speak(u); return true; }
-        catch (e) { if (req.onEnd) req.onEnd(); return false; }
+        // Attempt to load the pre-recorded MP3
+        audioEl.src = "audio/bubble/" + L + "/" + req.section + ".mp3";
+        audioEl.onplay = req.onStart || null;
+        audioEl.onended = req.onEnd || null;
+        audioEl.onerror = function() {
+          // If the audio file is missing or fails to load, fall back to TTS
+          ttsFallback(req);
+        };
+        audioEl.play().catch(function(e) {
+          if (e) {
+            if (e.name === 'AbortError') return; // Intentional stop
+            if (e.name === 'NotAllowedError') {
+              // Browser blocked autoplay (e.g. lost user gesture during language switch)
+              if (req.onEnd) req.onEnd();
+              return;
+            }
+          }
+          // For other errors (like network failures), fall back to TTS
+          ttsFallback(req);
+        });
+        return true;
       }
     };
   }
@@ -296,6 +328,7 @@
     panel.classList.toggle("speaking", on);
   }
   function stopSpeech() { voice.stop(); setSpeaking(false); }
+
   /* Speaks one message; onDone (optional) runs when it finishes,
      which lets us chain the intro into the section narration. */
   function speakSection(section, onDone) {
@@ -418,18 +451,25 @@
     try { panel.focus({ preventScroll: true }); } catch (e) { panel.focus(); }
 
     if (canSpeak) {
-      // First open this session → full intro; re-open → reactivation line.
-      var lead = ssGet(SS_INTRO) ? "reactivate" : "intro";
-      ssSet(SS_INTRO, "1");
-      introing = true;
-      renderMessage(lead);
-      speakSection(lead, function () {   // when the intro/reactivation finishes…
-        introing = false;
-        if (!open) return;
-        var sec = monitor.current() || "hero";  // …explain the current section
+      // First open this page load → full intro; re-open → skip intro and just explain the section.
+      var lead = hasIntroduced ? null : "intro";
+      hasIntroduced = true;
+      
+      if (lead) {
+        introing = true;
+        renderMessage(lead);
+        speakSection(lead, function () {   // when the intro finishes…
+          introing = false;
+          if (!open) return;
+          var sec = monitor.current() || "hero";  // …explain the current section
+          renderMessage(sec);
+          speakSection(sec);
+        });
+      } else {
+        var sec = monitor.current() || "hero";
         renderMessage(sec);
         speakSection(sec);
-      });
+      }
     } else {
       renderMessage(monitor.current() || "hero");  // no speech → show section text
     }

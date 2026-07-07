@@ -60,9 +60,14 @@ SCRIPTS_FILE = ROOT / "narration" / "scripts.json"
 AUDIO_DIR = ROOT / "audio"
 MODELS_DIR = Path(os.environ.get("LOCALAPPDATA", ROOT)) / "SushrutaTTS" / "models"
 
-# ── Voice configuration ─────────────────────────────────────
-# English (Kokoro): af_heart is the warmest female voice; also
-# try af_bella or af_nicole. speed < 1.0 = calmer, slower.
+# English (Azure Neural via edge-tts): en-US-AriaNeural is an exceptionally
+# warm, empathetic, and natural voice. We use a slow rate for a soothing tone,
+# and phonetic replacements to ensure Ayurvedic terms are pronounced perfectly.
+EDGE_VOICE_EN = "en-US-AriaNeural"
+EDGE_RATE_EN = "-14%"
+EDGE_PITCH_EN = "-4Hz"
+
+# English fallback (Kokoro)
 KOKORO_VOICE = "af_heart"
 KOKORO_SPEED = 0.88
 
@@ -160,7 +165,78 @@ def download_kokoro_models():
         tmp.replace(dest)
 
 
+def _english_edge(jobs):
+    import asyncio
+    import io
+    import edge_tts
+
+    log(f"  using Azure Neural voice {EDGE_VOICE_EN} "
+        f"(rate {EDGE_RATE_EN}, pitch {EDGE_PITCH_EN}) via edge-tts")
+
+    def finalize(phrase):
+        # Phonetic replacements for US English TTS to pronounce Indian/Sanskrit words correctly
+        pronunciations = {
+            "Sushruta": "Soosh-roo-thah",
+            "Ayurveda": "Ah-yoor-vay-dah",
+            "Ayurvedic": "Ah-yoor-vay-dic",
+            "Padaabhyanga": "Pah-dahb-hyang-gah",
+            "Abhyanga": "Abb-hyang-gah",
+            "Shirodhara": "Shee-roh-dhah-rah",
+            "Pizhichil": "Pee-zhee-chill",
+            "Potli": "Poat-lee",
+            "potlis": "Poat-lees",
+            "marma": "mahr-mah",
+            "Marma": "mahr-mah",
+            "Narasaraopet": "Nah-rah-sah-row-pet",
+            "Palnadu": "Pahl-nah-doo",
+        }
+        for word, phonetic in pronunciations.items():
+            phrase = re.sub(r'\b' + re.escape(word) + r'\b', phonetic, phrase)
+        
+        return phrase if re.search(r"[.!?।]$", phrase) else phrase + "."
+
+    async def synth(phrase):
+        stream = edge_tts.Communicate(
+            finalize(phrase), EDGE_VOICE_EN, rate=EDGE_RATE_EN, pitch=EDGE_PITCH_EN)
+        buf = io.BytesIO()
+        async for chunk in stream.stream():
+            if chunk["type"] == "audio":
+                buf.write(chunk["data"])
+        buf.seek(0)
+        wav, sr = sf.read(buf, dtype="float32")
+        if wav.ndim > 1:
+            wav = wav.mean(axis=1)
+        return wav, sr
+
+    async def run_all():
+        for therapy, text in jobs:
+            log(f"• {therapy} (en)")
+            rng = np.random.default_rng(PARLER_SEED)
+            sr = 24000
+            parts = [_room_tone(TE_LEAD_IN, sr, rng)]
+            for pi, phrases in enumerate(split_script(text)):
+                if pi > 0:
+                    parts.append(_room_tone(rng.uniform(*TE_PARA_PAUSE), sr, rng))
+                for si, phrase in enumerate(phrases):
+                    if si > 0:
+                        parts.append(_room_tone(rng.uniform(*TE_DOTS_PAUSE), sr, rng))
+                    wav, sr = await synth(phrase)
+                    parts.append(wav)
+            parts.append(_room_tone(TE_TAIL, sr, rng))
+            wav = _warmth(np.concatenate(parts))
+            write_mp3(AUDIO_DIR / "en" / f"{therapy}.mp3", wav, sr, peak_target=TE_PEAK)
+
+    asyncio.run(run_all())
+
+
 def make_english(jobs):
+    try:
+        _english_edge(jobs)
+        return
+    except Exception as e:
+        log(f"  ✗ Azure Neural (edge-tts) failed: {e}")
+        log("  Falling back to offline Kokoro models.")
+
     from kokoro_onnx import Kokoro
 
     download_kokoro_models()
