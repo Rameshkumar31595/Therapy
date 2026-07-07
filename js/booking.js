@@ -134,7 +134,7 @@
       serviceType: "Service Type",
       atCenterVal: "At Massage Therapy Center",
       homeVal: "Home Service",
-      massage therapy center: "Massage Therapy Center Location",
+      "massage therapy center": "Massage Therapy Center Location",
       custAddr: "Home Address",
       directions: "Directions",
       notes: "Notes",
@@ -167,7 +167,7 @@
       serviceType: "సేవ రకం",
       atCenterVal: "మసాజ్ థెరపీ సెంటర్‌లో",
       homeVal: "హోమ్ సర్వీస్",
-      massage therapy center: "మసాజ్ థెరపీ సెంటర్ చిరునామా",
+      "massage therapy center": "మసాజ్ థెరపీ సెంటర్ చిరునామా",
       custAddr: "ఇంటి చిరునామా",
       directions: "మార్గం",
       notes: "గమనికలు",
@@ -388,7 +388,7 @@
       p.push(els.address.value.trim());
     } else {
       // At Massage Therapy Center → massage therapy center address + Google Maps link.
-      p.push("📍 " + L.massage therapy center);
+      p.push("📍 " + L["massage therapy center"]);
       p.push("");
       p.push(CENTER_ADDRESS_LINES.join("\n"));
       p.push("");
