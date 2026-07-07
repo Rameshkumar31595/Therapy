@@ -42,7 +42,7 @@
   var MESSAGES = {
     "intro-morning": {
       en: [
-        "Good morning! I'm Bubble, your wellness guide. Welcome to Sushruta Kerala Massage Therapy. I'll be right here if you need help exploring our treatments.",
+        "Good morning! I'm Bubble, your wellness guide. Welcome to Sushruta Kerala Massage Therapy. I'll be right here if you need help exploring our therapies.",
         "A very good morning to you! Welcome to Sushruta. I'm Bubble! Think of me as your personal guide to everything we offer here.",
         "Good morning and welcome to Sushruta Kerala Massage Therapy. I am Bubble. Feel free to tap me anytime you'd like a quick tour."
       ],
@@ -152,7 +152,7 @@
       en: [
         "Shirodhara involves a continuous, rhythmic flow of warm oil over your forehead to profoundly calm the mind and nervous system.",
         "Melt away mental stress with Shirodhara, our signature therapy designed to deeply relax your mind and improve sleep quality.",
-        "Experience profound tranquility with Shirodhara, the ultimate Ayurvedic treatment for mental clarity and relaxation."
+        "Experience profound tranquility with Shirodhara, the ultimate Ayurvedic therapy for mental clarity and relaxation."
       ],
       te: [
         "శిరోధారలో మీ నుదిటిపై వెచ్చని నూనెను నిరంతరంగా, లయబద్ధంగా పోయడం ద్వారా మనస్సు మరియు నాడీ వ్యవస్థను ప్రశాంతపరుస్తారు.",
@@ -187,7 +187,7 @@
     "booking-shirodhara": {
       en: [
         "Shirodhara is a beautiful choice for melting away stress and calming the mind. Let me know if you need help finishing the form!",
-        "Ah, Shirodhara! The continuous flow of warm oil is a royal treatment for your nervous system.",
+        "Ah, Shirodhara! The continuous flow of warm oil is a royal therapy for your nervous system.",
         "Excellent choice! Shirodhara is our most deeply relaxing therapy."
       ],
       te: [
@@ -210,7 +210,7 @@
     },
     intro: {
       en: [
-        "Hi! I'm Bubble, your wellness guide. Welcome to Sushruta Kerala Massage Therapy. I'll be right here if you need help exploring our treatments, facilities, or booking options.",
+        "Hi! I'm Bubble, your wellness guide. Welcome to Sushruta Kerala Massage Therapy. I'll be right here if you need help exploring our therapies, facilities, or booking options.",
         "Hello! Welcome to Sushruta. I'm Bubble! Think of me as your personal guide to everything we offer here, from our therapies to booking an appointment.",
         "Namaste, and welcome to Sushruta Kerala Massage Therapy. I am Bubble. Feel free to tap me anytime you'd like a quick tour of what you're looking at."
       ],
@@ -222,8 +222,8 @@
     },
     hero: {
       en: [
-        "We offer authentic Kerala Ayurvedic therapies right here at our clinic. We even offer relaxing treatments like Padaabhyanga and Abhyanga as convenient home services.",
-        "At our specialized clinic, you can experience true Kerala Ayurveda. And for your ultimate comfort, treatments like Padaabhyanga are available right at your home.",
+        "We offer authentic Kerala massage therapy right here at our clinic, with pure natural oil, for relaxation, to improve blood circulation, body comfort, and skin health. We even offer relaxing therapies like Padaabhyanga and Abhyanga as convenient home services.",
+        "At our specialized clinic, you can experience true Kerala Ayurveda. And for your ultimate comfort, therapies like Padaabhyanga are available right at your home.",
         "Experience the healing power of authentic Kerala therapies at our center. If you prefer to relax at home, our home services have you covered."
       ],
       te: [
@@ -259,7 +259,7 @@
     therapies: {
       en: [
         "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Herbal Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
-        "We offer a wonderful range of traditional treatments. Browse through them below, and just tap the listen button to hear a detailed explanation of each one.",
+        "We offer a wonderful range of traditional therapies. Browse through them below, and just tap the listen button to hear a detailed explanation of each one.",
         "From soothing Shirodhara to relaxing Pizhichil, explore all our healing therapies here. Don't forget to tap listen to learn the benefits of each."
       ],
       te: [
@@ -271,8 +271,8 @@
     "therapy-detail": {
       en: [
         "If you want to know what to expect, just tap 'Listen to Therapy' to hear a soothing explanation in your own language.",
-        "Curious about a specific treatment? Tap 'Listen to Therapy' on the card and I'll explain how it works.",
-        "Tap 'Listen to Therapy' on any treatment card below, and a detailed voice guide will tell you everything you need to know."
+        "Curious about a specific therapy? Tap 'Listen to Therapy' on the card and I'll explain how it works.",
+        "Tap 'Listen to Therapy' on any therapy card below, and a detailed voice guide will tell you everything you need to know."
       ],
       te: [
         "ఏదైనా కార్డ్‌పై థెరపీ వినండి నొక్కితే, ఆ చికిత్స ఎలా పనిచేస్తుందో మీ భాషలో వినవచ్చు.",

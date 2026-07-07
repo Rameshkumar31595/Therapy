@@ -878,7 +878,7 @@ body.nav-open .site-header { background: none; box-shadow: none; backdrop-filter
 .service-card:hover .service-icon { transform: rotate(-6deg) scale(1.08); background: rgba(201, 163, 90, 0.22); }
 .service-icon svg { width: 1.9rem; height: 1.9rem; fill: var(--gold-bright); }
 
-/* Treatment photo — same 3.4rem height & margin as the icon box,
+/* Therapy photo — same 3.4rem height & margin as the icon box,
    so card dimensions are unchanged; landscape crop for clarity */
 .service-photo {
   width: 5.5rem;
