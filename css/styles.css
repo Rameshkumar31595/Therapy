@@ -2737,3 +2737,110 @@ body.cert-lightbox-open { overflow: hidden; }
   .bk-done-actions { flex-direction: column; align-items: stretch; }
   .bk-done-actions .btn { width: 100%; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   TESTIMONIALS CAROUSEL
+   ═══════════════════════════════════════════════════════════ */
+.testimonials {
+  background: var(--ivory-warm);
+  padding: 4rem 1rem;
+}
+.testimonials-carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  text-align: center;
+  min-height: 250px;
+}
+.testimonial-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
+.testimonial-card.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  position: relative;
+}
+.quote-icon {
+  width: 40px;
+  height: 40px;
+  fill: var(--gold-bright);
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+.testimonial-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: var(--forest-deep);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.testimonial-author strong {
+  color: var(--forest-deep);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.testimonial-author span {
+  color: var(--forest-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.testimonial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.test-btn {
+  background: transparent;
+  border: 1px solid var(--forest-muted);
+  color: var(--forest-deep);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+.test-btn:hover {
+  background: var(--forest-deep);
+  color: var(--ivory);
+  border-color: var(--forest-deep);
+}
+.test-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+.test-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--forest-muted);
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.test-dot.active {
+  opacity: 1;
+  background: var(--gold-bright);
+  transform: scale(1.3);
+}

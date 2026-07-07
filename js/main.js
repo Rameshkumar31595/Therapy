@@ -138,10 +138,22 @@
     "exp.g1": "వేడి హెర్బల్ నూనెలు",
     "exp.g2": "తొందర లేని సంప్రదాయ సేవ",
     "exp.g3": "డీప్ రిలాక్సేషన్",
-    "exp.g4": "కేరళ అందం",
-    "exp.hint": "← &nbsp;స్వైప్ చేయండి&nbsp; →",
+    "exp.g4": "ది స్పిరిట్ ఆఫ్ కేరళ",
+    "exp.hint": "← &nbsp;స్వాైప్ చేయండి&nbsp; →",
 
-    "bk.eyebrow": "మీ సెషన్ బుక్ చేసుకోండి",
+    "test.eyebrow": "క్లయింట్ల అనుభవాలు",
+    "test.title": "ఆరోగ్య <span class=\"gold-italic\">మాటలు</span>",
+    "test.c1": "\"నాకు కొన్ని నెలలుగా తీవ్రమైన నడుము నొప్పి ఉంది. ఇక్కడి సంప్రదాయ కేరళ మసాజ్ మరియు వేడి నూనెలు చాలా ఉపశమనం కలిగించాయి. చాలా వృత్తిపరమైన మరియు ప్రశాంతమైన సేవ.\"",
+    "test.a1": "శ్రీనివాస్ రావు",
+    "test.l1": "నరసరావుపేట",
+    "test.c2": "\"లేడీ థెరపిస్ట్ నాకు చాలా సౌకర్యంగా అనిపించింది. నా ఒత్తిడిని తగ్గించడానికి శిరోధార థెరపీ సరిగ్గా సరిపోయింది. నేను ఇప్పుడు చాలా బాగా నిద్రపోతున్నాను.\"",
+    "test.a2": "లక్ష్మి కె.",
+    "test.l2": "గుంటూరు",
+    "test.c3": "\"వృద్ధుడైన నా తండ్రికి హోమ్ సర్వీస్ పొందడం ఒక వరం. థెరపిస్ట్ చాలా సున్నితంగా వ్యవహరించారు, కేవలం రెండు సెషన్ల తర్వాత కీళ్ల నొప్పుల నుండి ఉపశమనం స్పష్టంగా కనిపించింది.\"",
+    "test.a3": "వెంకటేష్",
+    "test.l3": "పల్నాడు",
+
+    "bk.eyebrow": "మీ అపాయింట్‌మెంట్ బుక్ చేయండి",
     "bk.title": "మీ <span class=\"gold-italic\">విశ్రాంతి క్షణాన్ని</span> రిజర్వ్ చేసుకోండి",
     "bk.intro": "కొన్ని వివరాలు నింపండి చాలు. మీ రిక్వెస్ట్ మాకు వెంటనే వాట్సాప్‌లో అందుతుంది. ఇప్పుడు పేమెంట్ లేదు, అకౌంట్ అవసరం లేదు.",
     "bk.t1": "సర్టిఫైడ్ ప్రొఫెషనల్స్",
@@ -782,6 +794,66 @@
     
     // Initial check
     setTimeout(updateSpy, 100);
+  })();
+
+  /* ── Testimonials Carousel ────────────── */
+  (function initTestimonials() {
+    var cards = document.querySelectorAll('.testimonial-card');
+    var dots = document.querySelectorAll('.test-dot');
+    var prevBtn = document.querySelector('.test-btn.prev');
+    var nextBtn = document.querySelector('.test-btn.next');
+    
+    if (!cards.length) return;
+    
+    var currentIndex = 0;
+    var timer;
+    
+    function showTestimonial(index) {
+      cards.forEach(function(card) { card.classList.remove('active'); });
+      dots.forEach(function(dot) { dot.classList.remove('active'); });
+      
+      cards[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentIndex = index;
+    }
+    
+    function nextTestimonial() {
+      var next = (currentIndex + 1) % cards.length;
+      showTestimonial(next);
+    }
+    
+    function prevTestimonial() {
+      var prev = (currentIndex - 1 + cards.length) % cards.length;
+      showTestimonial(prev);
+    }
+    
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(nextTestimonial, 5000);
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        nextTestimonial();
+        resetTimer();
+      });
+    }
+    
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        prevTestimonial();
+        resetTimer();
+      });
+    }
+    
+    dots.forEach(function(dot, index) {
+      dot.addEventListener('click', function() {
+        showTestimonial(index);
+        resetTimer();
+      });
+    });
+    
+    resetTimer();
   })();
 
 })();
