@@ -545,7 +545,7 @@
 
     /* One row per story stage.
        dark – share of grey "stress" motes   drop – share of oil droplets
-       leaf – share of herbal leaves         up   – 0 = falling … 1 = rising
+       leaf – share of natural leaves         up   – 0 = falling … 1 = rising
        speed – overall pace                  veil/va – ambient colour wash
        figO – silhouette opacity tuned to that section's background */
     var STAGES = [

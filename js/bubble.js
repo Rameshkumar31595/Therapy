@@ -138,9 +138,9 @@
     },
     potli: {
       en: [
-        "Hot Herbal Potli uses warm poultices of medicinal herbs to reduce inflammation and provide deep relief for aching joints.",
-        "Experience the healing warmth of Hot Herbal Potli, highly effective for soothing stiff muscles and joint pain.",
-        "Our Potli therapy applies heated herbal bags to targeted areas, melting away deep-seated tension and pain."
+        "Hot Potli uses warm poultices of natural ingredients to reduce inflammation and provide deep relief for aching joints.",
+        "Experience the healing warmth of Hot Potli, highly effective for soothing stiff muscles and joint pain.",
+        "Our Potli therapy applies heated natural bags to targeted areas, melting away deep-seated tension and pain."
       ],
       te: [
         "హెర్బల్ పోట్లి ఔషధ మూలికల వెచ్చని మూటలను ఉపయోగించి వాపును తగ్గిస్తుంది మరియు కీళ్ల నొప్పులకు లోతైన ఉపశమనాన్ని ఇస్తుంది.",
@@ -174,9 +174,9 @@
     },
     "booking-potli": {
       en: [
-        "Hot Hot Herbal Potli is perfect for soothing stiff muscles and joint pain. Let me know if you need help finishing the form!",
-        "Ah, Potli! The warm herbal pouches will provide incredible relief to your muscles.",
-        "Excellent choice! Hot Herbal Potli is highly recommended for deep tissue relaxation."
+        "Hot Hot Potli is perfect for soothing stiff muscles and joint pain. Let me know if you need help finishing the form!",
+        "Ah, Potli! The warm Warm Pouches will provide incredible relief to your muscles.",
+        "Excellent choice! Hot Potli is highly recommended for deep tissue relaxation."
       ],
       te: [
         "హెర్బల్ పోట్లి చాలా మంచి ఎంపిక! కండరాల నొప్పులను తగ్గించడానికి ఇది అద్భుతంగా పనిచేస్తుంది.",
@@ -258,7 +258,7 @@
     },
     therapies: {
       en: [
-        "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Hot Herbal Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
+        "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Hot Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
         "We offer a wonderful range of traditional therapies. Browse through them below, and just tap the listen button to hear a detailed explanation of each one.",
         "From soothing Shirodhara to relaxing Pizhichil, explore all our healing therapies here. Don't forget to tap listen to learn the benefits of each."
       ],
@@ -378,7 +378,7 @@
     },
     "potli": {
       en: [
-        "Hot Hot Herbal Potli uses muslin pouches filled with medicinal herbs. Pressed warm against your body, it reduces joint pain, relieves stiffness, and relaxes deep muscle tissues."
+        "Hot Hot Potli uses muslin pouches filled with natural ingredients. Pressed warm against your body, it reduces joint pain, relieves stiffness, and relaxes deep muscle tissues."
       ],
       te: [
         "హాట్ హెర్బల్ పోట్లి థెరపీలో మూలికలతో నింపిన వేడి మూటలను ఉపయోగిస్తారు. ఇది కీళ్ల నొప్పులను, కండరాల పట్టుకోతలను తగ్గించడానికి అద్భుతంగా పనిచేస్తుంది."
