@@ -139,12 +139,12 @@
     potli: {
       en: [
         "Hot Potli uses warm poultices of natural ingredients to reduce inflammation and provide deep relief for aching joints.",
-        "Experience the healing warmth of Hot Potli, highly effective for soothing stiff muscles and joint pain.",
+        "Experience the soothing warmth of Hot Potli, highly effective for soothing stiff muscles and joint pain.",
         "Our Potli therapy applies heated natural bags to targeted areas, melting away deep-seated tension and pain."
       ],
       te: [
         "హాట్ పోట్లి ఔషధ మూలికల వెచ్చని మూటలను ఉపయోగించి వాపును తగ్గిస్తుంది మరియు కీళ్ల నొప్పులకు లోతైన ఉపశమనాన్ని ఇస్తుంది.",
-        "కండరాల బిగుతు మరియు కీళ్ల నొప్పులను తగ్గించడంలో అత్యంత ప్రభావవంతమైన హాట్ పోట్లి యొక్క స్వస్థతను అనుభవించండి.",
+        "కండరాల బిగుతు మరియు కీళ్ల నొప్పులను తగ్గించడంలో అత్యంత ప్రభావవంతమైన హాట్ పోట్లి యొక్క హాయిని అనుభవించండి.",
         "మా పోట్లి థెరపీ వేడిచేసిన మూలికా సంచులను ఉపయోగించి, లోతైన ఒత్తిడి మరియు నొప్పిని దూరం చేస్తుంది."
       ]
     },
@@ -163,7 +163,7 @@
     pizhichil: {
       en: [
         "Pizhichil is the king of Massage therapies, combining a continuous pour of warm natural oil with a gentle, synchronous massage.",
-        "Treat yourself to Pizhichil, a royal therapy that intensely nourishes the body, improves circulation, and relieves severe tension.",
+        "pamper yourself to Pizhichil, a royal therapy that intensely nourishes the body, improves circulation, and relieves severe tension.",
         "Experience the luxurious Pizhichil. Litres of warm natural oil are rhythmically poured over your body for unmatched rejuvenation."
       ],
       te: [
@@ -198,12 +198,12 @@
     },
     "booking-pizhichil": {
       en: [
-        "Pizhichil is the ultimate royal therapy for profound healing and relaxation. Let me know if you need help finishing the form!",
+        "Pizhichil is the ultimate royal therapy for profound soothing and relaxation. Let me know if you need help finishing the form!",
         "Ah, Pizhichil! You've chosen the king of Massage therapies.",
         "Excellent choice! Pizhichil offers unmatched rejuvenation for both body and mind."
       ],
       te: [
-        "పిజిచిల్ చాలా మంచి ఎంపిక! లోతైన స్వస్థత మరియు విశ్రాంతికి ఇది అంతిమ రాజ థెరపీ.",
+        "పిజిచిల్ చాలా మంచి ఎంపిక! లోతైన ఉపశమనం మరియు విశ్రాంతికి ఇది అంతిమ రాజ థెరపీ.",
         "ఆహా, పిజిచిల్! మీరు మసాజ్ థెరపీలలో రారాజును ఎంచుకున్నారు.",
         "మంచి ఎంపిక! పిజిచిల్ మీ శరీరానికి మరియు మనస్సుకు సాటిలేని ఉత్తేజాన్ని ఇస్తుంది."
       ]
@@ -224,24 +224,24 @@
       en: [
         "We offer authentic Kerala massage therapy right here at our massage therapy center, with pure natural oil, for relaxation, to improve blood circulation, body comfort, and skin health. We even offer relaxing therapies like Padaabhyanga and Abhyanga as convenient home services.",
         "At our specialized massage therapy center, you can experience true Kerala Massage tradition. And for your ultimate comfort, therapies like Padaabhyanga are available right at your home.",
-        "Experience the healing power of authentic Kerala therapies at our center. If you prefer to relax at home, our home services have you covered."
+        "Experience the soothing power of authentic Kerala therapies at our center. If you prefer to relax at home, our home services have you covered."
       ],
       te: [
         "మేము మా ప్రత్యేక మసాజ్ థెరపీ సెంటర్‌లో ప్రామాణిక కేరళ మసాజ్ థెరపీలను అందిస్తున్నాము. పాదాభ్యంగ మరియు అభ్యంగ వంటి కొన్ని థెరపీలను మీ ఇంటి వద్ద కూడా అందిస్తాము.",
         "మా మసాజ్ థెరపీ సెంటర్‌లో మీరు నిజమైన కేరళ మసాజ్ సంప్రదాయాన్ని అనుభవించవచ్చు. మీ సౌలభ్యం కోసం, పాదాభ్యంగ వంటి థెరపీలను మీ ఇంటి వద్దకే తీసుకువస్తున్నాము.",
-        "మా కేంద్రంలో కేరళ థెరపీల స్వస్థతను ఆస్వాదించండి. మీరు ఇంట్లోనే విశ్రాంతి తీసుకోవాలనుకుంటే, మా హోమ్ సర్వీసెస్ మీకు అందుబాటులో ఉన్నాయి."
+        "మా కేంద్రంలో కేరళ థెరపీల హాయిని ఆస్వాదించండి. మీరు ఇంట్లోనే విశ్రాంతి తీసుకోవాలనుకుంటే, మా హోమ్ సర్వీసెస్ మీకు అందుబాటులో ఉన్నాయి."
       ]
     },
     about: {
       en: [
         "Sushruta is run by a certified therapist couple. Our goal is to bring the true, traditional essence of Kerala Massage tradition straight to Narasaraopet.",
         "Founded by a passionate and certified therapist couple, we are deeply committed to providing authentic Massage care to the Narasaraopet community.",
-        "We are a husband and wife team of certified therapists, and our lifelong mission is bringing traditional Kerala healing practices directly to you."
+        "We are a husband and wife team of certified therapists, and our lifelong mission is bringing traditional Kerala soothing practices directly to you."
       ],
       te: [
-        "సుశ్రుత కేరళ మసాజ్ కేంద్రాన్ని ఒక సర్టిఫైడ్ థెరపిస్ట్ దంపతులు నిర్వహిస్తున్నారు. నరసరావుపేటలో నిజమైన కేరళ మసాజ్ వైద్యాన్ని అందించడమే మా లక్ష్యం.",
+        "సుశ్రుత కేరళ మసాజ్ కేంద్రాన్ని ఒక సర్టిఫైడ్ థెరపిస్ట్ దంపతులు నిర్వహిస్తున్నారు. నరసరావుపేటలో నిజమైన కేరళ మసాజ్ మసాజ్ాన్ని అందించడమే మా లక్ష్యం.",
         "అంకితభావం గల సర్టిఫైడ్ థెరపిస్ట్ దంపతులచే స్థాపించబడిన మా కేంద్రం, నరసరావుపేట వాసులకు అసలైన మసాజ్ సేవలు అందించడానికి కట్టుబడి ఉంది.",
-        "మేము సర్టిఫైడ్ థెరపిస్టులైన భార్యాభర్తలం. సాంప్రదాయ కేరళ వైద్య పద్ధతులను నేరుగా మీ దరికి చేర్చడమే మా జీవిత లక్ష్యం."
+        "మేము సర్టిఫైడ్ థెరపిస్టులైన భార్యాభర్తలం. సాంప్రదాయ కేరళ మసాజ్ పద్ధతులను నేరుగా మీ దరికి చేర్చడమే మా జీవిత లక్ష్యం."
       ]
     },
     certificates: {
@@ -260,7 +260,7 @@
       en: [
         "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Hot Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
         "We offer a wonderful range of traditional therapies. Browse through them below, and just tap the listen button to hear a detailed explanation of each one.",
-        "From soothing Shirodhara to relaxing Pizhichil, explore all our healing therapies here. Don't forget to tap listen to learn the benefits of each."
+        "From soothing Shirodhara to relaxing Pizhichil, explore all our soothing therapies here. Don't forget to tap listen to learn the benefits of each."
       ],
       te: [
         "పాదాభ్యంగ, అభ్యంగ, శిరోధార, పిజిచిల్ మరియు హాట్ పోట్లి వంటి మా థెరపీలను అన్వేషించండి. ప్రతి థెరపీ గురించి మరింత తెలుసుకోవడానికి కార్డ్‌పై 'వినండి' నొక్కండి.",
@@ -313,7 +313,7 @@
       te: [
         "వెచ్చని సహజ నూనెలు, ప్రశాంతమైన వ్యక్తిగత సేవ మరియు కేరళ సంప్రదాయ స్ఫూర్తితో కూడిన ప్రశాంత వాతావరణంలో గొప్ప ఉపశమనాన్ని అనుభవించండి.",
         "ప్రశాంతతలో మునిగిపోండి. మా శ్రద్ధతో కూడిన సేవ మరియు వెచ్చని సహజ నూనెలు మిమ్మల్ని పూర్తిగా ఉత్తేజపరుస్తాయి.",
-        "ప్రశాంతమైన వాతావరణంలోకి అడుగుపెట్టండి. కేరళ మసాజ్ సంప్రదాయం మరియు మా వ్యక్తిగత సేవ మీకు నిజమైన స్వస్థతను అందిస్తాయి."
+        "ప్రశాంతమైన వాతావరణంలోకి అడుగుపెట్టండి. కేరళ మసాజ్ సంప్రదాయం మరియు మా వ్యక్తిగత సేవ మీకు నిజమైన హాయిని అందిస్తాయి."
       ]
     },
     "location": {
@@ -332,7 +332,7 @@
       en: [
         "Ready to relax? Just choose your service, therapy, and time. Your booking will be quickly confirmed over WhatsApp.",
         "Booking is simple and fast. Select what you need, pick a time, and we'll confirm everything securely with you on WhatsApp.",
-        "It's time to treat yourself. Use the form below to request an appointment, and look out for a WhatsApp message from us to confirm."
+        "It's time to pamper yourself. Use the form below to request an appointment, and look out for a WhatsApp message from us to confirm."
       ],
       te: [
         "విశ్రాంతి తీసుకోవడానికి సిద్ధంగా ఉన్నారా? మీకు కావలసిన సేవ, థెరపీ, తేదీ మరియు సమయాన్ని ఎంచుకోండి. మీ బుకింగ్ అభ్యర్థన వాట్సాప్ ద్వారా నిర్ధారించబడుతుంది.",
@@ -386,7 +386,7 @@
     },
     "shirodhara": {
       en: [
-        "Shirodhara involves pouring a continuous stream of warm natural oil gently over your forehead. It is incredibly effective for calming the nervous system, reducing anxiety, and curing insomnia."
+        "Shirodhara involves pouring a continuous stream of warm natural oil gently over your forehead. It is incredibly effective for calming the nervous system, reducing anxiety, and comforting insomnia."
       ],
       te: [
         "శిరోధారలో వెచ్చని సహజ నూనెను నుదుటిపై నిరంతరం ధారగా పోస్తారు. ఇది నాడీ వ్యవస్థను ప్రశాంతపరిచి, ఒత్తిడిని మరియు నిద్రలేమిని తగ్గిస్తుంది."
