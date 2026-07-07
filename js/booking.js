@@ -21,7 +21,7 @@
      The massage therapy center offers BOTH "At Massage Therapy Center" and "Home Service".
      Home Service is available ONLY for the three therapies that
      need no massage therapy center equipment (see HOME_THERAPIES). When Home
-     Service is chosen the Herbal Steam add-on is removed and a
+     Service is chosen the Hot Steam Bath add-on is removed and a
      customer address is required; the WhatsApp message then
      carries that address instead of the massage therapy center address/map. */
 
@@ -124,7 +124,7 @@
       patient: "Patient",
       contact: "Contact",
       therapy: "Therapy",
-      steam: "Herbal Steam",
+      steam: "Hot Steam Bath",
       steamYes: "Yes (+₹200)",
       date: "Date",
       time: "Time",
@@ -157,7 +157,7 @@
       patient: "పేరు",
       contact: "ఫోన్",
       therapy: "థెరపీ",
-      steam: "హెర్బల్ స్టీమ్",
+      steam: "హాట్ స్టీమ్ బాత్",
       steamYes: "అవును (+₹200)",
       date: "తేదీ",
       time: "సమయం",
@@ -231,7 +231,7 @@
   els.date.min = todayISO();
 
   /* Match the form to the chosen service type: filter the therapy
-     list, and toggle the Herbal Steam add-on + the home-address
+     list, and toggle the Hot Steam Bath add-on + the home-address
      field. Switching back to "At Massage Therapy Center" restores everything. */
   function applyServiceType() {
     var sessionType = els.session.value;
@@ -248,7 +248,7 @@
       els.therapy.value = "";
     }
 
-    // Herbal Steam is massage therapy center-only — remove it entirely for Home Service.
+    // Hot Steam Bath is massage therapy center-only — remove it entirely for Home Service.
     if (els.steam) {
       if (isHome) els.steam.checked = false;
       els.steam.disabled = isHome;
@@ -350,7 +350,7 @@
   }
 
   /* Builds the full booking message in the ACTIVE site language.
-     Optional rows (Herbal Steam, Notes) are only added when set —
+     Optional rows (Hot Steam Bath, Notes) are only added when set —
      no empty placeholders, no "—"/"N/A". Address + Maps link are
      always present. Kept compact so the encoded wa.me payload stays
      well within mobile limits (nothing gets truncated). */
@@ -373,7 +373,7 @@
     p.push("🧭 " + L.serviceType + ": " + (isHome ? L.homeVal : L.atClinicVal));
     p.push("");
     p.push("💆 " + L.therapy + ": " + therapyName);
-    // Herbal Steam only ever applies to a massage therapy center booking.
+    // Hot Steam Bath only ever applies to a massage therapy center booking.
     if (!isHome && els.steam && els.steam.checked) p.push("♨️ " + L.steam + ": " + L.steamYes);
     p.push("");
     p.push("📅 " + L.date + ": " + formatDate(els.date.value));
