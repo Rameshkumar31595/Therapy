@@ -179,7 +179,7 @@
         "Padaabhyanga": "పాదాభ్యంగ",
         "Abhyanga": "అభ్యంగ",
         "Abhyanga Extended": "అభ్యంగ (ఎక్స్‌టెండెడ్)",
-        "Hot Potli": "హాట్ హెర్బల్ పోట్లి",
+        "Hot Potli": "హాట్ హాట్ పోట్లి",
         "Shirodhara": "శిరోధార",
         "Pizhichil": "పిజిచిల్"
       }
