@@ -1181,7 +1181,7 @@ html[lang="te"] .home-badge { letter-spacing: 0.01em; text-transform: none; font
   padding-inline: 0.8rem;
   border-bottom-color: transparent;
 }
-.timings-list li.today span:first-child::after {
+.timings-list li.today > span:first-child::after {
   content: "Today";
   font-size: 0.58rem;
   font-weight: 700;
@@ -1201,6 +1201,9 @@ html[lang="te"] .home-badge { letter-spacing: 0.01em; text-transform: none; font
   padding-inline: 0.8rem !important;
   border-bottom-color: transparent !important;
   margin-top: 0.4rem;
+}
+.halfday-special > span:last-child {
+  white-space: normal;
 }
 .halfday-note {
   font-style: normal;
@@ -1615,7 +1618,7 @@ html[lang="te"] .service-tag { letter-spacing: 0.05em; text-transform: none; }
 html[lang="te"] .scroll-hint-text { letter-spacing: 0.1em; }
 html[lang="te"] .hero-sub,
 html[lang="te"] p { line-height: 1.85; }
-html[lang="te"] .timings-list li.today span:first-child::after { content: "ఈరోజు"; }
+html[lang="te"] .timings-list li.today > span:first-child::after { content: "ఈరోజు"; }
 @media (max-width: 899px) {
   html[lang="te"] .main-nav a { font-size: 1.25rem; }
 }

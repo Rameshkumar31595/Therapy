@@ -627,8 +627,9 @@
         if (!req || !req.text) { if (req && req.onEnd) req.onEnd(); return false; }
         this.stop();
         var L = req.lang === "te" ? "te" : "en";
+        var BUBBLE_AUDIO_VERSION = "2026-07-10c";
         // Attempt to load the pre-recorded MP3 variation
-        audioEl.src = "audio/bubble/" + L + "/" + req.section + "_" + (req.index || 0) + ".mp3";
+        audioEl.src = "audio/bubble/" + L + "/" + req.section + "_" + (req.index || 0) + ".mp3?v=" + BUBBLE_AUDIO_VERSION;
         audioEl.onplay = req.onStart || null;
         audioEl.onended = req.onEnd || null;
         audioEl.onerror = function() {
