@@ -86,7 +86,8 @@
       sessionNote: "Home Service is available only for Padaabhyanga, Abhyanga and Abhyanga Extended. At the massage therapy center, all therapies are available.",
       therapyNote: "Some therapies need special equipment that is only available at the massage therapy center.",
       addressPh: "House / flat, street, area, landmark, town…",
-      notesPh: "Anything we should know: health conditions, preferences…"
+      notesPh: "Anything we should know: health conditions, preferences…",
+      errSaturdayCenter: "On Saturdays, the center is closed. Home service is available full day by appointment."
     },
     te: {
       errName: "దయచేసి మీ పేరు రాయండి.",
@@ -106,7 +107,8 @@
       sessionNote: "హోమ్ సర్వీస్ కేవలం Padaabhyanga, Abhyanga, Abhyanga Extended కోసం మాత్రమే అందుబాటులో ఉంది. మసాజ్ థెరపీ సెంటర్‌లో అన్ని థెరపీలు అందుబాటులో ఉంటాయి.",
       therapyNote: "కొన్ని థెరపీలకు అవసరమైన ప్రత్యేక పరికరాలు కేవలం మసాజ్ థెరపీ సెంటర్‌లో మాత్రమే అందుబాటులో ఉంటాయి.",
       addressPh: "ఇల్లు / ఫ్లాట్, వీధి, ఏరియా, ల్యాండ్‌మార్క్, ఊరు…",
-      notesPh: "మేము తెలుసుకోవాల్సినవి: ఆరోగ్య విషయాలు, ఇష్టాలు…"
+      notesPh: "మేము తెలుసుకోవాల్సినవి: ఆరోగ్య విషయాలు, ఇష్టాలు…",
+      errSaturdayCenter: "శనివారాల్లో సెంటర్ సెలవు. అపాయింట్‌మెంట్ ద్వారా హోమ్ సర్వీస్ పూర్తి రోజు అందుబాటులో ఉంటుంది."
     }
   };
   function t(key) { return T[lang()][key]; }
@@ -268,6 +270,37 @@
     setError(els.session, "bkSessionErr", null);
     setError(els.therapy, "bkTherapyErr", null);
     applyServiceType();
+    validateSaturdayRule();
+  });
+
+  function isSelectedDateSaturday() {
+    var val = els.date.value;
+    if (!val) return false;
+    var p = val.split("-");
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    return d.getDay() === 6; // 6 = Saturday
+  }
+
+  function validateSaturdayRule() {
+    if (isSelectedDateSaturday() && els.session.value === "At Massage Therapy Center") {
+      setError(els.session, "bkSessionErr", t("errSaturdayCenter"));
+      return false;
+    } else {
+      var errEl = document.getElementById("bkSessionErr");
+      if (errEl && errEl.textContent === t("errSaturdayCenter")) {
+        setError(els.session, "bkSessionErr", null);
+      }
+      return true;
+    }
+  }
+
+  els.date.addEventListener("change", function () {
+    setError(els.date, "bkDateErr", null);
+    validateSaturdayRule();
+  });
+  els.date.addEventListener("input", function () {
+    setError(els.date, "bkDateErr", null);
+    validateSaturdayRule();
   });
 
   /* ── Validation ─────────────────────────────────────────── */
@@ -308,6 +341,9 @@
     }
 
     check(!!els.session.value, els.session, "bkSessionErr", t("errSession"));
+    if (els.session.value) {
+      check(validateSaturdayRule(), els.session, "bkSessionErr", t("errSaturdayCenter"));
+    }
     check(!!els.therapy.value, els.therapy, "bkTherapyErr", t("errTherapy"));
 
     // Home Service requires a delivery address.

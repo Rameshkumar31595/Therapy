@@ -294,14 +294,14 @@
     },
     "timings": {
       en: [
-        "We're open every day from 9 AM to 8 PM, except on Saturdays when we close early at 1 PM. It's always best to book your appointment in advance.",
-        "Our doors are open daily from 9 in the morning to 8 at night, though we do close at 1 PM on Saturdays. Please remember to book ahead!",
-        "You can visit us from 9 AM to 8 PM on most days, and until 1 PM on Saturdays. We highly recommend scheduling your session before you arrive."
+        "On Saturdays, the center is closed. Home service is available full day by appointment.",
+        "On Saturdays, the center is closed. Home service is available full day by appointment.",
+        "On Saturdays, the center is closed. Home service is available full day by appointment."
       ],
       te: [
-        "మేము ప్రతిరోజూ ఉదయం 9 గంటల నుండి రాత్రి 8 గంటల వరకు తెరిచి ఉంటాము, శనివారం మాత్రం మధ్యాహ్నం 1 గంట వరకు మాత్రమే. మీరు ముందుగా అపాయింట్‌మెంట్ బుక్ చేసుకోవడం సూచించబడింది.",
-        "శనివారం మధ్యాహ్నం 1 గంట వరకు మినహా, మా తలుపులు ప్రతిరోజూ ఉదయం 9 నుండి రాత్రి 8 వరకు తెరిచి ఉంటాయి. దయచేసి ముందుగా బుక్ చేసుకోవడం మర్చిపోకండి!",
-        "మీరు శనివారం మధ్యాహ్నం 1 గంట వరకు మరియు మిగిలిన రోజులలో ఉదయం 9 నుండి రాత్రి 8 వరకు మమ్మల్ని సందర్శించవచ్చు. వచ్చే ముందు అపాయింట్‌మెంట్ తీసుకోవడం ఉత్తమం."
+        "శనివారాల్లో సెంటర్ సెలవు. అపాయింట్‌మెంట్ ద్వారా హోమ్ సర్వీస్ పూర్తి రోజు అందుబాటులో ఉంటుంది.",
+        "శనివారాల్లో సెంటర్ సెలవు. అపాయింట్‌మెంట్ ద్వారా హోమ్ సర్వీస్ పూర్తి రోజు అందుబాటులో ఉంటుంది.",
+        "శనివారాల్లో సెంటర్ సెలవు. అపాయింట్‌మెంట్ ద్వారా హోమ్ సర్వీస్ పూర్తి రోజు అందుబాటులో ఉంటుంది."
       ]
     },
     "experience": {
