@@ -34,21 +34,21 @@ MESSAGES = {
     },
     "about": {
       "en": [
-        "Sushruta is run by a certified therapist couple. Our goal is to bring the true, traditional essence of Kerala Massage tradition straight to Narasaraopet.",
-        "Founded by a passionate and certified therapist couple, we are deeply committed to providing authentic Massage care to the Narasaraopet community.",
+        "Sushruta is run by a certified therapist couple. Our goal is to bring the true, traditional essence of Kerala massage techniques straight to Narasaraopet.",
+        "Founded by a passionate and certified therapist couple, we are deeply committed to providing authentic massage care to the Narasaraopet community.",
         "We are a husband and wife team of certified therapists, and our lifelong mission is bringing traditional Kerala soothing practices directly to you."
       ],
       "te": [
-        "సుశ్రుత కేరళ మసాజ్ కేంద్రాన్ని ఒక సర్టిఫైడ్ థెరపిస్ట్ దంపతులు నిర్వహిస్తున్నారు. నరసరావుపేటలో నిజమైన కేరళ మసాజ్ మసాజ్ాన్ని అందించడమే మా లక్ష్యం.",
+        "సుశ్రుత కేరళ మసాజ్ కేంద్రాన్ని ఒక సర్టిఫైడ్ థెరపిస్ట్ దంపతులు నిర్వహిస్తున్నారు. నరసరావుపేటలో నిజమైన కేరళ మసాజ్‌ను అందించడమే మా లక్ష్యం.",
         "అంకితభావం గల సర్టిఫైడ్ థెరపిస్ట్ దంపతులచే స్థాపించబడిన మా కేంద్రం, నరసరావుపేట వాసులకు అసలైన మసాజ్ సేవలు అందించడానికి కట్టుబడి ఉంది.",
         "మేము సర్టిఫైడ్ థెరపిస్టులైన భార్యాభర్తలం. సాంప్రదాయ కేరళ మసాజ్ పద్ధతులను నేరుగా మీ దరికి చేర్చడమే మా జీవిత లక్ష్యం."
       ]
     },
     "certificates": {
       "en": [
-        "Our certifications show our deep professional training in traditional Massage tradition, so you can always rest assured you are in expert hands.",
+        "Our certifications show our deep professional training in traditional massage techniques, so you can always rest assured you are in expert hands.",
         "We pride ourselves on our rigorous professional training. These certifications guarantee you're receiving care of the absolute highest quality.",
-        "Feel completely at ease knowing our expertise is backed by recognized Massage certifications. You are truly in safe, knowledgeable hands."
+        "Feel completely at ease knowing our expertise is backed by recognized massage certifications. You are truly in safe, knowledgeable hands."
       ],
       "te": [
         "మా సర్టిఫికేట్లు సాంప్రదాయ మసాజ్ పద్ధతుల్లో మా వృత్తిపరమైన శిక్షణ మరియు నైపుణ్యాన్ని ప్రతిబింబిస్తాయి. అత్యుత్తమ నాణ్యమైన థెరపీకి ఇవే నిదర్శనం.",
@@ -63,7 +63,7 @@ MESSAGES = {
         "From soothing Shirodhara to relaxing Pizhichil, explore all our soothing therapies here. Don't forget to tap listen to learn the benefits of each."
       ],
       "te": [
-        "పాదాభ్యంగ, అభ్యంగ, శిరోధార, పిజిచిల్ మరియు హెర్బల్ పోట్లి వంటి మా థెరపీలను అన్వేషించండి. ప్రతి థెరపీ గురించి మరింత తెలుసుకోవడానికి కార్డ్‌పై 'వినండి' నొక్కండి.",
+        "పాదాభ్యంగ, అభ్యంగ, శిరోధార, పిజిచిల్ మరియు హాట్ పోట్లి వంటి మా థెరపీలను అన్వేషించండి. ప్రతి థెరపీ గురించి మరింత తెలుసుకోవడానికి కార్డ్‌పై 'వినండి' నొక్కండి.",
         "మేము అద్భుతమైన సాంప్రదాయ థెరపీలను అందిస్తున్నాము. కింద వాటిని పరిశీలించండి, మరియు ప్రతి దాని గురించి వివరంగా వినడానికి లిజన్ బటన్‌ను నొక్కండి.",
         "ప్రశాంతమైన శిరోధార నుండి ఉపశమనం కలిగించే పిజిచిల్ వరకు, మా థెరపీలన్నింటినీ ఇక్కడ అన్వేషించండి. ప్రతి థెరపీ ప్రయోజనాలను వినడం మర్చిపోకండి."
       ]
@@ -77,7 +77,7 @@ MESSAGES = {
       "te": [
         "ఏదైనా కార్డ్‌పై థెరపీ వినండి నొక్కితే, ఆ థెరపీ ఎలా పనిచేస్తుందో మీ భాషలో వినవచ్చు.",
         "ఏదైనా నిర్దిష్ట థెరపీ గురించి ఆసక్తి ఉందా? కార్డ్‌పై 'థెరపీ వినండి' నొక్కండి, అది ఎలా పనిచేస్తుందో నేను వివరిస్తాను.",
-        "కింద ఉన్న ఏదైనా ట్రీట్‌మెంట్ కార్డ్‌పై 'థెరపీ వినండి' నొక్కండి, వాయిస్ గైడ్ మీకు కావాల్సిన ప్రతి విషయాన్ని వివరిస్తుంది."
+        "కింద ఉన్న ఏదైనా థెరపీ కార్డ్‌పై 'థెరపీ వినండి' నొక్కండి, వాయిస్ గైడ్ మీకు కావాల్సిన ప్రతి విషయాన్ని వివరిస్తుంది."
       ]
     },
     "why-us": {
@@ -171,8 +171,8 @@ MESSAGES = {
         "Our Potli therapy applies heated natural bags to targeted areas, melting away deep-seated tension and pain."
       ],
       "te": [
-        "హెర్బల్ పోట్లి సహజ నూనెల వెచ్చని మూటలను ఉపయోగించి వాపును తగ్గిస్తుంది మరియు కీళ్ల నొప్పులకు లోతైన ఉపశమనాన్ని ఇస్తుంది.",
-        "కండరాల బిగుతు మరియు కీళ్ల నొప్పులను తగ్గించడంలో అత్యంత ప్రభావవంతమైన హెర్బల్ పోట్లి యొక్క హాయిని అనుభవించండి.",
+        "హాట్ పోట్లి సహజ నూనెల వెచ్చని మూటలను ఉపయోగించి వాపును తగ్గిస్తుంది మరియు కీళ్ల నొప్పులకు లోతైన ఉపశమనాన్ని ఇస్తుంది.",
+        "కండరాల బిగుతు మరియు కీళ్ల నొప్పులను తగ్గించడంలో అత్యంత ప్రభావవంతమైన హాట్ పోట్లి యొక్క హాయిని అనుభవించండి.",
         "మా పోట్లి థెరపీ వేడిచేసిన సహజ సంచులను ఉపయోగించి, లోతైన ఒత్తిడి మరియు నొప్పిని దూరం చేస్తుంది."
       ]
     },
@@ -180,7 +180,7 @@ MESSAGES = {
       "en": [
         "Shirodhara involves a continuous, rhythmic flow of warm oil over your forehead to profoundly calm the mind and nervous system.",
         "Melt away mental stress with Shirodhara, our signature therapy designed to deeply relax your mind and improve sleep quality.",
-        "Experience profound tranquility with Shirodhara, the ultimate Massage therapy for mental clarity and relaxation."
+        "Experience profound tranquility with Shirodhara, the ultimate massage therapy for mental clarity and relaxation."
       ],
       "te": [
         "శిరోధారలో మీ నుదిటిపై వెచ్చని నూనెను నిరంతరంగా, లయబద్ధంగా పోయడం ద్వారా మనస్సు మరియు నాడీ వ్యవస్థను ప్రశాంతపరుస్తారు.",
@@ -190,8 +190,8 @@ MESSAGES = {
     },
     "pizhichil": {
       "en": [
-        "Pizhichil is the king of Massage therapies, combining a continuous pour of warm natural oil with a gentle, synchronous massage.",
-        "pamper yourself to Pizhichil, a royal therapy that intensely nourishes the body, improves circulation, and relieves severe tension.",
+        "Pizhichil is the king of massage therapies, combining a continuous pour of warm natural oil with a gentle, synchronous massage.",
+        "pamper yourself with Pizhichil, a royal therapy that intensely nourishes the body, improves circulation, and relieves severe tension.",
         "Experience the luxurious Pizhichil. Litres of warm natural oil are rhythmically poured over your body for unmatched rejuvenation."
       ],
       "te": [

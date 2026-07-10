@@ -174,8 +174,8 @@
     },
     "booking-potli": {
       en: [
-        "Hot Hot Potli is perfect for soothing stiff muscles and joint pain. Let me know if you need help finishing the form!",
-        "Ah, Potli! The warm Warm Pouches will provide incredible relief to your muscles.",
+        "Hot Potli is perfect for soothing stiff muscles and joint pain. Let me know if you need help finishing the form!",
+        "Ah, Potli! The warm pouches will provide incredible relief to your muscles.",
         "Excellent choice! Hot Potli is highly recommended for deep tissue relaxation."
       ],
       te: [
@@ -199,7 +199,7 @@
     "booking-pizhichil": {
       en: [
         "Pizhichil is the ultimate royal therapy for profound soothing and relaxation. Let me know if you need help finishing the form!",
-        "Ah, Pizhichil! You've chosen the king of Massage therapies.",
+        "Ah, Pizhichil! You've chosen the king of massage therapies.",
         "Excellent choice! Pizhichil offers unmatched rejuvenation for both body and mind."
       ],
       te: [
@@ -234,21 +234,21 @@
     },
     about: {
       en: [
-        "Sushruta is run by a certified therapist couple. Our goal is to bring the true, traditional essence of Kerala Massage tradition straight to Narasaraopet.",
-        "Founded by a passionate and certified therapist couple, we are deeply committed to providing authentic Massage care to the Narasaraopet community.",
+        "Sushruta is run by a certified therapist couple. Our goal is to bring the true, traditional essence of Kerala massage techniques straight to Narasaraopet.",
+        "Founded by a passionate and certified therapist couple, we are deeply committed to providing authentic massage care to the Narasaraopet community.",
         "We are a husband and wife team of certified therapists, and our lifelong mission is bringing traditional Kerala soothing practices directly to you."
       ],
       te: [
-        "సుశ్రుత కేరళ మసాజ్ కేంద్రాన్ని ఒక సర్టిఫైడ్ థెరపిస్ట్ దంపతులు నిర్వహిస్తున్నారు. నరసరావుపేటలో నిజమైన కేరళ మసాజ్ మసాజ్ాన్ని అందించడమే మా లక్ష్యం.",
+        "సుశ్రుత కేరళ మసాజ్ కేంద్రాన్ని ఒక సర్టిఫైడ్ థెరపిస్ట్ దంపతులు నిర్వహిస్తున్నారు. నరసరావుపేటలో నిజమైన కేరళ మసాజ్‌ను అందించడమే మా లక్ష్యం.",
         "అంకితభావం గల సర్టిఫైడ్ థెరపిస్ట్ దంపతులచే స్థాపించబడిన మా కేంద్రం, నరసరావుపేట వాసులకు అసలైన మసాజ్ సేవలు అందించడానికి కట్టుబడి ఉంది.",
         "మేము సర్టిఫైడ్ థెరపిస్టులైన భార్యాభర్తలం. సాంప్రదాయ కేరళ మసాజ్ పద్ధతులను నేరుగా మీ దరికి చేర్చడమే మా జీవిత లక్ష్యం."
       ]
     },
     certificates: {
       en: [
-        "Our certifications show our deep professional training in traditional Massage tradition, so you can always rest assured you are in expert hands.",
+        "Our certifications show our deep professional training in traditional massage techniques, so you can always rest assured you are in expert hands.",
         "We pride ourselves on our rigorous professional training. These certifications guarantee you're receiving care of the absolute highest quality.",
-        "Feel completely at ease knowing our expertise is backed by recognized Massage certifications. You are truly in safe, knowledgeable hands."
+        "Feel completely at ease knowing our expertise is backed by recognized massage certifications. You are truly in safe, knowledgeable hands."
       ],
       te: [
         "మా సర్టిఫికేట్లు సాంప్రదాయ మసాజ్ పద్ధతుల్లో మా వృత్తిపరమైన శిక్షణ మరియు నైపుణ్యాన్ని ప్రతిబింబిస్తాయి. అత్యుత్తమ నాణ్యమైన థెరపీకి ఇవే నిదర్శనం.",
@@ -277,7 +277,7 @@
       te: [
         "ఏదైనా కార్డ్‌పై థెరపీ వినండి నొక్కితే, ఆ థెరపీ ఎలా పనిచేస్తుందో మీ భాషలో వినవచ్చు.",
         "ఏదైనా నిర్దిష్ట థెరపీ గురించి ఆసక్తి ఉందా? కార్డ్‌పై 'థెరపీ వినండి' నొక్కండి, అది ఎలా పనిచేస్తుందో నేను వివరిస్తాను.",
-        "కింద ఉన్న ఏదైనా ట్రీట్‌మెంట్ కార్డ్‌పై 'థెరపీ వినండి' నొక్కండి, వాయిస్ గైడ్ మీకు కావాల్సిన ప్రతి విషయాన్ని వివరిస్తుంది."
+        "కింద ఉన్న ఏదైనా థెరపీ కార్డ్‌పై 'థెరపీ వినండి' నొక్కండి, వాయిస్ గైడ్ మీకు కావాల్సిన ప్రతి విషయాన్ని వివరిస్తుంది."
       ]
     },
     "why-us": {
@@ -378,10 +378,10 @@
     },
     "potli": {
       en: [
-        "Hot Hot Potli uses muslin pouches filled with natural ingredients. Pressed warm against your body, it reduces joint pain, relieves stiffness, and relaxes deep muscle tissues."
+        "Hot Potli uses muslin pouches filled with natural ingredients. Pressed warm against your body, it reduces joint pain, relieves stiffness, and relaxes deep muscle tissues."
       ],
       te: [
-        "హాట్ హాట్ పోట్లి థెరపీలో సహజ పదార్థాలతో నింపిన వేడి మూటలను ఉపయోగిస్తారు. ఇది కీళ్ల నొప్పులను, కండరాల పట్టుకోతలను తగ్గించడానికి అద్భుతంగా పనిచేస్తుంది."
+        "హాట్ పోట్లి థెరపీలో సహజ పదార్థాలతో నింపిన వేడి మూటలను ఉపయోగిస్తారు. ఇది కీళ్ల నొప్పులను, కండరాల పట్టుకోతలను తగ్గించడానికి అద్భుతంగా పనిచేస్తుంది."
       ]
     },
     "shirodhara": {

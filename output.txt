@@ -1,0 +1,1057 @@
+[
+  {
+    "feature": "JS File Syntax: main.js",
+    "status": "Working",
+    "detail": "Syntax OK"
+  },
+  {
+    "feature": "JS File Syntax: booking.js",
+    "status": "Working",
+    "detail": "Syntax OK"
+  },
+  {
+    "feature": "JS File Syntax: bubble.js",
+    "status": "Working",
+    "detail": "Syntax OK"
+  },
+  {
+    "feature": "JS File Syntax: certificates.js",
+    "status": "Working",
+    "detail": "Syntax OK"
+  },
+  {
+    "feature": "JS File Syntax: voice-guide.js",
+    "status": "Working",
+    "detail": "Syntax OK"
+  },
+  {
+    "feature": "HTML Script tag: js/certificates.js?v=4",
+    "status": "Working",
+    "detail": "File exists"
+  },
+  {
+    "feature": "HTML Script tag: js/main.js?v=4",
+    "status": "Working",
+    "detail": "File exists"
+  },
+  {
+    "feature": "HTML Script tag: js/booking.js?v=4",
+    "status": "Working",
+    "detail": "File exists"
+  },
+  {
+    "feature": "HTML Script tag: js/bubble.js?v=4",
+    "status": "Working",
+    "detail": "File exists"
+  },
+  {
+    "feature": "HTML CSS tag: css/styles.css?v=2.3",
+    "status": "Working",
+    "detail": "File exists"
+  },
+  {
+    "feature": "HTML CSS tag: css/bubble.css",
+    "status": "Working",
+    "detail": "File exists"
+  },
+  {
+    "feature": "Navigation Target: #lotus",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #top",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #lotus",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #services",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #booking",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #about",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #why-us",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #contact",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #bird",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #bird",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #bird",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #booking",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #booking",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #booking",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #booking",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #booking",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #booking",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #booking",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #booking",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #services",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #lotus",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #lotus",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #leaf",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Navigation Target: #lotus",
+    "status": "Working",
+    "detail": "Anchor target exists"
+  },
+  {
+    "feature": "Translation Key: nav.services",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: nav.book",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: nav.about",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: nav.why",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: nav.contact",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: nav.call",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: nav.directions",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: hero.eyebrow",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: hero.t1",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: hero.t2",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: hero.t3",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: hero.sub",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: cta.book",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: cta.wa",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: cta.call",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: hero.scroll",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc.eyebrow",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc.intro",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc1.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc1.tag",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc.homeBadge",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc1.desc",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: dur.30",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc.listen",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc.book",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc2.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc2.tag",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc2.desc",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: dur.45",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc.badge1",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc3.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc3.note",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc3.desc",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: dur.60",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc4.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc4.tag",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc4.desc",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc5.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc5.tag",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc5.desc",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: dur.50",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc.badge2",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc6.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc6.tag",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: svc6.desc",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: steam.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: steam.label",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: steam.desc",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: steam.btn",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.intro",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.name",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.phone",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.session",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.massage therapy center",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.home",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.sessionNote",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.therapy",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.therapyPh",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.therapyNote",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.steam",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.address",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.addressNote",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.date",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.time",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.timePh",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.gender",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.male",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.female",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.genderNote",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.notes",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.submit",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.privacy",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.doneTitle",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.doneMsg",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.addr",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.continue",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.directions",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bk.waContact",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.badge",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.eyebrow",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.lead",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.para",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.p1t",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.p1d",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.p2t",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.p2d",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.p3t",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.p3d",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: about.link",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: cred.eyebrow",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: cred.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: cred.statement",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: cred.b1",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: cred.b2",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: cred.b3",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: cred.b4",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: cred.verify",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.eyebrow",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c1t",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c1d",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c2t",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c2d",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c3t",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c3d",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c4t",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c4d",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c5t",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c5d",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c6t",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c6d",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c7t",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: why.c7d",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: exp.eyebrow",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: exp.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: exp.intro",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: exp.g1",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: exp.g2",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: exp.g3",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: exp.g4",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: exp.hint",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: time.eyebrow",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: time.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: time.para",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: time.btn",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: time.card",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: day.mon",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: day.tue",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: day.wed",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: day.thu",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: day.fri",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: day.sat",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: day.sat.center",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: day.sat.home",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: day.sun",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: time.foot",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: con.title",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: con.sub",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: con.wa",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: con.call",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: con.loc",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: con.hours",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: con.door",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: con.directions",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: bye.msg",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: foot.line",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: foot.addr",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: foot.directions",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: foot.home",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: m.wa",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: m.call",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Translation Key: m.dir",
+    "status": "Working",
+    "detail": "Translated in Telugu (TE)"
+  },
+  {
+    "feature": "Saturday Booking Validation Logic",
+    "status": "Working",
+    "detail": "Validation functions are present and wired"
+  },
+  {
+    "feature": "JSON-LD Structured Data Schema",
+    "status": "Working",
+    "detail": "Valid JSON"
+  }
+]
