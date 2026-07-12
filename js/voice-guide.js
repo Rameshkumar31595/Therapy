@@ -33,32 +33,32 @@
   var THERAPIES = {
     padaabhyanga: {
       file: "padaabhyanga",
-      name: { en: "Padaabhyanga", te: "పాదాభ్యంగం" },
-      tag:  { en: "Foot & Leg Massage", te: "పాదాలు & కాళ్ల మసాజ్" }
+      name: { en: "Siroabhyanga with Padaabhyanga Combo", te: "సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో" },
+      tag:  { en: "Head, leg, and foot massage", te: "తల, కాళ్లు, పాదాల మసాజ్" }
     },
     abhyanga45: {
       file: "abhyanga45",
-      name: { en: "Abhyanga", te: "అభ్యంగం" },
+      name: { en: "Abhyanga Full Body", te: "అభ్యంగ ఫుల్ బాడీ" },
       tag:  { en: "Full Body Oil Massage · 45 min", te: "ఫుల్ బాడీ ఆయిల్ మసాజ్ · 45 నిమిషాలు" }
     },
     abhyanga60: {
       file: "abhyanga60",
-      name: { en: "Abhyanga Extended", te: "అభ్యంగం ఎక్స్‌టెండెడ్" },
+      name: { en: "Abhyanga Full Body Extended Version", te: "అభ్యంగ ఫుల్ బాడీ ఎక్స్‌టెండెడ్ వెర్షన్" },
       tag:  { en: "Full Body Oil Massage · 60 min", te: "ఫుల్ బాడీ ఆయిల్ మసాజ్ · 60 నిమిషాలు" }
     },
     potli: {
       file: "potli",
-      name: { en: "Hot Potli", te: "హాట్ హాట్ పోట్లి" },
+      name: { en: "Herbal Potli Therapy", te: "హెర్బల్ పోట్లి థెరపీ" },
       tag:  { en: "Warm Pouch Massage", te: "హాట్ పోట్లి మసాజ్" }
     },
     shirodhara: {
       file: "shirodhara",
-      name: { en: "Shirodhara", te: "శిరోధార" },
+      name: { en: "Shirodhara Warm Oil Head Bath", te: "శిరోధార వార్మ్ ఆయిల్ హెడ్ బాత్" },
       tag:  { en: "Warm Oil Head Therapy", te: "వేడి నూనె హెడ్ థెరపీ" }
     },
     pizhichil: {
       file: "pizhichil",
-      name: { en: "Pizhichil", te: "పిళిచిల్" },
+      name: { en: "Pizhichil Royal Warm Oil Bath Therapy", te: "పిజిచిల్ రాయల్ వార్మ్ ఆయిల్ బాత్ థెరపీ" },
       tag:  { en: "Traditional Kerala Oil Therapy", te: "సంప్రదాయ కేరళ ఆయిల్ థెరపీ" }
     }
   };

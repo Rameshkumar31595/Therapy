@@ -83,7 +83,7 @@
       namePh: "Your name",
       phonePh: "10-digit mobile number",
       sessionPh: "Select service type…",
-      sessionNote: "Home Service is available only for Padaabhyanga, Abhyanga and Abhyanga Extended. At the massage therapy center, all therapies are available.",
+      sessionNote: "Home Service is available only for Siroabhyanga with Padaabhyanga Combo, Abhyanga Full Body and Abhyanga Full Body Extended Version. At the massage therapy center, all therapies are available.",
       therapyNote: "Some therapies need special equipment that is only available at the massage therapy center.",
       addressPh: "House / flat, street, area, landmark, town…",
       notesPh: "Anything we should know: health conditions, preferences…",
@@ -104,7 +104,7 @@
       namePh: "మీ పేరు",
       phonePh: "10 అంకెల మొబైల్ నంబర్",
       sessionPh: "సేవ రకం ఎంచుకోండి…",
-      sessionNote: "హోమ్ సర్వీస్ కేవలం Padaabhyanga, Abhyanga, Abhyanga Extended కోసం మాత్రమే అందుబాటులో ఉంది. మసాజ్ థెరపీ సెంటర్‌లో అన్ని థెరపీలు అందుబాటులో ఉంటాయి.",
+      sessionNote: "హోమ్ సర్వీస్ కేవలం సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో, అభ్యంగ ఫుల్ బాడీ, అభ్యంగ ఫుల్ బాడీ ఎక్స్‌టెండెడ్ వెర్షన్ కోసం మాత్రమే అందుబాటులో ఉంది. మసాజ్ థెరపీ సెంటర్‌లో అన్ని థెరపీలు అందుబాటులో ఉంటాయి.",
       therapyNote: "కొన్ని థెరపీలకు అవసరమైన ప్రత్యేక పరికరాలు కేవలం మసాజ్ థెరపీ సెంటర్‌లో మాత్రమే అందుబాటులో ఉంటాయి.",
       addressPh: "ఇల్లు / ఫ్లాట్, వీధి, ఏరియా, ల్యాండ్‌మార్క్, ఊరు…",
       notesPh: "మేము తెలుసుకోవాల్సినవి: ఆరోగ్య విషయాలు, ఇష్టాలు…",
@@ -127,7 +127,7 @@
       contact: "Contact",
       therapy: "Therapy",
       steam: "Hot Steam Bath",
-      steamYes: "Yes (+₹200)",
+      steamYes: "Yes (Free)",
       date: "Date",
       time: "Time",
       therapist: "Therapist",
@@ -145,12 +145,12 @@
       months: ["January", "February", "March", "April", "May", "June",
                "July", "August", "September", "October", "November", "December"],
       therapies: {
-        "Padaabhyanga": "Padaabhyanga",
-        "Abhyanga": "Abhyanga",
-        "Abhyanga Extended": "Abhyanga (Extended)",
-        "Hot Potli": "Hot Potli",
-        "Shirodhara": "Shirodhara",
-        "Pizhichil": "Pizhichil"
+        "Padaabhyanga": "Siroabhyanga with Padaabhyanga Combo",
+        "Abhyanga": "Abhyanga Full Body",
+        "Abhyanga Extended": "Abhyanga Full Body Extended Version",
+        "Hot Potli": "Herbal Potli Therapy",
+        "Shirodhara": "Shirodhara Warm Oil Head Bath",
+        "Pizhichil": "Pizhichil Royal Warm Oil Bath Therapy"
       }
     },
     te: {
@@ -160,7 +160,7 @@
       contact: "ఫోన్",
       therapy: "థెరపీ",
       steam: "హాట్ స్టీమ్ బాత్",
-      steamYes: "అవును (+₹200)",
+      steamYes: "అవును (ఉచితం)",
       date: "తేదీ",
       time: "సమయం",
       therapist: "థెరపిస్ట్",
@@ -178,12 +178,12 @@
       months: ["జనవరి", "ఫిబ్రవరి", "మార్చి", "ఏప్రిల్", "మే", "జూన్",
                "జూలై", "ఆగస్టు", "సెప్టెంబర్", "అక్టోబర్", "నవంబర్", "డిసెంబర్"],
       therapies: {
-        "Padaabhyanga": "పాదాభ్యంగ",
-        "Abhyanga": "అభ్యంగ",
-        "Abhyanga Extended": "అభ్యంగ (ఎక్స్‌టెండెడ్)",
-        "Hot Potli": "హాట్ హాట్ పోట్లి",
-        "Shirodhara": "శిరోధార",
-        "Pizhichil": "పిజిచిల్"
+        "Padaabhyanga": "సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో",
+        "Abhyanga": "అభ్యంగ ఫుల్ బాడీ",
+        "Abhyanga Extended": "అభ్యంగ ఫుల్ బాడీ ఎక్స్‌టెండెడ్ వెర్షన్",
+        "Hot Potli": "హెర్బల్ పోట్లి థెరపీ",
+        "Shirodhara": "శిరోధార వార్మ్ ఆయిల్ హెడ్ బాత్",
+        "Pizhichil": "పిజిచిల్ రాయల్ వార్మ్ ఆయిల్ బాత్ థెరపీ"
       }
     }
   };

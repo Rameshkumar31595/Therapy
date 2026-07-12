@@ -78,14 +78,14 @@
     },
     "booking-padaabhyanga": {
       en: [
-        "Padaabhyanga is a great choice for relieving tired legs and improving sleep. Let me know if you need help finishing the form!",
-        "Ah, Padaabhyanga! Perfect for melting away the day's fatigue from your feet.",
-        "Excellent choice! Padaabhyanga works wonders for relaxation."
+        "Siroabhyanga with Padaabhyanga Combo is a great choice for soothing your head, legs, and feet and improving sleep. Let me know if you need help finishing the form!",
+        "Ah, the Siroabhyanga with Padaabhyanga Combo! Perfect for melting away the day's fatigue from your head, legs, and feet.",
+        "Excellent choice! The Siroabhyanga with Padaabhyanga Combo works wonders for relaxation."
       ],
       te: [
-        "పాదాభ్యంగ అద్భుతమైన ఎంపిక! అలసిన కాళ్ళకు ఇది చాలా ఉపశమనం ఇస్తుంది.",
-        "ఆహా, పాదాభ్యంగ! మీ పాదాల అలసటను దూరం చేయడానికి ఇది సరైనది.",
-        "మంచి ఎంపిక! పాదాభ్యంగ మీ విశ్రాంతికి అద్భుతంగా పనిచేస్తుంది."
+        "సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో అద్భుతమైన ఎంపిక! అలసిన తల, కాళ్లు, పాదాలకు ఇది చాలా ఉపశమనం ఇస్తుంది.",
+        "ఆహా, సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో! మీ తల, కాళ్లు, పాదాల అలసటను దూరం చేయడానికి ఇది సరైనది.",
+        "మంచి ఎంపిక! సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో మీ విశ్రాంతికి అద్భుతంగా పనిచేస్తుంది."
       ]
     },
     "booking-abhyanga": {
@@ -102,14 +102,14 @@
     },
     padaabhyanga: {
       en: [
-        "Padaabhyanga is a traditional foot massage that relieves fatigue, improves sleep, and completely relaxes the lower limbs.",
-        "Our Padaabhyanga therapy focuses on your feet and lower legs to melt away daily stress and restore balance.",
-        "Experience deep relaxation with Padaabhyanga, designed to soothe tired feet and promote a calm, restful sleep."
+        "Siroabhyanga with Padaabhyanga Combo is a traditional head, leg, and foot massage that relieves fatigue, improves sleep, and completely relaxes the head and lower limbs.",
+        "Our Siroabhyanga with Padaabhyanga Combo focuses on your head, feet, and lower legs to melt away daily stress and restore balance.",
+        "Experience deep relaxation with the Siroabhyanga with Padaabhyanga Combo, designed to soothe your head and tired feet and promote a calm, restful sleep."
       ],
       te: [
-        "పాదాభ్యంగ అనేది అలసటను తగ్గించి, నిద్రను మెరుగుపరిచే సాంప్రదాయ పాద మసాజ్. ఇది కాళ్ళకు పూర్తి విశ్రాంతిని ఇస్తుంది.",
-        "మా పాదాభ్యంగ థెరపీ మీ పాదాలు మరియు కాళ్ళపై దృష్టి సారించి, రోజువారీ ఒత్తిడిని దూరం చేస్తుంది.",
-        "అలసిపోయిన పాదాలను శాంతపరచడానికి మరియు ప్రశాంతమైన నిద్రను ప్రోత్సహించడానికి పాదాభ్యంగతో లోతైన విశ్రాంతిని అనుభవించండి."
+        "సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో అనేది అలసటను తగ్గించి, నిద్రను మెరుగుపరిచే సాంప్రదాయ తల, కాళ్లు, పాదాల మసాజ్. ఇది తల మరియు కాళ్ళకు పూర్తి విశ్రాంతిని ఇస్తుంది.",
+        "మా సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో మీ తల, పాదాలు మరియు కాళ్ళపై దృష్టి సారించి, రోజువారీ ఒత్తిడిని దూరం చేస్తుంది.",
+        "అలసిపోయిన తల, పాదాలను శాంతపరచడానికి మరియు ప్రశాంతమైన నిద్రను ప్రోత్సహించడానికి సిరోఅభ్యంగ & పాదాభ్యంగ కాంబోతో లోతైన విశ్రాంతిని అనుభవించండి."
       ]
     },
     abhyanga45: {
@@ -138,14 +138,14 @@
     },
     potli: {
       en: [
-        "Hot Potli uses warm poultices of natural ingredients to reduce inflammation and provide deep relief for aching joints.",
-        "Experience the soothing warmth of Hot Potli, highly effective for soothing stiff muscles and joint pain.",
-        "Our Potli therapy applies heated natural bags to targeted areas, melting away deep-seated tension and pain."
+        "Herbal Potli Therapy uses warm poultices of natural ingredients to reduce inflammation and provide deep relief for aching joints.",
+        "Experience the soothing warmth of the Herbal Potli Therapy, highly effective for soothing stiff muscles and joint pain.",
+        "Our Herbal Potli Therapy applies heated natural bags to targeted areas, melting away deep-seated tension and pain."
       ],
       te: [
-        "హాట్ పోట్లి సహజ నూనెల వెచ్చని మూటలను ఉపయోగించి వాపును తగ్గిస్తుంది మరియు కీళ్ల నొప్పులకు లోతైన ఉపశమనాన్ని ఇస్తుంది.",
-        "కండరాల బిగుతు మరియు కీళ్ల నొప్పులను తగ్గించడంలో అత్యంత ప్రభావవంతమైన హాట్ పోట్లి యొక్క హాయిని అనుభవించండి.",
-        "మా పోట్లి థెరపీ వేడిచేసిన సహజ సంచులను ఉపయోగించి, లోతైన ఒత్తిడి మరియు నొప్పిని దూరం చేస్తుంది."
+        "హెర్బల్ పోట్లి థెరపీ సహజ నూనెల వెచ్చని మూటలను ఉపయోగించి వాపును తగ్గిస్తుంది మరియు కీళ్ల నొప్పులకు లోతైన ఉపశమనాన్ని ఇస్తుంది.",
+        "కండరాల బిగుతు మరియు కీళ్ల నొప్పులను తగ్గించడంలో అత్యంత ప్రభావవంతమైన హెర్బల్ పోట్లి థెరపీ యొక్క హాయిని అనుభవించండి.",
+        "మా హెర్బల్ పోట్లి థెరపీ వేడిచేసిన సహజ సంచులను ఉపయోగించి, లోతైన ఒత్తిడి మరియు నొప్పిని దూరం చేస్తుంది."
       ]
     },
     shirodhara: {
@@ -174,14 +174,14 @@
     },
     "booking-potli": {
       en: [
-        "Hot Potli is perfect for soothing stiff muscles and joint pain. Let me know if you need help finishing the form!",
+        "Herbal Potli Therapy is perfect for soothing stiff muscles and joint pain. Let me know if you need help finishing the form!",
         "Ah, Potli! The warm pouches will provide incredible relief to your muscles.",
-        "Excellent choice! Hot Potli is highly recommended for deep tissue relaxation."
+        "Excellent choice! Herbal Potli Therapy is highly recommended for deep tissue relaxation."
       ],
       te: [
-        "హాట్ పోట్లి చాలా మంచి ఎంపిక! కండరాల నొప్పులను తగ్గించడానికి ఇది అద్భుతంగా పనిచేస్తుంది.",
+        "హెర్బల్ పోట్లి థెరపీ చాలా మంచి ఎంపిక! కండరాల నొప్పులను తగ్గించడానికి ఇది అద్భుతంగా పనిచేస్తుంది.",
         "ఆహా, పోట్లి! వెచ్చని సహజ మూటలు మీ కండరాలకు గొప్ప ఉపశమనాన్ని ఇస్తాయి.",
-        "మంచి ఎంపిక! కండరాల విశ్రాంతికి హాట్ పోట్లి బాగా సిఫార్సు చేయబడింది."
+        "మంచి ఎంపిక! కండరాల విశ్రాంతికి హెర్బల్ పోట్లి థెరపీ బాగా సిఫార్సు చేయబడింది."
       ]
     },
     "booking-shirodhara": {
@@ -222,13 +222,13 @@
     },
     hero: {
       en: [
-        "We offer authentic Kerala massage therapy right here at our massage therapy center, with pure natural oil, for relaxation, to improve blood circulation, body comfort, and skin health. We even offer relaxing therapies like Padaabhyanga and Abhyanga as convenient home services.",
-        "At our specialized massage therapy center, you can experience true Kerala Massage tradition. And for your ultimate comfort, therapies like Padaabhyanga are available right at your home.",
+        "We offer authentic Kerala massage therapy right here at our massage therapy center, with pure natural oil, for relaxation, to improve blood circulation, body comfort, and skin health. We even offer relaxing therapies like the Siroabhyanga with Padaabhyanga Combo and Abhyanga as convenient home services.",
+        "At our specialized massage therapy center, you can experience true Kerala Massage tradition. And for your ultimate comfort, therapies like the Siroabhyanga with Padaabhyanga Combo are available right at your home.",
         "Experience the soothing power of authentic Kerala therapies at our center. If you prefer to relax at home, our home services have you covered."
       ],
       te: [
-        "మేము మా ప్రత్యేక మసాజ్ థెరపీ సెంటర్‌లో ప్రామాణిక కేరళ మసాజ్ థెరపీలను అందిస్తున్నాము. పాదాభ్యంగ మరియు అభ్యంగ వంటి కొన్ని థెరపీలను మీ ఇంటి వద్ద కూడా అందిస్తాము.",
-        "మా మసాజ్ థెరపీ సెంటర్‌లో మీరు నిజమైన కేరళ మసాజ్ సంప్రదాయాన్ని అనుభవించవచ్చు. మీ సౌలభ్యం కోసం, పాదాభ్యంగ వంటి థెరపీలను మీ ఇంటి వద్దకే తీసుకువస్తున్నాము.",
+        "మేము మా ప్రత్యేక మసాజ్ థెరపీ సెంటర్‌లో ప్రామాణిక కేరళ మసాజ్ థెరపీలను అందిస్తున్నాము. సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో మరియు అభ్యంగ వంటి కొన్ని థెరపీలను మీ ఇంటి వద్ద కూడా అందిస్తాము.",
+        "మా మసాజ్ థెరపీ సెంటర్‌లో మీరు నిజమైన కేరళ మసాజ్ సంప్రదాయాన్ని అనుభవించవచ్చు. మీ సౌలభ్యం కోసం, సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో వంటి థెరపీలను మీ ఇంటి వద్దకే తీసుకువస్తున్నాము.",
         "మా కేంద్రంలో కేరళ థెరపీల హాయిని ఆస్వాదించండి. మీరు ఇంట్లోనే విశ్రాంతి తీసుకోవాలనుకుంటే, మా హోమ్ సర్వీసెస్ మీకు అందుబాటులో ఉన్నాయి."
       ]
     },
@@ -258,12 +258,12 @@
     },
     therapies: {
       en: [
-        "Take a look at our therapies, like Padaabhyanga, Abhyanga, Shirodhara, Pizhichil, and Hot Potli. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
+        "Take a look at our therapies, like the Siroabhyanga with Padaabhyanga Combo, Abhyanga, Shirodhara, Pizhichil, and Herbal Potli Therapy. You can tap 'Listen to Therapy' on any card to hear exactly how it works.",
         "We offer a wonderful range of traditional therapies. Browse through them below, and just tap the listen button to hear a detailed explanation of each one.",
         "From soothing Shirodhara to relaxing Pizhichil, explore all our soothing therapies here. Don't forget to tap listen to learn the benefits of each."
       ],
       te: [
-        "పాదాభ్యంగ, అభ్యంగ, శిరోధార, పిజిచిల్ మరియు హాట్ పోట్లి వంటి మా థెరపీలను అన్వేషించండి. ప్రతి థెరపీ గురించి మరింత తెలుసుకోవడానికి కార్డ్‌పై 'వినండి' నొక్కండి.",
+        "సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో, అభ్యంగ, శిరోధార, పిజిచిల్ మరియు హెర్బల్ పోట్లి థెరపీ వంటి మా థెరపీలను అన్వేషించండి. ప్రతి థెరపీ గురించి మరింత తెలుసుకోవడానికి కార్డ్‌పై 'వినండి' నొక్కండి.",
         "మేము అద్భుతమైన సాంప్రదాయ థెరపీలను అందిస్తున్నాము. కింద వాటిని పరిశీలించండి, మరియు ప్రతి దాని గురించి వివరంగా వినడానికి లిజన్ బటన్‌ను నొక్కండి.",
         "ప్రశాంతమైన శిరోధార నుండి ఉపశమనం కలిగించే పిజిచిల్ వరకు, మా థెరపీలన్నింటినీ ఇక్కడ అన్వేషించండి. ప్రతి థెరపీ ప్రయోజనాలను వినడం మర్చిపోకండి."
       ]
@@ -354,10 +354,10 @@
     },
     "padaabhyanga": {
       en: [
-        "Padaabhyanga is a traditional foot and leg massage. It uses warm natural oils on vital energy points to relieve tired feet, improve blood circulation, and promote deep, restful sleep."
+        "Siroabhyanga with Padaabhyanga Combo is a traditional head, leg, and foot massage. It uses warm natural oils on vital energy points to relieve a tired head and feet, improve blood circulation, and promote deep, restful sleep."
       ],
       te: [
-        "పాదాభ్యంగం అనేది సాంప్రదాయ కాళ్లు మరియు పాదాల మసాజ్. ఇది అలసటను దూరం చేసి, రక్త ప్రసరణను మెరుగుపరుస్తుంది మరియు మంచి నిద్రను ప్రోత్సహిస్తుంది."
+        "సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో అనేది సాంప్రదాయ తల, కాళ్లు మరియు పాదాల మసాజ్. ఇది అలసటను దూరం చేసి, రక్త ప్రసరణను మెరుగుపరుస్తుంది మరియు మంచి నిద్రను ప్రోత్సహిస్తుంది."
       ]
     },
     "abhyanga45": {
@@ -378,10 +378,10 @@
     },
     "potli": {
       en: [
-        "Hot Potli uses muslin pouches filled with natural ingredients. Pressed warm against your body, it reduces joint pain, relieves stiffness, and relaxes deep muscle tissues."
+        "Herbal Potli Therapy uses muslin pouches filled with natural ingredients. Pressed warm against your body, it reduces joint pain, relieves stiffness, and relaxes deep muscle tissues."
       ],
       te: [
-        "హాట్ పోట్లి థెరపీలో సహజ పదార్థాలతో నింపిన వేడి మూటలను ఉపయోగిస్తారు. ఇది కీళ్ల నొప్పులను, కండరాల పట్టుకోతలను తగ్గించడానికి అద్భుతంగా పనిచేస్తుంది."
+        "హెర్బల్ పోట్లి థెరపీలో సహజ పదార్థాలతో నింపిన వేడి మూటలను ఉపయోగిస్తారు. ఇది కీళ్ల నొప్పులను, కండరాల పట్టుకోతలను తగ్గించడానికి అద్భుతంగా పనిచేస్తుంది."
       ]
     },
     "shirodhara": {
