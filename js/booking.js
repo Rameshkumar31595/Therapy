@@ -21,8 +21,7 @@
      The massage therapy center offers BOTH "At Massage Therapy Center" and "Home Service".
      Home Service is available ONLY for the three therapies that
      need no massage therapy center equipment (see HOME_THERAPIES). When Home
-     Service is chosen the Hot Steam Bath add-on is removed and a
-     customer address is required; the WhatsApp message then
+     Service is chosen a customer address is required; the WhatsApp message then
      carries that address instead of the massage therapy center address/map. */
 
   /* Massage Therapy Center address (one line per part for clean WhatsApp rendering)
@@ -47,8 +46,6 @@
     phone: document.getElementById("bkPhone"),
     session: document.getElementById("bkSession"),
     therapy: document.getElementById("bkTherapy"),
-    steam: document.getElementById("bkSteam"),
-    steamField: document.getElementById("bkSteamField"),
     address: document.getElementById("bkAddress"),
     addressField: document.getElementById("bkAddressField"),
     date: document.getElementById("bkDate"),
@@ -126,8 +123,6 @@
       patient: "Patient",
       contact: "Contact",
       therapy: "Therapy",
-      steam: "Hot Steam Bath",
-      steamYes: "Yes (Free)",
       date: "Date",
       time: "Time",
       therapist: "Therapist",
@@ -159,8 +154,6 @@
       patient: "పేరు",
       contact: "ఫోన్",
       therapy: "థెరపీ",
-      steam: "హాట్ స్టీమ్ బాత్",
-      steamYes: "అవును (ఉచితం)",
       date: "తేదీ",
       time: "సమయం",
       therapist: "థెరపిస్ట్",
@@ -233,8 +226,8 @@
   els.date.min = todayISO();
 
   /* Match the form to the chosen service type: filter the therapy
-     list, and toggle the Hot Steam Bath add-on + the home-address
-     field. Switching back to "At Massage Therapy Center" restores everything. */
+     list, and toggle the home-address field. Switching back to
+     "At Massage Therapy Center" restores everything. */
   function applyServiceType() {
     var sessionType = els.session.value;
     var isHome = sessionType === "Home Service";
@@ -249,13 +242,6 @@
     if (!therapyAllowedForSession(els.therapy.value, sessionType)) {
       els.therapy.value = "";
     }
-
-    // Hot Steam Bath is massage therapy center-only — remove it entirely for Home Service.
-    if (els.steam) {
-      if (isHome) els.steam.checked = false;
-      els.steam.disabled = isHome;
-    }
-    if (els.steamField) els.steamField.hidden = isHome;
 
     // Home address: shown & required for Home Service; cleared otherwise.
     if (els.addressField) els.addressField.hidden = !isHome;
@@ -386,7 +372,7 @@
   }
 
   /* Builds the full booking message in the ACTIVE site language.
-     Optional rows (Hot Steam Bath, Notes) are only added when set —
+     Optional rows (Notes) are only added when set —
      no empty placeholders, no "—"/"N/A". Address + Maps link are
      always present. Kept compact so the encoded wa.me payload stays
      well within mobile limits (nothing gets truncated). */
@@ -409,8 +395,6 @@
     p.push("🧭 " + L.serviceType + ": " + (isHome ? L.homeVal : L.atCenterVal));
     p.push("");
     p.push("💆 " + L.therapy + ": " + therapyName);
-    // Hot Steam Bath only ever applies to a massage therapy center booking.
-    if (!isHome && els.steam && els.steam.checked) p.push("♨️ " + L.steam + ": " + L.steamYes);
     p.push("");
     p.push("📅 " + L.date + ": " + formatDate(els.date.value));
     p.push("🕒 " + L.time + ": " + els.time.value);
@@ -491,7 +475,7 @@
     form.hidden = false;
   });
 
-  /* ── "Book" buttons: preselect therapy / steam add-on ───── */
+  /* ── "Book" buttons: preselect therapy ─────────────────── */
   document.querySelectorAll("[data-book]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var therapy = btn.getAttribute("data-book");
@@ -503,19 +487,6 @@
       setError(els.session, "bkSessionErr", null);
       setError(els.therapy, "bkTherapyErr", null);
       if (form.hidden) { /* success panel showing — bring form back */
-        els.success.hidden = true;
-        els.success.classList.remove("show");
-        form.hidden = false;
-      }
-    });
-  });
-  document.querySelectorAll("[data-book-steam]").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      // Steam is massage therapy center-only, so ensure the massage therapy center service is selected.
-      els.session.value = "At Massage Therapy Center";
-      applyServiceType();
-      els.steam.checked = true;
-      if (form.hidden) {
         els.success.hidden = true;
         els.success.classList.remove("show");
         form.hidden = false;

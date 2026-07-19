@@ -58,13 +58,12 @@
       "@type": "OfferCatalog",
       "name": "Kerala Massage Therapies",
       "itemListElement": [
-        { "@type": "Offer", "name": "Siroabhyanga with Padaabhyanga Combo: Head, leg, and foot massage (40 min)", "price": "600", "priceCurrency": "INR" },
+        { "@type": "Offer", "name": "Siroabhyanga with Padaabhyanga Combo: Head, leg, and foot massage (30 min)", "price": "600", "priceCurrency": "INR" },
         { "@type": "Offer", "name": "Abhyanga Full Body (45 min)", "price": "1000", "priceCurrency": "INR" },
         { "@type": "Offer", "name": "Abhyanga Full Body Extended Version (60 min)", "price": "1200", "priceCurrency": "INR" },
         { "@type": "Offer", "name": "Herbal Potli Therapy (45 min)", "price": "1500", "priceCurrency": "INR" },
         { "@type": "Offer", "name": "Shirodhara Warm Oil Head Bath (50 min)", "price": "2000", "priceCurrency": "INR" },
-        { "@type": "Offer", "name": "Pizhichil Royal Warm Oil Bath Therapy (60 min)", "price": "2500", "priceCurrency": "INR" },
-        { "@type": "Offer", "name": "Steam Add-on", "price": "0", "priceCurrency": "INR" }
+        { "@type": "Offer", "name": "Pizhichil Royal Warm Oil Bath Therapy (60 min)", "price": "2500", "priceCurrency": "INR" }
       ]
     }
   }
@@ -274,8 +273,8 @@
     <!-- ═══════════ RITUAL RIBBON ═══════════ -->
     <div class="ritual-ribbon" aria-hidden="true">
       <div class="ribbon-track">
-        <span>Abhyanga ✦ Shirodhara ✦ Pizhichil ✦ Potli ✦ Padaabhyanga ✦ Steam ✦&nbsp;</span>
-        <span>Abhyanga ✦ Shirodhara ✦ Pizhichil ✦ Potli ✦ Padaabhyanga ✦ Steam ✦&nbsp;</span>
+        <span>Abhyanga ✦ Shirodhara ✦ Pizhichil ✦ Potli ✦ Padaabhyanga ✦&nbsp;</span>
+        <span>Abhyanga ✦ Shirodhara ✦ Pizhichil ✦ Potli ✦ Padaabhyanga ✦&nbsp;</span>
       </div>
     </div>
 
@@ -305,7 +304,7 @@
             <p class="home-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3Z"/></svg><span data-i18n="svc.homeBadge">Home Service Available</span></p>
             <p class="service-desc" data-i18n="svc1.desc">A grounding therapy for tired legs and feet, with warm oil, firm rhythmic strokes and marma point care to melt away the day's fatigue.</p>
             <div class="service-meta">
-              <span class="service-duration"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7Z"/></svg><span data-i18n="dur.40">40 Minutes</span></span>
+              <span class="service-duration"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7Z"/></svg><span data-i18n="dur.30">30 Minutes</span></span>
               <span class="service-price">₹600</span>
             </div>
             <button type="button" class="service-listen" data-therapy="padaabhyanga">
@@ -409,22 +408,6 @@
             <a href="#booking" class="service-book" data-book="Pizhichil" data-i18n="svc.book">Book Appointment</a>
           </article>
         </div>
-
-        <div class="steam-addon reveal">
-          <div class="steam-addon-left">
-            <div class="service-photo steam-photo">
-              <img src="https://images.pexels.com/photos/34097625/pexels-photo-34097625.jpeg?auto=compress&cs=tinysrgb&w=220&h=136&fit=crop" alt="Hot steam bath rising from heated stones" loading="lazy" width="220" height="136" />
-            </div>
-            <div>
-              <h3><span data-i18n="steam.title">Hot Steam Bath</span> <span class="addon-label" data-i18n="steam.label">Add-on</span></h3>
-              <p data-i18n="steam.desc">Complete any therapy with soothing hot steam bath that opens pores, eases muscles and deepens relaxation.</p>
-            </div>
-          </div>
-          <div class="steam-addon-right">
-            <span class="service-price">Free</span>
-            <a href="#booking" class="service-book" data-book-steam="1" data-i18n="steam.btn">Add to Booking</a>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -465,7 +448,7 @@
               <div class="bk-therapy-wrap">
                 <select id="bkTherapy" name="therapy" disabled>
                   <option value="" data-i18n="bk.therapyPh">Select a therapy…</option>
-                  <option value="Padaabhyanga" data-home="1" data-massage therapy center="1">Siroabhyanga with Padaabhyanga Combo · 40 min · ₹600</option>
+                  <option value="Padaabhyanga" data-home="1" data-massage therapy center="1">Siroabhyanga with Padaabhyanga Combo · 30 min · ₹600</option>
                   <option value="Abhyanga" data-home="1" data-massage therapy center="1">Abhyanga Full Body · 45 min · ₹1,000</option>
                   <option value="Abhyanga Extended" data-home="1" data-massage therapy center="1">Abhyanga Full Body Extended Version · 60 min · ₹1,200</option>
                   <option value="Hot Potli" data-massage therapy center="1">Herbal Potli Therapy · 45 min · ₹1,500</option>
@@ -475,13 +458,6 @@
                 <p class="bk-note bk-note-right" data-i18n="bk.therapyNote">Some therapies need special equipment that is only available at the massage therapy center.</p>
               </div>
               <p class="bk-error" id="bkTherapyErr" hidden></p>
-            </div>
-
-            <div class="bk-field bk-field-steam" id="bkSteamField">
-              <label class="bk-check">
-                <input type="checkbox" id="bkSteam" name="steam" />
-                <span data-i18n="bk.steam">Add Hot Steam Bath <strong>(Free)</strong></span>
-              </label>
             </div>
 
             <!-- Shown only when Home Service is selected (js/booking.js) -->
