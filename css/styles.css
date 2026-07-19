@@ -1180,6 +1180,8 @@ html[lang="te"] .home-badge { letter-spacing: 0.01em; text-transform: none; font
   border-radius: 0.6rem;
   padding-inline: 0.8rem;
   border-bottom-color: transparent;
+  box-shadow: 0 0 0 1.5px rgba(227, 194, 132, 0.4), 0 0 14px rgba(201, 163, 90, 0.28);
+  animation: todayGlow 2.6s ease-in-out infinite;
 }
 .timings-list li.today > span:first-child::after {
   content: "Today";
@@ -1193,6 +1195,17 @@ html[lang="te"] .home-badge { letter-spacing: 0.01em; text-transform: none; font
   padding: 0.18rem 0.55rem;
   margin-left: 0.55rem;
   vertical-align: middle;
+  animation: todayBadgePulse 2.6s ease-in-out infinite;
+}
+
+/* Gentle pulse that draws the eye to the current day */
+@keyframes todayGlow {
+  0%, 100% { box-shadow: 0 0 0 1.5px rgba(227, 194, 132, 0.35), 0 0 10px rgba(201, 163, 90, 0.16); }
+  50%      { box-shadow: 0 0 0 1.5px rgba(227, 194, 132, 0.75), 0 0 22px rgba(201, 163, 90, 0.5); }
+}
+@keyframes todayBadgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(227, 194, 132, 0); }
+  50%      { box-shadow: 0 0 10px 1px rgba(227, 194, 132, 0.65); }
 }
 
 .halfday-special {
