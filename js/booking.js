@@ -80,7 +80,7 @@
       namePh: "Your name",
       phonePh: "10-digit mobile number",
       sessionPh: "Select service type…",
-      sessionNote: "Home Service is available only for Siroabhyanga with Padaabhyanga Combo, Abhyanga Full Body and Abhyanga Full Body Extended Version. At the massage therapy center, all therapies are available.",
+      sessionNote: "Home Service is available only for Siroabhyanga with Padaabhyanga Combo, Abhyanga Full Body and Abhyanga Full Body Extended Version. Home service costs ₹300 extra per session over the center price. At the massage therapy center, all therapies are available.",
       therapyNote: "Some therapies need special equipment that is only available at the massage therapy center.",
       addressPh: "House / flat, street, area, landmark, town…",
       notesPh: "Anything we should know: health conditions, preferences…",
@@ -101,7 +101,7 @@
       namePh: "మీ పేరు",
       phonePh: "10 అంకెల మొబైల్ నంబర్",
       sessionPh: "సేవ రకం ఎంచుకోండి…",
-      sessionNote: "హోమ్ సర్వీస్ కేవలం సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో, అభ్యంగ ఫుల్ బాడీ, అభ్యంగ ఫుల్ బాడీ ఎక్స్‌టెండెడ్ వెర్షన్ కోసం మాత్రమే అందుబాటులో ఉంది. మసాజ్ థెరపీ సెంటర్‌లో అన్ని థెరపీలు అందుబాటులో ఉంటాయి.",
+      sessionNote: "హోమ్ సర్వీస్ కేవలం సిరోఅభ్యంగ & పాదాభ్యంగ కాంబో, అభ్యంగ ఫుల్ బాడీ, అభ్యంగ ఫుల్ బాడీ ఎక్స్‌టెండెడ్ వెర్షన్ కోసం మాత్రమే అందుబాటులో ఉంది. హోమ్ సర్వీస్‌కు సెంటర్ ధర కంటే సెషన్‌కు ₹300 అదనం. మసాజ్ థెరపీ సెంటర్‌లో అన్ని థెరపీలు అందుబాటులో ఉంటాయి.",
       therapyNote: "కొన్ని థెరపీలకు అవసరమైన ప్రత్యేక పరికరాలు కేవలం మసాజ్ థెరపీ సెంటర్‌లో మాత్రమే అందుబాటులో ఉంటాయి.",
       addressPh: "ఇల్లు / ఫ్లాట్, వీధి, ఏరియా, ల్యాండ్‌మార్క్, ఊరు…",
       notesPh: "మేము తెలుసుకోవాల్సినవి: ఆరోగ్య విషయాలు, ఇష్టాలు…",
@@ -188,6 +188,38 @@
     "Abhyanga Extended": true
   };
 
+  /* Home Service costs a fixed surcharge over the center price.
+     Center prices stay exactly as listed; when Home Service is
+     chosen, the eligible therapy options show center price + this. */
+  var HOME_SURCHARGE = 300;
+
+  function formatINR(n) {
+    return "₹" + n.toLocaleString("en-IN");
+  }
+
+  /* Remember each option's original (center-price) label once, so we
+     can restore it when the visitor switches back to At Center. */
+  Array.prototype.forEach.call(els.therapy.options, function (option) {
+    if (option.value) option.setAttribute("data-center-label", option.textContent);
+  });
+
+  /* Rewrite the price shown on the three home-eligible options to the
+     center price + surcharge while Home Service is selected. */
+  function applyHomePricing(isHome) {
+    Array.prototype.forEach.call(els.therapy.options, function (option) {
+      if (!option.value || !HOME_THERAPIES[option.value]) return;
+      var base = option.getAttribute("data-center-label") || option.textContent;
+      if (isHome) {
+        option.textContent = base.replace(/₹[\d,]+/, function (price) {
+          var num = parseInt(price.replace(/[^\d]/g, ""), 10);
+          return formatINR(num + HOME_SURCHARGE);
+        });
+      } else {
+        option.textContent = base;
+      }
+    });
+  }
+
   var CENTER_THERAPIES = {
     "Padaabhyanga": true,
     "Abhyanga": true,
@@ -231,6 +263,8 @@
   function applyServiceType() {
     var sessionType = els.session.value;
     var isHome = sessionType === "Home Service";
+
+    applyHomePricing(isHome);
 
     els.therapy.disabled = !sessionType;
     Array.prototype.forEach.call(els.therapy.options, function (option) {
