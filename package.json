@@ -1,0 +1,24 @@
+{
+  "name": "therapy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "check.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rameshkumar31595/Therapy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Rameshkumar31595/Therapy/issues"
+  },
+  "homepage": "https://github.com/Rameshkumar31595/Therapy#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
